@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Friend_titlebar">
+     <attr name="rihgt" format="reference|integer"></attr>
+        <attr name="left" format="reference|integer"></attr>
+        <attr name="toutext" format="string"></attr>
+    </declare-styleable>
+
+
+</resources>

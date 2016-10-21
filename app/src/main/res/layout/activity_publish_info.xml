@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/themeblue">
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-30dp"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:src="@drawable/dynamic_cancel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="写写写"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+        <ImageView
+            android:id="@+id/iv_publishmore"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/dynamic_publish"
+            android:layout_marginRight="-20dp"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_center"
+    android:layout_marginTop="50dp">
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/et_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:hint="说点什么吧..."
+        android:inputType="textMultiLine"
+        android:gravity="left|top"
+        android:minLines="4"
+        android:maxLines="16"
+        android:background="@null"/>
+    <View
+        android:layout_below="@id/et_text"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="5dp"
+        android:background="@android:color/darker_gray" />
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_bottom"
+        android:layout_below="@+id/rl_center">
+        <com.example.charmer.moving.MyView.GridView_picture
+            android:id="@+id/gridView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:columnWidth="90dp"
+            >
+        </com.example.charmer.moving.MyView.GridView_picture>
+        <!--<GridView-->
+            <!--android:id="@+id/gridView1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:numColumns="3"-->
+            <!--android:verticalSpacing="-20dp">-->
+        <!--</GridView>-->
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(友情提示:只能添加9张图片,长按图片可以删除已添加图片)"
+        android:gravity="center"
+        android:layout_below="@+id/rl_bottom"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_imageView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/addphoto"-->
+        <!--android:layout_below="@+id/v_view"-->
+        <!--android:layout_alignLeft="@+id/et_text"-->
+        <!--android:layout_alignStart="@+id/et_text"-->
+        <!--android:layout_marginTop="5dp"/>-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="添加照片"-->
+        <!--android:textSize="20sp"-->
+        <!--android:layout_alignBottom="@+id/iv_imageView"-->
+        <!--android:layout_toRightOf="@+id/iv_imageView"-->
+        <!--android:layout_toEndOf="@+id/iv_imageView"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginStart="20dp" />-->
+</RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
