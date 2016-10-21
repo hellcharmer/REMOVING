@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">MOVING</string>
+    <string name="search">搜索</string>
+    <string name="publisherName">发布者名字</string>
+    <string name="type">活动类别</string>
+    <string name="theme">活动主题</string>
+    <string name="place">活动地点</string>
+    <string name="activityTime">活动时间</string>
+    <string name="costdesc">总花费:</string>
+    <string name="cost">活动花费</string>
+    <string name="paymentMethoddesc">付费方式:</string>
+    <string name="paymentMethod">付费方式</string>
+    <string name="currentNumberdesc">当前人数:</string>
+    <string name="currentNumber">当前人数</string>
+    <string name="totalNumberdesc">总人数:</string>
+    <string name="totalNumber">总人数</string>
+    <string name="exercises">活动</string>
+    <string name="exercisesinfoes">活动详情</string>
+    <string name="manager">管理</string>
+    <string name="exemanager">活动管理</string>
+    <string name="releasetime">发布于</string>
+    <string-array name="exercisetype">
+        <item>全部分类</item>
+        <item>篮球</item>
+        <item>足球</item>
+        <item>乒乓</item>
+        <item>羽毛球</item>
+        <item>网球</item>
+        <item>游泳</item>
+    </string-array>
+    <string-array name="exercisetheme">
+        <item>全部主题</item>
+        <item>一起玩</item>
+        <item>教教我</item>
+        <item>比一比</item>
+        <item>交朋友</item>
+
+    </string-array>
+    <string name="action_settings">Settings</string>
+    <string-array name="exepbtype">
+        <item>篮球</item>
+        <item>足球</item>
+        <item>乒乓</item>
+        <item>羽毛球</item>
+        <item>网球</item>
+        <item>游泳</item>
+    </string-array>
+    <string-array name="exepbtheme">
+        <item>一起玩</item>
+        <item>教教我</item>
+        <item>比一比</item>
+        <item>交朋友</item>
+    </string-array>
+    <string-array name="exepbnumber">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>12</item>
+        <item>22</item>
+    </string-array>
+    <string-array name="exepbcostmthd">
+        <item>AA制</item>
+        <item>我买单</item>
+        <item>你请客</item>
+    </string-array>
+    <string name="app_cancel">取消</string>
+    <string name="app_sure">确定</string>
+</resources>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.charmer.moving.home_activity.ZixunInfo_xq">
+
+    <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<com.example.charmer.moving.MyView.ObservableScrollView
+    android:id="@+id/sl_home_picture"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/home_xiangxi_header"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@color/colorSkybule"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <ImageView
+        android:id="@+id/iv_home_return"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cha"/>
+    <ImageView
+        android:id="@+id/xiangxi_author_touxiang"
+        android:layout_toRightOf="@id/iv_home_return"
+        android:layout_marginTop="15dp"
+       android:layout_marginLeft="15dp"
+        android:src="@drawable/people_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+        <TextView
+            android:id="@+id/xiangxi_author"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/xiangxi_author_touxiang"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:text="张三"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+           android:layout_alignParentRight="true"
+            android:src="@drawable/three_point"
+            android:layout_gravity="center_vertical"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_home_title"
+        android:layout_marginTop="48dp"
+        android:background="@color/colorSkybule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/home_xiangxi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:text="lisi"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/rl_home_title"
+        android:id="@+id/rl_home_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/home_xiangxi_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="内容"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+    <com.example.charmer.moving.MyView.GridView_picture
+        android:id="@+id/home_xiangxi_picture"
+        android:layout_below="@id/rl_home_content"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        >
+
+    </com.example.charmer.moving.MyView.GridView_picture>
+
+</RelativeLayout>
+
+</com.example.charmer.moving.MyView.ObservableScrollView>
+
+    <LinearLayout
+
+        android:id="@+id/home_xiangxi_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_dianzan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/home_xiangxi_dianzan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/dianzan"
+                android:textColor="@color/home_xiangxi_buttom"
+                android:text="点赞"
+                android:onClick="onTabClicked"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_shoucang"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/home_xiangxi_shoucang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/shoucang"
+                android:textColor="@color/home_xiangxi_buttom"
+                android:text="收藏"
+                android:onClick="onTabClicked"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_pinglun"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/home_xiangxi_pinglun"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/pinglun1"
+                android:textColor="@color/home_xiangxi_buttom"
+                android:text="评论"
+                android:onClick="onTabClicked"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_home_xiangxi_title"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        android:background="@color/colorSkybule">
+        <ImageView
+            android:id="@+id/iv_home_hide_return"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cha"/>
+        <TextView
+            android:id="@+id/xiangxi_hide_title"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_home_hide_return"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:text="题目"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/three_point"
+            android:layout_gravity="center_vertical"
+            />
+
+    </RelativeLayout>
+</FrameLayout>
