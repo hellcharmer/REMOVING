@@ -58,6 +58,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import me.weyye.library.EmptyLayout;
+
 
 /**
  * Created by Administrator on 2016/9/19.
@@ -68,7 +70,7 @@ public class Fragment_home extends Fragment {
 
 
 
-
+    private EmptyLayout emptyLayout;
     private SwipeRefreshLayout mSr_refresh1;
     private SwipeRefreshLayout mSr_refresh2;
     private SwipeRefreshLayout mSr_refresh3;
@@ -178,6 +180,15 @@ public class Fragment_home extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         initData();
+        //绑定
+        emptyLayout.bindView(lv_zixun);
+        emptyLayout.setOnButtonClick(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //重新加载数据
+                getZixunlist(1);
+            }
+        });
         vp_zixun.setCurrentItem(0);
         lv_zixun.setAdapter(adapter1);
 
@@ -209,6 +220,7 @@ public class Fragment_home extends Fragment {
 
 
         View view1 = View.inflate(getActivity(), R.layout.fragment_home, null);
+        emptyLayout = (EmptyLayout)view1.findViewById(R.id.emptyLayout);
         //刷新控件
         mSr_refresh1 = (SwipeRefreshLayout)view1.findViewById(R.id.sr_refresh);
 
@@ -875,7 +887,7 @@ public class Fragment_home extends Fragment {
 
 
     private void getZixunlist(int page) {
-
+        emptyLayout.showLoading("正在加载，请稍后");
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain");
         params.addQueryStringParameter("page",page+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -897,6 +909,8 @@ public class Fragment_home extends Fragment {
                 }
                 //zixunlist.clear();
                 zixunlist.addAll(bean.zixunlist);
+                // 成功
+                emptyLayout.showSuccess();
                 //通知listView更新界面
                 adapter1.notifyDataSetChanged();
 
@@ -904,7 +918,7 @@ public class Fragment_home extends Fragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.i(TAG,ex.toString());
+                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
             }
 
             @Override
@@ -920,7 +934,7 @@ public class Fragment_home extends Fragment {
 
     }
     private void getExerciseList() {
-
+        emptyLayout.showLoading("正在加载，请稍后");
         //GPS定位值==place
         String str = "http://10.40.5.13:8080/moving/getexercise?exercisetheme=全部主题&exercisetype=全部分类&page=1&place=苏州";
         RequestParams params = new RequestParams(str);
@@ -940,34 +954,15 @@ public class Fragment_home extends Fragment {
                 exerciseList.addAll(bean.exerciseList);
                 //dongtaiList = bean.dongtailist;   error
                 System.out.println(bean.exerciseList);
+                // 成功
+                emptyLayout.showSuccess();
                 adapter_huodong.notifyDataSetChanged();
-
-
-
-
-
-//                try {
-//                   // xUtilsImageUtils.display(huodong_tx1, HttpUtils.host + URLDecoder.decode(zixun.photoImg, "utf-8"));
-//                    huongdong_Title1.setText(URLDecoder.decode(exerciseList.get(0).title,"utf-8"));
-//                    huodong_xiangxi1.setText(exerciseList.get(0).exerciseId + "·"+DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(exerciseList.get(0).activityTime,"utf-8"))));
-//                    huongdong_Title2.setText(URLDecoder.decode(exerciseList.get(1).title,"utf-8"));
-//                    huodong_xiangxi2.setText(exerciseList.get(1).exerciseId + "·"+DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(exerciseList.get(1).activityTime,"utf-8"))));
-//                    huongdong_Title3.setText(URLDecoder.decode(exerciseList.get(2).title,"utf-8"));
-//                    huodong_xiangxi3.setText(exerciseList.get(2).exerciseId + "·"+DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(exerciseList.get(2).activityTime,"utf-8"))));
-//                    huongdong_Title4.setText(URLDecoder.decode(exerciseList.get(3).title,"utf-8"));
-//                    huodong_xiangxi4.setText(exerciseList.get(3).exerciseId + "·"+DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(exerciseList.get(3).activityTime,"utf-8"))));
-//                    huongdong_Title5.setText(URLDecoder.decode(exerciseList.get(4).title,"utf-8"));
-//                    huodong_xiangxi5.setText(exerciseList.get(4).exerciseId + "·"+DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(exerciseList.get(4).activityTime,"utf-8"))));
-//                } catch (UnsupportedEncodingException e) {
-//                    e.printStackTrace();
-//                }
-
 
             }
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
 
             }
 

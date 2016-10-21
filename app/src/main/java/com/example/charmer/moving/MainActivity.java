@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         Constant.displayWidth = displayMetrics.widthPixels;
         Constant.displayHeight = displayMetrics.heightPixels;
+        //初始化模糊界面
+        plus_rl.setClickable(false);
         //初始化fragment
         fragment_home = new Fragment_home();
         fragment_mine = new Fragment_mine();
@@ -296,6 +298,25 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             // TODO Auto-generated method stub
+            clicked = !clicked;
+            // 两个按钮的显示隐藏
+            dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            // 加号旋转
+            plus_im.startAnimation(clicked ? rotate_anticlockwise
+                    : rotate_clockwise);
+            // 按钮显示隐藏效果
+            dishui_tv.startAnimation(clicked ? scale_max : scale_min);
+            guoshui_tv.startAnimation(clicked ? scale_max : scale_min);
+            iv_fabuhuodong.startAnimation(clicked ? scale_max : scale_min);
+            iv_write.startAnimation(clicked ? scale_max : scale_min);
+            // 背景色的改变
+            plus_rl.setBackgroundColor(clicked ? Color
+                    .parseColor("#aaffffff") : Color.TRANSPARENT);
+            // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
+            plus_rl.setClickable(clicked);
             v.startAnimation(alpha_button);
             plus_im.performClick();
             Intent intent =new Intent(MainActivity.this,Publish_articles.class);

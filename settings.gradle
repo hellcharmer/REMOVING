@@ -1,2 +1,2 @@
-include ':app',':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable'
+include ':app',':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable',":library"
 include ':libs:pulltorefresh' ,':app'

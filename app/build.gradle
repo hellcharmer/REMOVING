@@ -29,4 +29,6 @@ dependencies {
     compile project(':libs:pulltorefresh')
     compile 'com.baoyz.swipemenulistview:library:1.3.0'
     compile project(':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable')
+    compile project(':library')
+    compile files('libs/android-support-v7-recyclerview.jar')
 }
