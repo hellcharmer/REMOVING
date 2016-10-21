@@ -186,6 +186,7 @@ public class Fragment_home extends Fragment {
             @Override
             public void onClick(View v) {
                 //重新加载数据
+                getExerciseList();
                 getZixunlist(1);
             }
         });
@@ -193,7 +194,7 @@ public class Fragment_home extends Fragment {
         lv_zixun.setAdapter(adapter1);
 
 
-
+        emptyLayout.showLoading("正在加载，请稍后");
         getExerciseList();
         getZixunlist(page_zixun);
         //list 的每个点击事件
@@ -482,34 +483,6 @@ public class Fragment_home extends Fragment {
             public void onPageSelected(int position) {
                 toastUtil.Short(getActivity(),"这是第"+(position+1)+"页").show();
 
-//                switch (position) {
-//                    case 0:
-//                        rb_zixun_one.setChecked(true);
-//
-//
-//                        break;
-//                    case 1:
-//                        rb_zixun_two.setChecked(true);
-//                        break;
-//                    case 2:
-//                        rb_zixun_three.setChecked(true);
-//                        break;
-//                    case 3:
-//                        rb_zixun_four.setChecked(true);
-//                        break;
-//                    case 4:
-//                        rb_zixun_five.setChecked(true);
-//                        break;
-//                    case 5:
-//                        rb_zixun_six.setChecked(true);
-//                        break;
-//                    case 6:
-//                        rb_zixun_seven.setChecked(true);
-//                        break;
-//                    default:
-//                        break;
-//
-//                }
                 RadioButton radioButton = (RadioButton)view.findViewById(_id+position);
                 radioButton.performClick();
             }
@@ -568,7 +541,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-
+                    getExerciseList();
                       getZixunlist(1);
 
 
@@ -817,7 +790,7 @@ public class Fragment_home extends Fragment {
         }.start();
     }
     public void hideBar() {
-        mHeaderAnimator = ObjectAnimator.ofFloat(home_search_bar, "translationY", -home_search_bar.getHeight());
+        mHeaderAnimator = ObjectAnimator.ofFloat(home_search_bar, "translationY", -home_search_bar.getHeight()-7);
         titlebarAnimator = ObjectAnimator.ofFloat(hs_view, "translationY", -hs_view.getHeight());
         bottomAnimator = ObjectAnimator.ofFloat(main_bottom, "translationY", Constant.displayHeight);
         plusAnimator = ObjectAnimator.ofFloat(plus_rl, "translationY", Constant.displayHeight);
@@ -887,7 +860,7 @@ public class Fragment_home extends Fragment {
 
 
     private void getZixunlist(int page) {
-        emptyLayout.showLoading("正在加载，请稍后");
+
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain");
         params.addQueryStringParameter("page",page+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -918,7 +891,7 @@ public class Fragment_home extends Fragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
+
             }
 
             @Override
@@ -934,7 +907,7 @@ public class Fragment_home extends Fragment {
 
     }
     private void getExerciseList() {
-        emptyLayout.showLoading("正在加载，请稍后");
+
         //GPS定位值==place
         String str = "http://10.40.5.13:8080/moving/getexercise?exercisetheme=全部主题&exercisetype=全部分类&page=1&place=苏州";
         RequestParams params = new RequestParams(str);

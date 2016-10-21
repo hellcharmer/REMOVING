@@ -242,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 // 两个按钮的显示隐藏
                 dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
                 iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 // 加号旋转
@@ -257,6 +258,12 @@ public class MainActivity extends AppCompatActivity {
                         .parseColor("#aaffffff") : Color.TRANSPARENT);
                 // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
                 plus_rl.setClickable(clicked);
+                iv_write.setClickable(clicked? true : false);
+                dishui_tv.setClickable(clicked? true : false);
+                guoshui_tv.setClickable(clicked? true : false);
+                iv_fabuhuodong.setClickable(clicked? true : false);
+
+
             }
         });
         plus_rl.setOnClickListener(new View.OnClickListener() {
@@ -268,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
                 // 两个按钮的显示隐藏
                 dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
                 iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 // 加号旋转
@@ -283,6 +291,10 @@ public class MainActivity extends AppCompatActivity {
                         .parseColor("#aaffffff") : Color.TRANSPARENT);
                 // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
                 plus_rl.setClickable(clicked);
+                iv_write.setClickable(clicked? true : false);
+                dishui_tv.setClickable(clicked? true : false);
+                guoshui_tv.setClickable(clicked? true : false);
+                iv_fabuhuodong.setClickable(clicked? true : false);
             }
         });
 
@@ -302,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
             // 两个按钮的显示隐藏
             dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
             guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
             iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
             iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
             // 加号旋转
@@ -317,6 +330,10 @@ public class MainActivity extends AppCompatActivity {
                     .parseColor("#aaffffff") : Color.TRANSPARENT);
             // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
             plus_rl.setClickable(clicked);
+            iv_write.setClickable(clicked? true : false);
+            dishui_tv.setClickable(clicked? true : false);
+            guoshui_tv.setClickable(clicked? true : false);
+            iv_fabuhuodong.setClickable(clicked? true : false);
             v.startAnimation(alpha_button);
             plus_im.performClick();
             Intent intent =new Intent(MainActivity.this,Publish_articles.class);
