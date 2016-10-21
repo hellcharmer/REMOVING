@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.charmer.moving">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
+
+    <application
+        android:name=".MyApplicition.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".fragment.one_activity" />
+        <activity android:name=".publishInfo.PublishInfo" />
+        <activity android:name=".relevantexercise.ExerciseinfoActivity" />
+        <activity android:name=".relevantexercise.ManagerexeActivity" />
+        <activity android:name=".home_activity.ZixunInfo_xq" />
+        <activity android:name=".relevantexercise.ExeInfopublisher" />
+        <activity android:name=".relevantexercise.ExeInfoparticipate" />
+        <activity android:name=".home_activity.Main2Activity" />
+        <activity android:name=".home_activity.Publish_articles"></activity>
+    </application>
+
+</manifest>
