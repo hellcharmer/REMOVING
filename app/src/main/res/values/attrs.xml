@@ -36,5 +36,11 @@
         <attr name="npv_AlternativeTextArrayWithoutMeasureHint" format="reference" />
         <!--the max length of hint content-->
         <attr name="npv_AlternativeHint" format="reference|string" />
+
+    </declare-styleable>
+    <declare-styleable name="Friend_titlebar">
+        <attr name="rihgt" format="reference|integer"></attr>
+        <attr name="left" format="reference|integer"></attr>
+        <attr name="toutext" format="string"></attr>
     </declare-styleable>
 </resources>
