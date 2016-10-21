@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@drawable/boder"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/huodong_tx"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/people_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
+        <TextView
+            android:id="@+id/huongdong_Title"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:lines="2"
+            android:maxEms="5"
+            android:layout_height="wrap_content"
+            android:text="职场晋升比知"/>
+        <TextView
+            android:id="@+id/huodong_xiangxi"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/text_gray"
+            android:text="XXXXXXXXX"
+
+            />
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看详细"/>
+    </LinearLayout>
+</LinearLayout>
