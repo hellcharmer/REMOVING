@@ -60,6 +60,8 @@ import java.util.Map;
 
 import me.weyye.library.EmptyLayout;
 
+import static com.example.charmer.moving.R.id.tv_dianzanshu;
+
 
 /**
  * Created by Administrator on 2016/9/19.
@@ -67,7 +69,7 @@ import me.weyye.library.EmptyLayout;
 public class Fragment_home extends Fragment {
 
 
-
+    private ImageView iv_zan;
 
 
     private EmptyLayout emptyLayout;
@@ -125,6 +127,7 @@ public class Fragment_home extends Fragment {
     MyAdapter adapter2;
     MyAdapter adapter3;
     HoudongAdapter adapter_huodong;
+    int dianzannum=0;
 
     private float mCurrentCheckedRadioLeft;//当前被选中的RadioButton距离左侧的距离
 
@@ -891,7 +894,7 @@ public class Fragment_home extends Fragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
             }
 
             @Override
@@ -935,7 +938,7 @@ public class Fragment_home extends Fragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
+
 
             }
 
@@ -1039,8 +1042,60 @@ public class Fragment_home extends Fragment {
 
 
 
+    private void addDianZanNum(Integer zixunId){
+        RequestParams params = new RequestParams(HttpUtils.host+"addzannum");
+        params.addQueryStringParameter("zixunId",zixunId+"");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
 
 
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                // Log.i(TAG,ex.toString());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
+    private void deleteDianZanNum(Integer zixunId){
+        RequestParams params = new RequestParams(HttpUtils.host+"deletezannum");
+        params.addQueryStringParameter("zixunId",zixunId+"");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                // Log.i(TAG,ex.toString());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
 
 
     private class MyPAdapter extends PagerAdapter {
@@ -1108,6 +1163,7 @@ public class Fragment_home extends Fragment {
             //打气筒
              ViewHolder viewHolder=null;
 
+            final ListActivityBean.Zixun zixun = list.get(position);
 
             if(convertView==null){
                 viewHolder =new ViewHolder();
@@ -1121,27 +1177,33 @@ public class Fragment_home extends Fragment {
                     tp.setFakeBoldText(true);
                     viewHolder.tv_type = ((TextView) convertView.findViewById(R.id.tv_type));
                     viewHolder.tv_content = ((TextView) convertView.findViewById(R.id.tv_content));
-                    viewHolder.iv_zan = ((ImageView) convertView.findViewById(R.id.iv_dianzan));
-                    viewHolder.tv_dianzanshu = ((TextView) convertView.findViewById(R.id.tv_dianzanshu));
-                    viewHolder.iv_zan.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                     iv_zan=viewHolder.iv_zan = ((ImageView) convertView.findViewById(R.id.iv_dianzan));
+                      final TextView dianzanshu=viewHolder.tv_dianzanshu = ((TextView) convertView.findViewById(tv_dianzanshu));
+
+                iv_zan.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
 
-                            if (choiceZan.contains((Integer) (((ImageView) v).getTag()))) {
-                                ((ImageView) v).setImageResource(R.drawable.zan_no);
-
-                                choiceZan.remove((Integer) (((ImageView) v).getTag()));
-                            } else {
-                                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zan);
-                                ((ImageView) v).setImageBitmap(bitmap);
-
-                                choiceZan.add((Integer) (((ImageView) v).getTag()));
-                            }
+                        if (choiceZan.contains((Integer) (((ImageView) v).getTag()))) {
+                            ((ImageView) v).setImageResource(R.drawable.zan_no);
+                            dianzannum=Integer.parseInt(dianzanshu.getText().toString()) -1;
+                            deleteDianZanNum(zixun.zixunId);
+                            dianzanshu.setText(dianzannum+"");
+                            choiceZan.remove((Integer) (((ImageView) v).getTag()));
+                        } else {
+                            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zan);
+                            ((ImageView) v).setImageBitmap(bitmap);
+                            dianzannum=Integer.parseInt(dianzanshu.getText().toString()) +1;
+                            // System.out.println(zixun.zixunId);
+                            addDianZanNum(zixun.zixunId);
+                            dianzanshu.setText(dianzannum+"");
+                            choiceZan.add((Integer) (((ImageView) v).getTag()));
                         }
+                    }
 
 
-                    });
+                });
 
                 convertView.setTag(viewHolder);//缓存对象
             }else{
@@ -1149,9 +1211,11 @@ public class Fragment_home extends Fragment {
                 viewHolder=(ViewHolder)convertView.getTag();
             }
 
-            ListActivityBean.Zixun zixun = list.get(position);
+
 
             try {
+
+
                 //Log.i("TAG",(URLDecoder.decode(zixun.timeStamp,"utf-8")));
                 viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.likes+"人收藏 ·"+zixun.zixunId+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
                 viewHolder.tv_name.setText(URLDecoder.decode(zixun.title,"utf-8"));

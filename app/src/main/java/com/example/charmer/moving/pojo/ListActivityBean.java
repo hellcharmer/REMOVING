@@ -48,9 +48,12 @@ public class ListActivityBean {
         public Integer dianzanshu;
         public String title;
 
+        public Integer getZixunId() {
+            return zixunId;
+        }
 
-
-
-
+        public void setZixunId(Integer zixunId) {
+            this.zixunId = zixunId;
+        }
     }
 }
