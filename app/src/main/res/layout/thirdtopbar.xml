@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/themeblue">
+        android:background="@color/colorSkybule">
         <TextView
             android:layout_width="96dp"
             android:layout_height="48dp"
@@ -24,6 +25,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="@string/manager"
+            />
+        <Button
+            android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/manager"
+            android:text="发布"
             />
     </RelativeLayout>
 

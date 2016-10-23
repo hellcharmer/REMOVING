@@ -16,6 +16,6 @@
         android:dashGap="0dp"/>
 
     <solid
-        android:color="@color/colorSkybule"
+        android:color="@color/Skybule"
     />
 </shape>

@@ -26,6 +26,7 @@
         <item>乒乓</item>
         <item>羽毛球</item>
         <item>网球</item>
+        <item>游泳</item>
     </string-array>
     <string-array name="exercisetheme">
         <item>全部主题</item>
@@ -44,5 +45,40 @@
         <item>Saturn</item>
         <item>Uranus</item>
         <item>Neptune</item>
+        <item>交朋友</item>
     </string-array>
+    <string-array name="exepbtype">
+        <item>篮球</item>
+        <item>足球</item>
+        <item>乒乓</item>
+        <item>羽毛球</item>
+        <item>网球</item>
+        <item>游泳</item>
+    </string-array>
+
+    <string-array name="exepbtheme">
+<item>一起玩</item>
+<item>教教我</item>
+<item>比一比</item>
+<item>交朋友</item>
+</string-array>
+<string-array name="exepbnumber">
+<item>2</item>
+<item>3</item>
+<item>4</item>
+<item>5</item>
+<item>6</item>
+<item>7</item>
+<item>8</item>
+<item>9</item>
+<item>12</item>
+<item>22</item>
+</string-array>
+<string-array name="exepbcostmthd">
+<item>AA制</item>
+<item>我买单</item>
+<item>你请客</item>
+</string-array>
+<string name="app_cancel">取消</string>
+<string name="app_sure">确定</string>
 </resources>

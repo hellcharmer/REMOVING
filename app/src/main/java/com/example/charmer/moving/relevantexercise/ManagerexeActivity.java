@@ -36,15 +36,19 @@ public class ManagerexeActivity extends AppCompatActivity {
 
     private BaseAdapter adapter1;
     private BaseAdapter adapter2;
+    private BaseAdapter adapter3;
     ViewPager pager = null;
     PagerTabStrip tabStrip = null;
     private ListView exelist1;
     private ListView exelist2;
+    private ListView exelist3;
     ArrayList<View> viewContainter = new ArrayList<View>();
     List<String> titleContainer = new ArrayList<String>();
     public String TAG = "tag";
     final ArrayList<VariableExercise.Exercises> exeinfolist1 = new ArrayList<VariableExercise.Exercises>();
     final ArrayList<VariableExercise.Exercises> exeinfolist2 = new ArrayList<VariableExercise.Exercises>();
+    final ArrayList<VariableExercise.Exercises> exeinfolist3 = new ArrayList<VariableExercise.Exercises>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,21 +60,26 @@ public class ManagerexeActivity extends AppCompatActivity {
         //取消tab下面的长横线
        // titleStrip.setDrawFullUnderline(false);
         //设置tab的背景色
-        tabStrip.setBackgroundColor(this.getResources().getColor(R.color.themeblue));
+        tabStrip.setBackgroundColor(this.getResources().getColor(R.color.colorSkybule));
         //设置当前tab页签的下划线颜色
         tabStrip.setTabIndicatorColor(this.getResources().getColor(R.color.white));
         tabStrip.setTextSpacing(200);
 
         View view1 = LayoutInflater.from(this).inflate(R.layout.blanklist, null);
         View view2 = LayoutInflater.from(this).inflate(R.layout.blanklistsupply, null);
+        View view3 = LayoutInflater.from(this).inflate(R.layout.blanklistenroll, null);
+
         exelist1 = (ListView)view1.findViewById(R.id.exeitem);
         exelist2 = (ListView)view2.findViewById(R.id.exeitem2);
+        exelist3 = (ListView)view3.findViewById(R.id.exeitem3);
         //viewpager开始添加view
         viewContainter.add(view1);
         viewContainter.add(view2);
+        viewContainter.add(view3);
         //页签项
         titleContainer.add("我的发布");
         titleContainer.add("我的参加");
+        titleContainer.add("我的报名");
 
         tabStrip.setTextSize(1,18);
         tabStrip.setTextColor(this.getResources().getColor(R.color.white));
@@ -127,10 +136,16 @@ public class ManagerexeActivity extends AppCompatActivity {
                 Log.d(TAG, "------selected:" + arg0);
                 switch (arg0){
                     case 0:
-                        exelist1.setAdapter(adapter1);
-                        getExe();
+                        exelist2.setAdapter(adapter2);
+                        getExespart();
                         break;
                     case 1:
+                        exelist1.setAdapter(adapter1);
+                        getExe();
+                        exelist3.setAdapter(adapter3);
+                        getExesenroll();
+                        break;
+                    case 2:
                         exelist2.setAdapter(adapter2);
                         getExespart();
                         break;
@@ -141,6 +156,7 @@ public class ManagerexeActivity extends AppCompatActivity {
 
         adapter1 = new MyexeAdapter();
         adapter2 = new exeAdapter();
+        adapter3 = new exeenrollAdapter();
 
         exelist1.setAdapter(adapter1);
         getExe();
@@ -164,7 +180,15 @@ public class ManagerexeActivity extends AppCompatActivity {
 
             }
         });
+        exelist3.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ManagerexeActivity.this, ExeInfoEnroll.class);
+                intent.putExtra("exerciseId", exeinfolist3.get(position).exerciseId+"");
+                startActivity(intent);
 
+            }
+        });
 
     }
 
@@ -174,7 +198,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExe() {
         String str = "http://10.40.5.13:8080/moving/getexebypublish";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("publisher","12333222");
+        params.addQueryStringParameter("publisher","1234");
 
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -212,7 +236,7 @@ public class ManagerexeActivity extends AppCompatActivity {
         String str = "http://10.40.5.13:8080/moving/getexebypart";
         RequestParams params = new RequestParams(str);
         params.addQueryStringParameter("participator","12333222");
-
+        params.addQueryStringParameter("mode","0");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -224,6 +248,42 @@ public class ManagerexeActivity extends AppCompatActivity {
                 System.out.println(bean.exerciseList);
                 //通知listview更新界面
                 adapter2.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
+
+    private void getExesenroll() {
+        String str = "http://10.40.5.13:8080/moving/getexebypart";
+        RequestParams params = new RequestParams(str);
+        params.addQueryStringParameter("participator","12333222");
+        params.addQueryStringParameter("mode","1");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Gson gson = new Gson();
+                exeinfolist3.clear();
+                VariableExercise bean = gson.fromJson(result, VariableExercise.class);
+                exeinfolist3.addAll(bean.exerciseList);
+                //dongtaiList = bean.dongtailist;   error
+                //通知listview更新界面
+                adapter3.notifyDataSetChanged();
 
             }
 
@@ -340,6 +400,54 @@ public class ManagerexeActivity extends AppCompatActivity {
     }
 
 }
+
+    class exeenrollAdapter extends BaseAdapter{
+
+        @Override
+        public int getCount() {
+            return exeinfolist3.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return exeinfolist3.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Log.i(TAG, "加载listview item position:" + position);
+            ViewHolder viewHolder = null;
+            if(convertView == null) {
+                viewHolder = new ViewHolder();
+                // 打气筒  view就是指每一个listview item
+                convertView = View.inflate(ManagerexeActivity.this, R.layout.exeitemenroll, null);
+                viewHolder.type = ((TextView) convertView.findViewById(R.id.exetype));
+                viewHolder.place = ((TextView) convertView.findViewById(R.id.exeplace));
+                viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
+                viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
+                convertView.setTag(viewHolder);//缓存对象
+            }else{
+                viewHolder = (ViewHolder)convertView.getTag();
+            }
+            VariableExercise.Exercises exercises = exeinfolist3.get(position);
+
+            try {
+                viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
+                viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
+                viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(0,16));
+                viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(0,16));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            return convertView;
+        }
+
+    }
 
     private static class ViewHolder{
         TextView type ;

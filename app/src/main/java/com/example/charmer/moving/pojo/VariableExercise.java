@@ -16,7 +16,6 @@ public class VariableExercise {
         public String userImage;
         public String title;
         public String type;
-
         public String theme;
         public String place;
         public Double cost;
