@@ -18,8 +18,8 @@ public class Exercises {
 				+ publisherId + ", releaseTime=" + releaseTime
 				+ ", totalNumber=" + totalNumber + "]";
 	}
-	private Integer exerciseId;
-    private Integer publisherId;
+	private Long exerciseId;
+    private Long publisherId;
     private String exerciseTitle;
     private String exerciseType;
     private String exerciseTheme;
@@ -39,19 +39,19 @@ public class Exercises {
     
     
 
-	public Integer getExerciseId() {
+	public Long getExerciseId() {
 		return exerciseId;
 	}
 
-	public void setExerciseId(Integer exerciseId) {
+	public void setExerciseId(Long exerciseId) {
 		this.exerciseId = exerciseId;
 	}
 
-	public Integer getPublisherId() {
+	public Long getPublisherId() {
 		return publisherId;
 	}
 
-	public void setPublisherId(Integer publisherId) {
+	public void setPublisherId(Long publisherId) {
 		this.publisherId = publisherId;
 	}
 
@@ -180,7 +180,7 @@ public class Exercises {
 	public Exercises() {
     }
 
-	public Exercises( Integer publisherId,String exerciseTitle, String exerciseType,
+	public Exercises( Long publisherId,String exerciseTitle, String exerciseType,
 			String exerciseTheme, String place, Double cost, String paymentMethod,
 			Integer currentNumber, Integer totalNumber, Date activityTime) {
 		super();
@@ -195,7 +195,7 @@ public class Exercises {
 		this.totalNumber = totalNumber;
 		this.activityTime = activityTime;
 	}
-	public Exercises(Integer exerciseId, Integer publisherId,String exerciseTitle, String exerciseType,
+	public Exercises(Long exerciseId, Long publisherId,String exerciseTitle, String exerciseType,
 			String exerciseTheme, String place, Double cost, String paymentMethod,
 			Integer currentNumber, Integer totalNumber, Date activityTime) {
 		super();
@@ -213,7 +213,7 @@ public class Exercises {
 		this.activityTime = activityTime;
 	}
 
-	public Exercises(Integer publisherId, String exerciseTitle, String exerciseType, String exerciseTheme, String exerciseIntroduce, String place, Date activityTime, Double cost, String paymentMethod, Integer totalNumber, Date releaseTime, String exerciseCode) {
+	public Exercises(Long publisherId, String exerciseTitle, String exerciseType, String exerciseTheme, String exerciseIntroduce, String place, Date activityTime, Double cost, String paymentMethod, Integer totalNumber, Date releaseTime, String exerciseCode) {
 		this.publisherId = publisherId;
 		this.exerciseTitle = exerciseTitle;
 		this.exerciseType = exerciseType;

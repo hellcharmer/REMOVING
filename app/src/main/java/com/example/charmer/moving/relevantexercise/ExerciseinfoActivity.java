@@ -25,6 +25,7 @@ import java.util.ArrayList;
 public class ExerciseinfoActivity extends AppCompatActivity {
     private BaseAdapter adapter;
     private ListView lv_exercise;
+    private TextView title ;
     private static final String TAG = "ExerciseinfoActivity";
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     private TextView textintroduce;
@@ -37,6 +38,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
         String exerciseId = intent.getStringExtra("exerciseId");
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
+        title = ((TextView) findViewById(R.id.titleinfo));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -74,6 +76,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                 VariableExercise.Exercises exercises = exerciseList.get(position);
 
                 try {
+                    System.out.println("-------------------=-=---------------------");
                     viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
                     viewHolder.theme.setText(URLDecoder.decode(exercises.theme,"utf-8"));
                     viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
@@ -108,11 +111,13 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                 //dongtaiList = bean.dongtailist;   error
                 System.out.println(bean.exerciseList);
                 try{
-                textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
+                    title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
+                    textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
             } catch (UnsupportedEncodingException e) {
+
                 e.printStackTrace();
             }
-                Log.i("exerciseList", "exerciseList: "+exerciseList);
+
                 //通知listview更新界面
                 adapter.notifyDataSetChanged();
 

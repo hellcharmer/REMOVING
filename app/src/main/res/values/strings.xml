@@ -3,6 +3,7 @@
     <string name="search">搜索</string>
     <string name="publisherName">发布者名字</string>
     <string name="type">活动类别</string>
+    <string name="title">活动名称</string>
     <string name="theme">活动主题</string>
     <string name="place">活动地点</string>
     <string name="activityTime">活动时间</string>

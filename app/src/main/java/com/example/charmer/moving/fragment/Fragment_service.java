@@ -67,11 +67,11 @@ public class Fragment_service extends Fragment {
     private ObjectAnimator mHeaderAnimator;
     private ObjectAnimator mBottomAnimator;
     private ObjectAnimator spinnerconAnimator;
-    private ObjectAnimator ballAnimator;
+    //private ObjectAnimator ballAnimator;
     private LinearLayout mBottom_bar;
     private LinearLayout mHead_bar;
     private LinearLayout spinnercon;
-    private RelativeLayout ball;
+    //private RelativeLayout ball;
     private int i = 0;
     private int page = 1;
     private int totalPage;
@@ -102,7 +102,7 @@ public class Fragment_service extends Fragment {
         mBottom_bar = (LinearLayout) getActivity().findViewById(R.id.main_bottom);
         mHead_bar = (LinearLayout) view.findViewById(R.id.headexericse);
         spinnercon = (LinearLayout) view.findViewById(R.id.spinnercon);
-        ball = (RelativeLayout) view.findViewById(R.id.plus_rl);
+        //ball = (RelativeLayout) view.findViewById(R.id.plus_rl);
         mSr_refresh = (SwipeRefreshLayout) view.findViewById(R.id.sr_refresh);
         //设置下拉刷新加载圈的颜色
         mSr_refresh.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
@@ -186,7 +186,7 @@ public class Fragment_service extends Fragment {
                     viewHolder.place = ((TextView) convertView.findViewById(R.id.place));
                     viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.activityTime));
                     viewHolder.currentNumber = ((TextView) convertView.findViewById(R.id.currentNumber));
-
+                    viewHolder.title = ((TextView) convertView.findViewById(R.id.title));
                     convertView.setTag(viewHolder);//缓存对象
                 }else{
                     viewHolder = (ViewHolder)convertView.getTag();
@@ -194,11 +194,12 @@ public class Fragment_service extends Fragment {
                 VariableExercise.Exercises exercises = exerciseList.get(position);
 
                 try {
-                    viewHolder.publisherId.setText(URLDecoder.decode(exercises.publisherId,"utf-8"));
+                    viewHolder.publisherId.setText(URLDecoder.decode((exercises.publisherId).toString(),"utf-8"));
                     viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
                     viewHolder.theme.setText(URLDecoder.decode(exercises.theme,"utf-8"));
+                    viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
                     viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
-                    viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(0,16));
+                    viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
                     viewHolder.currentNumber.setText(URLDecoder.decode(exercises.currentNumber.toString(),"utf-8"));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -308,11 +309,11 @@ public class Fragment_service extends Fragment {
         mHeaderAnimator = ObjectAnimator.ofFloat(mHead_bar, "translationY", -mHead_bar.getHeight());
         mBottomAnimator = ObjectAnimator.ofFloat(mBottom_bar, "translationY", mBottom_bar.getHeight());
         spinnerconAnimator = ObjectAnimator.ofFloat(spinnercon, "translationY", -spinnercon.getHeight());
-        ballAnimator = ObjectAnimator.ofFloat(ball, "translationY",200);
+        //ballAnimator = ObjectAnimator.ofFloat(ball, "translationY",200);
         mHeaderAnimator.setDuration(500).start();
         mBottomAnimator.setDuration(400).start();
         spinnerconAnimator.setDuration(500).start();
-        ballAnimator.setDuration(300).start();
+        //ballAnimator.setDuration(300).start();
         mHeaderAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -331,11 +332,11 @@ public class Fragment_service extends Fragment {
         mHeaderAnimator = ObjectAnimator.ofFloat(mHead_bar, "translationY", 0);
         mBottomAnimator = ObjectAnimator.ofFloat(mBottom_bar,"translationY", 0);
         spinnerconAnimator = ObjectAnimator.ofFloat(spinnercon,"translationY", 0);
-        ballAnimator = ObjectAnimator.ofFloat(spinnercon,"translationY", 0);
+        //ballAnimator = ObjectAnimator.ofFloat(spinnercon,"translationY", 0);
         mHeaderAnimator.setDuration(300).start();
         mBottomAnimator.setDuration(400).start();
         spinnerconAnimator.setDuration(300).start();
-        ballAnimator.setDuration(300).start();
+        //ballAnimator.setDuration(300).start();
     }
 
     private void loadExemore() {
@@ -417,6 +418,7 @@ public class Fragment_service extends Fragment {
 
     private static class ViewHolder{
         TextView publisherId ;
+        TextView title ;
         TextView type ;
         TextView theme ;
         TextView place ;

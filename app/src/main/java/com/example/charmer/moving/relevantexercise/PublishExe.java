@@ -191,10 +191,10 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
                     && !"请选方式".equals(mthdslt.getText().toString()) &&!"请选人数".equals(numslt.getText().toString()))
             {
                 //Toast.makeText(PublishExe.this, "提交成功", Toast.LENGTH_SHORT).show();
-                exepub = new Exercises(1234, exe_pb_name.getText().toString(), typeslt.getText().toString(),
+                exepub = new Exercises((long)1222111346, exe_pb_name.getText().toString(), typeslt.getText().toString(),
                        themeslt.getText().toString(), exepb_intro.getText().toString(), exepb_place.getText().toString(),
                        DateUtil.stringToDate(etStartTime.getText().toString()), Double.parseDouble(exepb_cost.getText().toString()), mthdslt.getText().toString(),
-                       Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()), "HFYY432");
+                       Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()), "FUJKONVNKK");
 
                 sendexepub(exepub);
 
@@ -219,9 +219,9 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
                 System.out.println("+_+_+_+__"+result);
                 if ("true".equals(result)){
                     Toast.makeText(PublishExe.this, "发布成功", Toast.LENGTH_SHORT).show();
-                    finish();
-                    Intent intent = new Intent(PublishExe.this, ManagerexeActivity.class);
-                    startActivity(intent);
+//                    finish();
+//                    Intent intent = new Intent(PublishExe.this, ManagerexeActivity.class);
+//                    startActivity(intent);
 
                 }else{
                     Toast.makeText(PublishExe.this, "发布失败", Toast.LENGTH_SHORT).show();

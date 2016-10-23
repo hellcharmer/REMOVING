@@ -198,7 +198,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExe() {
         String str = "http://10.40.5.13:8080/moving/getexebypublish";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("publisher","1234");
+        params.addQueryStringParameter("publisher","1758043101");
 
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -331,6 +331,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                 // 打气筒  view就是指每一个listview item
                 convertView = View.inflate(ManagerexeActivity.this, R.layout.exeitemintro, null);
                 viewHolder.type = ((TextView) convertView.findViewById(R.id.exetype));
+                viewHolder.title = ((TextView) convertView.findViewById(R.id.exetitle));
                 viewHolder.place = ((TextView) convertView.findViewById(R.id.exeplace));
                 viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
                 viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
@@ -342,9 +343,10 @@ public class ManagerexeActivity extends AppCompatActivity {
 
             try {
                 viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
+                viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
                 viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
-                viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(0,16));
-                viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(0,16));
+                viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
+                viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -379,6 +381,7 @@ public class ManagerexeActivity extends AppCompatActivity {
             // 打气筒  view就是指每一个listview item
             convertView = View.inflate(ManagerexeActivity.this, R.layout.joinexeitemintro, null);
             viewHolder.type = ((TextView) convertView.findViewById(R.id.exetype));
+            viewHolder.title = ((TextView) convertView.findViewById(R.id.exetitle));
             viewHolder.place = ((TextView) convertView.findViewById(R.id.exeplace));
             viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
             viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
@@ -391,8 +394,9 @@ public class ManagerexeActivity extends AppCompatActivity {
         try {
             viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
             viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
-            viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(0,16));
-            viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(0,16));
+            viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
+            viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
+            viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -428,6 +432,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                 convertView = View.inflate(ManagerexeActivity.this, R.layout.exeitemenroll, null);
                 viewHolder.type = ((TextView) convertView.findViewById(R.id.exetype));
                 viewHolder.place = ((TextView) convertView.findViewById(R.id.exeplace));
+                viewHolder.title = ((TextView) convertView.findViewById(R.id.exetitle));
                 viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
                 viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
                 convertView.setTag(viewHolder);//缓存对象
@@ -439,8 +444,9 @@ public class ManagerexeActivity extends AppCompatActivity {
             try {
                 viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
                 viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
-                viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(0,16));
-                viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(0,16));
+                viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
+                viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
+                viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -451,6 +457,7 @@ public class ManagerexeActivity extends AppCompatActivity {
 
     private static class ViewHolder{
         TextView type ;
+        TextView title ;
         TextView place ;
         TextView activityTime ;
         TextView releaseTime ;
