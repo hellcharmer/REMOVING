@@ -4,7 +4,9 @@ package com.example.charmer.moving.fragment;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -60,6 +62,8 @@ import java.util.Map;
 
 import me.weyye.library.EmptyLayout;
 
+import static com.example.charmer.moving.R.id.tv_dianzanshu;
+
 
 /**
  * Created by Administrator on 2016/9/19.
@@ -67,7 +71,7 @@ import me.weyye.library.EmptyLayout;
 public class Fragment_home extends Fragment {
 
 
-
+    private ImageView iv_zan;
 
 
     private EmptyLayout emptyLayout;
@@ -125,6 +129,7 @@ public class Fragment_home extends Fragment {
     MyAdapter adapter2;
     MyAdapter adapter3;
     HoudongAdapter adapter_huodong;
+    int dianzannum=0;
 
     private float mCurrentCheckedRadioLeft;//当前被选中的RadioButton距离左侧的距离
 
@@ -153,6 +158,7 @@ public class Fragment_home extends Fragment {
     private  List<View> listView= new ArrayList<View>();
     private List<Map<String, String>> titleList = new ArrayList<Map<String,String>>();
     private List<Integer> choiceZan = new ArrayList<Integer>();
+    private List<Integer> choiceZanNum = new ArrayList<Integer>();
     ToastUtil toastUtil;
 
 
@@ -186,6 +192,7 @@ public class Fragment_home extends Fragment {
             @Override
             public void onClick(View v) {
                 //重新加载数据
+                getExerciseList();
                 getZixunlist(1);
             }
         });
@@ -193,7 +200,7 @@ public class Fragment_home extends Fragment {
         lv_zixun.setAdapter(adapter1);
 
 
-
+        emptyLayout.showLoading("正在加载，请稍后");
         getExerciseList();
         getZixunlist(page_zixun);
         //list 的每个点击事件
@@ -482,34 +489,6 @@ public class Fragment_home extends Fragment {
             public void onPageSelected(int position) {
                 toastUtil.Short(getActivity(),"这是第"+(position+1)+"页").show();
 
-//                switch (position) {
-//                    case 0:
-//                        rb_zixun_one.setChecked(true);
-//
-//
-//                        break;
-//                    case 1:
-//                        rb_zixun_two.setChecked(true);
-//                        break;
-//                    case 2:
-//                        rb_zixun_three.setChecked(true);
-//                        break;
-//                    case 3:
-//                        rb_zixun_four.setChecked(true);
-//                        break;
-//                    case 4:
-//                        rb_zixun_five.setChecked(true);
-//                        break;
-//                    case 5:
-//                        rb_zixun_six.setChecked(true);
-//                        break;
-//                    case 6:
-//                        rb_zixun_seven.setChecked(true);
-//                        break;
-//                    default:
-//                        break;
-//
-//                }
                 RadioButton radioButton = (RadioButton)view.findViewById(_id+position);
                 radioButton.performClick();
             }
@@ -568,7 +547,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-
+                    getExerciseList();
                       getZixunlist(1);
 
 
@@ -817,7 +796,7 @@ public class Fragment_home extends Fragment {
         }.start();
     }
     public void hideBar() {
-        mHeaderAnimator = ObjectAnimator.ofFloat(home_search_bar, "translationY", -home_search_bar.getHeight());
+        mHeaderAnimator = ObjectAnimator.ofFloat(home_search_bar, "translationY", -home_search_bar.getHeight()-7);
         titlebarAnimator = ObjectAnimator.ofFloat(hs_view, "translationY", -hs_view.getHeight());
         bottomAnimator = ObjectAnimator.ofFloat(main_bottom, "translationY", Constant.displayHeight);
         plusAnimator = ObjectAnimator.ofFloat(plus_rl, "translationY", Constant.displayHeight);
@@ -887,7 +866,7 @@ public class Fragment_home extends Fragment {
 
 
     private void getZixunlist(int page) {
-        emptyLayout.showLoading("正在加载，请稍后");
+
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain");
         params.addQueryStringParameter("page",page+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -934,7 +913,7 @@ public class Fragment_home extends Fragment {
 
     }
     private void getExerciseList() {
-        emptyLayout.showLoading("正在加载，请稍后");
+
         //GPS定位值==place
         String str = "http://10.40.5.13:8080/moving/getexercise?exercisetheme=全部主题&exercisetype=全部分类&page=1&place=苏州";
         RequestParams params = new RequestParams(str);
@@ -962,7 +941,7 @@ public class Fragment_home extends Fragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
+
 
             }
 
@@ -1066,8 +1045,60 @@ public class Fragment_home extends Fragment {
 
 
 
+    private void addDianZanNum(Integer zixunId){
+        RequestParams params = new RequestParams(HttpUtils.host+"addzannum");
+        params.addQueryStringParameter("zixunId",zixunId+"");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
 
 
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                // Log.i(TAG,ex.toString());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
+    private void deleteDianZanNum(Integer zixunId){
+        RequestParams params = new RequestParams(HttpUtils.host+"deletezannum");
+        params.addQueryStringParameter("zixunId",zixunId+"");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                // Log.i(TAG,ex.toString());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
 
 
     private class MyPAdapter extends PagerAdapter {
@@ -1109,6 +1140,7 @@ public class Fragment_home extends Fragment {
 
     private class MyAdapter extends BaseAdapter {
         private   List<ListActivityBean.Zixun> list;
+        Map<Integer,Integer> dianzan=new HashMap<Integer, Integer>();
         public MyAdapter( List<ListActivityBean.Zixun> list) {
             this.list= list;
         }
@@ -1129,13 +1161,26 @@ public class Fragment_home extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             Log.i(TAG, "加载ListView item_position:" + position);
+
+           final SharedPreferences sharedPreferences = getActivity().getSharedPreferences("dianzanshu", Context.MODE_PRIVATE);
+
+
+
+
 
             //打气筒
              ViewHolder viewHolder=null;
 
-
+            final ListActivityBean.Zixun zixun = list.get(position);
+            SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);
+            editor.putString(zixun.zixunId+"state", zixun.state);
+            editor.commit();//提交修改
+            if((sharedPreferences.getString(zixun.zixunId+"state", zixun.state)).equals("1")){
+                choiceZan.add(zixun.zixunId);
+            }
             if(convertView==null){
                 viewHolder =new ViewHolder();
 
@@ -1148,43 +1193,59 @@ public class Fragment_home extends Fragment {
                     tp.setFakeBoldText(true);
                     viewHolder.tv_type = ((TextView) convertView.findViewById(R.id.tv_type));
                     viewHolder.tv_content = ((TextView) convertView.findViewById(R.id.tv_content));
-                    viewHolder.iv_zan = ((ImageView) convertView.findViewById(R.id.iv_dianzan));
-                    viewHolder.tv_dianzanshu = ((TextView) convertView.findViewById(R.id.tv_dianzanshu));
-                    viewHolder.iv_zan.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                     iv_zan=viewHolder.iv_zan = ((ImageView) convertView.findViewById(R.id.iv_dianzan));
+                      final TextView dianzanshu=viewHolder.tv_dianzanshu = ((TextView) convertView.findViewById(tv_dianzanshu));
 
-
-                            if (choiceZan.contains((Integer) (((ImageView) v).getTag()))) {
-                                ((ImageView) v).setImageResource(R.drawable.zan_no);
-
-                                choiceZan.remove((Integer) (((ImageView) v).getTag()));
-                            } else {
-                                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zan);
-                                ((ImageView) v).setImageBitmap(bitmap);
-
-                                choiceZan.add((Integer) (((ImageView) v).getTag()));
-                            }
+                iv_zan.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final int sp_dianzanshu = sharedPreferences.getInt(zixun.zixunId+"dianzanshu", 0);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+                        if (choiceZan.contains((Integer) (((ImageView) v).getTag()))) {
+                            ((ImageView) v).setImageResource(R.drawable.zan_no);
+                            System.out.println("-----------------"+sp_dianzanshu);
+                            dianzannum=sp_dianzanshu -1;
+                            dianzan.put(position,dianzannum);
+                            editor.putInt(zixun.zixunId+"dianzanshu",dianzannum );
+                            editor.commit();//提交修改
+                          //  deleteDianZanNum(zixun.zixunId);
+                            dianzanshu.setText(dianzannum+"");
+                            choiceZan.remove((Integer) (((ImageView) v).getTag()));
+                            choiceZanNum.remove((Integer) ((dianzanshu).getTag()));
+                        } else {
+                            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zan);
+                            ((ImageView) v).setImageBitmap(bitmap);
+                            System.out.println("+++++++++++"+sp_dianzanshu);
+                            dianzannum=sp_dianzanshu +1;
+                            // System.out.println(zixun.zixunId);
+                            dianzan.put(position,dianzannum);
+                            editor.putInt(zixun.zixunId+"dianzanshu",dianzannum );
+                            editor.commit();//提交修改
+                          // addDianZanNum(zixun.zixunId);
+                            dianzanshu.setText(dianzannum+"");
+                            choiceZan.add((Integer) (((ImageView) v).getTag()));
+                            choiceZanNum.add((Integer) ((dianzanshu).getTag()));
                         }
+                    }
 
 
-                    });
+                });
 
                 convertView.setTag(viewHolder);//缓存对象
             }else{
-
                 viewHolder=(ViewHolder)convertView.getTag();
             }
 
-            ListActivityBean.Zixun zixun = list.get(position);
 
             try {
+
+
                 //Log.i("TAG",(URLDecoder.decode(zixun.timeStamp,"utf-8")));
                 viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.likes+"人收藏 ·"+zixun.zixunId+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
                 viewHolder.tv_name.setText(URLDecoder.decode(zixun.title,"utf-8"));
                 viewHolder.tv_type.setText(URLDecoder.decode(zixun.type,"utf-8"));
                 viewHolder.tv_content.setText(URLDecoder.decode(zixun.content,"utf-8"));
-                viewHolder.tv_dianzanshu.setText(zixun.dianzanshu+"");
+
                 if(list.get(position).photoImg.equals("")){
                     viewHolder.iv_picture.setVisibility(View.GONE);
                 }else {
@@ -1192,7 +1253,7 @@ public class Fragment_home extends Fragment {
                     xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.host + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
                 }
 
-               // Log.i("====",position+"=="+zixunlist.get(0).likes);
+                // Log.i("====",position+"=="+zixunlist.get(0).likes);
 
 
             } catch (UnsupportedEncodingException e) {
@@ -1201,13 +1262,22 @@ public class Fragment_home extends Fragment {
 
 
             //页面显示处理
-            if(choiceZan.contains(position)){
+            if(choiceZan.contains(zixun.zixunId)){
                 viewHolder.iv_zan.setImageResource(R.drawable.zan);
+
             }else{
                 viewHolder.iv_zan.setImageResource(R.drawable.zan_no);
-            }
 
-            viewHolder.iv_zan.setTag(position);//设置一个唯一的标识，建议主键
+            }
+            if (choiceZanNum.contains(zixun.zixunId)){
+                viewHolder.tv_dianzanshu.setText(dianzan.get(position)+"");
+            }else {
+
+
+                viewHolder.tv_dianzanshu.setText(sharedPreferences.getInt(zixun.zixunId+"dianzanshu", 0)+"");
+            }
+            viewHolder.iv_zan.setTag(zixun.zixunId);//设置一个唯一的标识，建议主键
+            viewHolder.tv_dianzanshu.setTag(zixun.zixunId);
             return convertView;
         }
 

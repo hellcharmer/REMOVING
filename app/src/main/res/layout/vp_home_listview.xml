@@ -3,35 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
-    <LinearLayout
 
-        android:visibility="visible"
-        android:clickable="true"
-        android:background="#0280FC"
-        android:gravity="center_vertical"
-        android:id="@+id/home_search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-        <Button
-
-            android:drawableLeft="@drawable/tab_home_find_search2"
-            android:padding="8dp"
-            android:paddingTop="8dp"
-            android:drawablePadding="8dp"
-            android:layout_margin="7dp"
-            android:background="@drawable/search_button_selector"
-            android:textColor="#99ffffff"
-            android:text="@string/search"
-            android:gravity="left|center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
     <HorizontalScrollView
-        android:layout_marginTop="48dp"
+
         android:id="@+id/hs_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@color/colorSkybule"
         android:scrollbars="none"
         >
@@ -55,12 +32,36 @@
             <ImageView
                 android:id="@+id/img1"
                 android:layout_width="0dp"
-                android:layout_height="4dp"
+                android:layout_height="10dp"
                 android:background="@color/colorWhite"
                 android:layout_gravity="bottom"
                 />
         </LinearLayout>
     </HorizontalScrollView>
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:visibility="visible"
+        android:clickable="true"
+        android:background="#0280FC"
+        android:gravity="center_vertical"
+        android:id="@+id/home_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+        <Button
+
+            android:drawableLeft="@drawable/tab_home_find_search2"
+            android:padding="8dp"
+            android:paddingTop="8dp"
+            android:drawablePadding="8dp"
+            android:layout_margin="7dp"
+            android:background="@drawable/search_button_selector"
+            android:textColor="#99ffffff"
+            android:text="@string/search"
+            android:gravity="left|center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <View
         android:id="@+id/strut_new1"
         android:layout_width="0dp"
