@@ -18,15 +18,17 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.ToastUtil;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.relevantexercise.ExerciseinfoActivity;
 import com.example.charmer.moving.relevantexercise.ManagerexeActivity;
+import com.example.charmer.moving.relevantexercise.PublishExe;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -44,12 +46,13 @@ import java.util.ArrayList;
 public class Fragment_service extends Fragment {
 
     private static final String TAG = "Fragment_service";
-    private ListView lv_exercise;
+    private LoadMoreListView lv_exercise;
     private BaseAdapter adapter;
     private View view;
     private Spinner spinner1;
     private Spinner spinner2;
     private Button manager_btn;
+    private Button tempbtn;
     private SwipeRefreshLayout mSr_refresh;
     private boolean isRunning = false;
     private ObjectAnimator mHeaderAnimator;
@@ -60,12 +63,10 @@ public class Fragment_service extends Fragment {
     private LinearLayout mHead_bar;
     private LinearLayout spinnercon;
     private RelativeLayout ball;
-    private TextView mLoadMore;
-    private View footview;
-    boolean isLoading=false;
     private int i = 0;
     private int page = 1;
     private int totalPage;
+    ToastUtil toastUtil;
     Requirement requirement = new Requirement("全部分类","全部主题");
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
 
@@ -74,6 +75,8 @@ public class Fragment_service extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_service,null);
+        View v=inflater.inflate(R.layout.layout_toast_view,null);
+        toastUtil=new ToastUtil(getActivity(),v,200);
         return view;
     }
 
@@ -81,10 +84,9 @@ public class Fragment_service extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         manager_btn = (Button)view.findViewById(R.id.manager);
-
-        lv_exercise = ((ListView)view.findViewById(R.id.listview));
+        tempbtn = (Button)view.findViewById(R.id.temp);
+        lv_exercise = ((LoadMoreListView)view.findViewById(R.id.listview));
         lv_exercise.addHeaderView(View.inflate(getActivity(),R.layout.blankspace,null));
-
         spinner1 = (Spinner)view.findViewById(R.id.spinner1);
         spinner2 = (Spinner)view.findViewById(R.id.spinner2);
 
@@ -200,26 +202,38 @@ public class Fragment_service extends Fragment {
         //LayoutInflater inflater = LayoutInflater.from(getActivity());
         lv_exercise.setAdapter(adapter);
 
-        //从服务器拿
+
 
         manager_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ManagerexeActivity.class);
-
                 startActivity(intent);
             }
         });
 
+        tempbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), PublishExe.class);
+                startActivity(intent);
+            }
+        });
         lv_exercise.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ExerciseinfoActivity.class);
-                intent.putExtra("exerciseId", exerciseList.get(position).exerciseId+"");
+                intent.putExtra("exerciseId", exerciseList.get(position-1).exerciseId+"");
                 startActivity(intent);
             }
         });
+        lv_exercise.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
 
+                loadExemore();
+            }
+        });
 
     }
 
@@ -275,7 +289,7 @@ public class Fragment_service extends Fragment {
             }
         });
 
-        
+
 
 
     }
@@ -315,7 +329,38 @@ public class Fragment_service extends Fragment {
         ballAnimator.setDuration(300).start();
     }
 
+    private void loadExemore() {
+
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(page<totalPage) {
+
+                    getExerciseList(requirement,++page);
+                }else {
+                    //Toast.makeText(getContext(),"已经到底了",Toast.LENGTH_LONG).show();
+                    toastUtil.Short(getActivity(),"已经到底了！").show();
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        lv_exercise.setLoadCompleted();
+                    }
+                });
+            }
+        }.start();
+    }
+
     private void getExerciseList(Requirement requirement,int page) {
+        final int currentpage = page;
         String str = "http://10.40.5.13:8080/moving/getexercise";
         RequestParams params = new RequestParams(str);
         params.addQueryStringParameter("exercisetype",requirement.getExercisetype().toString());
@@ -327,7 +372,10 @@ public class Fragment_service extends Fragment {
             @Override
             public void onSuccess(String result) {
                 Gson gson = new Gson();
-                exerciseList.clear();
+                if(currentpage==1){
+                    exerciseList.clear();
+                }
+
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 totalPage = bean.totalPage;
                 exerciseList.addAll(bean.exerciseList);

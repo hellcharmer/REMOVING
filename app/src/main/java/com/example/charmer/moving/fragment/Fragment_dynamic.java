@@ -27,7 +27,7 @@ import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Info;
-import com.example.charmer.moving.publishInfo.PublishInfo;
+import com.example.charmer.moving.publishInfo.UploadPhotoActivity;
 import com.example.charmer.moving.utils.CommonAdapter;
 import com.example.charmer.moving.utils.ViewHolder;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
@@ -96,7 +96,7 @@ public class Fragment_dynamic extends BaseFragment {
         ivPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PublishInfo.class);
+                Intent intent = new Intent(getActivity(), UploadPhotoActivity.class);
                 startActivity(intent);
             }
         });

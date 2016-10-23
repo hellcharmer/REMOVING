@@ -1,19 +1,10 @@
 [
     {
-<<<<<<< HEAD
         "merged": "G:\\Keep\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
         "source": "G:\\Keep\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
     },
     {
         "merged": "G:\\Keep\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
         "source": "G:\\Keep\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
-=======
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
-    },
-    {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
->>>>>>> b0dfa49c2229bf820e0ee18ff531233b04edcca6
     }
 ]

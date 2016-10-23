@@ -3,8 +3,10 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
     >
 
 
@@ -48,7 +50,7 @@
             android:layout_height="130dp"
             android:padding="5dp"
             android:paddingLeft="10dp"
-            android:background="@drawable/contentframe"
+            android:background="@drawable/remakeborde"
             >
 
             <TextView
