@@ -60,12 +60,13 @@ import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.UserInfo;
 
+import static com.example.charmer.moving.MainActivity.getTokenAsyncTask;
+
 /**
  * Created by lenovo on 2016/10/11.
  */
 public class Fragment_friend extends Fragment implements View.OnClickListener {
-//    @InjectView(R.id.vp_friend)
-//    ViewPager vpFriend;
+
     private NoScrollViewPager vpFriend;
     @InjectView(R.id.iv_search)
     ImageView ivSearch;
@@ -90,7 +91,8 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     private boolean isRunning = false;
     private PagerAdapter pagerAdapter;
     private List<View> views = new ArrayList<View>();
-    private final List<Friend> friends=new ArrayList<>();
+    private final List<Friend> friends=new ArrayList<Friend>();//所有好友信息
+    private List<User> usersToken=new ArrayList<User>();//所有user的Token
     CommonAdapter<Friend> goodfriendad;
     private Friend_titlebar fd_friend;
     private Friend_titlebar fd_talk;
@@ -103,12 +105,14 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     private SwipeRefreshLayout re_friend;
     private boolean flag=true;
     private User user;
-     private String Token ="lwp/KHm+eGBYftUTYb7DI8nFmcJ/2rEYfnVhqmlcFQt+6Np4QnHe4PQCI8L5cbvgXJ/88iWUVTk2M5W/nTubnQ==";
-    private String Token1="Eq6zSTr0XiHc5M64QJkNnsnFmcJ/2rEYfnVhqmlcFQt+6Np4QnHe4M/NVx9ABY9sc5zVKxhi5Ts2M5W/nTubnQ==";
+     private String Token;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_friend, null);
+//       Token= MainActivity.getToken();
+//        Log.i("Tooooo2","kenn"+Token);
         tip.put("篮球",R.drawable.basketball);
         tip.put("游泳",R.drawable.swim);
         tip.put("乒乓球",R.drawable.pingp);
@@ -127,6 +131,14 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     }
 
     private void initdata() {
+        //所有user的token后台处理
+        //已在MainActivity中注册所有Id并获得usertoken
+        //尝试异步任务
+//        GetTokenAsyncTask getTokenAsyncTask=new GetTokenAsyncTask();
+//        getTokenAsyncTask.execute();
+        //第四次异步任务终于成功哇哈哈哈哈哈哈！！！！！时间优化4倍
+        Token=getTokenAsyncTask.getToken();
+        Log.i("Tooooo5","kenn"+Token);
         //对好友的信息处理
         getFriendData();
         //容云用户提供头像
@@ -143,10 +155,10 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
             }
         },true);
         //链接融云
+
         Rong();
 
     }
-
 
     private void initview(View view) {
         //第三方控件侧滑
@@ -341,7 +353,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (RongIM.getInstance() != null)
                 {
-       RongIM.getInstance().startPrivateChat(getActivity(),friends.get(position-1).getFriendid()+"", friends.get(position).getName());}
+       RongIM.getInstance().startPrivateChat(getActivity(),friends.get(position-1).getFriendid()+"", friends.get(position-1).getName());}
             }
         });
         //会话标题按钮
@@ -529,54 +541,59 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
 
     //会话列表链接容云
     private void Rong(){
-//        //异步回调刷新数据
-        RequestParams requestParams1 =new RequestParams(HttpUtils.host4+"getuser");
-        requestParams1.addQueryStringParameter("userid",+((MyApplication)getActivity().getApplication()).getUser().getUserid()+"");
-        x.http().get(requestParams1, new Callback.CommonCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-                Log.i("UUUSSSSIIIMMMGG",result);
-                Gson gson=new Gson();
-                Type type=new TypeToken<User>(){}.getType();
-                user=gson.fromJson(result,type);
-                RongIM.getInstance().refreshUserInfoCache(new UserInfo(((MyApplication)getActivity().getApplication()).getUser().getUserid()+"", user.getUsername(), Uri.parse(HttpUtils.host4+user.getUserimg())));
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-        });
 
 
-        /**
-         * 连接
-         */
-        RongIM.connect(Token, new RongIMClient.ConnectCallback() {
-            @Override
-            public void onTokenIncorrect() {
-                Log.e("framgment","tokenINcorrect");
-            }
+            //        //异步回调刷新数据??有用？？
+            RequestParams requestParams1 =new RequestParams(HttpUtils.host4+"getuser");
+            requestParams1.addQueryStringParameter("userid",+((MyApplication)getActivity().getApplication()).getUser().getUserid()+"");
+            x.http().get(requestParams1, new Callback.CommonCallback<String>() {
+                @Override
+                public void onSuccess(String result) {
+                    Log.i("UUUSSSSIIIMMMGG",result);
+                    Gson gson=new Gson();
+                    Type type=new TypeToken<User>(){}.getType();
+                    user=gson.fromJson(result,type);
+                    RongIM.getInstance().refreshUserInfoCache(new UserInfo(((MyApplication)getActivity().getApplication()).getUser().getUserid()+"", user.getUsername(), Uri.parse(HttpUtils.host4+user.getUserimg())));
+                }
 
-            @Override
-            public void onSuccess(String s) {
-                Log.e("framgment", "onSuccess: "+s );
-            }
-            @Override
-            public void onError(RongIMClient.ErrorCode errorCode) {
-                Log.e("framgment", "onError: "+errorCode.getValue() );
-            }
-        });
-    }
+                @Override
+                public void onError(Throwable ex, boolean isOnCallback) {
+
+                }
+
+                @Override
+                public void onCancelled(CancelledException cex) {
+
+                }
+
+                @Override
+                public void onFinished() {
+
+                }
+            });
+
+            /**
+             * 连接
+             */
+            RongIM.connect(Token, new RongIMClient.ConnectCallback() {
+                @Override
+                public void onTokenIncorrect() {
+                    Log.i("Tooooo1","kenn"+Token);
+                    Log.e("framgment","tokenINcorrect");
+                }
+
+                @Override
+                public void onSuccess(String s) {
+                    Log.e("framgment1", "onSuccess: "+s );
+                }
+                @Override
+                public void onError(RongIMClient.ErrorCode errorCode) {
+                    Log.e("framgmente", "onError: "+errorCode.getValue() );
+                }
+            });
+        }
+
+    //获得所有用户token
+
 
 }

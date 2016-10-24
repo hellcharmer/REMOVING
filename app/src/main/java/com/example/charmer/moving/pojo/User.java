@@ -23,7 +23,14 @@ public class User implements Parcelable {
     private Integer userjoinsucessjoin;
     private Integer usergood;
     private Integer userbad;
+    private String usertoken;
     public User(){}
+
+    public User(Integer userid, boolean usersex, String usertoken) {
+        this.userid = userid;
+        this.usersex = usersex;
+        this.usertoken = usertoken;
+    }
 
     public User(String username, String userimg) {
         this.username = username;
@@ -34,6 +41,14 @@ public class User implements Parcelable {
         this.username = username;
         this.userimg = userimg;
         this.usersex = usersex;
+    }
+
+    public String getUsertoken() {
+        return usertoken;
+    }
+
+    public void setUsertoken(String usertoken) {
+        this.usertoken = usertoken;
     }
 
     public User(Integer userid) {

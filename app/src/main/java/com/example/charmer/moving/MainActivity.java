@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -23,8 +24,13 @@ import com.example.charmer.moving.fragment.Fragment_friend;
 import com.example.charmer.moving.fragment.Fragment_home;
 import com.example.charmer.moving.fragment.Fragment_mine;
 import com.example.charmer.moving.fragment.Fragment_service;
+import com.example.charmer.moving.friendchat.GetTokenAsyncTask;
 import com.example.charmer.moving.home_activity.Publish_articles;
+import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.StatusBarCompat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private boolean clicked = false;// 记录加号按钮的点击状态，默认为没有点击
@@ -35,7 +41,12 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_fabuhuodong;
     private ImageView iv_write;
     private TextView dishui_tv, guoshui_tv;
-
+    //
+    public static GetTokenAsyncTask getTokenAsyncTask;
+    private List<User> usersToken=new ArrayList<User>();//所有user的Token
+    public static String Token;
+    public Integer j;
+    //
     private Animation rotate_anticlockwise, rotate_clockwise, scale_max,
             scale_min, alpha_button;
 
@@ -56,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//       getusertoken();
+          yiburenwu2();
         //BP.init();
         StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
 
@@ -67,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         Constant.displayWidth = displayMetrics.widthPixels;
         Constant.displayHeight = displayMetrics.heightPixels;
+        //初始化模糊界面
+        plus_rl.setClickable(false);
         //初始化fragment
         fragment_home = new Fragment_home();
         fragment_mine = new Fragment_mine();
@@ -240,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
                 // 两个按钮的显示隐藏
                 dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
                 iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 // 加号旋转
@@ -255,6 +271,12 @@ public class MainActivity extends AppCompatActivity {
                         .parseColor("#aaffffff") : Color.TRANSPARENT);
                 // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
                 plus_rl.setClickable(clicked);
+                iv_write.setClickable(clicked? true : false);
+                dishui_tv.setClickable(clicked? true : false);
+                guoshui_tv.setClickable(clicked? true : false);
+                iv_fabuhuodong.setClickable(clicked? true : false);
+
+
             }
         });
         plus_rl.setOnClickListener(new View.OnClickListener() {
@@ -266,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
                 // 两个按钮的显示隐藏
                 dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
                 iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
                 // 加号旋转
@@ -281,6 +304,10 @@ public class MainActivity extends AppCompatActivity {
                         .parseColor("#aaffffff") : Color.TRANSPARENT);
                 // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
                 plus_rl.setClickable(clicked);
+                iv_write.setClickable(clicked? true : false);
+                dishui_tv.setClickable(clicked? true : false);
+                guoshui_tv.setClickable(clicked? true : false);
+                iv_fabuhuodong.setClickable(clicked? true : false);
             }
         });
 
@@ -296,6 +323,30 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             // TODO Auto-generated method stub
+            clicked = !clicked;
+            // 两个按钮的显示隐藏
+            dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
+            iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            // 加号旋转
+            plus_im.startAnimation(clicked ? rotate_anticlockwise
+                    : rotate_clockwise);
+            // 按钮显示隐藏效果
+            dishui_tv.startAnimation(clicked ? scale_max : scale_min);
+            guoshui_tv.startAnimation(clicked ? scale_max : scale_min);
+            iv_fabuhuodong.startAnimation(clicked ? scale_max : scale_min);
+            iv_write.startAnimation(clicked ? scale_max : scale_min);
+            // 背景色的改变
+            plus_rl.setBackgroundColor(clicked ? Color
+                    .parseColor("#aaffffff") : Color.TRANSPARENT);
+            // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
+            plus_rl.setClickable(clicked);
+            iv_write.setClickable(clicked? true : false);
+            dishui_tv.setClickable(clicked? true : false);
+            guoshui_tv.setClickable(clicked? true : false);
+            iv_fabuhuodong.setClickable(clicked? true : false);
             v.startAnimation(alpha_button);
             plus_im.performClick();
             Intent intent =new Intent(MainActivity.this,Publish_articles.class);
@@ -344,6 +395,67 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+//修改获得user的Token
+//   public  void getusertoken(){
+//       j=((MyApplication)this.getApplication()).getUser().getUserid();
+//       RequestParams requestParams2=new RequestParams(HttpUtils.host4+"getalluserstoken");
+//       x.http().get(requestParams2, new Callback.CommonCallback<String>() {
+//           @Override
+//           public void onSuccess(String result) {
+//               Gson gson=new Gson();
+//               Type type=new TypeToken<List<User>>(){}.getType();
+//               Log.i("TokenSuccess",result);
+//               List<User> newusersToken=gson.fromJson(result,type);
+//               usersToken.addAll(newusersToken);
+//               //赋予当前用户token
+//               for (int i=0;i<usersToken.size();i++){
+//                   if(j==usersToken.get(i).getUserid()){
+//                       Token=usersToken.get(i).getUsertoken();
+//                       Log.i("Tooooo3","kennn"+Token);
+//                        setToken(Token);
+//                   }
+//               }
+//           }
+//
+//           @Override
+//           public void onError(Throwable ex, boolean isOnCallback) {
+//
+//           }
+//
+//           @Override
+//           public void onCancelled(CancelledException cex) {
+//
+//           }
+//
+//           @Override
+//           public void onFinished() {
+//
+//           }
+//       });
+//   }
+//
+    //异步任务尝试2
+    public void yiburenwu2(){
+         getTokenAsyncTask=new GetTokenAsyncTask();
+        getTokenAsyncTask.execute();
+        Token=getTokenAsyncTask.getToken();
+        Log.i("Tooooo4","kenn"+Token);
+    }
 
+    public static GetTokenAsyncTask getGetTokenAsyncTask() {
+        return getTokenAsyncTask;
+    }
+
+    public static void setGetTokenAsyncTask(GetTokenAsyncTask getTokenAsyncTask) {
+        MainActivity.getTokenAsyncTask = getTokenAsyncTask;
+    }
+
+    public static String getToken() {
+        return Token;
+    }
+
+    public void setToken(String token) {
+        Token = token;
+    }
 
 }

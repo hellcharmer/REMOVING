@@ -41,7 +41,9 @@
         <attr name="npv_AlternativeTextArrayWithoutMeasureHint" format="reference" />
         <!--the max length of hint content-->
         <attr name="npv_AlternativeHint" format="reference|string" />
+
     </declare-styleable>
+
 </resources>
 
 
