@@ -18,12 +18,12 @@ import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.charmer.moving.MyApplicition.MyApplication;
+import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Info;
@@ -55,13 +55,13 @@ import butterknife.InjectView;
 public class Fragment_dynamic extends BaseFragment {
 
     private boolean isRunning = false;
-    Integer dynamic_pageNo = 1; //第一页
-    Integer total_pageSize = 10; //总共多少页
+    private Integer dynamic_pageNo = 1; //第一页
+    private Integer total_pageSize = 5; //总共多少页
 
     InfosAdapter infosAdapter;
     List<Info> infoList = new ArrayList<Info>();
     @InjectView(R.id.lv_info)
-    ListView lvInfo;
+    LoadMoreListView lvInfo;
     @InjectView(R.id.pb_load)
     ProgressBar pbLoad;
     @InjectView(R.id.iv_publish)
@@ -75,7 +75,7 @@ public class Fragment_dynamic extends BaseFragment {
     private ObjectAnimator bottomAnimator;
     private RelativeLayout rl_test;
     private LinearLayout mBottom;
-
+    private boolean is_now=true;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -118,12 +118,47 @@ public class Fragment_dynamic extends BaseFragment {
 
     @Override
     public void initData() {
+
         getData(dynamic_pageNo); //获取网络数据，显示在listview上
+        lvInfo.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
+                loadZixunMore();
+
+            }
+        });
 
     }
 
+    private void loadZixunMore() {
+
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(dynamic_pageNo<total_pageSize) {
+
+                    getData(++dynamic_pageNo);
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        lvInfo.setLoadCompleted();
+                    }
+                });
+            }
+        }.start();
+    }
+
     //xutils获取网络数据
-    public void getData(Integer page) {
+    public void getData(final Integer dynamic_pageNo) {
         //xutils获取网络数据
         String url = HttpUtils.host_dynamic + "queryinfoservlet";
         RequestParams requestParams = new RequestParams(url);
@@ -141,13 +176,17 @@ public class Fragment_dynamic extends BaseFragment {
                 List<Info> infos = gson.fromJson(result, type);  //解析成List<Info>
                 String str = infos.get(0).getUser().getUsername();
                 Log.i("username", "username" + str);
-                infoList.clear();
+                if(dynamic_pageNo==1){
+                    infoList.clear();
+                }
+
                 infoList.addAll(infos);
 
                 if (infosAdapter == null) {
                     infosAdapter = new InfosAdapter(getActivity(),infoList,R.layout.fragment_info_more);
                     lvInfo.setAdapter(infosAdapter);
                 } else {
+                    Log.i("sssssssssss","sssssssssssss");
                     infosAdapter.notifyDataSetChanged();
                 }
             }
@@ -187,6 +226,7 @@ public class Fragment_dynamic extends BaseFragment {
 
             //初始化checkStstus：默认都是位选中状态
             for(int i = 0;i<lists.size();i++){
+                Log.i("jin","jin");
                 checkStatus.put(i,false);
             }
 
@@ -207,6 +247,23 @@ public class Fragment_dynamic extends BaseFragment {
         @Override
         public void convert(ViewHolder viewHolder,final Info info, final int position) {
             //取出控件
+            final CheckBox iv_like = viewHolder.getViewById(R.id.iv_like);
+            final boolean flagmsg = info.isInfoState();
+             if(is_now){
+                 likenums.put(position,info.getInfoLikeNum());
+                 if(flagmsg){
+                     iv_like.setChecked(true);
+                     checkStatus.put(position,true);
+                 }else{
+                     iv_like.setChecked(false);
+                     checkStatus.put(position,false);
+                 }}
+
+
+            iv_like.setChecked(checkStatus.get(position));
+
+            flag.put(position,false);
+            isliked.put(position,true);
             ImageView userimg = viewHolder.getViewById(R.id.iv_photoImg);
             xUtilsImageUtils.display(userimg, HttpUtils.host_dynamic + info.getUser().getUserimg(), true);
             TextView username = viewHolder.getViewById(R.id.tv_infoName);
@@ -219,7 +276,7 @@ public class Fragment_dynamic extends BaseFragment {
             infoDate.setText(date);
             final TextView tv_likeNumber = viewHolder.getViewById(R.id.tv_likeNumber);
             tv_likeNumber.setText(likenums.get(position)+"");
-             final boolean flagmsg = info.isInfoState();
+
 
 
             //取出gridview
@@ -230,11 +287,7 @@ public class Fragment_dynamic extends BaseFragment {
                 gv.setAdapter(imgsAdapter);
             }
 
-            final CheckBox iv_like = viewHolder.getViewById(R.id.iv_like);
-            if(flagmsg){
-                iv_like.setChecked(true);
-                checkStatus.put(position,true);
-            }
+
 
             iv_like.setTag(position); //每个checkbox的tag不一样
             //显示一个view时，重新设置view上的iv_like状态
@@ -248,9 +301,11 @@ public class Fragment_dynamic extends BaseFragment {
                     if(checkStatus.get(position)){
                         iv_like.setChecked(false);
                         checkStatus.put(position,false);
+                        is_now=false;
                     }else{
                         iv_like.setChecked(true);
                         checkStatus.put(position,true);
+                        is_now=false;
                     }
 
                     RequestParams requestParams1 = new RequestParams(HttpUtils.host_dynamic+"updatelikeservlet");
@@ -285,10 +340,12 @@ public class Fragment_dynamic extends BaseFragment {
                         checkStatus.put((int)v.getTag(),true);
                         flag.put((int)v.getTag(),true);
                         //改变点赞数
+
                         if(flag.get(position)) {
                             likeNum = Integer.parseInt(tv_likeNumber.getText().toString()) + 1;
                             tv_likeNumber.setText(likeNum+"");
                             likenums.put((int)v.getTag(),likeNum);
+                            is_now=false;
                             RequestParams requestParams = new RequestParams(HttpUtils.host_dynamic+"updateaddinfolikenum");
                             requestParams.addQueryStringParameter("infoId",info.getInfoId()+"");
                             x.http().get(requestParams, new Callback.CommonCallback<String>() {
@@ -316,8 +373,6 @@ public class Fragment_dynamic extends BaseFragment {
                         }
                         flag.put((int)v.getTag(),false);
 
-
-
                     }
                     else if(!checkStatus.get(position) && position == (int) iv_like.getTag()){
                         checkStatus.put((int)v.getTag(),false);
@@ -327,6 +382,7 @@ public class Fragment_dynamic extends BaseFragment {
                             likeNum = Integer.parseInt(tv_likeNumber.getText().toString()) -1;
                             tv_likeNumber.setText(likeNum+"");
                             likenums.put((int)v.getTag(),likeNum);
+                            is_now=false;
                             RequestParams requestParams = new RequestParams(HttpUtils.host_dynamic+"updatedeleteinfolikenum");
                             requestParams.addQueryStringParameter("infoId",info.getInfoId()+"");
                             x.http().get(requestParams, new Callback.CommonCallback<String>() {

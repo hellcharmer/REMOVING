@@ -19,9 +19,14 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.pojo.Info;
+import com.example.charmer.moving.pojo.User;
 
 import java.io.ByteArrayOutputStream;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +36,8 @@ public class UploadPhotoActivity extends AppCompatActivity {
     private static final String IMG_ADD_TAG = "a";
     private GridView gridView;
     private GVAdapter adapter;
+    private Info info;
+    private User user;
 
     private List<String> list;
     String uploadFile = "";
@@ -70,10 +77,8 @@ public class UploadPhotoActivity extends AppCompatActivity {
         initEvent();
         // 提交发布
 
-
         initData();
     }
-
 
 
     private void upLoad() {
@@ -242,6 +247,18 @@ public class UploadPhotoActivity extends AppCompatActivity {
     }
 
 
+    //获取输入的数据：
+    private void getData(){
+
+        String infoContent = et_content.getText().toString();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
+        String infoDate = formatter.format(new Timestamp(System.currentTimeMillis()));
+        Integer userid = ((MyApplication)getApplication()).getUser().getUserid();
+//        String Imgurl="images/"+
+        user = new User(userid);
+        info = new Info(infoContent,Timestamp.valueOf(infoDate),user);
+
+    }
 
 }
 

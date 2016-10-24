@@ -32,7 +32,9 @@ public class UploadUtils {
     public static String uploadFile(File file, String RequestURL)
     {
         String BOUNDARY =  UUID.randomUUID().toString();  //边界标识   随机生成
-        String PREFIX = "--" , LINE_END = "\r\n";
+        String PREFIX = "--" ,
+                LINE_END = ",";
+//        LINE_END = "\r\n";
         String CONTENT_TYPE = "multipart/form-data";   //内容类型
 
         try {

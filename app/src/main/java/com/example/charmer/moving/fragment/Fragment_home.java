@@ -1175,8 +1175,8 @@ public class Fragment_home extends Fragment {
 
             final ListActivityBean.Zixun zixun = list.get(position);
             SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);
-            editor.putString(zixun.zixunId+"state", zixun.state);
+//            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);
+//            editor.putString(zixun.zixunId+"state", zixun.state);
             editor.commit();//提交修改
             if((sharedPreferences.getString(zixun.zixunId+"state", zixun.state)).equals("1")){
                 choiceZan.add(zixun.zixunId);
