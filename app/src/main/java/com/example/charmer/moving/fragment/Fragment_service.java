@@ -84,7 +84,7 @@ public class Fragment_service extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_service,null);
-        View v=inflater.inflate(R.layout.layout_toast_view,null);
+        View v= inflater.inflate(R.layout.layout_toast_view,null);
         toastUtil=new ToastUtil(getActivity(),v,200);
         return view;
     }

@@ -35,7 +35,7 @@ public class Exercises {
     private String groupMembers;
     private String exerciseCode;
     private String activeState;
-    
+    private String enroller;
     
     
 
@@ -177,6 +177,14 @@ public class Exercises {
 		this.activeState = activeState;
 	}
 
+
+	public String getEnroller() {
+		return enroller;
+	}
+
+	public void setEnroller(String enroller) {
+		this.enroller = enroller;
+	}
 	public Exercises() {
     }
 
@@ -213,7 +221,23 @@ public class Exercises {
 		this.activityTime = activityTime;
 	}
 
-	public Exercises(Long publisherId, String exerciseTitle, String exerciseType, String exerciseTheme, String exerciseIntroduce, String place, Date activityTime, Double cost, String paymentMethod, Integer totalNumber, Date releaseTime, String exerciseCode) {
+//	public Exercises(Long publisherId, String exerciseTitle, String exerciseType, String exerciseTheme, String exerciseIntroduce, String place, Date activityTime, Double cost, String paymentMethod, Integer totalNumber, Date releaseTime, String exerciseCode) {
+//		this.publisherId = publisherId;
+//		this.exerciseTitle = exerciseTitle;
+//		this.exerciseType = exerciseType;
+//		this.exerciseTheme = exerciseTheme;
+//		this.exerciseIntroduce = exerciseIntroduce;
+//		this.place = place;
+//		this.activityTime = activityTime;
+//		this.cost = cost;
+//		this.paymentMethod = paymentMethod;
+//		this.totalNumber = totalNumber;
+//		this.releaseTime = releaseTime;
+//		this.exerciseCode = exerciseCode;
+//	}
+
+	public Exercises(Long publisherId, String exerciseTitle, String exerciseType, String exerciseTheme, String exerciseIntroduce, String place, Date activityTime, Double cost, String paymentMethod, Integer totalNumber, Date releaseTime, String exerciseCode, String participator, String groupMembers, String enroller) {
+
 		this.publisherId = publisherId;
 		this.exerciseTitle = exerciseTitle;
 		this.exerciseType = exerciseType;
@@ -226,5 +250,8 @@ public class Exercises {
 		this.totalNumber = totalNumber;
 		this.releaseTime = releaseTime;
 		this.exerciseCode = exerciseCode;
+		this.participator = participator;
+		this.groupMembers = groupMembers;
+		this.enroller = enroller;
 	}
 }

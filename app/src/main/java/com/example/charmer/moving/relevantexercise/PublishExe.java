@@ -194,7 +194,7 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
                 exepub = new Exercises((long)1222111346, exe_pb_name.getText().toString(), typeslt.getText().toString(),
                        themeslt.getText().toString(), exepb_intro.getText().toString(), exepb_place.getText().toString(),
                        DateUtil.stringToDate(etStartTime.getText().toString()), Double.parseDouble(exepb_cost.getText().toString()), mthdslt.getText().toString(),
-                       Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()), "FUJKONVNKK");
+                       Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()), "FUJKONVNKK","","","");
 
                 sendexepub(exepub);
 
