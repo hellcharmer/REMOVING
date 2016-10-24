@@ -65,48 +65,53 @@
         android:layout_below="@id/iv_photo"/>
 </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+
         android:layout_below="@id/ll_content">
-
-    <ImageView
-        android:id="@+id/iv_dianzan"
-        android:src="@drawable/zan_no"
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="260dp"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-
-        />
-    <TextView
-        android:id="@+id/tv_dianzanshu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="14sp"
-        android:text="33"
-        android:layout_toRightOf="@id/iv_dianzan"
-        android:layout_marginTop="4dp"/>
+        <TextView
+            android:id="@+id/tv_pinglun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+           android:layout_marginRight="10dp"
+            android:textSize="14sp"
+            android:text="33"
+            android:layout_marginTop="13dp"/>
         <ImageView
             android:id="@+id/iv_pinglun"
             android:background="@drawable/f_d_talk"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="20dp"
+            android:layout_toLeftOf="@+id/tv_pinglun"
+            android:layout_marginRight="5dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
 
             />
         <TextView
-            android:id="@+id/tv_pinglun"
+            android:id="@+id/tv_dianzanshu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/iv_pinglun"
             android:textSize="14sp"
             android:text="33"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="10dp"
+           />
+    <ImageView
+        android:id="@+id/iv_dianzan"
+        android:src="@drawable/zan_no"
+        android:layout_marginTop="6dp"
+        android:layout_toLeftOf="@+id/tv_dianzanshu"
+        android:layout_marginRight="5dp"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
 
-            android:layout_toRightOf="@id/iv_pinglun"
-            android:layout_marginTop="4dp"/>
-    </LinearLayout>
+        />
+
+
+
+    </RelativeLayout>
 </RelativeLayout>

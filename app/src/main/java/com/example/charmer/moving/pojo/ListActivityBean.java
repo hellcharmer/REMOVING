@@ -36,7 +36,7 @@ public class ListActivityBean {
 
 
     public static class Zixun {
-
+        public String  state;
         public Integer zixunId;
         public String photoImg;
         public String author;
@@ -45,12 +45,15 @@ public class ListActivityBean {
         public String timeStamp;
         public String content;
         public Integer likes;
-        public Integer dianzanshu;
+        public Integer likeNumber;
         public String title;
 
+        public Integer getZixunId() {
+            return zixunId;
+        }
 
-
-
-
+        public void setZixunId(Integer zixunId) {
+            this.zixunId = zixunId;
+        }
     }
 }
