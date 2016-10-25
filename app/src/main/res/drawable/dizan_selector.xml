@@ -3,5 +3,5 @@
     <item android:drawable="@drawable/likeafter" android:state_checked="true" />
     <item android:drawable="@drawable/likebefore" android:state_checked="false" />
     <item android:drawable="@drawable/likeafter" android:state_pressed="true" />
-    <item android:drawable="@drawable/likebefore" />
+    <item android:drawable="@drawable/likebefore" android:state_pressed="false"/>
 </selector>

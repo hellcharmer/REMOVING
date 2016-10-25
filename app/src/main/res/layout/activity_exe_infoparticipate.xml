@@ -147,6 +147,15 @@
             </RelativeLayout>
 
 
+            <TextView
+                android:id="@+id/titleinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/infohead"
+                android:textSize="22sp"
+                android:gravity="center"
+                />
+
             <RelativeLayout
                 android:id="@+id/infoesfoot"
                 android:layout_width="match_parent"

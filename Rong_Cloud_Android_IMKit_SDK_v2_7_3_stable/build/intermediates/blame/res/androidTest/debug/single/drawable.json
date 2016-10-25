@@ -1,19 +1,19 @@
 [
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_cs_group_dialog_ok_selector.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_cs_group_dialog_ok_selector.xml"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_switch_btn.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_switch_btn.xml"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_ic_star_selector.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_ic_star_selector.xml"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_cs_group_dialog_ok_selector.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_cs_group_dialog_ok_selector.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_corner_voice_style.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_corner_voice_style.xml"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_ic_star_selector.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_ic_star_selector.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_ic_text.xml",
@@ -48,24 +48,24 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_ic_files.xml"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_pb_file_download_progress.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_pb_file_download_progress.xml"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_sel_picsel_toolbar_back.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_sel_picsel_toolbar_back.xml"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_pb_file_download_progress.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_pb_file_download_progress.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_bg_menu.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_bg_menu.xml"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_ic_smiley.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_ic_smiley.xml"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_ic_voice.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_ic_voice.xml"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_ic_smiley.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_ic_smiley.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_corner_location_style.xml",

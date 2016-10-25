@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer"
     tools:context="com.example.charmer.moving.MainActivity">
+
     <FrameLayout
         android:id="@+id/frame_content"
         android:background="#fff"
@@ -30,10 +31,8 @@
         />
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="48dp"
-
         android:orientation="horizontal" >
         <RelativeLayout
             android:id="@+id/btn_container_main_page"
@@ -99,7 +98,11 @@
                 android:onClick="onTabClicked"
                 android:paddingBottom="5dip"
                 android:paddingTop="7dip"
+                 android:visibility="gone"
                 />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
         </RelativeLayout>
 
         <RelativeLayout

@@ -2,8 +2,10 @@ package com.example.charmer.moving.friendchat;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Button;
 
 import com.example.charmer.moving.MyApplicition.MyApplication;
+import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.User;
 import com.google.gson.Gson;
@@ -21,6 +23,12 @@ import java.util.List;
  * Created by lenovo on 2016/10/22.
  */
 public class GetTokenAsyncTask extends AsyncTask<String,Integer,String> {
+   private Button btn_friends;
+
+    public GetTokenAsyncTask(Button btn_friends) {
+        this.btn_friends = btn_friends;
+    }
+
     private Integer j;
     private List<User> usersToken=new ArrayList<User>();//所有user的Token
     public  String Token;
@@ -33,11 +41,13 @@ public class GetTokenAsyncTask extends AsyncTask<String,Integer,String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
+
     }
 
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
+
     }
 
     @Override
@@ -59,8 +69,11 @@ public class GetTokenAsyncTask extends AsyncTask<String,Integer,String> {
                         Token=usersToken.get(i).getUsertoken();
                         Log.i("Tooooo3","kennn"+Token);
                         setToken(Token);
+
                     }
                 }
+
+                btn_friends.setBackgroundResource(R.drawable.friends);
             }
 
             @Override
@@ -76,6 +89,7 @@ public class GetTokenAsyncTask extends AsyncTask<String,Integer,String> {
             @Override
             public void onFinished() {
 
+
             }
         });
         return Token;
@@ -87,5 +101,13 @@ public class GetTokenAsyncTask extends AsyncTask<String,Integer,String> {
 
     public void setToken(String token) {
         Token = token;
+    }
+
+
+
+    @Override
+    protected void onCancelled() {
+        super.onCancelled();
+
     }
 }

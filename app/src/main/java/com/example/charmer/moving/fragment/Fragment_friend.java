@@ -31,6 +31,7 @@ import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
@@ -59,8 +60,6 @@ import butterknife.InjectView;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.UserInfo;
-
-import static com.example.charmer.moving.MainActivity.getTokenAsyncTask;
 
 /**
  * Created by lenovo on 2016/10/11.
@@ -137,7 +136,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
 //        GetTokenAsyncTask getTokenAsyncTask=new GetTokenAsyncTask();
 //        getTokenAsyncTask.execute();
         //第四次异步任务终于成功哇哈哈哈哈哈哈！！！！！时间优化4倍
-        Token=getTokenAsyncTask.getToken();
+        Token= MainActivity.getToken();
         Log.i("Tooooo5","kenn"+Token);
         //对好友的信息处理
         getFriendData();

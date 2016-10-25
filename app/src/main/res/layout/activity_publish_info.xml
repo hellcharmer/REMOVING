@@ -37,7 +37,9 @@
     </RelativeLayout>
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_below="@id/rl_title"
+        android:layout_height="match_parent"
+        >
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -45,11 +47,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/rl_center"
-    android:layout_marginTop="50dp">
+    android:layout_marginTop="0dp">
     <EditText
         android:layout_marginTop="5dp"
         android:id="@+id/et_text"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:hint="说点什么吧..."

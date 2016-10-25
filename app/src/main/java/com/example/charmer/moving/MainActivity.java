@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -18,19 +20,28 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.contantData.Constant;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.fragment.Fragment_dynamic;
 import com.example.charmer.moving.fragment.Fragment_friend;
 import com.example.charmer.moving.fragment.Fragment_home;
 import com.example.charmer.moving.fragment.Fragment_mine;
 import com.example.charmer.moving.fragment.Fragment_service;
-import com.example.charmer.moving.friendchat.GetTokenAsyncTask;
 import com.example.charmer.moving.home_activity.Publish_articles;
 import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.StatusBarCompat;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
     private boolean clicked = false;// 记录加号按钮的点击状态，默认为没有点击
@@ -41,15 +52,26 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_fabuhuodong;
     private ImageView iv_write;
     private TextView dishui_tv, guoshui_tv;
-    //
-    public static GetTokenAsyncTask getTokenAsyncTask;
+    //lzy的改动
+    private Integer j;
+    private Button btn_friends;
     private List<User> usersToken=new ArrayList<User>();//所有user的Token
     public static String Token;
-    public Integer j;
-    //
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                //handleMessage界面更新
+                case 0:
+                    btn_friends.setVisibility(View.VISIBLE);
+                    break;
+            }
+        }
+    };
+    //lzy的改动
     private Animation rotate_anticlockwise, rotate_clockwise, scale_max,
             scale_min, alpha_button;
-
     android.support.v4.app.Fragment[] fragments;
     Fragment_home fragment_home;//主页
     Fragment_mine fragment_mine;
@@ -62,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
     Drawable startDra;
     int oldIndex;//用户看到的item
     int newIndex;//用户即将看到的item
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -376,6 +400,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         // TODO Auto-generated method stub
+        //lzy的改动
+
+        btn_friends = ((Button) findViewById(R.id.friends));
+        //
         plus_rl = (RelativeLayout) findViewById(R.id.plus_rl);
         plus_yuan = (ImageView) findViewById(R.id.plus_yuan);
         plus_im = (ImageView) findViewById(R.id.plus_im);
@@ -395,67 +423,62 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-//修改获得user的Token
-//   public  void getusertoken(){
-//       j=((MyApplication)this.getApplication()).getUser().getUserid();
-//       RequestParams requestParams2=new RequestParams(HttpUtils.host4+"getalluserstoken");
-//       x.http().get(requestParams2, new Callback.CommonCallback<String>() {
-//           @Override
-//           public void onSuccess(String result) {
-//               Gson gson=new Gson();
-//               Type type=new TypeToken<List<User>>(){}.getType();
-//               Log.i("TokenSuccess",result);
-//               List<User> newusersToken=gson.fromJson(result,type);
-//               usersToken.addAll(newusersToken);
-//               //赋予当前用户token
-//               for (int i=0;i<usersToken.size();i++){
-//                   if(j==usersToken.get(i).getUserid()){
-//                       Token=usersToken.get(i).getUsertoken();
-//                       Log.i("Tooooo3","kennn"+Token);
-//                        setToken(Token);
-//                   }
-//               }
-//           }
-//
-//           @Override
-//           public void onError(Throwable ex, boolean isOnCallback) {
-//
-//           }
-//
-//           @Override
-//           public void onCancelled(CancelledException cex) {
-//
-//           }
-//
-//           @Override
-//           public void onFinished() {
-//
-//           }
-//       });
-//   }
-//
+
     //异步任务尝试2
     public void yiburenwu2(){
-         getTokenAsyncTask=new GetTokenAsyncTask();
-        getTokenAsyncTask.execute();
-        Token=getTokenAsyncTask.getToken();
-        Log.i("Tooooo4","kenn"+Token);
-    }
+//         getTokenAsyncTask=new GetTokenAsyncTask(btn_friends);
+//        getTokenAsyncTask.execute();
+        //handler更新视图
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                j= MyApplication.getUser().getUserid();
+                RequestParams requestParams2=new RequestParams(HttpUtils.host4+"getalluserstoken");
+                x.http().get(requestParams2, new Callback.CommonCallback<String>() {
+                    @Override
+                    public void onSuccess(String result) {
+                        Gson gson=new Gson();
+                        Type type=new TypeToken<List<User>>(){}.getType();
+                        Log.i("TokenSuccess",result);
+                        List<User> newusersToken=gson.fromJson(result,type);
+                        usersToken.addAll(newusersToken);
+                        //赋予当前用户token
+                        for (int i=0;i<usersToken.size();i++){
+                            if(j==usersToken.get(i).getUserid()){
+                                Token=usersToken.get(i).getUsertoken();
+                                Log.i("Tooooo3","kennn"+Token);
+                                setToken(Token);
+                            }
+                        }
+                        Message msg = new Message();
+                        msg.what = 0;
+                        handler.sendMessage(msg);
+                    }
 
-    public static GetTokenAsyncTask getGetTokenAsyncTask() {
-        return getTokenAsyncTask;
-    }
+                    @Override
+                    public void onError(Throwable ex, boolean isOnCallback) {
 
-    public static void setGetTokenAsyncTask(GetTokenAsyncTask getTokenAsyncTask) {
-        MainActivity.getTokenAsyncTask = getTokenAsyncTask;
-    }
+                    }
 
-    public static String getToken() {
+                    @Override
+                    public void onCancelled(CancelledException cex) {
+
+                    }
+
+                    @Override
+                    public void onFinished() {
+                    }
+                });
+
+            }
+        }).start();
+
+    }
+    public  static String getToken() {
         return Token;
     }
 
     public void setToken(String token) {
         Token = token;
     }
-
 }

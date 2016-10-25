@@ -882,6 +882,8 @@ public class Fragment_home extends Fragment {
                 //Log.i(TAG,bean.status+"---------");
                 //Log.i(TAG,bean.zixunlist.size()+"---------");
                 if(page_zixun==1){
+
+
                     zixunlist.clear();
                 }
                 //zixunlist.clear();
@@ -1169,6 +1171,9 @@ public class Fragment_home extends Fragment {
 
             final ListActivityBean.Zixun zixun = list.get(position);
             SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+//            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);
+//            editor.putString(zixun.zixunId+"state", zixun.state);
+            editor.commit();//提交修改
 //            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);//??
             editor.putString(zixun.zixunId+"state", zixun.state);//??
             editor.commit();//提交修改 ????

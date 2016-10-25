@@ -11,8 +11,8 @@ public class VariableExercise {
     public ArrayList<Exercises> exerciseList;
 
     public static class Exercises{
-        public Integer exerciseId;
-        public String publisherId;
+        public Long exerciseId;
+        public Long publisherId;
         public String userImage;
         public String title;
         public String type;

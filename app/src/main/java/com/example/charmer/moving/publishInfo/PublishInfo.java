@@ -20,11 +20,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.utils.MyAdapter;
+
+import org.xutils.http.RequestParams;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,6 +44,8 @@ public class PublishInfo extends AppCompatActivity {
     private Bitmap bmp;
     private ImageView iv_cancel;
     private ImageView iView;
+    private ImageView iv_publishmore;
+    private EditText et_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,36 +105,7 @@ public class PublishInfo extends AppCompatActivity {
                             dialog.dismiss();
                         }
                     });
-//
-//                    Button btn_cancel=(Button) contentview.findViewById(R.id.btn_cancel);
-//                    btn_cancel.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Toast.makeText(getApplicationContext(),"执行方法",Toast.LENGTH_LONG).show();
-//                             aList.remove(position);
-//
-//                            onResume();
-//
-//                            new Thread(new Runnable() {
-//                                @Override
-//                                public void run() {
-//                                    while(!Thread.currentThread().isInterrupted()){
-//                                        try {
-//                                            Thread.sleep(100);
-//                                        } catch (InterruptedException e) {
-//                                            e.printStackTrace();
-//                                        }
-//                                        Log.i("sss","ssssss");
-//                                        gridView.postInvalidate();
-//                                        onResume();
-//                                    }
-//                                }
-//                            });
-//                            onResume();
-//                            dialog.dismiss();
-//
-//                        }
-//                    });
+
 
 
                     //设置对话框尺寸
@@ -145,12 +123,21 @@ public class PublishInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                Toast.makeText(getApplicationContext(),"quxiao",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        iv_publishmore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                publishInfo();
             }
         });
     }
 
 
     private void initView() {
+        iv_cancel = ((ImageView) findViewById(R.id.iv_cancel));
         gridView = (GridView) findViewById(R.id.gridView1);
         bmp = BitmapFactory.decodeResource(getResources(), R.drawable.addphoto);
         aList = new ArrayList<Bitmap>();
@@ -158,7 +145,8 @@ public class PublishInfo extends AppCompatActivity {
         adapter = new MyAdapter(PublishInfo.this, aList);
         gridView.setAdapter(adapter);
         context = PublishInfo.this;
-        iv_cancel = ((ImageView) findViewById(R.id.iv_cancel));
+        iv_publishmore = ((ImageView) findViewById(R.id.iv_publishmore));
+        et_text = ((EditText) findViewById(R.id.et_text));
     }
 
     //点击画囊后执行
@@ -193,6 +181,13 @@ public class PublishInfo extends AppCompatActivity {
             //刷新后释放，防止手机休眠后自动添加
             picturePath = null;
         }
+    }
+
+    //发布动态
+    private void publishInfo() {
+        RequestParams requestparams = new RequestParams(HttpUtils.host_dynamic+"insertinfoservlet");
+
+//        Info info = new Info(et_text.getText().toString(),new Timestamp(System.currentTimeMillis()),String.valueOf(((MyApplication)this.getApplication()).getUser().getUserid()));
     }
 
 }

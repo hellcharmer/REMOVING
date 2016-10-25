@@ -10,17 +10,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/remakeborde"
         >
-
-        <TextView
-            android:id="@+id/exetype"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/type"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:padding="5dp"
-            />
-
         <TextView
             android:id="@+id/releasetime"
             android:layout_width="wrap_content"
@@ -32,6 +21,19 @@
             android:layout_marginRight="15dp"
             />
         <TextView
+            android:id="@+id/exetype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_alignTop="@id/releasetime"
+            android:layout_marginLeft="10dp"
+            />
+
+
+        <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,11 +44,32 @@
             android:layout_marginRight="5dp"
             />
         <ImageView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/signtitle"
+            android:layout_below="@id/exetype"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="5dp"
+            />
+        <TextView
+            android:id="@+id/exetitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exetype"
+            android:layout_toRightOf="@id/time"
+            android:text="@string/title"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            />
+        <ImageView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/time"
-            android:layout_below="@id/exetype"
+            android:layout_below="@id/exetitle"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="12dp"
             android:layout_marginRight="5dp"
@@ -55,7 +78,7 @@
             android:id="@+id/exetime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/exetype"
+            android:layout_below="@id/exetitle"
             android:layout_toRightOf="@id/time"
             android:text="@string/activityTime"
             android:textSize="18sp"
