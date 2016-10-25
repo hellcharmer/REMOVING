@@ -13,10 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.google.gson.Gson;
@@ -37,6 +39,9 @@ public class ManagerexeActivity extends AppCompatActivity {
     private BaseAdapter adapter1;
     private BaseAdapter adapter2;
     private BaseAdapter adapter3;
+    private Button cancelExe;
+    private Button cancelJoin;
+    private Button cancelEnroll;
     ViewPager pager = null;
     PagerTabStrip tabStrip = null;
     private ListView exelist1;
@@ -162,6 +167,7 @@ public class ManagerexeActivity extends AppCompatActivity {
         getExe();
         exelist2.setAdapter(adapter2);
         getExespart();
+
         exelist1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -198,7 +204,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExe() {
         String str = "http://10.40.5.13:8080/moving/getexebypublish";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("publisher","1758043101");
+        params.addQueryStringParameter("publisher",MyApplication.getUser().getUseraccount());
 
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -235,19 +241,21 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExespart() {
         String str = "http://10.40.5.13:8080/moving/getexebypart";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("participator","12333222");
+        params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
         params.addQueryStringParameter("mode","0");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Gson gson = new Gson();
-                exeinfolist2.clear();
-                VariableExercise bean = gson.fromJson(result, VariableExercise.class);
-                exeinfolist2.addAll(bean.exerciseList);
-                //dongtaiList = bean.dongtailist;   error
-                System.out.println(bean.exerciseList);
-                //通知listview更新界面
-                adapter2.notifyDataSetChanged();
+                if(!"".equals(result)) {
+                    Gson gson = new Gson();
+                    exeinfolist2.clear();
+                    VariableExercise bean = gson.fromJson(result, VariableExercise.class);
+                    exeinfolist2.addAll(bean.exerciseList);
+                    //dongtaiList = bean.dongtailist;   error
+                    System.out.println(bean.exerciseList);
+                    //通知listview更新界面
+                    adapter2.notifyDataSetChanged();
+                }
 
             }
 
@@ -272,7 +280,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExesenroll() {
         String str = "http://10.40.5.13:8080/moving/getexebypart";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("participator","12333222");
+        params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
         params.addQueryStringParameter("mode","1");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -325,6 +333,7 @@ public class ManagerexeActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             Log.i(TAG, "加载listview item position:" + position);
+            final int position1 = position;
             ViewHolder viewHolder = null;
             if(convertView == null) {
                 viewHolder = new ViewHolder();
@@ -335,11 +344,12 @@ public class ManagerexeActivity extends AppCompatActivity {
                 viewHolder.place = ((TextView) convertView.findViewById(R.id.exeplace));
                 viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
                 viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
+                cancelExe = (Button) convertView.findViewById(R.id.cancelExe);
                 convertView.setTag(viewHolder);//缓存对象
             }else{
                 viewHolder = (ViewHolder)convertView.getTag();
             }
-            VariableExercise.Exercises exercises = exeinfolist1.get(position);
+            final VariableExercise.Exercises exercises = exeinfolist1.get(position);
 
             try {
                 viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
@@ -347,6 +357,13 @@ public class ManagerexeActivity extends AppCompatActivity {
                 viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
                 viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
                 viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
+                cancelExe.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(ManagerexeActivity.this,exeinfolist1.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
+                         ExeSharedMthd.cancelExe(exeinfolist1.get(position1).exerciseId.toString(),ManagerexeActivity.this);
+                    }
+                });
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -375,6 +392,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Log.i(TAG, "加载listview item position:" + position);
+        final int position1 = position;
         ViewHolder viewHolder = null;
         if(convertView == null) {
             viewHolder = new ViewHolder();
@@ -385,6 +403,7 @@ public class ManagerexeActivity extends AppCompatActivity {
             viewHolder.place = ((TextView) convertView.findViewById(R.id.exeplace));
             viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
             viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
+            cancelJoin = (Button) convertView.findViewById(R.id.cancelJoin);
             convertView.setTag(viewHolder);//缓存对象
         }else{
             viewHolder = (ViewHolder)convertView.getTag();
@@ -397,6 +416,14 @@ public class ManagerexeActivity extends AppCompatActivity {
             viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
             viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
             viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
+
+            cancelJoin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ExeSharedMthd.cancelJoin(exeinfolist2.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(),ManagerexeActivity.this);
+                    //Toast.makeText(ManagerexeActivity.this,exeinfolist2.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
+                }
+            });
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -424,6 +451,7 @@ public class ManagerexeActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            final int position1 = position;
             Log.i(TAG, "加载listview item position:" + position);
             ViewHolder viewHolder = null;
             if(convertView == null) {
@@ -435,6 +463,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                 viewHolder.title = ((TextView) convertView.findViewById(R.id.exetitle));
                 viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
                 viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
+                cancelEnroll = ((Button) convertView.findViewById(R.id.cancelEnroll));
                 convertView.setTag(viewHolder);//缓存对象
             }else{
                 viewHolder = (ViewHolder)convertView.getTag();
@@ -447,6 +476,15 @@ public class ManagerexeActivity extends AppCompatActivity {
                 viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
                 viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
                 viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
+
+                cancelEnroll.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(ManagerexeActivity.this,exeinfolist3.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
+                        ExeSharedMthd.cancelEnroll(exeinfolist3.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(), ManagerexeActivity.this);
+                    }
+                });
+
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -462,5 +500,6 @@ public class ManagerexeActivity extends AppCompatActivity {
         TextView activityTime ;
         TextView releaseTime ;
         TextView theme;
+
     }
 }

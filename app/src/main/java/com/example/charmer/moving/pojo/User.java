@@ -20,7 +20,7 @@ public class User implements Parcelable {
     private Integer userpublish;
     private Integer usersucesspublish;
     private Integer userjoin;
-    private Integer userjoinsucessjoin;
+    private Integer usersucessjoin;
     private Integer usergood;
     private Integer userbad;
     public User(){}
@@ -29,9 +29,21 @@ public class User implements Parcelable {
         this.username = username;
         this.userimg = userimg;
     }
-
-    public User(Integer userid) {
+    public User(Integer userid){
         this.userid = userid;
+    }
+
+    public User(Integer userid,String useraccount) {
+        this.userid = userid;
+        this.useraccount = useraccount;
+    }
+
+    public Integer getUsersucessjoin() {
+        return usersucessjoin;
+    }
+
+    public void setUsersucessjoin(Integer usersucessjoin) {
+        this.usersucessjoin = usersucessjoin;
     }
 
     public Integer getUserid() {
@@ -138,13 +150,7 @@ public class User implements Parcelable {
         this.userjoin = userjoin;
     }
 
-    public Integer getUserjoinsucessjoin() {
-        return userjoinsucessjoin;
-    }
 
-    public void setUserjoinsucessjoin(Integer userjoinsucessjoin) {
-        this.userjoinsucessjoin = userjoinsucessjoin;
-    }
 
     public Integer getUsergood() {
         return usergood;
@@ -182,7 +188,7 @@ public class User implements Parcelable {
         dest.writeValue(this.userpublish);
         dest.writeValue(this.usersucesspublish);
         dest.writeValue(this.userjoin);
-        dest.writeValue(this.userjoinsucessjoin);
+        dest.writeValue(this.usersucessjoin);
         dest.writeValue(this.usergood);
         dest.writeValue(this.userbad);
     }
@@ -201,7 +207,7 @@ public class User implements Parcelable {
         this.userpublish = (Integer) in.readValue(Integer.class.getClassLoader());
         this.usersucesspublish = (Integer) in.readValue(Integer.class.getClassLoader());
         this.userjoin = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.userjoinsucessjoin = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.usersucessjoin = (Integer) in.readValue(Integer.class.getClassLoader());
         this.usergood = (Integer) in.readValue(Integer.class.getClassLoader());
         this.userbad = (Integer) in.readValue(Integer.class.getClassLoader());
     }

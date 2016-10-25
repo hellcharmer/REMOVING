@@ -7,11 +7,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -28,19 +32,30 @@ public class ExeInfoparticipate extends AppCompatActivity {
     private BaseAdapter adapter;
     private ListView lv_exercise;
     private TextView title ;
+    private Button canceljoin;
+    private TextView name;
+    private TextView successfulpublishpercent;
+    private TextView appointmentRate;
+    private ImageView imguser;
     private static final String TAG = "ExerciseinfoActivity";
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     private TextView textintroduce;
-
+    VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
+    private String exerciseId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exe_infoparticipate);
         Intent intent = this.getIntent();
-        String exerciseId = intent.getStringExtra("exerciseId");
+        exerciseId = intent.getStringExtra("exerciseId");
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
         title = ((TextView) findViewById(R.id.titleinfo));
+        canceljoin = ((Button) findViewById(R.id.canceljoin));
+        name = ((TextView) findViewById(R.id.name));
+        successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
+        appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
+        imguser = ((ImageView) findViewById(R.id.imguser));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -95,6 +110,15 @@ public class ExeInfoparticipate extends AppCompatActivity {
         lv_exercise.setAdapter(adapter);
         getExerciseList(exerciseId);
 
+        canceljoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(1==ExeSharedMthd.cancelJoin(exerciseId, MyApplication.getUser().getUseraccount(),ExeInfoparticipate.this)){
+                    finish();
+                }
+            }
+        });
+
     }
     private void getExerciseList(String exerciseId) {
         String str = "http://10.40.5.13:8080/moving/getexebyid";
@@ -109,11 +133,15 @@ public class ExeInfoparticipate extends AppCompatActivity {
                 exerciseList.clear();
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exerciseList.addAll(bean.exerciseList);
-                //dongtaiList = bean.dongtailist;   error
-                System.out.println(bean.exerciseList);
+                ds = bean.ds;
                 try{
                     title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
                     textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
+                    name.setText(ds.userName);
+                    successfulpublishpercent.setText(ds.successfulpublishpercent);
+                    appointmentRate.setText(ds.appointmentRate);
+                    xUtilsImageUtils.display(imguser,"http://10.40.5.13:8080/moving/upload/"+ds.userImg);
+
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
