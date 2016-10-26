@@ -172,13 +172,7 @@ public class User implements Parcelable {
         this.userjoin = userjoin;
     }
 
-    public Integer getUserjoinsucessjoin() {
-        return userjoinsucessjoin;
-    }
 
-    public void setUserjoinsucessjoin(Integer userjoinsucessjoin) {
-        this.userjoinsucessjoin = userjoinsucessjoin;
-    }
 
     public Integer getUsergood() {
         return usergood;
@@ -216,9 +210,10 @@ public class User implements Parcelable {
         dest.writeValue(this.userpublish);
         dest.writeValue(this.usersucesspublish);
         dest.writeValue(this.userjoin);
-        dest.writeValue(this.userjoinsucessjoin);
+        dest.writeValue(this.usersucessjoin);
         dest.writeValue(this.usergood);
         dest.writeValue(this.userbad);
+        dest.writeString(this.usertoken);
     }
 
     protected User(Parcel in) {
@@ -235,12 +230,13 @@ public class User implements Parcelable {
         this.userpublish = (Integer) in.readValue(Integer.class.getClassLoader());
         this.usersucesspublish = (Integer) in.readValue(Integer.class.getClassLoader());
         this.userjoin = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.userjoinsucessjoin = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.usersucessjoin = (Integer) in.readValue(Integer.class.getClassLoader());
         this.usergood = (Integer) in.readValue(Integer.class.getClassLoader());
         this.userbad = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.usertoken = in.readString();
     }
 
-    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+    public static final Creator<User> CREATOR = new Creator<User>() {
         @Override
         public User createFromParcel(Parcel source) {
             return new User(source);

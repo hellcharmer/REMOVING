@@ -4,8 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplicition.MyApplication"
@@ -21,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".fragment.one_activity" />
         <activity android:name=".publishInfo.PublishInfo" />
         <activity android:name=".relevantexercise.ExerciseinfoActivity" />
@@ -29,8 +27,10 @@
         <activity android:name=".home_activity.ZixunInfo_xq" />
         <activity android:name=".relevantexercise.ExeInfopublisher" />
         <activity android:name=".relevantexercise.ExeInfoparticipate" />
-
-        <activity android:name=".friendchat.ConversationActivity">
+        <activity android:name=".friendchat.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -38,18 +38,30 @@
 
                 <data
                     android:host="com.example.charmer.moving"
-                android:pathPrefix="/conversation/"
-                android:scheme="rong" />
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
             </intent-filter>
-
         </activity>
         <activity android:name=".relevantexercise.ExeInfoparticipate" />
         <activity android:name=".home_activity.Main2Activity" />
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
-        <activity android:name=".home_activity.Publish_articles"></activity>
-        <activity android:name=".publishInfo.UploadPhotoActivity"></activity>
+        <activity android:name=".home_activity.Publish_articles" />
+        <activity android:name=".publishInfo.UploadPhotoActivity" />
+        <activity android:name=".friendchat.ConversationListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="io.rong.fast"
+                    android:pathPrefix="/conversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
