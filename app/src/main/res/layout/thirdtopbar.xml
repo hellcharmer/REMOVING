@@ -7,6 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:background="@color/themeblue">
         android:background="@color/colorSkybule">
         android:background="@color/themeblue">
         <TextView

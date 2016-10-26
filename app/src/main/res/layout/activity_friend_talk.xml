@@ -4,11 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <ListView
+
+    <fragment
+        android:layout_marginTop="50dp"
+        android:id="@+id/conversationlist"
+        android:name="io.rong.imkit.fragment.ConversationListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_talks"
-        android:dividerHeight="10dp"
-        ></ListView>
+
+        />
 
 </LinearLayout>

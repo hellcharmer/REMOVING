@@ -7,6 +7,7 @@
     <dimen name="swipe_progress_to_top">105dp</dimen>
     <dimen name="swipe_progress_appear_offset">30dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="default_btn_radius_circle">42dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="default_btn_radius_circle">42dp</dimen>
+    <dimen name="activity_fragment">150dp</dimen>
 </resources>

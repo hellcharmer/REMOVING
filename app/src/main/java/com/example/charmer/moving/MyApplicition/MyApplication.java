@@ -13,8 +13,15 @@ import org.xutils.x;
  */
 public class MyApplication extends Application{
 
+
+    public static User getUser() {
+        return user;
+    }
     private static User user =new User(1,"1315462328");//设置一个默认用户
 
+    public void setUser(User user) {
+        this.user = user;
+    }
     public static Context context;
     @Override
     public void onCreate() {
@@ -24,14 +31,5 @@ public class MyApplication extends Application{
         context = getApplicationContext();
 
     }
-    public static Context getContext() {
-        return context;
-    }
-    public static User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+    public static Context getContext(){return context;}
 }

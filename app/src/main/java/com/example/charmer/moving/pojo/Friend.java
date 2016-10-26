@@ -8,38 +8,45 @@ import android.os.Parcelable;
  */
 public class Friend implements Parcelable {
 
-    public Integer friendId;
-    public String photoImg;
+    public Integer friendid;
+    public String photoimg;
     public String name;
     public String title;
     public String content;
-    public Integer dianzan;
-
+   public boolean visbale;
+    public User user;
     // alt+insert
 
     public Friend(){}
 
-    public Friend(Integer friendId, String name, String title, String content) {
-        this.friendId = friendId;
+    public Friend(String title) {
+        this.title = title;
+    }
+
+    public Friend(Integer friendid, String photoimg, String name, String title, String content, boolean visbale, User user) {
+        this.friendid = friendid;
+        this.photoimg = photoimg;
         this.name = name;
         this.title = title;
         this.content = content;
+        this.visbale = visbale;
+        this.user = user;
     }
 
-    public Integer getFriendId() {
-        return friendId;
+    public Integer getFriendid() {
+        return friendid;
     }
 
-    public void setFriendId(Integer friendId) {
-        this.friendId = friendId;
+    public void setFriendid(Integer friendid) {
+        this.friendid = friendid;
     }
 
-    public String getPhotoImg() {
-        return photoImg;
+    public String getPhotoimg() {
+        return photoimg;
     }
 
-    public void setPhotoImg(String photoImg) {
-        this.photoImg = photoImg;
+    public void setPhotoimg(String photoimg) {
+        this.photoimg = photoimg;
     }
 
     public String getName() {
@@ -66,12 +73,20 @@ public class Friend implements Parcelable {
         this.content = content;
     }
 
-    public Integer getDianzan() {
-        return dianzan;
+    public boolean isVisbale() {
+        return visbale;
     }
 
-    public void setDianzan(Integer dianzan) {
-        this.dianzan = dianzan;
+    public void setVisbale(boolean visbale) {
+        this.visbale = visbale;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -81,21 +96,23 @@ public class Friend implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(this.friendId);
-        dest.writeString(this.photoImg);
+        dest.writeValue(this.friendid);
+        dest.writeString(this.photoimg);
         dest.writeString(this.name);
         dest.writeString(this.title);
         dest.writeString(this.content);
-        dest.writeValue(this.dianzan);
+        dest.writeByte(this.visbale ? (byte) 1 : (byte) 0);
+        dest.writeParcelable(this.user, flags);
     }
 
     protected Friend(Parcel in) {
-        this.friendId = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.photoImg = in.readString();
+        this.friendid = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.photoimg = in.readString();
         this.name = in.readString();
         this.title = in.readString();
         this.content = in.readString();
-        this.dianzan = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.visbale = in.readByte() != 0;
+        this.user = in.readParcelable(User.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<Friend> CREATOR = new Parcelable.Creator<Friend>() {

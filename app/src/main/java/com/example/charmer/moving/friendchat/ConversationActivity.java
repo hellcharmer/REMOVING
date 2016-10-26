@@ -10,8 +10,8 @@ import com.example.charmer.moving.R;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.Conversation;
+import io.rong.imlib.model.Message;
 import io.rong.imlib.model.UserInfo;
-
 
 public class ConversationActivity extends AppCompatActivity {
 
@@ -33,11 +33,9 @@ public class ConversationActivity extends AppCompatActivity {
             }
 
             @Override
-            public boolean onMessageClick(Context context, View view, io.rong.imlib.model.Message message) {
+            public boolean onMessageClick(Context context, View view, Message message) {
                 return false;
             }
-
-
 
             @Override
             public boolean onMessageLinkClick(Context context, String s) {
@@ -45,10 +43,9 @@ public class ConversationActivity extends AppCompatActivity {
             }
 
             @Override
-            public boolean onMessageLongClick(Context context, View view, io.rong.imlib.model.Message message) {
+            public boolean onMessageLongClick(Context context, View view, Message message) {
                 return false;
             }
-
         });
     }
 }

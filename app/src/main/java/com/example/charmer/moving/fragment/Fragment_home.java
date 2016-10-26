@@ -1177,10 +1177,6 @@ public class Fragment_home extends Fragment {
 
            final SharedPreferences sharedPreferences = getActivity().getSharedPreferences("dianzanshu", Context.MODE_PRIVATE);
 
-
-
-
-
             //打气筒
              ViewHolder viewHolder=null;
 
@@ -1189,9 +1185,12 @@ public class Fragment_home extends Fragment {
 //            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);
 //            editor.putString(zixun.zixunId+"state", zixun.state);
             editor.commit();//提交修改
+//            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);//??
+            editor.putString(zixun.zixunId+"state", zixun.state);//??
+            editor.commit();//提交修改 ????
             if((sharedPreferences.getString(zixun.zixunId+"state", zixun.state)).equals("1")){
                 choiceZan.add(zixun.zixunId);
-            }
+            }//??可优化
             if(convertView==null){
                 viewHolder =new ViewHolder();
 

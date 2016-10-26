@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--WheelView 属性-->
+    <declare-styleable name="Friend_titlebar">
+     <attr name="rihgt" format="reference|integer"></attr>
+        <attr name="left" format="reference|integer"></attr>
+        <attr name="toutext" format="string"></attr>
+    </declare-styleable>
+
     <declare-styleable name="WheelView">
         <!--set number of item displayed, default is 3-->
         <attr name="npv_ShowCount" format="reference|integer" />
@@ -38,9 +43,8 @@
         <attr name="npv_AlternativeHint" format="reference|string" />
 
     </declare-styleable>
-    <declare-styleable name="Friend_titlebar">
-        <attr name="rihgt" format="reference|integer"></attr>
-        <attr name="left" format="reference|integer"></attr>
-        <attr name="toutext" format="string"></attr>
-    </declare-styleable>
+
 </resources>
+
+
+
