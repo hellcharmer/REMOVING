@@ -39,7 +39,7 @@ public class ListActivityBean {
         public String  state;
         public Integer zixunId;
         public String photoImg;
-        public String author;
+        public String publisherimg;
         public String chenghao;
         public String type;
         public String publisher;
@@ -47,6 +47,7 @@ public class ListActivityBean {
         public String content;
         public Integer likes;
         public Integer collections;
+        public Integer pingluns;
 
         public String title;
 

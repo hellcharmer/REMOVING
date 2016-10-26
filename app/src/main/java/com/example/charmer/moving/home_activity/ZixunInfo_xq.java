@@ -324,7 +324,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                 viewHolder = (ViewHolder) convertView.getTag();
             }
             //  System.out.println("=============="+imgs[0]);
-            xUtilsImageUtils.display(viewHolder.image, HttpUtils.host + imgs[position]);
+            xUtilsImageUtils.display(viewHolder.image, HttpUtils.host +"upload/"+ imgs[position]);
             return convertView;
         }
     }

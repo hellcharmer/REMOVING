@@ -364,7 +364,8 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         for(int i=0;i<imagePaths.size();i++){
             //头像的存储完整路径
             file.add(i,new File(imagePaths.get(i)));
-            str = str +imagePaths.get(i)+",";
+
+            str = str +imagePaths.get(i).substring(29)+",";
             System.out.println("str========="+str);
         }
 
