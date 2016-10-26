@@ -30,4 +30,6 @@
     <color name="default_btn_red">#FF5E5E</color>
     <color name="default_window_bg">#f5f5f9</color>
     <color name="Skybule">#af0099ff</color>
+    <color name="dark_grey">#999999</color>
+    <color name="bright_grey">#dedede</color>
 </resources>

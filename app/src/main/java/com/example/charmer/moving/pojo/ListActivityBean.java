@@ -42,10 +42,12 @@ public class ListActivityBean {
         public String author;
         public String chenghao;
         public String type;
+        public String publisher;
         public String timeStamp;
         public String content;
         public Integer likes;
-        public Integer likeNumber;
+        public Integer collections;
+
         public String title;
 
         public Integer getZixunId() {
