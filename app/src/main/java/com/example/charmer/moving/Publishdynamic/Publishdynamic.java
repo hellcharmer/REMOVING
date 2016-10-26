@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;

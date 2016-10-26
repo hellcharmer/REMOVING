@@ -28,6 +28,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,12 +37,14 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.MyView.MyGridView;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.Constant;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.contantData.ToastUtil;
+import com.example.charmer.moving.home_activity.SearchActivity;
 import com.example.charmer.moving.home_activity.ZixunInfo_xq;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
@@ -92,7 +95,7 @@ public class Fragment_home extends Fragment {
     private ObjectAnimator titlebarAnimator;
     private ObjectAnimator bottomAnimator;
     private ObjectAnimator plusAnimator;
-
+    private Button bt_search_home;
     private static final String TAG = "Fragment_home";
 
     private LoadMoreListView lv_zixun;
@@ -193,7 +196,7 @@ public class Fragment_home extends Fragment {
             public void onClick(View v) {
                 //重新加载数据
                 getExerciseList();
-                getZixunlist(1);
+                getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUserid());
             }
         });
         vp_zixun.setCurrentItem(0);
@@ -202,7 +205,7 @@ public class Fragment_home extends Fragment {
 
         emptyLayout.showLoading("正在加载，请稍后");
         getExerciseList();
-        getZixunlist(page_zixun);
+        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUserid());
         //list 的每个点击事件
         lv_zixun.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -213,15 +216,17 @@ public class Fragment_home extends Fragment {
                 startActivity(intent);
             }
         });
+        bt_search_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),SearchActivity.class);
 
+                startActivity(intent);
+            }
+        });
 
 
     }
-
-
-
-
-
 
     private void initlistviews() {
 
@@ -368,7 +373,7 @@ public class Fragment_home extends Fragment {
     private void initData() {
         titleLayout = (LinearLayout)view.findViewById(R.id.title_lay);
         layout = (LinearLayout)view.findViewById(R.id.lay);
-
+        bt_search_home = (Button)view.findViewById(R.id.bt_search_home);
         mImageView = (ImageView)view.findViewById(R.id.img1);
         vp_zixun = ((ViewPager)view.findViewById(R.id.vp_zixun));
         plus_rl=(RelativeLayout)getActivity().findViewById(R.id.plus_rl);
@@ -432,7 +437,7 @@ public class Fragment_home extends Fragment {
                     case 1000:
                         lv_zixun.setAdapter(adapter1);
                         getExerciseList();
-                        getZixunlist(page_zixun);
+                        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUserid());
 
                         break;
                     case 1001:
@@ -548,7 +553,7 @@ public class Fragment_home extends Fragment {
                     @Override
                     public void run() {
                     getExerciseList();
-                      getZixunlist(1);
+                      getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUserid());
 
 
                         //调用该方法结束刷新，否则加载圈会一直在
@@ -713,6 +718,7 @@ public class Fragment_home extends Fragment {
         });
 
        }
+
     private void loadZixunMore() {
 
         new Thread(){
@@ -726,7 +732,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_zixun<totalpage_zixun) {
 
-                    getZixunlist(++page_zixun);
+                    getZixunlist(++page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUserid());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -865,10 +871,11 @@ public class Fragment_home extends Fragment {
     }
 
 
-    private void getZixunlist(int page) {
+    private void getZixunlist(int page,Integer userId) {
 
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain");
         params.addQueryStringParameter("page",page+"");
+        params.addQueryStringParameter("userId",userId+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -912,6 +919,7 @@ public class Fragment_home extends Fragment {
         });
 
     }
+
     private void getExerciseList() {
 
         //GPS定位值==place
@@ -957,6 +965,7 @@ public class Fragment_home extends Fragment {
         });
 
     }
+
     private void getZixunlist_basketball(int page) {
         String url= HttpUtils.host+"toappmain";//访问网络的url
         RequestParams params = new RequestParams(url);
@@ -1000,6 +1009,7 @@ public class Fragment_home extends Fragment {
         });
 
     }
+
     private void getZixunlist_swim(int page) {
 
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain?type=游泳");
@@ -1072,6 +1082,7 @@ public class Fragment_home extends Fragment {
         });
 
     }
+
     private void deleteDianZanNum(Integer zixunId){
         RequestParams params = new RequestParams(HttpUtils.host+"deletezannum");
         params.addQueryStringParameter("zixunId",zixunId+"");
@@ -1341,6 +1352,7 @@ public class Fragment_home extends Fragment {
         }
 
 }
+
     private static class ViewHolder{
         ImageView iv_photo;
         ImageView huodong_tx;

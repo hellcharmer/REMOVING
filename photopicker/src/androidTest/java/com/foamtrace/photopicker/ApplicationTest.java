@@ -1,4 +1,4 @@
-package com.jxw.moving;
+package com.foamtrace.photopicker;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

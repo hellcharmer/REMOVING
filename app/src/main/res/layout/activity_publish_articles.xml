@@ -77,11 +77,13 @@
                 android:hint="分享运动快乐..."
                 android:gravity="top|left"
                 android:layout_width="match_parent"
-                android:layout_height="500dp" />
-            <ImageView
-                android:id="@+id/iv_test"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <com.example.charmer.moving.MyView.GridView_picture
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="@dimen/space_size"
+                android:verticalSpacing="@dimen/space_size" />
         </LinearLayout>
     </ScrollView>
     <TextView

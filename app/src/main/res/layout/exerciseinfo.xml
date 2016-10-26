@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="发布成功率"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/name"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/fabulv"
                 android:layout_alignTop="@id/fabulv"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:layout_marginLeft="15dp"
                 />
             <TextView
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="参加成功率"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/fabulv"
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/canjialv"
                 android:layout_alignTop="@id/canjialv"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:layout_marginLeft="15dp"
                 />
         </RelativeLayout>

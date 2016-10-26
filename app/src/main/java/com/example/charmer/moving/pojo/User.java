@@ -172,6 +172,13 @@ public class User implements Parcelable {
         this.userjoin = userjoin;
     }
 
+    public Integer getUserjoinsucessjoin() {
+        return usersucessjoin;
+    }
+
+    public void setUserjoinsucessjoin(Integer userjoinsucessjoin) {
+        this.usersucessjoin = userjoinsucessjoin;
+    }
 
     public Integer getUsergood() {
         return usergood;
@@ -209,6 +216,7 @@ public class User implements Parcelable {
         dest.writeValue(this.userpublish);
         dest.writeValue(this.usersucesspublish);
         dest.writeValue(this.userjoin);
+        dest.writeValue(this.usersucessjoin);
         dest.writeValue(this.usergood);
         dest.writeValue(this.userbad);
     }
@@ -227,6 +235,7 @@ public class User implements Parcelable {
         this.userpublish = (Integer) in.readValue(Integer.class.getClassLoader());
         this.usersucesspublish = (Integer) in.readValue(Integer.class.getClassLoader());
         this.userjoin = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.usersucessjoin = (Integer) in.readValue(Integer.class.getClassLoader());
         this.usergood = (Integer) in.readValue(Integer.class.getClassLoader());
         this.userbad = (Integer) in.readValue(Integer.class.getClassLoader());
     }

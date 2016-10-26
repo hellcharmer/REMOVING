@@ -49,7 +49,7 @@
         android:layout_height="48dp"
         android:orientation="horizontal">
         <Button
-
+            android:id="@+id/bt_search_home"
             android:drawableLeft="@drawable/tab_home_find_search2"
             android:padding="8dp"
             android:paddingTop="8dp"

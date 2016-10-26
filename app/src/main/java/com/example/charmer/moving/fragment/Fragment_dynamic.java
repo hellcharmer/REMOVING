@@ -57,7 +57,15 @@ public class Fragment_dynamic extends BaseFragment {
     private boolean isRunning = false;
     private Integer dynamic_pageNo = 1; //第一页
     private Integer total_pageSize = 5; //总共多少页
-
+    Map<Integer,Boolean> flag = new HashMap<>();
+    //记录选中的位置 checkbox 点赞
+    Map<Integer,Boolean> checkStatus = new HashMap<>();
+    //记录likenum的位置
+    Map<Integer,Integer> likenums = new HashMap<>();
+    //有没有点过
+    Map<Integer,Boolean> isliked=new HashMap<>();
+    //是不是最新
+    Map<Integer,Boolean> is_now=new HashMap<>();
     InfosAdapter infosAdapter;
     List<Info> infoList = new ArrayList<Info>();
     @InjectView(R.id.lv_info)
@@ -75,7 +83,7 @@ public class Fragment_dynamic extends BaseFragment {
     private ObjectAnimator bottomAnimator;
     private RelativeLayout rl_test;
     private LinearLayout mBottom;
-    private boolean is_now=true;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -215,13 +223,7 @@ public class Fragment_dynamic extends BaseFragment {
     }
 
     class InfosAdapter extends CommonAdapter<Info>{
-        Map<Integer,Boolean> flag = new HashMap<>();
-        //记录选中的位置 checkbox 点赞
-        Map<Integer,Boolean> checkStatus = new HashMap<>();
-        //记录likenum的位置
-        Map<Integer,Integer> likenums = new HashMap<>();
-        //有没有点过
-        Map<Integer,Boolean> isliked=new HashMap<>();
+
 
         public InfosAdapter(Context context, List<Info> lists, int layoutId) {
             super(context, lists, layoutId);
@@ -232,6 +234,9 @@ public class Fragment_dynamic extends BaseFragment {
                 checkStatus.put(i,false);
             }
 
+            for(int i = 0;i<lists.size();i++){
+                is_now.put(i,true);
+            }
             //初始化likenum
             for(int i = 0;i<lists.size();i++){
                 likenums.put(i,lists.get(i).getInfoLikeNum());
@@ -251,7 +256,10 @@ public class Fragment_dynamic extends BaseFragment {
             //取出控件
             final CheckBox iv_like = viewHolder.getViewById(R.id.iv_like);
             final boolean flagmsg = info.isInfoState();
-            if(is_now){
+            if (is_now.get(position)==null){
+                is_now.put(position,true);
+            }
+            if(is_now.get(position)){
                 likenums.put(position,info.getInfoLikeNum());
                 if(flagmsg){
                     iv_like.setChecked(true);
@@ -260,6 +268,17 @@ public class Fragment_dynamic extends BaseFragment {
                     iv_like.setChecked(false);
                     checkStatus.put(position,false);
                 }}
+               if (checkStatus.get(position)==null){
+                   likenums.put(position,info.getInfoLikeNum());
+                   if(flagmsg){
+                       iv_like.setChecked(true);
+                       checkStatus.put(position,true);
+                   }else{
+                       iv_like.setChecked(false);
+                       checkStatus.put(position,false);
+                   }
+               }
+
 
 
             iv_like.setChecked(checkStatus.get(position));
@@ -303,11 +322,11 @@ public class Fragment_dynamic extends BaseFragment {
                     if(checkStatus.get(position)){
                         iv_like.setChecked(false);
                         checkStatus.put(position,false);
-                        is_now=false;
+                        is_now.put(position,false);
                     }else{
                         iv_like.setChecked(true);
                         checkStatus.put(position,true);
-                        is_now=false;
+                        is_now.put(position,false);
                     }
 
                     RequestParams requestParams1 = new RequestParams(HttpUtils.host_dynamic+"updatelikeservlet");
@@ -348,7 +367,7 @@ public class Fragment_dynamic extends BaseFragment {
                             likeNum = Integer.parseInt(tv_likeNumber.getText().toString()) + 1;
                             tv_likeNumber.setText(likeNum+"");
                             likenums.put((int)v.getTag(),likeNum);
-                            is_now=false;
+                            is_now.put(position,false);
                             RequestParams requestParams = new RequestParams(HttpUtils.host_dynamic+"updateaddinfolikenum");
                             requestParams.addQueryStringParameter("infoId",info.getInfoId()+"");
                             x.http().get(requestParams, new Callback.CommonCallback<String>() {
@@ -385,7 +404,7 @@ public class Fragment_dynamic extends BaseFragment {
                             likeNum = Integer.parseInt(tv_likeNumber.getText().toString()) -1;
                             tv_likeNumber.setText(likeNum+"");
                             likenums.put((int)v.getTag(),likeNum);
-                            is_now=false;
+                            is_now.put(position,false);
                             RequestParams requestParams = new RequestParams(HttpUtils.host_dynamic+"updatedeleteinfolikenum");
                             requestParams.addQueryStringParameter("infoId",info.getInfoId()+"");
                             x.http().get(requestParams, new Callback.CommonCallback<String>() {
@@ -482,8 +501,13 @@ public class Fragment_dynamic extends BaseFragment {
                     public void run() {
                         dynamic_pageNo = 1;
                         getData(dynamic_pageNo);
+                        checkStatus.clear();
+                        likenums.clear();
+                        flag.clear();
+                        isliked.clear();
                         //调用该方法结束刷新，否则加载圈会一直在
                         dynamic_refresh.setRefreshing(false);
+
                     }
                 },1000);
             }
