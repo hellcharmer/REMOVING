@@ -33,6 +33,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1" >
             <Button
+                android:id="@+id/cancelEnroll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -92,7 +93,6 @@
                         android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HELLCHARMER"
                         android:textSize="20sp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="20dp"
@@ -108,6 +108,16 @@
                         android:layout_below="@id/name"
                         />
                     <TextView
+                        android:id="@+id/successfulpublishpercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/fabulv"
+                        android:layout_alignTop="@id/fabulv"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="15dp"
+                        />
+                    <TextView
+                        android:id="@+id/canjialv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="参加成功率"
@@ -115,6 +125,15 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_below="@id/fabulv"
+                        />
+                    <TextView
+                        android:id="@+id/appointmentRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/canjialv"
+                        android:layout_alignTop="@id/canjialv"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="15dp"
                         />
                 </RelativeLayout>
 

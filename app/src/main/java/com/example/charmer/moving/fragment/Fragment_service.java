@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -29,6 +30,7 @@ import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.relevantexercise.ExerciseinfoActivity;
 import com.example.charmer.moving.relevantexercise.ManagerexeActivity;
 import com.example.charmer.moving.relevantexercise.PublishExe;
+import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -171,13 +173,16 @@ public class Fragment_service extends Fragment {
                     viewHolder = new ViewHolder();
                 // 打气筒  view就是指每一个listview item
                     convertView = View.inflate(getActivity(), R.layout.activity_exercise, null);
-                    viewHolder.publisherId = ((TextView) convertView.findViewById(R.id.publisherId));
+                    viewHolder.publisher = ((TextView) convertView.findViewById(R.id.publisher));
+                    System.out.println(viewHolder.publisher+"===-=-=-=-");
                     viewHolder.type = ((TextView) convertView.findViewById(R.id.type));
                     viewHolder.theme = ((TextView) convertView.findViewById(R.id.theme));
                     viewHolder.place = ((TextView) convertView.findViewById(R.id.place));
                     viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.activityTime));
                     viewHolder.currentNumber = ((TextView) convertView.findViewById(R.id.currentNumber));
                     viewHolder.title = ((TextView) convertView.findViewById(R.id.title));
+                    viewHolder.userImage = ((ImageView) convertView.findViewById(R.id.userImage));
+                    
                     convertView.setTag(viewHolder);//缓存对象
                 }else{
                     viewHolder = (ViewHolder)convertView.getTag();
@@ -185,13 +190,14 @@ public class Fragment_service extends Fragment {
                 VariableExercise.Exercises exercises = exerciseList.get(position);
 
                 try {
-                    viewHolder.publisherId.setText(URLDecoder.decode((exercises.publisherId).toString(),"utf-8"));
+                    viewHolder.publisher.setText(URLDecoder.decode(exercises.userName,"utf-8"));
                     viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
                     viewHolder.theme.setText(URLDecoder.decode(exercises.theme,"utf-8"));
                     viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
                     viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
                     viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
                     viewHolder.currentNumber.setText(URLDecoder.decode(exercises.currentNumber.toString(),"utf-8"));
+                    xUtilsImageUtils.display(viewHolder.userImage,"http://10.40.5.13:8080/moving/upload/"+exercises.userImage);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
@@ -408,7 +414,7 @@ public class Fragment_service extends Fragment {
         }
 
     private static class ViewHolder{
-        TextView publisherId ;
+        TextView publisher ;
         TextView title ;
         TextView type ;
         TextView theme ;
@@ -418,6 +424,7 @@ public class Fragment_service extends Fragment {
         TextView paymentMethod ;
         TextView currentNumber ;
         TextView totalNumber ;
+        ImageView userImage;
 }
 
     private class Requirement {

@@ -20,7 +20,7 @@ public class User implements Parcelable {
     private Integer userpublish;
     private Integer usersucesspublish;
     private Integer userjoin;
-    private Integer userjoinsucessjoin;
+    private Integer usersucessjoin;
     private Integer usergood;
     private Integer userbad;
     private String usertoken;
@@ -53,6 +53,19 @@ public class User implements Parcelable {
 
     public User(Integer userid) {
         this.userid = userid;
+    }
+
+    public User(Integer userid,String useraccount) {
+        this.userid = userid;
+        this.useraccount = useraccount;
+    }
+
+    public Integer getUsersucessjoin() {
+        return usersucessjoin;
+    }
+
+    public void setUsersucessjoin(Integer usersucessjoin) {
+        this.usersucessjoin = usersucessjoin;
     }
 
     public Integer getUserid() {

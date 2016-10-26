@@ -8,17 +8,16 @@ import com.example.charmer.moving.pojo.User;
 
 import org.xutils.x;
 
-import io.rong.imkit.RongIM;
-
 /**
  * Created by Charmer on 2016/9/13.
  */
 public class MyApplication extends Application{
 
-    private static User user =new User(1);//设置一个默认用户
+
     public static User getUser() {
         return user;
     }
+    private static User user =new User(1,"1315462328");//设置一个默认用户
 
     public void setUser(User user) {
         this.user = user;
@@ -29,8 +28,8 @@ public class MyApplication extends Application{
         super.onCreate();
         x.Ext.init(this);
         x.Ext.setDebug(BuildConfig.DEBUG); // 是否输出debug日志, 开启debug会影响性能.
-        RongIM.init(this);
-        context =getApplicationContext();
+        context = getApplicationContext();
+
     }
     public static Context getContext(){return context;}
 }
