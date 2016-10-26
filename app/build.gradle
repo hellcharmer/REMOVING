@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 23
     buildToolsVersion "24.0.2"
+
     defaultConfig {
-        applicationId "com.jxw.moving"
-        minSdkVersion 23
-        targetSdkVersion 24
+        applicationId "com.example.charmer.moving"
+        minSdkVersion 15
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -20,10 +20,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'org.xutils:xutils:3.3.36'
+    compile files('libs/gson-2.3.1.jar')
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile project(':libs:pulltorefresh')
+    compile 'com.baoyz.swipemenulistview:library:1.3.0'
+    compile project(':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable')
+    compile project(':library')
+    compile files('libs/android-support-v7-recyclerview.jar')
+    compile project(':photopicker')
 }

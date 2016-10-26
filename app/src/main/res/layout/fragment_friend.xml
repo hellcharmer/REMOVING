@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="visible"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:text="加载中，请稍后..."
+        android:id="@+id/tv_jiazai"
+        android:textColor="#7F7F7F"
+        android:layout_alignLeft="@id/progressbar"
+        android:layout_below="@id/progressbar"
+        />
+
+      <com.example.charmer.moving.utils.NoScrollViewPager
+          android:layout_width="match_parent"
+          android:layout_height="fill_parent"
+          android:id="@+id/vp_friend"
+          android:layout_below="@+id/rl_toptitle" />
+
+
+
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/rl_toptitle"
+       >
+    <com.example.charmer.moving.utils.Friend_titlebar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/fd_talk"
+        app:left="@drawable/tou"
+        app:rihgt="@drawable/goodfriend"
+        app:toutext="会话"
+        />
+
+      <com.example.charmer.moving.utils.Friend_titlebar
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:id="@+id/fd_friend"
+          app:left="@drawable/talk"
+          app:rihgt="@drawable/qun"
+          app:toutext="好友"
+          android:visibility="gone"
+          />
+    <com.example.charmer.moving.utils.Friend_titlebar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/fd_qun"
+        app:left="@drawable/goodfriend"
+        app:rihgt="@drawable/tlz"
+        app:toutext="群组"
+        android:visibility="gone"
+        />
+    <com.example.charmer.moving.utils.Friend_titlebar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/fd_tlz"
+        app:left="@drawable/qun"
+        app:rihgt="@drawable/talk"
+        app:toutext="讨论"
+        android:visibility="gone"
+        />
+   </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:id="@+id/ll_sreach"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@drawable/friend_shape"
+           android:hint="搜索好友/群"
+           android:textSize="25dp"
+           android:textColor="#fff"
+           android:textColorHint="#fff"
+
+           />
+    </LinearLayout>
+
+</RelativeLayout>

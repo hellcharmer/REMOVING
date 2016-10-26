@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/titletop"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorSkybule">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/exercisesinfoes"
+            android:textSize="24sp"
+            android:textColor="#fff"
+            />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/main_bottom1"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/canceljoin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:text="离开活动"
+                android:background="@drawable/nobordebtnwithcolor"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:text="讨论组"
+                android:background="@drawable/nobordebtnwithcolor"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titletop"
+        android:layout_above="@id/main_bottom1"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:id="@+id/infohead"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/nobordeframe"
+                android:layout_margin="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/imguser"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@mipmap/app_icon"
+                    android:layout_centerVertical="true"
+                    />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/imguser"
+
+                    >
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        />
+                    <TextView
+                        android:id="@+id/fabulv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发布成功率"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@id/name"
+                        />
+                    <TextView
+                        android:id="@+id/successfulpublishpercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/fabulv"
+                        android:layout_alignTop="@id/fabulv"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="15dp"
+                        />
+                    <TextView
+                        android:id="@+id/canjialv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="参加成功率"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@id/fabulv"
+                        />
+                    <TextView
+                        android:id="@+id/appointmentRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/canjialv"
+                        android:layout_alignTop="@id/canjialv"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="15dp"
+                        />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/infomid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nobordeframewithcolor"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/infohead"
+                android:padding="10dp"
+                android:paddingTop="5dp"
+                android:layout_margin="10dp"
+                >
+
+                <ListView
+                    android:id="@+id/exemidinfolist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:paddingBottom="5dp"
+                    >
+
+                </ListView>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/titleinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/infohead"
+                android:textSize="22sp"
+                android:gravity="center"
+                />
+
+            <RelativeLayout
+                android:id="@+id/infoesfoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nobordeframe"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/infomid"
+                android:layout_margin="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="说明"
+                        android:textSize="24sp"
+                        android:textColor="@color/commonfontcolor"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="15dp"
+                        />
+                    <TextView
+                        android:id="@+id/textintroduce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="@color/commonfontcolor"
+                        android:layout_gravity="center"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/joiner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nobordeframe"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/infoesfoot"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="已参加用户"
+                    android:textSize="18sp"
+                    android:textColor="@color/themeblue"
+                    android:layout_margin="10dp"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
