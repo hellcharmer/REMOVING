@@ -4,8 +4,20 @@
         "source": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
     },
     {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
         "source": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\indicator_arrow.png",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\indicator_arrow.png"
     },
     {
         "merged": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\indicator_arrow.png",
