@@ -67,8 +67,7 @@ import io.rong.imlib.model.UserInfo;
 public class Fragment_friend extends Fragment implements View.OnClickListener {
 
     private NoScrollViewPager vpFriend;
-    @InjectView(R.id.iv_search)
-    ImageView ivSearch;
+
     @InjectView(R.id.ll_sreach)
     LinearLayout llSreach;
     @InjectView(R.id.progressbar)
@@ -212,11 +211,11 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
         //刷新处理
         re_friend = ((SwipeRefreshLayout) v2.findViewById(R.id.re_friend));
         //设置下拉刷新加载圈的颜色
-        re_friend.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
+        re_friend.setColorSchemeColors(getResources().getColor(R.color.colorSkybule));
         //设置下拉加载圈出现距离顶部的位置
-        re_friend.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.activity_horizontal_margin));
+        re_friend.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.activity_fragment));
         //设置下拉加载圈转动时距离顶部的位置
-        re_friend.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.activity_horizontal_margin));
+        re_friend.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.activity_fragment));
         //加载圈事件
         refreshData();
         //好友listview处理
@@ -411,6 +410,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
 
         @Override
         public void convert(ViewHolder viewHolder, Friend friend, int position) {
+
             Log.i("daqi","打气了");
            TextView tv_username= ((TextView) viewHolder.getViewById(R.id.tv_username));
             tv_username.setText(friend.getUser().getUsername());

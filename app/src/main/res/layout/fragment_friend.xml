@@ -78,13 +78,16 @@
         android:id="@+id/ll_sreach"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <ImageView
-            android:background="#fff"
-            android:id="@+id/iv_search"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-             android:src="@drawable/search"
-            />
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@drawable/friend_shape"
+           android:hint="搜索好友/群"
+           android:textSize="25dp"
+           android:textColor="#fff"
+           android:textColorHint="#fff"
+
+           />
     </LinearLayout>
 
 </RelativeLayout>

@@ -47,7 +47,7 @@
         android:layout_toRightOf="@id/nowact"
         android:text="最新参加的活动"
         android:textSize="20dp"
-        android:textColor="#7f7f7f"
+        android:textColor="#fff"
         android:layout_alignBottom="@id/nowact"
 
         />

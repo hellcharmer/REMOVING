@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_write;
     private TextView dishui_tv, guoshui_tv;
     //lzy的改动
+    private ImageView iv_huan;
     private Integer j;
     private Button btn_friends;
     private List<User> usersToken=new ArrayList<User>();//所有user的Token
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             switch (msg.what){
                 //handleMessage界面更新
                 case 0:
+                    iv_huan.setVisibility(View.GONE);
                     btn_friends.setVisibility(View.VISIBLE);
                     break;
             }
@@ -401,7 +403,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         // TODO Auto-generated method stub
         //lzy的改动
-
+        iv_huan = ((ImageView) findViewById(R.id.iv_huan));
         btn_friends = ((Button) findViewById(R.id.friends));
         //
         plus_rl = (RelativeLayout) findViewById(R.id.plus_rl);
