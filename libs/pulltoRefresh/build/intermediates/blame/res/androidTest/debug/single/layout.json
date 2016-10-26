@@ -1,10 +1,18 @@
 [
     {
-        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
-        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
     },
     {
-        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
-        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
     }
 ]

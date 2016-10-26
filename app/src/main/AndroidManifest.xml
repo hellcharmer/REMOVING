@@ -23,7 +23,6 @@
         </activity>
 
         <activity android:name=".fragment.one_activity" />
-        <activity android:name=".publishInfo.PublishInfo" />
         <activity android:name=".relevantexercise.ExerciseinfoActivity" />
         <activity android:name=".relevantexercise.ManagerexeActivity" />
         <activity android:name=".home_activity.ZixunInfo_xq" />
@@ -44,11 +43,11 @@
 
         </activity>
         <activity android:name=".relevantexercise.ExeInfoparticipate" />
-
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
+        <activity android:name=".home_activity.Publish_articles" />
+        <activity android:name=".Publishdynamic.Publishdynamic"></activity>
         <activity android:name=".home_activity.Publish_articles"></activity>
-        <activity android:name=".publishInfo.UploadPhotoActivity"></activity>
         <activity android:name=".home_activity.SearchActivity"></activity>
 
         <activity
@@ -60,6 +59,11 @@
             android:theme="@style/PhotoPickerTheme"
             />
 
+        <activity android:name="com.lidong.photopicker.PhotoPickerActivity"
+            android:theme="@style/PhotoPickerTheme"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity android:name="com.lidong.photopicker.PhotoPreviewActivity"
+            android:theme="@style/PhotoPickerTheme"></activity>
     </application>
 
 </manifest>

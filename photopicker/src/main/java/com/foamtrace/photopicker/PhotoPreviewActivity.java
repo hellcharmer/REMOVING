@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.foamtrace.photopicker.widget.ViewPagerFixed;
+import com.lidong.photopicker.R;
 
 import java.util.ArrayList;
 

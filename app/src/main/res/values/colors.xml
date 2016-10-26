@@ -25,7 +25,7 @@
     <color name="publish_grey">#a3a3a3</color>
     <color name="refreshcolor">#9770AE</color>
 
-
+    <color name="photopicker_background">#181819</color>
     <color name="default_text_color_normal">#383838</color>
     <color name="default_btn_pressed">#3179cb</color>
     <color name="default_btn_enable_false">#dedfe0</color>
@@ -34,5 +34,5 @@
     <color name="Skybule">#af0099ff</color>
     <color name="dark_grey">#999999</color>
     <color name="bright_grey">#dedede</color>
-    <color name="photopicker_background">#181819</color>
+
 </resources>

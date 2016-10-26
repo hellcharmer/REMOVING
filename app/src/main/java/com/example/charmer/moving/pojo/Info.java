@@ -115,6 +115,10 @@ public class Info implements Serializable{
 		this.infoDate = infoDate;
 		this.user = user;
 	}
+	public Info(String infoContent , User user) {
+		this.infoContent = infoContent;
+		this.user = user;
+	}
 }
 
 

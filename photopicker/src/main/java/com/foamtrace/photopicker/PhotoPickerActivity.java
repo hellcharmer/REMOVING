@@ -25,6 +25,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.foamtrace.photopicker.intent.PhotoPreviewIntent;
+import com.lidong.photopicker.R;
 
 import java.io.File;
 import java.io.IOException;
