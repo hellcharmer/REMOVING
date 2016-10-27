@@ -186,13 +186,13 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
 
         System.out.println("============" + UUID.randomUUID());
-        return sdf.format(date) + "_" + UUID.randomUUID() + ".png";
+        return sdf.format(date) + "_" + UUID.randomUUID() + ".jpg";
     }
 
-    private void fabuhuondong(Integer userId) {
+    private void fabuhuondong(String userId) {
 
         RequestParams params = new RequestParams(HttpUtils.host+"addzixun");
-        params.addQueryStringParameter("userId",userId+"");
+        params.addQueryStringParameter("userId",userId);
         params.addQueryStringParameter("title",publish_title.getText().toString());
         params.addQueryStringParameter("picture",str);
         params.addQueryStringParameter("content",publish_content.getText().toString());
@@ -234,11 +234,12 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                if("true".equals(result)){
-                    Toast.makeText(Publish_articles.this,"发布成功",Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(Publish_articles.this,"发布失败",Toast.LENGTH_SHORT).show();
-                }
+//                if("true".equals(result)){
+//                    Toast.makeText(Publish_articles.this,"发布成功",Toast.LENGTH_SHORT).show();
+//                }else {
+//                    Toast.makeText(Publish_articles.this,"发布失败",Toast.LENGTH_SHORT).show();
+//                }
+                System.out.println("---------------===="+result);
             }
 
             @Override
@@ -348,7 +349,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.iv_publish_btn:
                 Toast.makeText(Publish_articles.this,"正在发布...",Toast.LENGTH_SHORT).show();
-                fabuhuondong(((MyApplication)Publish_articles.this.getApplication()).getUser().getUserid());
+                fabuhuondong(((MyApplication)Publish_articles.this.getApplication()).getUser().getUseraccount());
                 sendImg();
                 break;
 
@@ -364,7 +365,8 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         for(int i=0;i<imagePaths.size();i++){
             //头像的存储完整路径
             file.add(i,new File(imagePaths.get(i)));
-
+            System.out.println(imagePaths.size());
+//            /storage/emulated/0/Pictures/
             str = str +imagePaths.get(i).substring(29)+",";
             System.out.println("str========="+str);
         }

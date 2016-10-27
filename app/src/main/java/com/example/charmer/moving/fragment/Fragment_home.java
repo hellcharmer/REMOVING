@@ -4,9 +4,7 @@ package com.example.charmer.moving.fragment;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -192,7 +190,7 @@ public class Fragment_home extends Fragment {
             public void onClick(View v) {
                 //重新加载数据
                 getExerciseList();
-                getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
             }
         });
         vp_zixun.setCurrentItem(0);
@@ -201,7 +199,7 @@ public class Fragment_home extends Fragment {
 
         emptyLayout.showLoading("正在加载，请稍后");
         getExerciseList();
-        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
         //list 的每个点击事件
         lv_zixun.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -433,20 +431,20 @@ public class Fragment_home extends Fragment {
                     case 1000:
                         lv_zixun.setAdapter(adapter1);
                         getExerciseList();
-                        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
                         break;
                     case 1001:
 
 
                         lv_zixun_basketball.setAdapter(adapter2);
-                       getZixunlist_basketball(page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                       getZixunlist_basketball(page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
                         break;
                     case 1002:
 
                         lv_zixun_swimming.setAdapter(adapter3);
-                         getZixunlist_swim(page_swim,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                         getZixunlist_swim(page_swim,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
                         break;
                     case 1003:
@@ -549,7 +547,7 @@ public class Fragment_home extends Fragment {
                     @Override
                     public void run() {
                     getExerciseList();
-                      getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                      getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
 
                         //调用该方法结束刷新，否则加载圈会一直在
@@ -565,7 +563,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh2.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        getZixunlist_basketball(1,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                        getZixunlist_basketball(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                         //调用该方法结束刷新，否则加载圈会一直在
                         mSr_refresh2.setRefreshing(false);
                     }
@@ -578,7 +576,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh3.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        getZixunlist_swim(1,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                        getZixunlist_swim(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                         //调用该方法结束刷新，否则加载圈会一直在
                         mSr_refresh3.setRefreshing(false);
                     }
@@ -728,7 +726,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_zixun<totalpage_zixun) {
 
-                    getZixunlist(++page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                    getZixunlist(++page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -755,7 +753,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_basketball<totalpage_basketball) {
 
-                    getZixunlist_basketball(++page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                    getZixunlist_basketball(++page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -782,7 +780,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_swim<totalpage_swimming) {
 
-                    getZixunlist_basketball(++page_swim,((MyApplication)getActivity().getApplication()).getUser().getUserid());
+                    getZixunlist_basketball(++page_swim,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -867,7 +865,7 @@ public class Fragment_home extends Fragment {
     }
 
 
-    private void getZixunlist(int page,Integer userId) {
+    private void getZixunlist(int page,String userId) {
 
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain");
         params.addQueryStringParameter("page",page+"");
@@ -962,7 +960,7 @@ public class Fragment_home extends Fragment {
 
     }
 
-    private void getZixunlist_basketball(int page,Integer userId) {
+    private void getZixunlist_basketball(int page,String userId) {
         String url= HttpUtils.host+"toappmain";//访问网络的url
         RequestParams params = new RequestParams(url);
         params.addQueryStringParameter("type","篮球");
@@ -1007,11 +1005,11 @@ public class Fragment_home extends Fragment {
 
     }
 
-    private void getZixunlist_swim(int page,Integer userId) {
+    private void getZixunlist_swim(int page,String userId) {
 
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain?type=游泳");
         params.addQueryStringParameter("page",page+"");
-        params.addQueryStringParameter("userId",userId+"");
+        params.addQueryStringParameter("userId",userId);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -1173,7 +1171,7 @@ public class Fragment_home extends Fragment {
         public View getView(final int position, View convertView, ViewGroup parent) {
             Log.i(TAG, "加载ListView item_position:" + position);
 
-           final SharedPreferences sharedPreferences = getActivity().getSharedPreferences("dianzanshu", Context.MODE_PRIVATE);
+          // final SharedPreferences sharedPreferences = getActivity().getSharedPreferences("dianzanshu", Context.MODE_PRIVATE);
 
             //打气筒
              ViewHolder viewHolder=null;
@@ -1252,7 +1250,7 @@ public class Fragment_home extends Fragment {
 
                 //Log.i("TAG",(URLDecoder.decode(zixun.timeStamp,"utf-8")));
                 viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.publisher+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
-                viewHolder.tv_shoucangpinglun.setText(URLDecoder.decode(zixun.collections+"人收藏 ·"+zixun.pingluns+"人评论","utf-8"));
+                viewHolder.tv_shoucangpinglun.setText(URLDecoder.decode(zixun.likes+"人收藏 ·"+zixun.pingluns+"人评论","utf-8"));
                 viewHolder.tv_name.setText(URLDecoder.decode(zixun.title,"utf-8"));
                 viewHolder.tv_type.setText(URLDecoder.decode(zixun.type,"utf-8"));
                 viewHolder.tv_content.setText(URLDecoder.decode(zixun.content,"utf-8"));

@@ -10,6 +10,7 @@ public class ListActivityBean {
     public int status;
     public int page;
     public List<Zixun> zixunlist;
+    public List<Comments> commentsList;
         public ArrayList<Friend> friendlist;
 
 
@@ -58,5 +59,18 @@ public class ListActivityBean {
         public void setZixunId(Integer zixunId) {
             this.zixunId = zixunId;
         }
+    }
+    public static class Comments {
+        public Integer zixun_id;
+        public String childDiscussantImg;
+        public Long childDiscussant;
+        public String childDiscussantName;
+        public String childComment;
+        public Long fatherDiscussant;
+        public String  fatherDiscussantName;
+        public String fatherComment;
+        public String commentTime;
+
+
     }
 }
