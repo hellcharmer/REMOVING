@@ -8,9 +8,10 @@
         android:id="@+id/rc_status_bar"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:background="#ffdfdf"
+
         android:orientation="horizontal"
         android:visibility="gone">
+        <!--android:background="#ffdfdf"-->
         <ImageView
             android:id="@+id/rc_status_bar_image"
             android:layout_width="wrap_content"
@@ -36,8 +37,9 @@
         android:layout_below="@+id/rc_status_bar"
         android:divider="@color/rc_conversation_list_divider_color"
         android:dividerHeight="0.5dp"
-        android:background="@color/rc_text_color_primary_inverse" />
-
+        android:cacheColorHint="#00000000"
+        android:background="@drawable/bg1"/>
+    <!--"@color/rc_text_color_primary_inverse"-->
 
     <LinearLayout
         android:id="@+id/rc_conversation_list_empty_layout"

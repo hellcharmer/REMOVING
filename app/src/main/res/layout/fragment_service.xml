@@ -20,7 +20,7 @@
             android:id="@+id/sr_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <ListView
+            <com.example.charmer.moving.MyView.LoadMoreListView
                 android:id="@+id/listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
                 android:background="@color/white"
                 >
 
-            </ListView>
+            </com.example.charmer.moving.MyView.LoadMoreListView>
         </android.support.v4.widget.SwipeRefreshLayout>
 
 

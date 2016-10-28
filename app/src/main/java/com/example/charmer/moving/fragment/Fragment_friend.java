@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -13,6 +14,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.text.InputType;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -20,6 +22,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -35,6 +38,7 @@ import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.friendchat.SearchTalk;
 import com.example.charmer.moving.pojo.Friend;
 import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.CommonAdapter;
@@ -66,8 +70,9 @@ import io.rong.imlib.model.UserInfo;
  */
 public class Fragment_friend extends Fragment implements View.OnClickListener {
 
+    @InjectView(R.id.edsearch)
+    EditText edsearch;
     private NoScrollViewPager vpFriend;
-
     @InjectView(R.id.ll_sreach)
     LinearLayout llSreach;
     @InjectView(R.id.progressbar)
@@ -89,21 +94,22 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     private boolean isRunning = false;
     private PagerAdapter pagerAdapter;
     private List<View> views = new ArrayList<View>();
-    private final List<Friend> friends=new ArrayList<Friend>();//所有好友信息
-    private List<User> usersToken=new ArrayList<User>();//所有user的Token
+    private final List<Friend> friends = new ArrayList<Friend>();//所有好友信息
+    private List<User> usersToken = new ArrayList<User>();//所有user的Token
     CommonAdapter<Friend> goodfriendad;
     private Friend_titlebar fd_friend;
     private Friend_titlebar fd_talk;
     private Friend_titlebar fd_qun;
     private Friend_titlebar fd_tlz;
-    private Map<String,Integer> tip=new HashMap<>();
-    private List<View> ft=new ArrayList<>();
+    private Map<String, Integer> tip = new HashMap<>();
+    private List<View> ft = new ArrayList<>();
     private int pv_position;
     private RelativeLayout mHead_bar;
     private SwipeRefreshLayout re_friend;
-    private boolean flag=true;
+    private boolean flag = true;
     private User user;
-     private String Token;
+    private String Token;
+    private RelativeLayout friendbg;
 
     @Nullable
     @Override
@@ -111,51 +117,68 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_friend, null);
 //       Token= MainActivity.getToken();
 //        Log.i("Tooooo2","kenn"+Token);
-        tip.put("篮球",R.drawable.basketball);
-        tip.put("游泳",R.drawable.swim);
-        tip.put("乒乓球",R.drawable.pingp);
-        tip.put("网球",R.drawable.vallyball);
-        tip.put("足球",R.drawable.football);
-        tip.put("钓鱼",R.drawable.fish);
+        tip.put("篮球", R.drawable.basketball);
+        tip.put("游泳", R.drawable.swim);
+        tip.put("乒乓球", R.drawable.pingp);
+        tip.put("网球", R.drawable.vallyball);
+        tip.put("足球", R.drawable.football);
+        tip.put("钓鱼", R.drawable.fish);
         vpFriend = (NoScrollViewPager) view.findViewById(R.id.vp_friend);
         vpFriend.setNoScroll(true);
         mBottom_bar = (LinearLayout) getActivity().findViewById(R.id.main_bottom);
         mHead_bar = ((RelativeLayout) view.findViewById(R.id.rl_toptitle));
         initdata();
         initview(view);
-        initEnt();
         ButterKnife.inject(this, view);
+        initEnt();
+
         return view;
     }
 
     private void initdata() {
+
         //所有user的token后台处理
         //已在MainActivity中注册所有Id并获得usertoken
         //尝试异步任务
-//        GetTokenAsyncTask getTokenAsyncTask=new GetTokenAsyncTask();
-//        getTokenAsyncTask.execute();
         //第四次异步任务终于成功哇哈哈哈哈哈哈！！！！！时间优化4倍
-        Token= MainActivity.getToken();
-        Log.i("Tooooo5","kenn"+Token);
+        Token = MainActivity.getToken();
+        /**
+         * 连接
+         */
+        RongIM.connect(Token, new RongIMClient.ConnectCallback() {
+            @Override
+            public void onTokenIncorrect() {
+                Log.i("Tooooo1", "kenn" + Token);
+                Log.e("framgment", "tokenINcorrect");
+            }
+
+            @Override
+            public void onSuccess(String s) {
+                Log.e("framgment1", "onSuccess: " + s);
+                RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+                    @Override
+                    public UserInfo getUserInfo(String s) {
+                        for (Friend i : friends) {
+                            if (i.getFriendid().equals(s)) {
+                                Log.i("提供了", "用户" + s);
+                                return new UserInfo(i.getFriendid() + "", i.getName(), Uri.parse(HttpUtils.host4 + i.getUser().getUserimg()));
+                            }
+                        }
+                        return null;
+                    }
+                }, true);
+                //容云用户提供头像
+                Rong();
+            }
+
+            @Override
+            public void onError(RongIMClient.ErrorCode errorCode) {
+                Log.e("framgmente", "onError: " + errorCode.getValue());
+            }
+        });
+        Log.i("Tooooo5", "kenn" + Token);
         //对好友的信息处理
         getFriendData();
-        //容云用户提供头像
-        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
-            @Override
-            public UserInfo getUserInfo(String s) {
-                for (Friend i:friends){
-                    if (i.getFriendid().equals(s)) {
-                        Log.i("提供了", "用户" + s);
-                        return new UserInfo(i.getFriendid()+"", i.getName(), Uri.parse(HttpUtils.host4 + i.getUser().getUserimg()));
-                    }
-                }
-                return null;
-            }
-        },true);
-        //链接融云
-
-        Rong();
-
     }
 
     private void initview(View view) {
@@ -193,7 +216,8 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                 menu.addMenuItem(deleteItem);
             }
         };
-
+        //主界面
+        friendbg = ((RelativeLayout) view.findViewById(R.id.friendbg));
         //每个标题
         fd_talk = ((Friend_titlebar) view.findViewById(R.id.fd_talk));
         fd_friend = ((Friend_titlebar) view.findViewById(R.id.fd_friend));
@@ -221,7 +245,6 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
         //好友listview处理
         listView = ((SwipeMenuListView) v2.findViewById(R.id.lv_goodfriends));
         listView.setMenuCreator(creator);
-
         views.add(v1);
         views.add(v2);
         views.add(v3);
@@ -254,6 +277,16 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     }
 
     private void initEnt() {
+        //软键盘不弹出
+        edsearch.setInputType(InputType.TYPE_NULL);
+        //edsear点击事件
+        edsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), SearchTalk.class);
+                startActivity(intent);
+            }
+        });
         //好友删除按钮
         listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
 
@@ -264,21 +297,24 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                         // open
                         break;
                     case 1:
-                       //delete
-                        Integer friendid=friends.get(position).getFriendid();
+                        //delete
+                        Integer friendid = friends.get(position).getFriendid();
                         RequestParams requestParams = new RequestParams(HttpUtils.host4 + "deletefd");
                         //获取用户ID
-                        requestParams.addQueryStringParameter("friendid",friendid+"");
+                        requestParams.addQueryStringParameter("friendid", friendid + "");
                         x.http().get(requestParams, new Callback.CommonCallback<String>() {
                             @Override
                             public void onSuccess(String result) {
                             }
+
                             @Override
                             public void onError(Throwable ex, boolean isOnCallback) {
                             }
+
                             @Override
                             public void onCancelled(CancelledException cex) {
                             }
+
                             @Override
                             public void onFinished() {
                             }
@@ -288,14 +324,10 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                while (!Thread.currentThread().isInterrupted())
-                                {
-                                    try
-                                    {
+                                while (!Thread.currentThread().isInterrupted()) {
+                                    try {
                                         Thread.sleep(100);
-                                    }
-                                    catch (InterruptedException e)
-                                    {
+                                    } catch (InterruptedException e) {
                                         Thread.currentThread().interrupt();
                                     }
                                     //使用postInvalidate可以直接在线程中更新界面
@@ -314,9 +346,10 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
             private float mEndY;
             private float mStartY;
             private int direction;//0表示向上，1表示向下
+
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()){
+                switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         mStartY = event.getY();
                         break;
@@ -324,7 +357,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                         mEndY = event.getY();
                         float v1 = mEndY - mStartY;
 
-                        if (v1 > 3 && !isRunning&& direction == 1) {
+                        if (v1 > 3 && !isRunning && direction == 1) {
                             direction = 0;
                             showBar();
                             mStartY = mEndY;
@@ -349,28 +382,30 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (RongIM.getInstance() != null)
-                {
-       RongIM.getInstance().startPrivateChat(getActivity(),friends.get(position-1).getFriendid()+"", friends.get(position-1).getName());}
+                if (RongIM.getInstance() != null) {
+
+                    RongIM.getInstance().startPrivateChat(getActivity(), friends.get(position - 1).getFriendid() + "", friends.get(position - 1).getName());
+                }
             }
         });
         //会话标题按钮
         fd_talk.setImgLeftOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"个人信息",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "个人信息", Toast.LENGTH_SHORT).show();
             }
         });
-       rightclick(fd_talk,1);
-       rightclick(fd_friend,2);
-        rightclick(fd_qun,3);
-        rightclick(fd_tlz,0);
-        leftclick(fd_friend,0);
-        leftclick(fd_qun,1);
-        leftclick(fd_tlz,2);
+        rightclick(fd_talk, 1);
+        rightclick(fd_friend, 2);
+        rightclick(fd_qun, 3);
+        rightclick(fd_tlz, 0);
+        leftclick(fd_friend, 0);
+        leftclick(fd_qun, 1);
+        leftclick(fd_tlz, 2);
         //vp滑动事件
         vpFriend.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            String str[]=new String[]{"会话","好友","群","讨论组"};
+            String str[] = new String[]{"会话", "好友", "群", "讨论组"};
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -378,10 +413,10 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
 
             @Override
             public void onPageSelected(int position) {
-                Toast.makeText(getActivity(),str[position],Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), str[position], Toast.LENGTH_SHORT).show();
                 ft.get(position).setVisibility(View.VISIBLE);
                 ft.get(pv_position).setVisibility(View.GONE);
-                pv_position=position;
+                pv_position = position;
             }
 
             @Override
@@ -396,10 +431,12 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-
+    //各种控件的点击事件
     @Override
     public void onClick(View v) {
+      switch (v.getId()){
 
+      }
     }
     //好友列表的填充
     class FriendAdapter extends CommonAdapter<Friend> {
@@ -411,14 +448,14 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
         @Override
         public void convert(ViewHolder viewHolder, Friend friend, int position) {
 
-            Log.i("daqi","打气了");
-           TextView tv_username= ((TextView) viewHolder.getViewById(R.id.tv_username));
+            Log.i("daqi", "打气了");
+            TextView tv_username = ((TextView) viewHolder.getViewById(R.id.tv_username));
             tv_username.setText(friend.getUser().getUsername());
-           TextView tv_nowact= ((TextView) viewHolder.getViewById(R.id.tv_nowact));
-           tv_nowact.setText(friend.getContent());
-            ImageView iv_toux=((ImageView) viewHolder.getViewById(R.id.iv_toux));
-            xUtilsImageUtils.display(iv_toux,HttpUtils.host4+friend.getUser().getUserimg(),true);
-            ImageView i_tip=((ImageView) viewHolder.getViewById(R.id.i_tip));
+            TextView tv_nowact = ((TextView) viewHolder.getViewById(R.id.tv_nowact));
+            tv_nowact.setText(friend.getContent());
+            ImageView iv_toux = ((ImageView) viewHolder.getViewById(R.id.iv_toux));
+            xUtilsImageUtils.display(iv_toux, HttpUtils.host4 + friend.getUser().getUserimg(), true);
+            ImageView i_tip = ((ImageView) viewHolder.getViewById(R.id.i_tip));
             i_tip.setImageResource(tip.get(friend.getTitle()));
         }
     }
@@ -434,20 +471,22 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                 friends.clear();
                 progressbar.setVisibility(View.GONE);
                 tvJiazai.setVisibility(View.GONE);
-                Gson gson=new Gson();
-                Type type=new TypeToken<List<Friend>>(){}.getType();
-                Log.i("getFrienddata",result);
-                List<Friend> newfds=gson.fromJson(result,type);
+                Gson gson = new Gson();
+                Type type = new TypeToken<List<Friend>>() {
+                }.getType();
+                Log.i("getFrienddata", result);
+                List<Friend> newfds = gson.fromJson(result, type);
                 friends.addAll(newfds);
-                goodfriendad=new FriendAdapter(getActivity(),friends,R.layout.activity_friend_goodfriend_layout);
-               listView.setAdapter(goodfriendad);
-                if (flag){
-                View view1=View.inflate(getContext(),R.layout.friendnumber,null);
-                TextView fdnum=((TextView) view1.findViewById(R.id.friendnumber));
-                fdnum.setText(friends.size()+"");
-                listView.addFooterView(view1);
-                View view2=View.inflate(getContext(),R.layout.friend_bugdeal,null);
-                listView.addHeaderView(view2);}
+                goodfriendad = new FriendAdapter(getActivity(), friends, R.layout.activity_friend_goodfriend_layout);
+                listView.setAdapter(goodfriendad);
+                if (flag) {
+                    View view1 = View.inflate(getContext(), R.layout.friendnumber, null);
+                    TextView fdnum = ((TextView) view1.findViewById(R.id.friendnumber));
+                    fdnum.setText(friends.size() + "");
+                    listView.addFooterView(view1);
+                    View view2 = View.inflate(getContext(), R.layout.friend_bugdeal, null);
+                    listView.addHeaderView(view2);
+                }
             }
 
             @Override
@@ -466,8 +505,9 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
             }
         });
     }
+
     //左右图片点击方法
-    public void leftclick(Friend_titlebar ft, final Integer i){
+    public void leftclick(Friend_titlebar ft, final Integer i) {
         ft.setImgLeftOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -475,7 +515,8 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
             }
         });
     }
-    public void rightclick(Friend_titlebar ft, final Integer i){
+
+    public void rightclick(Friend_titlebar ft, final Integer i) {
         ft.setImgRightOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -483,11 +524,13 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
             }
         });
     }
+
     //dp2xp
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 getResources().getDisplayMetrics());
     }
+
     //lisiview拖动隐藏bar
     public void hideBar() {
         mHeaderAnimator = ObjectAnimator.ofFloat(mHead_bar, "translationY", -mHead_bar.getHeight());
@@ -503,6 +546,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                 super.onAnimationStart(animation);
                 isRunning = true;
             }
+
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
@@ -513,86 +557,75 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
 
     public void showBar() {
         mHeaderAnimator = ObjectAnimator.ofFloat(mHead_bar, "translationY", 0);
-        mBottomAnimator = ObjectAnimator.ofFloat(mBottom_bar,"translationY", 0);
-        llsearch = ObjectAnimator.ofFloat(llSreach,"translationY", 0);
+        mBottomAnimator = ObjectAnimator.ofFloat(mBottom_bar, "translationY", 0);
+        llsearch = ObjectAnimator.ofFloat(llSreach, "translationY", 0);
 
         mHeaderAnimator.setDuration(300).start();
         mBottomAnimator.setDuration(400).start();
         llsearch.setDuration(300).start();
 
     }
+
     //加载圈的处理
     private void refreshData() {
         re_friend.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                flag=false;
+                flag = false;
                 re_friend.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         getFriendData();
                         re_friend.setRefreshing(false);
                     }
-                },1000);
+                }, 1000);
             }
         });
     }
 
     //会话列表链接容云
-    private void Rong(){
+    private void Rong() {
+        //        //异步回调刷新数据??有用？？3天后：有用 >_<
+        RequestParams requestParams1 = new RequestParams(HttpUtils.host4 + "getuser");
+        requestParams1.addQueryStringParameter("userid", +((MyApplication) getActivity().getApplication()).getUser().getUserid() + "");
+        x.http().get(requestParams1, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.i("UUUSSSSIIIMMMGG", result);
+                Gson gson = new Gson();
+                Type type = new TypeToken<User>() {
+                }.getType();
+                user = gson.fromJson(result, type);
+                RongIM.getInstance().refreshUserInfoCache(new UserInfo(((MyApplication) getActivity().getApplication()).getUser().getUserid() + "", user.getUsername(), Uri.parse(HttpUtils.host4 + user.getUserimg())));
+                //刷新所有好友的头像
+                refreshImg();
+            }
 
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
 
-            //        //异步回调刷新数据??有用？？
-            RequestParams requestParams1 =new RequestParams(HttpUtils.host4+"getuser");
-            requestParams1.addQueryStringParameter("userid",+((MyApplication)getActivity().getApplication()).getUser().getUserid()+"");
-            x.http().get(requestParams1, new Callback.CommonCallback<String>() {
-                @Override
-                public void onSuccess(String result) {
-                    Log.i("UUUSSSSIIIMMMGG",result);
-                    Gson gson=new Gson();
-                    Type type=new TypeToken<User>(){}.getType();
-                    user=gson.fromJson(result,type);
-                    RongIM.getInstance().refreshUserInfoCache(new UserInfo(((MyApplication)getActivity().getApplication()).getUser().getUserid()+"", user.getUsername(), Uri.parse(HttpUtils.host4+user.getUserimg())));
-                }
+            }
 
-                @Override
-                public void onError(Throwable ex, boolean isOnCallback) {
+            @Override
+            public void onCancelled(CancelledException cex) {
 
-                }
+            }
 
-                @Override
-                public void onCancelled(CancelledException cex) {
+            @Override
+            public void onFinished() {
 
-                }
+            }
+        });
 
-                @Override
-                public void onFinished() {
+    }
 
-                }
-            });
-
-            /**
-             * 连接
-             */
-            RongIM.connect(Token, new RongIMClient.ConnectCallback() {
-                @Override
-                public void onTokenIncorrect() {
-                    Log.i("Tooooo1","kenn"+Token);
-                    Log.e("framgment","tokenINcorrect");
-                }
-
-                @Override
-                public void onSuccess(String s) {
-                    Log.e("framgment1", "onSuccess: "+s );
-                }
-                @Override
-                public void onError(RongIMClient.ErrorCode errorCode) {
-                    Log.e("framgmente", "onError: "+errorCode.getValue() );
-                }
-            });
+    //刷新用户头像
+    private void refreshImg() {
+        for (Friend i : friends) {
+            Log.i("fffffrrrrree", i.getFriendid() + "");
+            RongIM.getInstance().refreshUserInfoCache(new UserInfo(i.getFriendid() + "", i.getName(), Uri.parse(HttpUtils.host4 + i.getUser().getUserimg())));
         }
-
-    //获得所有用户token
+    }
 
 
 }
