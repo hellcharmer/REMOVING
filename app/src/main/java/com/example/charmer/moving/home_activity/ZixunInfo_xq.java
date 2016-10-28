@@ -155,7 +155,6 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
         if(shoucangid.equals("")){
            getshoucangstate(((MyApplication)ZixunInfo_xq.this.getApplication()).getUser().getUseraccount());
-            System.out.println("=========="+count);
         }else {
             String[] shoucang = shoucangid.trim().split(",");
             for (int i = 0; i < shoucang.length; i++) {
@@ -376,7 +375,6 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                System.out.println(result);
                 if("true".equals(result)){
                     count=1;
                     Message msg = handler.obtainMessage();

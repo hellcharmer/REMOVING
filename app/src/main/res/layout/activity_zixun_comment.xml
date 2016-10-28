@@ -47,19 +47,20 @@
         <me.weyye.library.EmptyLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/emptyLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" android:layout_below="@+id/zixun_comment_header"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/zixun_comment_header"
         app:elEmptyLayout="@layout/layout_empty"
         app:elErrorLayout="@layout/layout_error"
         app:elLoadingLayout="@layout/layout_loading">
         <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/sr_refresh"
+            android:id="@+id/comment_sr_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
             >
 
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+
 
             <com.example.charmer.moving.MyView.LoadMoreListView
                 android:id="@+id/lv_comment"
@@ -68,14 +69,26 @@
                 android:layout_height="wrap_content">
 
             </com.example.charmer.moving.MyView.LoadMoreListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
         </me.weyye.library.EmptyLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_height="48dp"
         android:focusable="true"
+        android:background="@color/colorWhite"
         android:focusableInTouchMode="true"
         >
+        <com.example.charmer.moving.MyView.CircularProgress
+            android:id="@+id/pb_publish_comment"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="9dp"
+            android:visibility="gone"
+            />
         <ImageView
             android:id="@+id/iv_comment"
             android:layout_width="wrap_content"

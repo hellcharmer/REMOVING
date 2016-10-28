@@ -38,9 +38,11 @@
         android:layout_toRightOf="@id/iv_comment_photo"
         android:layout_below="@id/tv_comment_content"/>
     <TextView
+        android:id="@+id/tv_comment_watchmore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="查看对话"
+        android:visibility="gone"
         android:layout_below="@id/tv_comment_content"
         android:textColor="@color/border_clo"
         android:layout_alignParentRight="true"

@@ -38,12 +38,10 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name=".relevantexercise.ExeInfoparticipate" />
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
         <activity android:name=".home_activity.Publish_articles" />
         <activity android:name=".Publishdynamic.Publishdynamic" />
-        <activity android:name=".home_activity.Publish_articles" />
         <activity android:name=".home_activity.SearchActivity" />
         <activity
             android:name="com.foamtrace.photopicker.PhotoPickerActivity"
@@ -59,7 +57,8 @@
         <activity
             android:name="com.lidong.photopicker.PhotoPreviewActivity"
             android:theme="@style/PhotoPickerTheme" />
-        <activity android:name=".home_activity.Zixun_comment"></activity>
+        <activity android:name=".home_activity.Zixun_comment" />
+        <activity android:name=".home_activity.Zixun_comment_more"></activity>
     </application>
 
 </manifest>
