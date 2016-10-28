@@ -26,7 +26,10 @@
         <activity android:name=".home_activity.ZixunInfo_xq" />
         <activity android:name=".relevantexercise.ExeInfopublisher" />
         <activity android:name=".relevantexercise.ExeInfoparticipate" />
-        <activity android:name=".friendchat.ConversationActivity">
+        <activity
+            android:name=".friendchat.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -37,9 +40,31 @@
                     android:pathPrefix="/conversation/"
                     android:scheme="rong" />
             </intent-filter>
+
         </activity>
+        <activity android:name=".relevantexercise.ExeInfoparticipate" />
+
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
+        <activity android:name=".home_activity.Publish_articles" />
+        <activity android:name=".publishInfo.UploadPhotoActivity" />
+        <activity
+            android:name=".friendchat.ConversationListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="io.rong.fast"
+                    android:pathPrefix="/conversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".friendchat.Test"></activity>
+        <activity android:name=".friendchat.SearchTalk"></activity>
         <activity android:name=".home_activity.Publish_articles" />
         <activity android:name=".Publishdynamic.Publishdynamic" />
         <activity android:name=".home_activity.SearchActivity" />

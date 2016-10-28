@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * Created by Jingsheng Liang on 2016/9/13.
  */
 public class Friend implements Parcelable {
-
+    public String friendimg ;
     public Integer friendid;
     public String photoimg;
     public String name;
@@ -16,6 +16,15 @@ public class Friend implements Parcelable {
    public boolean visbale;
     public User user;
     // alt+insert
+
+    public Friend(String friendimg, String name, String title, String content, boolean visbale, Integer friendid) {
+        this.friendimg = friendimg;
+        this.name = name;
+        this.title = title;
+        this.content = content;
+        this.visbale = visbale;
+        this.friendid = friendid;
+    }
 
     public Friend(){}
 
@@ -31,6 +40,14 @@ public class Friend implements Parcelable {
         this.content = content;
         this.visbale = visbale;
         this.user = user;
+    }
+
+    public String getFriendimg() {
+        return friendimg;
+    }
+
+    public void setFriendimg(String friendimg) {
+        this.friendimg = friendimg;
     }
 
     public Integer getFriendid() {
@@ -96,6 +113,7 @@ public class Friend implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.friendimg);
         dest.writeValue(this.friendid);
         dest.writeString(this.photoimg);
         dest.writeString(this.name);
@@ -106,6 +124,7 @@ public class Friend implements Parcelable {
     }
 
     protected Friend(Parcel in) {
+        this.friendimg = in.readString();
         this.friendid = (Integer) in.readValue(Integer.class.getClassLoader());
         this.photoimg = in.readString();
         this.name = in.readString();
@@ -115,7 +134,7 @@ public class Friend implements Parcelable {
         this.user = in.readParcelable(User.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<Friend> CREATOR = new Parcelable.Creator<Friend>() {
+    public static final Creator<Friend> CREATOR = new Creator<Friend>() {
         @Override
         public Friend createFromParcel(Parcel source) {
             return new Friend(source);

@@ -8,7 +8,7 @@
       android:bottomRightRadius="2dp"
       />
     <padding
-        android:left="120dp"
+        android:left="130dp"
         android:top="3dp"
         android:right="10dp"
         android:bottom="3dp"/>
@@ -18,4 +18,5 @@
         android:width="2dp"
         android:color="@android:color/black"
         />
+
 </shape>
