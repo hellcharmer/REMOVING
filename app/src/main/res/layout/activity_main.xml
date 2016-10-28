@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer"
+    tools:context="com.example.charmer.moving.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_content"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        >
+
+    <View
+        android:id="@+id/midview"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/main_bottom"
+        android:background="@color/common_bottom_bar_selected_bg"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal" >
+        <RelativeLayout
+            android:id="@+id/btn_container_main_page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/home_select"
+                android:onClick="onTabClicked"
+                android:paddingBottom="5dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_container_compass_page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/communication"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/communication"
+                android:onClick="onTabClicked"
+                android:paddingBottom="5dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_service_page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/exercise"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/exercises"
+                android:onClick="onTabClicked"
+                android:paddingBottom="5dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_circle_page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/friends"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/friends"
+                android:onClick="onTabClicked"
+                android:paddingBottom="5dip"
+                android:paddingTop="7dip"
+                 android:visibility="gone"
+                />
+                <ImageView
+                    android:id="@+id/iv_huan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/huan"
+                    />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_friends_page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <Button
+                android:id="@+id/mine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/mine"
+                android:onClick="onTabClicked"
+                android:paddingBottom="5dip"
+                android:paddingTop="7dip"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/plus_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <RelativeLayout
+            android:id="@+id/yuan_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="60dp"
+            android:layout_marginRight="20dp"
+
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/plus_yuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="true"
+                android:src="@drawable/yuan_home" />
+
+            <ImageView
+                android:id="@+id/plus_im"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="true"
+                android:src="@drawable/plus_home" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/jiange01"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_above="@+id/yuan_rl"
+            android:layout_alignRight="@+id/yuan_rl"
+            android:layout_marginRight="15dp" />
+        <ImageView
+            android:id="@+id/iv_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/write1"
+            android:layout_above="@+id/jiange01"
+            android:layout_alignRight="@+id/jiange01"
+            android:paddingBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"
+            />
+        <TextView
+            android:id="@+id/dishui_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/jiange01"
+            android:layout_toLeftOf="@+id/iv_fabuhuodong"
+            android:background="@drawable/border_radius"
+            android:clickable="true"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:text="分享运动经验"
+            android:textColor="@color/plus_black"
+            android:textSize="18sp"
+            android:visibility="gone"
+             />
+
+        <View
+            android:id="@+id/jiange02"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_above="@+id/dishui_tv"
+            android:layout_alignRight="@+id/dishui_tv" />
+        <ImageView
+            android:id="@+id/iv_fabuhuodong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/write1"
+            android:layout_above="@+id/jiange02"
+            android:layout_alignRight="@+id/jiange01"
+            android:paddingBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"
+            />
+        <TextView
+            android:id="@+id/guoshui_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/jiange02"
+            android:layout_toLeftOf="@+id/iv_write"
+            android:background="@drawable/border_radius"
+            android:clickable="true"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:text="发布活动"
+            android:textColor="@color/plus_black"
+            android:textSize="18sp"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
