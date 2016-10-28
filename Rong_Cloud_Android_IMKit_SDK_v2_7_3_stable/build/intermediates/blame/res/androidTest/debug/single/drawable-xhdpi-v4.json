@@ -1,23 +1,23 @@
 [
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_file_icon_else.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_file_icon_else.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f62c.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f62c.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_volume_4.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_volume_4.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_file_icon_else.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_file_icon_else.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_text_selected.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_text_selected.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_bg_text_hover.9.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_bg_text_hover.9.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_text_selected.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_text_selected.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_volume_4.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_volume_4.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_left.9.png",
@@ -84,12 +84,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_notice_point.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_conversation_list_msg_sending.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_conversation_list_msg_sending.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_radio_button_off.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_radio_button_off.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_conversation_list_msg_sending.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_conversation_list_msg_sending.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f61a.png",
@@ -132,12 +132,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\select_check_sel.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_audio_file_icon.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_audio_file_icon.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f6ab.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f6ab.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_audio_file_icon.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_audio_file_icon.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f319.png",
@@ -168,20 +168,20 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_img_camera.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_other_file_icon.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_other_file_icon.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_voice_icon_left.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_voice_icon_left.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_text_normal.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_text_normal.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_other_file_icon.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_other_file_icon.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f635.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f635.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_text_normal.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_text_normal.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_file_icon_video.png",
@@ -196,6 +196,10 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_no_hover.png"
     },
     {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f4a9.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f4a9.png"
+    },
+    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_add_people.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_add_people.png"
     },
@@ -204,28 +208,24 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_sd_card_icon.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f4a9.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f4a9.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_picsel_catalog_pic_shadow.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_picsel_catalog_pic_shadow.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_bg_voice_popup.9.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_bg_voice_popup.9.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_picsel_catalog_pic_shadow.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_picsel_catalog_pic_shadow.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_volume_2.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_volume_2.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f48a.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f48a.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f618.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f618.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f48a.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f48a.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_volume_8.png",
@@ -244,12 +244,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u2615.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u2b50.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u2b50.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f60d.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f60d.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u2b50.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u2b50.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_picsel_back_pressed.png",
@@ -264,12 +264,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u23f3.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_right.9.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_right.9.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f61c.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f61c.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_right.9.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_right.9.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f61f.png",
@@ -288,12 +288,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_phone_selected.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f52b.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f52b.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\select_check_nor.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\select_check_nor.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f52b.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f52b.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_btn_send_hover.9.png",
@@ -324,12 +324,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f494.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_receive_play3.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_receive_play3.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f632.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f632.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_receive_play3.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_receive_play3.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_picsel_pictype_normal.png",
@@ -352,12 +352,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_read_receipt_request_hover.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ad_list_file_checked.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ad_list_file_checked.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f615.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f615.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ad_list_file_checked.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ad_list_file_checked.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f4de.png",
@@ -396,24 +396,24 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_mebmer_delete.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_indicator.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_indicator.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_default_discussion_portrait.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_default_discussion_portrait.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_indicator.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_indicator.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f634.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f634.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_voice_unread.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_voice_unread.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f648.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f648.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_voice_unread.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_voice_unread.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_fr_file_list_ad_icon_file.png",
@@ -492,12 +492,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u2614.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_unread_remind_without_count.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_unread_remind_without_count.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f6bf.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f6bf.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_unread_remind_without_count.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_unread_remind_without_count.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_voice_icon_right.png",
@@ -516,20 +516,20 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f349.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_picture_selected.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_picture_selected.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f649.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f649.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_video_file_icon.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_video_file_icon.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_picture_selected.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_picture_selected.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f4e2.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f4e2.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_video_file_icon.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_video_file_icon.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_location_selected.png",
@@ -556,20 +556,20 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u270c.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_ok_disabled.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_cs_group_ok_disabled.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u26c5.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u26c5.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_origin_check_nor.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_origin_check_nor.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_ok_disabled.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_cs_group_ok_disabled.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f614.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f614.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_origin_check_nor.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_origin_check_nor.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ed_pub_service_search_normal.9.png",
@@ -640,12 +640,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f48d.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f356.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f356.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_text_file_icon.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_text_file_icon.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f356.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f356.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_send_voice_three.png",
@@ -736,28 +736,24 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u2744.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f62f.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f62f.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_phone_normal.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_phone_normal.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f62f.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f62f.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_notice_wraning.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_notice_wraning.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f389.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f389.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u2600.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u2600.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f3b2.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f3b2.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f389.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f389.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_praise.png",
@@ -768,6 +764,10 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f44c.png"
     },
     {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f3b2.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f3b2.png"
+    },
+    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f4a3.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f4a3.png"
     },
@@ -776,12 +776,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f60c.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_sent_play1.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_sent_play1.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_conversation_newmsg.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_conversation_newmsg.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_sent_play1.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_sent_play1.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f48b.png",
@@ -812,12 +812,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_indicator_hover.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f47b.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f47b.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f609.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f609.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f47b.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f47b.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f631.png",
@@ -832,16 +832,16 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f600.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_receive_voice_one.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_receive_voice_one.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_picture_normal.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_picture_normal.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_no.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_no.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_receive_voice_one.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_receive_voice_one.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f556.png",
@@ -860,16 +860,16 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f332.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_receive_play2.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_receive_play2.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f622.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f622.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ad_list_file_unchecked.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ad_list_file_unchecked.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f622.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f622.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_receive_play2.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_receive_play2.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_complete.png",
@@ -880,12 +880,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f628.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_no_right.9.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_no_right.9.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_pb_file_download_progress_progress.9.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_pb_file_download_progress_progress.9.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_no_right.9.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_no_right.9.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_btn_pub_service_follow_hover.png",
@@ -924,16 +924,16 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f33b.png"
     },
     {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_check.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_cs_group_check.png"
+    },
+    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_ram_icon.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ac_ram_icon.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ad_list_folder_icon.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ad_list_folder_icon.png"
-    },
-    {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_check.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_cs_group_check.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_sent_play3.png",
@@ -976,24 +976,24 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_icon_admin_hover.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u270a.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u270a.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_camera_selected.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_camera_selected.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u270a.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u270a.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f3e1.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f3e1.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_btn_open_file_normal.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_btn_open_file_normal.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_receive_voice_three.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_receive_voice_three.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_btn_open_file_normal.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_btn_open_file_normal.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f434.png",
@@ -1008,12 +1008,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_volume_0.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_read_receipt_request.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_read_receipt_request.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_bg_toast.9.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_bg_toast.9.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_read_receipt_request.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_read_receipt_request.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_receive_play1.png",
@@ -1032,12 +1032,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f3c2.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_yes_hover.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_yes_hover.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_receive.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_receive.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_yes_hover.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_yes_hover.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_list_divide_line.png",
@@ -1056,20 +1056,20 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f4b0.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_sent_play2.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_sent_play2.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_star.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_star.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_praise_hover.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_praise_hover.png"
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_voice_sent_play2.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_sent_play2.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f602.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f602.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_praise_hover.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_praise_hover.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f621.png",
@@ -1132,12 +1132,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_file_icon_file.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f47c.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f47c.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f384.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f384.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f47c.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f47c.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_keyboard_normal.png",
@@ -1148,12 +1148,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f60b.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_no.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_no.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u263a.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u263a.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_no.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_no.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u270f.png",
@@ -1168,12 +1168,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f611.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f62a.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f62a.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_def_rich_content.png",

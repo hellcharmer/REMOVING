@@ -116,16 +116,16 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_read_receipt_request_button.xml"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_cs_corner_single_check_style.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_cs_corner_single_check_style.xml"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_btn_public_service_unfollow_selector.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_btn_public_service_unfollow_selector.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_corner_style.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_corner_style.xml"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_cs_corner_single_check_style.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_cs_corner_single_check_style.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_ic_picture.xml",

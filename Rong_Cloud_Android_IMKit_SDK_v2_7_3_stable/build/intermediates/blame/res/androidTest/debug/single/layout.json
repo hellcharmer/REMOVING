@@ -96,12 +96,12 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_fr_messagelist.xml"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_fr_public_service_search.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_fr_public_service_search.xml"
-    },
-    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_item_message.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_item_message.xml"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_fr_public_service_search.xml",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_fr_public_service_search.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_wi_notice.xml",
