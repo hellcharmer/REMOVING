@@ -4,11 +4,7 @@ package com.example.charmer.moving.fragment;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,6 +24,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,12 +33,14 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.MyView.MyGridView;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.Constant;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.contantData.ToastUtil;
+import com.example.charmer.moving.home_activity.SearchActivity;
 import com.example.charmer.moving.home_activity.ZixunInfo_xq;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
@@ -61,8 +60,6 @@ import java.util.List;
 import java.util.Map;
 
 import me.weyye.library.EmptyLayout;
-
-import static com.example.charmer.moving.R.id.tv_dianzanshu;
 
 
 /**
@@ -92,7 +89,7 @@ public class Fragment_home extends Fragment {
     private ObjectAnimator titlebarAnimator;
     private ObjectAnimator bottomAnimator;
     private ObjectAnimator plusAnimator;
-
+    private Button bt_search_home;
     private static final String TAG = "Fragment_home";
 
     private LoadMoreListView lv_zixun;
@@ -193,7 +190,7 @@ public class Fragment_home extends Fragment {
             public void onClick(View v) {
                 //重新加载数据
                 getExerciseList();
-                getZixunlist(1);
+                getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
             }
         });
         vp_zixun.setCurrentItem(0);
@@ -202,7 +199,7 @@ public class Fragment_home extends Fragment {
 
         emptyLayout.showLoading("正在加载，请稍后");
         getExerciseList();
-        getZixunlist(page_zixun);
+        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
         //list 的每个点击事件
         lv_zixun.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -213,15 +210,17 @@ public class Fragment_home extends Fragment {
                 startActivity(intent);
             }
         });
+        bt_search_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),SearchActivity.class);
 
+                startActivity(intent);
+            }
+        });
 
 
     }
-
-
-
-
-
 
     private void initlistviews() {
 
@@ -368,7 +367,7 @@ public class Fragment_home extends Fragment {
     private void initData() {
         titleLayout = (LinearLayout)view.findViewById(R.id.title_lay);
         layout = (LinearLayout)view.findViewById(R.id.lay);
-
+        bt_search_home = (Button)view.findViewById(R.id.bt_search_home);
         mImageView = (ImageView)view.findViewById(R.id.img1);
         vp_zixun = ((ViewPager)view.findViewById(R.id.vp_zixun));
         plus_rl=(RelativeLayout)getActivity().findViewById(R.id.plus_rl);
@@ -432,20 +431,20 @@ public class Fragment_home extends Fragment {
                     case 1000:
                         lv_zixun.setAdapter(adapter1);
                         getExerciseList();
-                        getZixunlist(page_zixun);
+                        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
                         break;
                     case 1001:
 
 
                         lv_zixun_basketball.setAdapter(adapter2);
-                       getZixunlist_basketball(page_basketball);
+                       getZixunlist_basketball(page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
                         break;
                     case 1002:
 
                         lv_zixun_swimming.setAdapter(adapter3);
-                         getZixunlist_swim(page_swim);
+                         getZixunlist_swim(page_swim,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
                         break;
                     case 1003:
@@ -548,7 +547,7 @@ public class Fragment_home extends Fragment {
                     @Override
                     public void run() {
                     getExerciseList();
-                      getZixunlist(1);
+                      getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
 
 
                         //调用该方法结束刷新，否则加载圈会一直在
@@ -564,7 +563,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh2.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        getZixunlist_basketball(1);
+                        getZixunlist_basketball(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                         //调用该方法结束刷新，否则加载圈会一直在
                         mSr_refresh2.setRefreshing(false);
                     }
@@ -577,7 +576,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh3.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        getZixunlist_swim(1);
+                        getZixunlist_swim(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                         //调用该方法结束刷新，否则加载圈会一直在
                         mSr_refresh3.setRefreshing(false);
                     }
@@ -713,6 +712,7 @@ public class Fragment_home extends Fragment {
         });
 
        }
+
     private void loadZixunMore() {
 
         new Thread(){
@@ -726,7 +726,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_zixun<totalpage_zixun) {
 
-                    getZixunlist(++page_zixun);
+                    getZixunlist(++page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -753,7 +753,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_basketball<totalpage_basketball) {
 
-                    getZixunlist_basketball(++page_basketball);
+                    getZixunlist_basketball(++page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -780,7 +780,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_swim<totalpage_swimming) {
 
-                    getZixunlist_basketball(++page_swim);
+                    getZixunlist_basketball(++page_swim,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -865,10 +865,11 @@ public class Fragment_home extends Fragment {
     }
 
 
-    private void getZixunlist(int page) {
+    private void getZixunlist(int page,String userId) {
 
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain");
         params.addQueryStringParameter("page",page+"");
+        params.addQueryStringParameter("userId",userId+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -912,6 +913,7 @@ public class Fragment_home extends Fragment {
         });
 
     }
+
     private void getExerciseList() {
 
         //GPS定位值==place
@@ -957,11 +959,13 @@ public class Fragment_home extends Fragment {
         });
 
     }
-    private void getZixunlist_basketball(int page) {
+
+    private void getZixunlist_basketball(int page,String userId) {
         String url= HttpUtils.host+"toappmain";//访问网络的url
         RequestParams params = new RequestParams(url);
         params.addQueryStringParameter("type","篮球");
         params.addQueryStringParameter("page",page+"");
+        params.addQueryStringParameter("userId",userId+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -1000,10 +1004,12 @@ public class Fragment_home extends Fragment {
         });
 
     }
-    private void getZixunlist_swim(int page) {
+
+    private void getZixunlist_swim(int page,String userId) {
 
         RequestParams params = new RequestParams(HttpUtils.host+"toappmain?type=游泳");
         params.addQueryStringParameter("page",page+"");
+        params.addQueryStringParameter("userId",userId);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -1072,6 +1078,7 @@ public class Fragment_home extends Fragment {
         });
 
     }
+
     private void deleteDianZanNum(Integer zixunId){
         RequestParams params = new RequestParams(HttpUtils.host+"deletezannum");
         params.addQueryStringParameter("zixunId",zixunId+"");
@@ -1164,71 +1171,73 @@ public class Fragment_home extends Fragment {
         public View getView(final int position, View convertView, ViewGroup parent) {
             Log.i(TAG, "加载ListView item_position:" + position);
 
-           final SharedPreferences sharedPreferences = getActivity().getSharedPreferences("dianzanshu", Context.MODE_PRIVATE);
+          // final SharedPreferences sharedPreferences = getActivity().getSharedPreferences("dianzanshu", Context.MODE_PRIVATE);
 
             //打气筒
              ViewHolder viewHolder=null;
 
             final ListActivityBean.Zixun zixun = list.get(position);
-            SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-//            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);
-//            editor.putString(zixun.zixunId+"state", zixun.state);
-            editor.commit();//提交修改
-//            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);//??
-            editor.putString(zixun.zixunId+"state", zixun.state);//??
-            editor.commit();//提交修改 ????
-            if((sharedPreferences.getString(zixun.zixunId+"state", zixun.state)).equals("1")){
-                choiceZan.add(zixun.zixunId);
-            }//??可优化
+//            SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+////            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);
+////            editor.putString(zixun.zixunId+"state", zixun.state);
+//            editor.commit();//提交修改
+////            editor.putInt(zixun.zixunId+"dianzanshu",zixun.likeNumber);//??
+//            editor.putString(zixun.zixunId+"state", zixun.state);//??
+//            editor.commit();//提交修改 ????
+//            if((sharedPreferences.getString(zixun.zixunId+"state", zixun.state)).equals("1")){
+//                choiceZan.add(zixun.zixunId);
+//            }//??可优化
             if(convertView==null){
                 viewHolder =new ViewHolder();
 
                     convertView = View.inflate(getActivity(), R.layout.activity_zi_xun, null);
+                    viewHolder.iv_photo = ((ImageView) convertView.findViewById(R.id.iv_photo ));
                     viewHolder.iv_picture = ((ImageView) convertView.findViewById(R.id.iv_picture));
                     viewHolder.tv_xiangxi = ((TextView) convertView.findViewById(R.id.tv_xiangxi));
                     viewHolder.tv_name = ((TextView) convertView.findViewById(R.id.tv_name));
+                    viewHolder.tv_shoucangpinglun = ((TextView) convertView.findViewById(R.id.tv_shoucangpinglun));
                     //字体加粗
                     TextPaint tp = viewHolder.tv_name.getPaint();
                     tp.setFakeBoldText(true);
                     viewHolder.tv_type = ((TextView) convertView.findViewById(R.id.tv_type));
                     viewHolder.tv_content = ((TextView) convertView.findViewById(R.id.tv_content));
-                     iv_zan=viewHolder.iv_zan = ((ImageView) convertView.findViewById(R.id.iv_dianzan));
-                      final TextView dianzanshu=viewHolder.tv_dianzanshu = ((TextView) convertView.findViewById(tv_dianzanshu));
-
-                iv_zan.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        final int sp_dianzanshu = sharedPreferences.getInt(zixun.zixunId+"dianzanshu", 0);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-                        if (choiceZan.contains((Integer) (((ImageView) v).getTag()))) {
-                            ((ImageView) v).setImageResource(R.drawable.zan_no);
-                            System.out.println("-----------------"+sp_dianzanshu);
-                            dianzannum=sp_dianzanshu -1;
-                            dianzan.put(position,dianzannum);
-                            editor.putInt(zixun.zixunId+"dianzanshu",dianzannum );
-                            editor.commit();//提交修改
-                          //  deleteDianZanNum(zixun.zixunId);
-                            dianzanshu.setText(dianzannum+"");
-                            choiceZan.remove((Integer) (((ImageView) v).getTag()));
-                            choiceZanNum.remove((Integer) ((dianzanshu).getTag()));
-                        } else {
-                            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zan);
-                            ((ImageView) v).setImageBitmap(bitmap);
-                            System.out.println("+++++++++++"+sp_dianzanshu);
-                            dianzannum=sp_dianzanshu +1;
-                            // System.out.println(zixun.zixunId);
-                            dianzan.put(position,dianzannum);
-                            editor.putInt(zixun.zixunId+"dianzanshu",dianzannum );
-                            editor.commit();//提交修改
-                          // addDianZanNum(zixun.zixunId);
-                            dianzanshu.setText(dianzannum+"");
-                            choiceZan.add((Integer) (((ImageView) v).getTag()));
-                            choiceZanNum.add((Integer) ((dianzanshu).getTag()));
-                        }
-                    }
-
-
-                });
+//                    iv_zan=viewHolder.iv_zan = ((ImageView) convertView.findViewById(R.id.iv_dianzan));
+//                    final TextView dianzanshu=viewHolder.tv_dianzanshu = ((TextView) convertView.findViewById(tv_dianzanshu));
+//
+//                iv_zan.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        final int sp_dianzanshu = sharedPreferences.getInt(zixun.zixunId+"dianzanshu", 0);
+//                        SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+//                        if (choiceZan.contains((Integer) (((ImageView) v).getTag()))) {
+//                            ((ImageView) v).setImageResource(R.drawable.zan_no);
+//                            System.out.println("-----------------"+sp_dianzanshu);
+//                            dianzannum=sp_dianzanshu -1;
+//                            dianzan.put(position,dianzannum);
+//                            editor.putInt(zixun.zixunId+"dianzanshu",dianzannum );
+//                            editor.commit();//提交修改
+//                          //  deleteDianZanNum(zixun.zixunId);
+//                            dianzanshu.setText(dianzannum+"");
+//                            choiceZan.remove((Integer) (((ImageView) v).getTag()));
+//                            choiceZanNum.remove((Integer) ((dianzanshu).getTag()));
+//                        } else {
+//                            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zan);
+//                            ((ImageView) v).setImageBitmap(bitmap);
+//                            System.out.println("+++++++++++"+sp_dianzanshu);
+//                            dianzannum=sp_dianzanshu +1;
+//                            // System.out.println(zixun.zixunId);
+//                            dianzan.put(position,dianzannum);
+//                            editor.putInt(zixun.zixunId+"dianzanshu",dianzannum );
+//                            editor.commit();//提交修改
+//                          // addDianZanNum(zixun.zixunId);
+//                            dianzanshu.setText(dianzannum+"");
+//                            choiceZan.add((Integer) (((ImageView) v).getTag()));
+//                            choiceZanNum.add((Integer) ((dianzanshu).getTag()));
+//                        }
+//                    }
+//
+//
+//                });
 
                 convertView.setTag(viewHolder);//缓存对象
             }else{
@@ -1240,16 +1249,17 @@ public class Fragment_home extends Fragment {
 
 
                 //Log.i("TAG",(URLDecoder.decode(zixun.timeStamp,"utf-8")));
-                viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.likes+"人收藏 ·"+zixun.zixunId+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
+                viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.publisher+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
+                viewHolder.tv_shoucangpinglun.setText(URLDecoder.decode(zixun.likes+"人收藏 ·"+zixun.pingluns+"人评论","utf-8"));
                 viewHolder.tv_name.setText(URLDecoder.decode(zixun.title,"utf-8"));
                 viewHolder.tv_type.setText(URLDecoder.decode(zixun.type,"utf-8"));
                 viewHolder.tv_content.setText(URLDecoder.decode(zixun.content,"utf-8"));
-
+                xUtilsImageUtils.display(viewHolder.iv_photo, HttpUtils.host+"userimg/"+ URLDecoder.decode(zixun.publisherimg, "utf-8"),true);
                 if(list.get(position).photoImg.equals("")){
                     viewHolder.iv_picture.setVisibility(View.GONE);
                 }else {
                     viewHolder.iv_picture.setVisibility(View.VISIBLE);
-                    xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.host + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
+                    xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.host+"upload/"+ URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
                 }
 
                 // Log.i("====",position+"=="+zixunlist.get(0).likes);
@@ -1260,23 +1270,23 @@ public class Fragment_home extends Fragment {
             }
 
 
-            //页面显示处理
-            if(choiceZan.contains(zixun.zixunId)){
-                viewHolder.iv_zan.setImageResource(R.drawable.zan);
-
-            }else{
-                viewHolder.iv_zan.setImageResource(R.drawable.zan_no);
-
-            }
-            if (choiceZanNum.contains(zixun.zixunId)){
-                viewHolder.tv_dianzanshu.setText(dianzan.get(position)+"");
-            }else {
-
-
-                viewHolder.tv_dianzanshu.setText(sharedPreferences.getInt(zixun.zixunId+"dianzanshu", 0)+"");
-            }
-            viewHolder.iv_zan.setTag(zixun.zixunId);//设置一个唯一的标识，建议主键
-            viewHolder.tv_dianzanshu.setTag(zixun.zixunId);
+//            //页面显示处理
+//            if(choiceZan.contains(zixun.zixunId)){
+//                viewHolder.iv_zan.setImageResource(R.drawable.zan);
+//
+//            }else{
+//                viewHolder.iv_zan.setImageResource(R.drawable.zan_no);
+//
+//            }
+//            if (choiceZanNum.contains(zixun.zixunId)){
+//                viewHolder.tv_dianzanshu.setText(dianzan.get(position)+"");
+//            }else {
+//
+//
+//                viewHolder.tv_dianzanshu.setText(sharedPreferences.getInt(zixun.zixunId+"dianzanshu", 0)+"");
+//            }
+//            viewHolder.iv_zan.setTag(zixun.zixunId);//设置一个唯一的标识，建议主键
+//            viewHolder.tv_dianzanshu.setTag(zixun.zixunId);
             return convertView;
         }
 
@@ -1341,6 +1351,7 @@ public class Fragment_home extends Fragment {
         }
 
 }
+
     private static class ViewHolder{
         ImageView iv_photo;
         ImageView huodong_tx;
@@ -1351,7 +1362,7 @@ public class Fragment_home extends Fragment {
         TextView tv_xiangxi;
         TextView tv_name;
         TextView tv_content;
-        TextView tv_dianzanshu;
+        TextView tv_shoucangpinglun;
         ImageView iv_zan;
     }
 
