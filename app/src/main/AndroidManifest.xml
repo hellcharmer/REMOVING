@@ -42,12 +42,11 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".relevantexercise.ExeInfoparticipate" />
 
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
         <activity android:name=".home_activity.Publish_articles" />
-        <activity android:name=".publishInfo.UploadPhotoActivity" />
+
         <activity
             android:name=".friendchat.ConversationListActivity"
             android:screenOrientation="portrait"
@@ -65,7 +64,6 @@
         </activity>
         <activity android:name=".friendchat.Test"></activity>
         <activity android:name=".friendchat.SearchTalk"></activity>
-        <activity android:name=".home_activity.Publish_articles" />
         <activity android:name=".Publishdynamic.Publishdynamic" />
         <activity android:name=".home_activity.SearchActivity" />
         <activity

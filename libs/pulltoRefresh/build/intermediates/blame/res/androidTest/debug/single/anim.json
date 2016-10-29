@@ -1,11 +1,27 @@
 [
     {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",

@@ -53,6 +53,7 @@
         app:elErrorLayout="@layout/layout_error"
         app:elLoadingLayout="@layout/layout_loading">
         <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_marginBottom="48dp"
             android:id="@+id/comment_sr_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -72,6 +73,7 @@
         </android.support.v4.widget.SwipeRefreshLayout>
         </me.weyye.library.EmptyLayout>
     <RelativeLayout
+        android:id="@+id/comment_bottom"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_height="48dp"
@@ -99,6 +101,7 @@
             android:layout_marginBottom="15dp"
             android:src="@drawable/comment1"/>
         <EditText android:id="@+id/edt_comment_name"
+            android:textColorHint="@color/text_gray"
             android:hint="添加评论"
             android:layout_marginLeft="5dp"
             android:textCursorDrawable="@drawable/color_cursor"

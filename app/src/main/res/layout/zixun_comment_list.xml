@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/iv_comment_photo"
         android:src="@drawable/people_icon"
         android:layout_width="40dp"
@@ -16,13 +17,15 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:text="题目"
+        android:layout_marginLeft="10dp"
         android:layout_toRightOf="@id/iv_comment_photo"
         android:layout_alignTop="@id/iv_comment_photo"/>
     <TextView
         android:id="@+id/tv_comment_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:text="内容"
         android:layout_toRightOf="@id/iv_comment_photo"
@@ -31,7 +34,9 @@
         android:id="@+id/tv_comment_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
 
         android:textColor="@color/border_clo"
         android:text="时间"

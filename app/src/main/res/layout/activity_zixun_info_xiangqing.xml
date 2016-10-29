@@ -7,6 +7,42 @@
     tools:context="com.example.charmer.moving.home_activity.ZixunInfo_xq">
 
     <RelativeLayout
+        android:id="@+id/rl_home_xiangxi_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        android:background="@color/colorSkybule">
+        <ImageView
+            android:id="@+id/iv_home_hide_return"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cha"/>
+        <TextView
+            android:id="@+id/xiangxi_hide_title"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_home_hide_return"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:text="题目"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/three_point"
+            android:layout_gravity="center_vertical"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 <com.example.charmer.moving.MyView.ObservableScrollView
@@ -188,39 +224,4 @@
 
     </LinearLayout>
 </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/rl_home_xiangxi_title"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:visibility="gone"
-        android:background="@color/colorSkybule">
-        <ImageView
-            android:id="@+id/iv_home_hide_return"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cha"/>
-        <TextView
-            android:id="@+id/xiangxi_hide_title"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/iv_home_hide_return"
-            android:layout_gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
-            android:textSize="16sp"
-            android:text="题目"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/three_point"
-            android:layout_gravity="center_vertical"
-            />
-
-    </RelativeLayout>
 </FrameLayout>

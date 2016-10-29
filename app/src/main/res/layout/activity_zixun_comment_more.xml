@@ -57,4 +57,45 @@
             </com.example.charmer.moving.MyView.LoadMoreListView>
         </android.support.v4.widget.SwipeRefreshLayout>
     </me.weyye.library.EmptyLayout>
+    <RelativeLayout
+        android:id="@+id/comment_bottom"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="48dp"
+        android:focusable="true"
+        android:background="@color/colorWhite"
+        android:visibility="gone"
+        android:focusableInTouchMode="true"
+        >
+        <com.example.charmer.moving.MyView.CircularProgress
+            android:id="@+id/pb_publish_comment"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="9dp"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/comment1"/>
+        <EditText android:id="@+id/edt_comment_name"
+            android:textColorHint="@color/text_gray"
+            android:hint="添加评论"
+            android:layout_marginLeft="5dp"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:backgroundTint="@color/colorSkybule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/iv_comment"
+            />
+
+    </RelativeLayout>
 </RelativeLayout>

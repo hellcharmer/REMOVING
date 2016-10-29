@@ -74,6 +74,12 @@ public class ListActivityBean {
         public String fatherComment;
         public String commentTime;
 
+            public Comments(Integer zixun_id, Long childDiscussant, String commentTime) {
+                this.zixun_id = zixun_id;
+                this.childDiscussant = childDiscussant;
+                this.commentTime = commentTime;
+            }
+
             public Comments(Integer zixun_id, Long childDiscussant, Long fatherDiscussant, Date commentTime, String childComment, String fatherComment) {
                 this.zixun_id = zixun_id;
                 this.childDiscussant = childDiscussant;
