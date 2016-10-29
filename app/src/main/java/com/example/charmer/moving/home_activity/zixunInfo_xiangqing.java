@@ -77,7 +77,7 @@ public class zixunInfo_xiangqing extends AppCompatActivity implements View.OnCli
 
         home_xiangxi_picture = (GridView) findViewById(R.id.home_xiangxi_picture);
 
-        home_xiangxi_dianzan = (Button) findViewById(R.id.home_xiangxi_dianzan);
+       //home_xiangxi_dianzan = (Button) findViewById(R.id.home_xiangxi_dianzan);
 
         btn_container_dianzan = (RelativeLayout) findViewById(R.id.btn_container_dianzan);
 
@@ -206,9 +206,9 @@ public class zixunInfo_xiangqing extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.home_xiangxi_dianzan:
-
-                break;
+//            case R.id.home_xiangxi_dianzan:
+//
+//                break;
             case R.id.home_xiangxi_shoucang:
 
                 break;

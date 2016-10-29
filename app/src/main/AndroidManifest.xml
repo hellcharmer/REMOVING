@@ -22,7 +22,6 @@
         </activity>
 
         <activity android:name=".fragment.one_activity" />
-        <activity android:name=".publishInfo.PublishInfo" />
         <activity android:name=".relevantexercise.ExerciseinfoActivity" />
         <activity android:name=".relevantexercise.ManagerexeActivity" />
         <activity android:name=".home_activity.ZixunInfo_xq" />
@@ -44,13 +43,11 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".relevantexercise.ExeInfoparticipate" />
-        <activity android:name=".home_activity.Main2Activity" />
-        </activity>
+
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
         <activity android:name=".home_activity.Publish_articles" />
-        <activity android:name=".publishInfo.UploadPhotoActivity" />
+
         <activity
             android:name=".friendchat.ConversationListActivity"
             android:screenOrientation="portrait"
@@ -68,9 +65,7 @@
         </activity>
         <activity android:name=".friendchat.Test"></activity>
         <activity android:name=".friendchat.SearchTalk"></activity>
-        <activity android:name=".home_activity.Publish_articles" />
         <activity android:name=".Publishdynamic.Publishdynamic" />
-        <activity android:name=".home_activity.Publish_articles" />
         <activity android:name=".home_activity.SearchActivity" />
         <activity
             android:name="com.foamtrace.photopicker.PhotoPickerActivity"
@@ -87,7 +82,6 @@
             android:name="com.lidong.photopicker.PhotoPreviewActivity"
             android:theme="@style/PhotoPickerTheme" />
         <activity android:name=".home_activity.Zixun_comment"></activity>
-        <activity android:name=".home_activity.SearchActivity" />
         <activity android:name=".Login.LoginActivity"></activity>
     </application>
 
