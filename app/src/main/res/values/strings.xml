@@ -85,4 +85,19 @@
     </string-array>
     <string name="app_cancel">取消</string>
     <string name="app_sure">确定</string>
+
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+
+    <!-- 小标题字体style -->
+    <style name="SmallTitleString">
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 大标题字体style -->
+    <style name="BigTitleString">
+        <item name="android:textColor">@color/plus_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

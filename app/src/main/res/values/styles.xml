@@ -79,5 +79,10 @@
     <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="Comment" parent="android:TextAppearance">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+
 
 </resources>

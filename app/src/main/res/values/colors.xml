@@ -34,5 +34,6 @@
     <color name="Skybule">#af0099ff</color>
     <color name="dark_grey">#999999</color>
     <color name="bright_grey">#dedede</color>
+    <color name="lightgrey">#d3d3d3</color><!--亮灰色 -->
 
 </resources>

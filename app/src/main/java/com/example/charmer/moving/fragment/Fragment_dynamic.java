@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,7 +29,11 @@ import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.Publishdynamic.Publishdynamic;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.pojo.Comment;
 import com.example.charmer.moving.pojo.Info;
+import com.example.charmer.moving.pojo.Reply;
+import com.example.charmer.moving.utils.CommentAdapter;
+import com.example.charmer.moving.utils.CommentReplyAdapter;
 import com.example.charmer.moving.utils.CommonAdapter;
 import com.example.charmer.moving.utils.ViewHolder;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
@@ -53,6 +59,9 @@ import butterknife.InjectView;
  * Created by Administrator on 2016/10/13.
  */
 public class Fragment_dynamic extends BaseFragment {
+
+    private CommentAdapter commentAdapter;
+    private CommentReplyAdapter commentReplyAdapter;
 
     private boolean isRunning = false;
     private Integer dynamic_pageNo = 1; //第一页
@@ -83,6 +92,16 @@ public class Fragment_dynamic extends BaseFragment {
     private ObjectAnimator bottomAnimator;
     private RelativeLayout rl_test;
     private LinearLayout mBottom;
+    private TextView btn_input_comment;
+
+    private static final int ONE_COMMENT_CODE = -1;
+    private EditText et_content;
+    private TextView btn_send;
+
+    private List<Comment> commentList;
+    private List<Reply> replyList;
+    private RelativeLayout rl_title;
+    private TextView rb_guys;
 
     @Nullable
     @Override
@@ -98,6 +117,9 @@ public class Fragment_dynamic extends BaseFragment {
         dynamic_refresh = ((SwipeRefreshLayout) getView().findViewById(R.id.dynamic_refresh));
         rl_test = ((RelativeLayout) getView().findViewById(R.id.rl_test));
         mBottom = ((LinearLayout) getActivity().findViewById(R.id.main_bottom));
+        rl_title = ((RelativeLayout) getActivity().findViewById(R.id.rl_title));
+        rb_guys = ((TextView) getView().findViewById(R.id.rb_guys));
+//        btn_input_comment = ((TextView) getActivity().findViewById(R.id.btn_input_comment));
     }
 
     @Override
@@ -109,6 +131,9 @@ public class Fragment_dynamic extends BaseFragment {
                 startActivity(intent);
             }
         });
+//        btn_input_comment.setOnClickListener(addCommentListener);
+
+
 
         //设置下拉刷新加载圈的颜色
         //设置卷内的颜色
@@ -124,6 +149,11 @@ public class Fragment_dynamic extends BaseFragment {
     }
 
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        initData();
+    }
 
     @Override
     public void initData() {
@@ -437,6 +467,8 @@ public class Fragment_dynamic extends BaseFragment {
 
             });
 
+
+
         }
 
     }
@@ -558,10 +590,17 @@ public class Fragment_dynamic extends BaseFragment {
         bottomAnimator = ObjectAnimator.ofFloat(mBottom, "translationY", 0);
 
         bottomAnimator.setDuration(400).start();
+        rl_title.getBackground().setAlpha(255);
+        rb_guys.setTextColor(Color.WHITE);
+        ivPublish.setImageResource(R.drawable.publish_dynamic);
 
     }
 
     private void hideBar() {
+
+        rl_title.getBackground().setAlpha(50);
+        rb_guys.setTextColor(Color.BLACK);
+        ivPublish.setImageResource(R.drawable.publish_black);
         bottomAnimator = ObjectAnimator.ofFloat(mBottom, "translationY", mBottom.getHeight());
         bottomAnimator.setDuration(400).start();
         bottomAnimator.addListener(new AnimatorListenerAdapter() {
@@ -577,4 +616,96 @@ public class Fragment_dynamic extends BaseFragment {
             }
         });
     }
+
+
+
+//    /**
+//     * 发表评论的监听
+//     */
+//    private View.OnClickListener addCommentListener = new View.OnClickListener() {
+//
+//        @Override
+//        public void onClick(View v) {
+//            onCreateDialog(ONE_COMMENT_CODE, ONE_COMMENT_CODE);
+//        }
+//    };
+//
+//    /**
+//     * 弹出评论的对话框
+//     *
+//     * @param parentPositon
+//     *            父节点的position
+//     * @param childPostion
+//     *            子节点的position
+//     * @return
+//     */
+//    protected Dialog onCreateDialog(final int parentPositon,
+//                                    final int childPostion) {
+//        final Dialog customDialog = new Dialog(getActivity());
+//        LayoutInflater inflater = getActivity().getLayoutInflater();
+//        View mView = inflater.inflate(R.layout.dialog_comment, null);
+//        et_content = ((EditText) mView.findViewById(R.id.et_content));
+//        btn_send = ((TextView) mView.findViewById(R.id.btn_send));
+//        customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        customDialog.setContentView(mView);
+//        customDialog.show();
+//
+//        btn_send.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                switch (childPostion) {
+//                    case ONE_COMMENT_CODE:
+//                        if (TextUtils.isEmpty(et_content.getText().toString())) {
+//                            Toast.makeText(getActivity().getApplicationContext(), "内容不能为空",
+//                                    Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            Comment comment = new Comment();
+//                            comment.setUsername("海盗");
+//                            comment.setContent(et_content.getText().toString());
+//
+//                            commentList.add(comment);
+//                            commentAdapter.clearList();
+////                            commentAdapter.updateList(commentList);
+//                            commentAdapter.notifyDataSetChanged();
+//                            customDialog.dismiss();
+//                            et_content.setText("");
+//                        }
+//                        break;
+//                    default:
+//                        if (TextUtils.isEmpty(et_content.getText().toString())) {
+//                            Toast.makeText(getActivity(), "内容不能为空", Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            Reply reply = new Reply();
+//                            reply.setUsername("兽" + parentPositon + childPostion);
+//                            reply.setContent(et_content.getText().toString());
+//
+//                            if (parentPositon != -1) {
+//                                reply.setReplyTo(commentList.get(parentPositon)
+//                                        .getReplyList().get(childPostion)
+//                                        .getUsername());
+//                                commentList.get(parentPositon).getReplyList()
+//                                        .add(reply);
+//                            } else {
+//                                replyList = commentList.get(childPostion)
+//                                        .getReplyList();
+//                                replyList.add(reply);
+//                                commentList.get(childPostion).setReplyList(
+//                                        replyList);
+//                            }
+//
+//                            commentAdapter.clearList();
+////                            commentAdapter.updateList(commentList);
+//                            commentAdapter.notifyDataSetChanged();
+//                            customDialog.dismiss();
+//                            et_content.setText("");
+//                        }
+//                        break;
+//                }
+//            }
+//        });
+//        return customDialog;
+//
+//}
+
 }

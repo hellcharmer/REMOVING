@@ -35,6 +35,8 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -99,6 +101,7 @@ public class Publishdynamic extends AppCompatActivity {
                     public void run() {
                         super.run();
                         insertinfo();
+                        finish();
                     }
                 }.start();
             }
@@ -251,7 +254,11 @@ public class Publishdynamic extends AppCompatActivity {
             requestparams.addBodyParameter("file"+i,imageFileLists.get(i));
         }
 //        Log.i("file","file"+imageFileLists.get(1));
-        requestparams.addQueryStringParameter("infoList",infoList);
+        try {
+            requestparams.addQueryStringParameter("infoList", URLEncoder.encode(infoList,"utf-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         Log.i("publish","userId"+MyApplication.getUser().getUserid()+"");
         x.http().post(requestparams, new Callback.CommonCallback<String>() {
             @Override
@@ -295,7 +302,8 @@ public class Publishdynamic extends AppCompatActivity {
         dialog.setNegativeButton("是", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                android.os.Process.killProcess(android.os.Process.myPid());
+                dialogInterface.dismiss();
+                finish();
 
             }
         });
