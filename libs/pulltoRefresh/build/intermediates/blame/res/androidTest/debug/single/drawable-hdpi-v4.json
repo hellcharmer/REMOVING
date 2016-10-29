@@ -1,7 +1,15 @@
 [
     {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
+        "merged": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_flip.png",
+        "source": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
+        "source": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\indicator_arrow.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
@@ -12,15 +20,19 @@
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
     },
     {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\indicator_arrow.png"
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\indicator_arrow.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_flip.png",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
     },
     {
         "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
         "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\indicator_arrow.png"
     },
     {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_flip.png",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
+        "merged": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
+        "source": "G:\\android_project\\MOVING\\libs\\pulltoRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
     }
 ]

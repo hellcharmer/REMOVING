@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.contantData.Constant;
@@ -28,6 +29,7 @@ import com.example.charmer.moving.fragment.Fragment_friend;
 import com.example.charmer.moving.fragment.Fragment_home;
 import com.example.charmer.moving.fragment.Fragment_mine;
 import com.example.charmer.moving.fragment.Fragment_service;
+import com.example.charmer.moving.friendchat.RongImChat;
 import com.example.charmer.moving.home_activity.Publish_articles;
 import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.StatusBarCompat;
@@ -65,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
             switch (msg.what){
                 //handleMessage界面更新
                 case 0:
-                    iv_huan.setVisibility(View.GONE);
-                    btn_friends.setVisibility(View.VISIBLE);
+                    Toast.makeText(MainActivity.this,"MOVING",Toast.LENGTH_SHORT).show();
+
                     break;
             }
         }
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //       getusertoken();
+        //lzy的改动
+        RongImChat.A=this;
           yiburenwu2();
         //BP.init();
         StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
@@ -403,7 +407,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         // TODO Auto-generated method stub
         //lzy的改动
-        iv_huan = ((ImageView) findViewById(R.id.iv_huan));
+
         btn_friends = ((Button) findViewById(R.id.friends));
         //
         plus_rl = (RelativeLayout) findViewById(R.id.plus_rl);
