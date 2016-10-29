@@ -16,6 +16,7 @@ import com.example.charmer.moving.R;
 public class LoadMoreListView extends ListView implements AbsListView.OnScrollListener {
     private Context mContext;
     private View mFootView;
+    private View mFootView1;
     private int mTotalItemCount;
     private OnLoadMoreListener mLoadMoreListener;
     private boolean mIsLoading=false;
@@ -38,6 +39,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
     private void init(Context context){
         this.mContext=context;
         mFootView= LayoutInflater.from(context).inflate(R.layout.home_foot_view,null);
+        mFootView1= LayoutInflater.from(context).inflate(R.layout.home_foot_view1,null);
         setOnScrollListener(this);
     }
 
@@ -50,6 +52,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
                 && lastVisibleIndex ==mTotalItemCount-1) {
             mIsLoading=true;
             addFooterView(mFootView);
+            addFooterView(mFootView1);
             if (mLoadMoreListener!=null) {
                 mLoadMoreListener.onloadMore();
             }
@@ -70,6 +73,8 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
     }
     public void setLoadCompleted(){
         mIsLoading=false;
-       removeFooterView(mFootView);
+        removeFooterView(mFootView);
+        removeFooterView(mFootView1);
     }
+
 }

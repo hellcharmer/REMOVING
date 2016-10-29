@@ -735,7 +735,8 @@ public class Fragment_home extends Fragment {
                     @Override
                     public void run() {
 
-                        lv_zixun.setLoadCompleted();
+                            lv_zixun.setLoadCompleted();
+
                     }
                 });
             }

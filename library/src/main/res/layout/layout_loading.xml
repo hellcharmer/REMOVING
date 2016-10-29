@@ -5,9 +5,9 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <com.example.charmer.moving.MyView.CircularProgress
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
 
     <TextView
         android:id="@+id/tvLoadingText"
