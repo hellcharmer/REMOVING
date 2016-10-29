@@ -140,7 +140,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
                     android:text="取消报名"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
+                    android:textColor="@drawable/fontchoice"
                     android:background="@drawable/nobordebtnwithblue"
                     />
             </RelativeLayout>
@@ -157,7 +158,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
                     android:text="联系发布者"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
+                    android:textColor="@drawable/fontchoice"
                     android:background="@drawable/nobordebtnwithblue"
                     />
             </RelativeLayout>

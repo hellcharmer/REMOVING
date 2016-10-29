@@ -39,7 +39,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
     private Button enroll;
     private TextView name;
     private TextView successfulpublishpercent;
-    private TextView appointmentRate;
+    private TextView publishNum;
     private ImageView imguser;
     private Integer currectNum;
     private Integer totalNum;
@@ -63,7 +63,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
         enroll = ((Button) findViewById(R.id.enroll));
         name = ((TextView) findViewById(R.id.name));
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
-        appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
+        publishNum = ((TextView) findViewById(R.id.publishNum));
         imguser = ((ImageView) findViewById(R.id.imguser));
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         adapter = new BaseAdapter() {
@@ -186,10 +186,8 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                     textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
-                    appointmentRate.setText(ds.appointmentRate);
+                    publishNum.setText(ds.publishedNum+"");
                     xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
-
-
 
             } catch (UnsupportedEncodingException e) {
 

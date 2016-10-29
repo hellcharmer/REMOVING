@@ -26,7 +26,7 @@
 
             <ImageView
 
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/userImage"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
@@ -37,19 +37,19 @@
             <TextView
                 android:id="@+id/publisher"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_below="@id/userImage"
                 android:paddingTop="10dp"
                 android:text="@string/publisherName"
                 android:gravity="center"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="155dp"
+            android:layout_height="137dp"
             android:padding="5dp"
             android:paddingLeft="10dp"
             android:background="@drawable/remakeborde"
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
                 />
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/type"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="4dp"
                 android:layout_below="@id/title"
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/theme"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginRight="5dp"
                 android:layout_alignTop="@id/type"
@@ -94,16 +94,16 @@
 
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="5dp"
                 />
             <TextView
                 android:id="@+id/place"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/place"
-                android:textSize="18sp"
-                android:layout_alignTop="@id/addr"
-                android:layout_marginBottom="4dp"
+                android:textSize="16sp"
+                android:layout_alignBottom="@id/addr"
+                android:layout_marginBottom="3dp"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/addr"
                 />
@@ -112,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/time"
+                android:layout_marginTop="2dp"
                 android:layout_below="@id/place"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
@@ -121,10 +122,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activityTime"
-                android:textSize="18sp"
-                android:layout_marginBottom="4dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginLeft="5dp"
-                android:layout_alignTop="@id/time"
+                android:layout_alignBottom="@id/time"
                 android:layout_toRightOf="@id/time"
                 />
 
@@ -135,6 +136,7 @@
                 android:src="@drawable/account"
                 android:layout_below="@id/activityTime"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="5dp"
                 />
             <TextView
@@ -143,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/currentNumberdesc"
                 android:textSize="18sp"
-                android:layout_alignTop="@id/account"
+                android:layout_alignBottom="@id/account"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/account"
                 />
@@ -152,8 +154,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/currentNumber"
-                android:textSize="18sp"
-                android:layout_alignTop="@id/currentNumberdesc"
+                android:textSize="16sp"
+                android:layout_alignBottom="@id/currentNumberdesc"
                 android:layout_toRightOf="@id/currentNumberdesc"
                 android:layout_marginLeft="5dp"
                 />

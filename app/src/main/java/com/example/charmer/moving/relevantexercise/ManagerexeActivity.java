@@ -1,10 +1,12 @@
 package com.example.charmer.moving.relevantexercise;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.google.gson.Gson;
 
@@ -47,6 +50,9 @@ public class ManagerexeActivity extends AppCompatActivity {
     private ListView exelist1;
     private ListView exelist2;
     private ListView exelist3;
+    private SwipeRefreshLayout mSr_refresh;
+    private SwipeRefreshLayout mSr_refresh2;
+    private SwipeRefreshLayout mSr_refresh3;
     ArrayList<View> viewContainter = new ArrayList<View>();
     List<String> titleContainer = new ArrayList<String>();
     public String TAG = "tag";
@@ -62,6 +68,8 @@ public class ManagerexeActivity extends AppCompatActivity {
         pager = (ViewPager) this.findViewById(R.id.vper);
         tabStrip = (PagerTabStrip) this.findViewById(R.id.strip);
 
+
+
         //取消tab下面的长横线
        // titleStrip.setDrawFullUnderline(false);
         //设置tab的背景色
@@ -74,6 +82,31 @@ public class ManagerexeActivity extends AppCompatActivity {
         View view2 = LayoutInflater.from(this).inflate(R.layout.blanklistsupply, null);
         View view3 = LayoutInflater.from(this).inflate(R.layout.blanklistenroll, null);
 
+        mSr_refresh = (SwipeRefreshLayout) view1.findViewById(R.id.exeitemrefresh);
+        //设置下拉刷新加载圈的颜色
+        mSr_refresh.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
+        //设置下拉加载圈出现距离顶部的位置
+        mSr_refresh.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
+        //设置下拉加载圈转动时距离顶部的位置
+        mSr_refresh.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.swipe_progress_to_top));
+
+        mSr_refresh2 = (SwipeRefreshLayout) view2.findViewById(R.id.exeitem2refresh);
+        //设置下拉刷新加载圈的颜色
+        mSr_refresh2.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
+        //设置下拉加载圈出现距离顶部的位置
+        mSr_refresh2.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
+        //设置下拉加载圈转动时距离顶部的位置
+        mSr_refresh2.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.swipe_progress_to_top));
+
+        mSr_refresh3 = (SwipeRefreshLayout) view3.findViewById(R.id.exeitem3refresh);
+        //设置下拉刷新加载圈的颜色
+        mSr_refresh3.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
+        //设置下拉加载圈出现距离顶部的位置
+        mSr_refresh3.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
+        //设置下拉加载圈转动时距离顶部的位置
+        mSr_refresh3.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.swipe_progress_to_top));
+
+        bindEvents();
         exelist1 = (ListView)view1.findViewById(R.id.exeitem);
         exelist2 = (ListView)view2.findViewById(R.id.exeitem2);
         exelist3 = (ListView)view3.findViewById(R.id.exeitem3);
@@ -141,18 +174,18 @@ public class ManagerexeActivity extends AppCompatActivity {
                 Log.d(TAG, "------selected:" + arg0);
                 switch (arg0){
                     case 0:
-                        exelist2.setAdapter(adapter2);
-                        getExespart();
+//                        exelist2.setAdapter(adapter2);
+//                        getExespart();
                         break;
                     case 1:
-                        exelist1.setAdapter(adapter1);
-                        getExe();
-                        exelist3.setAdapter(adapter3);
-                        getExesenroll();
+//                        exelist1.setAdapter(adapter1);
+//                        getExe();
+//                        exelist3.setAdapter(adapter3);
+//                        getExesenroll();
                         break;
                     case 2:
-                        exelist2.setAdapter(adapter2);
-                        getExespart();
+//                        exelist2.setAdapter(adapter2);
+//                        getExespart();
                         break;
                 }
             }
@@ -167,7 +200,8 @@ public class ManagerexeActivity extends AppCompatActivity {
         getExe();
         exelist2.setAdapter(adapter2);
         getExespart();
-
+        exelist3.setAdapter(adapter3);
+        getExesenroll();
         exelist1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -199,10 +233,63 @@ public class ManagerexeActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("+++++++++++++++onRestart");
+        exelist1.setAdapter(adapter1);
+        getExe();
+        exelist2.setAdapter(adapter2);
+        getExespart();
+        exelist3.setAdapter(adapter3);
+        getExesenroll();
+    }
 
+    private void bindEvents() {
+        mSr_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getExe();
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh.setRefreshing(false);
+                    }
+                }, 1000);
+            }
+        });
+        mSr_refresh2.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getExespart();
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh2.setRefreshing(false);
+                    }
+                }, 1000);
+            }
+        });
+        mSr_refresh3.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh3.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getExesenroll();
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh3.setRefreshing(false);
+                    }
+                }, 1000);
+            }
+        });
+
+    }
 
     private void getExe() {
-        String str = "http://10.40.5.13:8080/moving/getexebypublish";
+        String str = HttpUtils.hoster+"getexebypublish";
         RequestParams params = new RequestParams(str);
         params.addQueryStringParameter("publisher",MyApplication.getUser().getUseraccount());
 
@@ -239,7 +326,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     }
 
     private void getExespart() {
-        String str = "http://10.40.5.13:8080/moving/getexebypart";
+        String str = HttpUtils.hoster+"getexebypart";
         RequestParams params = new RequestParams(str);
         params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
         params.addQueryStringParameter("mode","0");
@@ -278,7 +365,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     }
 
     private void getExesenroll() {
-        String str = "http://10.40.5.13:8080/moving/getexebypart";
+        String str = HttpUtils.hoster+"getexebypart";
         RequestParams params = new RequestParams(str);
         params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
         params.addQueryStringParameter("mode","1");
@@ -360,8 +447,8 @@ public class ManagerexeActivity extends AppCompatActivity {
                 cancelExe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Toast.makeText(ManagerexeActivity.this,exeinfolist1.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
-                         ExeSharedMthd.cancelExe(exeinfolist1.get(position1).exerciseId.toString(),ManagerexeActivity.this);
+                        cancelExe(position1,exeinfolist1.get(position1).exerciseId.toString(),ManagerexeActivity.this);
+
                     }
                 });
             } catch (UnsupportedEncodingException e) {
@@ -420,8 +507,9 @@ public class ManagerexeActivity extends AppCompatActivity {
             cancelJoin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ExeSharedMthd.cancelJoin(exeinfolist2.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(),ManagerexeActivity.this);
-                    //Toast.makeText(ManagerexeActivity.this,exeinfolist2.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
+                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(),ManagerexeActivity.this);
+
+
                 }
             });
         } catch (UnsupportedEncodingException e) {
@@ -480,8 +568,8 @@ public class ManagerexeActivity extends AppCompatActivity {
                 cancelEnroll.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Toast.makeText(ManagerexeActivity.this,exeinfolist3.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
-                        ExeSharedMthd.cancelEnroll(exeinfolist3.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(), ManagerexeActivity.this);
+                        cancelEnroll(position1,exeinfolist3.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(), ManagerexeActivity.this);
+
                     }
                 });
 
@@ -500,6 +588,122 @@ public class ManagerexeActivity extends AppCompatActivity {
         TextView activityTime ;
         TextView releaseTime ;
         TextView theme;
+
+    }
+
+    public void cancelExe(int position,String exerciseId,Context contexts){
+        final int position1 = position;
+        final Context context = contexts;
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("choice","3");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    Toast.makeText(context,"取消活动成功！",Toast.LENGTH_SHORT).show();
+                    exeinfolist1.remove(position1);
+                    adapter1.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
+    public void cancelJoin(int position,String exerciseId,String joiner,Context contexts){
+        final Context context = contexts;
+        final int position1 =position;
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("choice","2");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
+                    exeinfolist2.remove(position1);
+                    adapter2.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+    public void cancelEnroll(int position,String exerciseId,String joiner,Context contexts){
+        final int position1 = position;
+        final Context context = contexts;
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("choice","1");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    Toast.makeText(context,"报名取消成功！",Toast.LENGTH_SHORT).show();
+                    exeinfolist3.remove(position1);
+                    adapter3.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
 
     }
 }

@@ -43,6 +43,7 @@
         <attr name="npv_AlternativeHint" format="reference|string" />
 
     </declare-styleable>
+
     <declare-styleable name="CircularProgress">
         <attr name="borderWidth1" format="dimension" />
     </declare-styleable>

@@ -38,7 +38,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
     private Button canceljoin;
     private TextView name;
     private TextView successfulpublishpercent;
-    private TextView appointmentRate;
+    private TextView publishedNum;
     private ImageView imguser;
     private GridView_picture joinerImgs;
     private ImageView joinerImg;
@@ -61,7 +61,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
         canceljoin = ((Button) findViewById(R.id.canceljoin));
         name = ((TextView) findViewById(R.id.name));
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
-        appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
+        publishedNum = ((TextView) findViewById(R.id.publishedNum));
         imguser = ((ImageView) findViewById(R.id.imguser));
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         adapter = new BaseAdapter() {
@@ -177,7 +177,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
                     textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
-                    appointmentRate.setText(ds.appointmentRate);
+                    publishedNum.setText(ds.publishedNum+"");
                     xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
 
                 } catch (UnsupportedEncodingException e) {
