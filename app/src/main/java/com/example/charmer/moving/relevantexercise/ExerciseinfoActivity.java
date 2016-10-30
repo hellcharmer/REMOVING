@@ -8,13 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MyApplicition.MyApplication;
+import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -26,9 +29,11 @@ import org.xutils.x;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExerciseinfoActivity extends AppCompatActivity {
     private BaseAdapter adapter;
+    private BaseAdapter imgadapter;
     private ListView lv_exercise;
     private TextView title ;
     private Button enroll;
@@ -36,12 +41,16 @@ public class ExerciseinfoActivity extends AppCompatActivity {
     private TextView successfulpublishpercent;
     private TextView appointmentRate;
     private ImageView imguser;
+    private Integer currectNum;
+    private Integer totalNum;
+    private GridView_picture joinerImgs;
     String exerciseId;
+    private ImageView joinerImg;
     private static final String TAG = "ExerciseinfoActivity";
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     private TextView textintroduce;
     VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
-
+    final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +65,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
         appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
         imguser = ((ImageView) findViewById(R.id.imguser));
+        joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -93,7 +103,6 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                 VariableExercise.Exercises exercises = exerciseList.get(position);
 
                 try {
-                    System.out.println("-------------------=-=---------------------");
                     viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
                     viewHolder.theme.setText(URLDecoder.decode(exercises.theme,"utf-8"));
                     viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
@@ -101,7 +110,9 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                     viewHolder.cost.setText(URLDecoder.decode(exercises.cost.toString(),"utf-8"));
                     viewHolder.paymentMethod.setText(URLDecoder.decode(exercises.paymentMethod,"utf-8"));
                     viewHolder.currentNumber.setText(URLDecoder.decode(exercises.currentNumber.toString(),"utf-8"));
+                    currectNum = exercises.currentNumber;
                     viewHolder.totalNumber.setText(URLDecoder.decode(exercises.totalNumber.toString(),"utf-8"));
+                    totalNum = exercises.totalNumber;
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
@@ -109,6 +120,36 @@ public class ExerciseinfoActivity extends AppCompatActivity {
             }
         };
         lv_exercise.setAdapter(adapter);
+        imgadapter = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return dsListJoin.size();
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return dsListJoin.get(position);
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                convertView = View.inflate(ExerciseinfoActivity.this, R.layout.joinerimg, null);
+                joinerImg= (ImageView) convertView.findViewById(R.id.joinerImg);
+                VariableExercise.DataSummary vds = dsListJoin.get(position);
+                xUtilsImageUtils.display(joinerImg, HttpUtils.hoster+"upload/"+vds.userImg);
+                System.out.println("==-=-=-=-=-=-"+vds.userImg);
+
+                return convertView;
+            }
+        };
+
+        joinerImgs.setAdapter(imgadapter);
+
         getExerciseList(exerciseId);
 
         enroll.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +157,9 @@ public class ExerciseinfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(MyApplication.getUser().getUseraccount().equals(exerciseList.get(0).publisherId.toString())){
                     Toast.makeText(ExerciseinfoActivity.this,"发布者不能报名自己的活动！",Toast.LENGTH_SHORT).show();
-                }else {
-
+                }else if (currectNum>=totalNum){
+                    Toast.makeText(ExerciseinfoActivity.this,"活动人数已满！",Toast.LENGTH_SHORT).show();
+                }else{
                     ExeSharedMthd.tryToEnroll(exerciseId, MyApplication.getUser().getUseraccount(), ExerciseinfoActivity.this);
                 }
             }
@@ -125,7 +167,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
 
     }
     private void getExerciseList(String exerciseId) {
-        String str = "http://10.40.5.13:8080/moving/getexebyid";
+        String str = HttpUtils.hoster+"getexebyid";
         RequestParams params = new RequestParams(str);
 
         params.addQueryStringParameter("exerciseId",exerciseId);
@@ -137,6 +179,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                 exerciseList.clear();
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exerciseList.addAll(bean.exerciseList);
+                dsListJoin.addAll(bean.dsListJoin);
                 ds = bean.ds;
                 try{
                     title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
@@ -144,7 +187,9 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
                     appointmentRate.setText(ds.appointmentRate);
-                    xUtilsImageUtils.display(imguser,"http://10.40.5.13:8080/moving/upload/"+ds.userImg);
+                    xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
+
+
 
             } catch (UnsupportedEncodingException e) {
 
@@ -153,7 +198,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
 
                 //通知listview更新界面
                 adapter.notifyDataSetChanged();
-
+                imgadapter.notifyDataSetChanged();
             }
 
             @Override

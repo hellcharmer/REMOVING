@@ -13,7 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.charmer.moving.MyApplicition.MyApplication;
+import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -25,10 +27,11 @@ import org.xutils.x;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExeInfoparticipate extends AppCompatActivity {
 
-
+    private BaseAdapter imgadapter;
     private BaseAdapter adapter;
     private ListView lv_exercise;
     private TextView title ;
@@ -37,10 +40,14 @@ public class ExeInfoparticipate extends AppCompatActivity {
     private TextView successfulpublishpercent;
     private TextView appointmentRate;
     private ImageView imguser;
+    private GridView_picture joinerImgs;
+    private ImageView joinerImg;
     private static final String TAG = "ExerciseinfoActivity";
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     private TextView textintroduce;
     VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
+    final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
+
     private String exerciseId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +63,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
         appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
         imguser = ((ImageView) findViewById(R.id.imguser));
+        joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -108,20 +116,49 @@ public class ExeInfoparticipate extends AppCompatActivity {
             }
         };
         lv_exercise.setAdapter(adapter);
+
+        imgadapter = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return dsListJoin.size();
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return dsListJoin.get(position);
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                convertView = View.inflate(ExeInfoparticipate.this, R.layout.joinerimg, null);
+                joinerImg= (ImageView) convertView.findViewById(R.id.joinerImg);
+                VariableExercise.DataSummary vds = dsListJoin.get(position);
+                xUtilsImageUtils.display(joinerImg, HttpUtils.hoster+"upload/"+vds.userImg);
+                System.out.println("==-=-=-=-=-=-"+vds.userImg);
+
+                return convertView;
+            }
+        };
+
+        joinerImgs.setAdapter(imgadapter);
         getExerciseList(exerciseId);
 
         canceljoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(1==ExeSharedMthd.cancelJoin(exerciseId, MyApplication.getUser().getUseraccount(),ExeInfoparticipate.this)){
-                    finish();
-                }
+                ExeSharedMthd.cancelJoin(exerciseId, MyApplication.getUser().getUseraccount(),ExeInfoparticipate.this);
+                finish();
             }
         });
 
     }
     private void getExerciseList(String exerciseId) {
-        String str = "http://10.40.5.13:8080/moving/getexebyid";
+        String str = HttpUtils.hoster+"getexebyid";
         RequestParams params = new RequestParams(str);
 
         params.addQueryStringParameter("exerciseId",exerciseId);
@@ -133,6 +170,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
                 exerciseList.clear();
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exerciseList.addAll(bean.exerciseList);
+                dsListJoin.addAll(bean.dsListJoin);
                 ds = bean.ds;
                 try{
                     title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
@@ -140,7 +178,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
                     appointmentRate.setText(ds.appointmentRate);
-                    xUtilsImageUtils.display(imguser,"http://10.40.5.13:8080/moving/upload/"+ds.userImg);
+                    xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
 
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -148,7 +186,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
                 Log.i("exerciseList", "exerciseList: "+exerciseList);
                 //通知listview更新界面
                 adapter.notifyDataSetChanged();
-
+                imgadapter.notifyDataSetChanged();
             }
 
             @Override

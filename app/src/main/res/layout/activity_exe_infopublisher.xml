@@ -156,6 +156,7 @@
                 >
 
                 <ListView
+                    android:focusable="false"
                     android:id="@+id/exemidinfolist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -222,6 +223,7 @@
                 android:layout_below="@id/infoesfoot"
                 android:layout_margin="10dp">
                 <TextView
+                    android:id="@+id/canjiayonghu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="已参加用户"
@@ -229,6 +231,42 @@
                     android:textColor="@color/themeblue"
                     android:layout_margin="10dp"
                     />
+                <com.example.charmer.moving.MyView.GridView_picture
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:id="@+id/joinerImgs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/canjiayonghu"
+                    android:columnWidth="60dp"
+                    android:numColumns="auto_fit"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp"
+                    android:horizontalSpacing="10dp"
+                    >
+
+                </com.example.charmer.moving.MyView.GridView_picture>
+
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/nobordeframe"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/joiner"
+            android:layout_margin="10dp">
+
+            <com.example.charmer.moving.MyView.MyListView
+                android:id="@+id/lvenrollers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:touchscreenBlocksFocus="true"
+                >
+
+            </com.example.charmer.moving.MyView.MyListView>
+
+
             </RelativeLayout>
 
         </RelativeLayout>
