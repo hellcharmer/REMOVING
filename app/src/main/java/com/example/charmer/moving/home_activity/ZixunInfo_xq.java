@@ -330,6 +330,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                     xiangxi_hide_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
                     home_xiangxi_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
                     home_xiangxi_content.setText(URLDecoder.decode(zixunById.get(0).content, "utf-8"));
+                    home_xiangxi_pinglun.setText(zixunById.get(0).pingluns);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
@@ -517,8 +518,6 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.home_xiangxi_shoucang:
                 String shoucangid =sharedPreferences.getString("shoucangid", "");
-
-
                 if(count%2!=0){
                     String [] shoucang =shoucangid.split(",");
                     String shoucangid_new="";

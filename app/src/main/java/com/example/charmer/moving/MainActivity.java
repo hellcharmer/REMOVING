@@ -424,7 +424,30 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         if (dishui_tv.getVisibility() == View.VISIBLE
                 && keyCode == KeyEvent.KEYCODE_BACK) {
-            plus_im.performClick();
+            clicked = !clicked;
+            // 两个按钮的显示隐藏
+            dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
+            iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            // 加号旋转
+            plus_im.startAnimation(clicked ? rotate_anticlockwise
+                    : rotate_clockwise);
+            // 按钮显示隐藏效果
+            dishui_tv.startAnimation(clicked ? scale_max : scale_min);
+            guoshui_tv.startAnimation(clicked ? scale_max : scale_min);
+            iv_fabuhuodong.startAnimation(clicked ? scale_max : scale_min);
+            iv_write.startAnimation(clicked ? scale_max : scale_min);
+            // 背景色的改变
+            plus_rl.setBackgroundColor(clicked ? Color
+                    .parseColor("#aaffffff") : Color.TRANSPARENT);
+            // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
+            plus_rl.setClickable(clicked);
+            iv_write.setClickable(clicked? true : false);
+            dishui_tv.setClickable(clicked? true : false);
+            guoshui_tv.setClickable(clicked? true : false);
+            iv_fabuhuodong.setClickable(clicked? true : false);
             return true;
         }
         return super.onKeyDown(keyCode, event);
