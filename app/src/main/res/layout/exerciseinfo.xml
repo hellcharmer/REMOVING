@@ -66,7 +66,7 @@
                 android:id="@+id/fabulv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发布成功率"
+                android:text="活动成功率"
                 android:textSize="16sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
@@ -85,14 +85,14 @@
                 android:id="@+id/canjialv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="参加成功率"
+                android:text="发布活动数"
                 android:textSize="16sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/fabulv"
                 />
             <TextView
-                android:id="@+id/appointmentRate"
+                android:id="@+id/publishNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/canjialv"
@@ -234,6 +234,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:text="联系发布者"
+                android:textColor="@drawable/fontchoice"
                 android:background="@drawable/nobordebtnwithcolor"
                 />
         </RelativeLayout>
@@ -248,6 +249,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:text="报名参加"
+                android:textColor="@drawable/fontchoice"
                 android:background="@drawable/nobordebtnwithcolor"
                 />
         </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.charmer.moving.relevantexercise;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class ExeInfopublisher extends AppCompatActivity {
     private Button cancelexe;
     private TextView name;
     private TextView successfulpublishpercent;
-    private TextView appointmentRate;
+    private TextView publishedNum;
     private ImageView imguser;
     private GridView_picture joinerImgs;
     private static final String TAG = "ExerciseinfoActivity";
@@ -75,7 +76,7 @@ public class ExeInfopublisher extends AppCompatActivity {
         cancelexe = ((Button) findViewById(R.id.cancelexe));
         name = ((TextView) findViewById(R.id.name));
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
-        appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
+        publishedNum = ((TextView) findViewById(R.id.publishedNum));
         imguser = ((ImageView) findViewById(R.id.imguser));
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         lvenrollers = ((ListView)findViewById(R.id.lvenrollers));
@@ -200,10 +201,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         //Toast.makeText(ExeInfopublisher.this,dsListEnroll.get(position1).userName.toString(),Toast.LENGTH_SHORT).show();
-                        ExeSharedMthd.agreeJoin(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
-
-                        getExerciseList(exerciseId);
-
+                        agreeJoin(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
 
                     }
                 });
@@ -238,6 +236,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                 exerciseList.clear();
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exerciseList.addAll(bean.exerciseList);
+                System.out.println("=-=-=-="+exerciseList.get(0).currentNumber);
                 dsListJoin.clear();
                 dsListJoin.addAll(bean.dsListJoin);
                 dsListEnroll.clear();
@@ -249,7 +248,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                     textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
-                    appointmentRate.setText(ds.appointmentRate);
+                    publishedNum.setText(ds.publishedNum+"");
                     xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
 
                 } catch (UnsupportedEncodingException e) {
@@ -257,9 +256,10 @@ public class ExeInfopublisher extends AppCompatActivity {
                 }
                 Log.i("exerciseList", "exerciseList: "+exerciseList);
                 //通知listview更新界面
-                adapter.notifyDataSetChanged();
+
                 imgadapter.notifyDataSetChanged();
                 enrolleradapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -279,6 +279,51 @@ public class ExeInfopublisher extends AppCompatActivity {
         });
 
     }
+
+    private void agreeJoin(String exerciseId,String joiner,Context contexts){
+        final String exeId = exerciseId;
+        final Context context = contexts;
+        String str = HttpUtils.hoster+"enrollexe";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("state","1");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("0".equals(result)){
+                    Toast.makeText(context,"人数已满，操作失败！",Toast.LENGTH_SHORT).show();
+                }else
+                if ("1".equals(result)){
+                    Toast.makeText(context,"操作成功！",Toast.LENGTH_SHORT).show();
+                    getExerciseList(exeId);
+                }else
+                {
+                    Toast.makeText(context,"操作失败！",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
+
     private static class ViewHolder{
         TextView type ;
         TextView theme ;

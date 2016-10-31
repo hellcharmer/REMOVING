@@ -230,8 +230,10 @@ public class Fragment_service extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ExerciseinfoActivity.class);
-                intent.putExtra("exerciseId", exerciseList.get(position-1).exerciseId+"");
-                startActivity(intent);
+                if (position>=1) {
+                    intent.putExtra("exerciseId", exerciseList.get(position - 1).exerciseId + "");
+                    startActivity(intent);
+                }
             }
         });
         lv_exercise.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {

@@ -50,11 +50,9 @@
             </intent-filter>
 
         </activity>
-
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
         <activity android:name=".home_activity.Publish_articles" />
-
         <activity
             android:name=".friendchat.ConversationListActivity"
             android:screenOrientation="portrait"
