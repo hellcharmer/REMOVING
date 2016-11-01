@@ -150,7 +150,7 @@ public class ForgetPsdActivity extends AppCompatActivity {
         Log.d(TAG, "Signup");
 
         if (!validate()) {
-            onSignupFailed();
+            onFailed();
             return;
         }
 
@@ -177,7 +177,7 @@ public class ForgetPsdActivity extends AppCompatActivity {
                     public void run() {
                         // On complete call either onSignupSuccess or onSignupFailed
                         // depending on success
-                        onSignupSuccess();
+                        onSuccess();
                         // onSignupFailed();
                         progressDialog.dismiss();
                     }
@@ -185,14 +185,15 @@ public class ForgetPsdActivity extends AppCompatActivity {
     }
 
 
-    public void onSignupSuccess() {
+    public void onSuccess() {
         _signupButton.setEnabled(true);
-        setResult(RESULT_OK, null);
+        Intent intent = new Intent(ForgetPsdActivity.this, LoginActivity.class);
+        startActivity(intent);
         finish();
     }
 
-    public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "注册失败", Toast.LENGTH_LONG).show();
+    public void onFailed() {
+        Toast.makeText(getBaseContext(), "找回失败", Toast.LENGTH_LONG).show();
 
         _signupButton.setEnabled(true);
     }

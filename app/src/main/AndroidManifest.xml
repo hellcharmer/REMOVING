@@ -26,6 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MainActivity">
+
         </activity>
         <activity android:name=".fragment.one_activity" />
         <activity android:name=".relevantexercise.ExerciseinfoActivity" />
@@ -51,7 +52,9 @@
         </activity>
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
-        <activity android:name=".home_activity.Publish_articles" />
+        <activity android:name=".home_activity.Publish_articles" >
+
+        </activity>
         <activity
             android:name=".friendchat.ConversationListActivity"
             android:screenOrientation="portrait"
@@ -71,13 +74,7 @@
         <activity android:name=".friendchat.SearchTalk"></activity>
         <activity android:name=".Publishdynamic.Publishdynamic" />
         <activity android:name=".home_activity.SearchActivity" />
-        <activity
-            android:name="com.foamtrace.photopicker.PhotoPickerActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/PhotoPickerTheme" />
-        <activity
-            android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
-            android:theme="@style/PhotoPickerTheme" />
+
         <activity
             android:name="com.lidong.photopicker.PhotoPickerActivity"
             android:configChanges="orientation|screenSize"

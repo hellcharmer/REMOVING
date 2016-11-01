@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
@@ -17,21 +16,27 @@ import android.widget.Toast;
 
 import com.example.charmer.moving.contantData.EditTextClearTools;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.LoginInfo;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.lang.reflect.Type;
+import java.util.Map;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class LoginActivity extends AppCompatActivity {
+    public static Integer userid;
+    public static String useraccount;
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    public static String hostmac;            //本机MAC
+    String mobile;
+     ProgressDialog progressDialog;
     @InjectView(R.id.input_mobile)
     EditText _mobileText;
     @InjectView(R.id.del_phonenumber)
@@ -100,13 +105,14 @@ public class LoginActivity extends AppCompatActivity {
 
         _loginButton.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
+         progressDialog = new ProgressDialog(LoginActivity.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("正在登录...");
         progressDialog.show();
 
-        String mobile = _mobileText.getText().toString();
+         mobile = _mobileText.getText().toString();
+
         String password = _passwordText.getText().toString();
         LoginInfo loginInfo= new LoginInfo(mobile,password);
         Login(loginInfo);
@@ -114,15 +120,15 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
         editor.putString("number", mobile);
         editor.commit();
-        new Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+//        new Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        // On complete call either onLoginSuccess or onLoginFailed
+//                        onLoginSuccess();
+//                        // onLoginFailed();
+//                        progressDialog.dismiss();
+//                    }
+//                }, 3000);
     }
 
 
@@ -145,6 +151,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
+        setUseraccount(mobile);
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         _loginButton.setEnabled(true);
@@ -164,14 +171,14 @@ public class LoginActivity extends AppCompatActivity {
         String password = _passwordText.getText().toString();
 
         if (mobile.isEmpty() || mobile.length() != 11) {
-            // _mobileText.setError("请输入有效的手机号");
+             _mobileText.setError("请输入有效的手机号");
             valid = false;
         } else {
             _mobileText.setError(null);
         }
 
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            // _passwordText.setError("请输入4-10个字母或数字");
+             _passwordText.setError("请输入4-10个字母或数字");
             valid = false;
         } else {
             _passwordText.setError(null);
@@ -181,16 +188,28 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void Login(LoginInfo loginInfo) {
 
-        RequestParams params = new RequestParams(HttpUtils.host+"");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"loginservlet");
         Gson gson =new Gson();
         String login = gson.toJson(loginInfo);
-        params.addQueryStringParameter("page",login);
-
+        params.addQueryStringParameter("info",login);
+        params.addQueryStringParameter("state","2");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 Gson gson = new Gson();
-                ListActivityBean bean=gson.fromJson(result, ListActivityBean.class);
+                Type type_map = new TypeToken<Map<String,String>>(){}.getType();
+                Map<String,String> map1= gson.fromJson(result, type_map);
+                System.out.println("========="+map1.get("result"));
+                if("1".equals(map1.get("result"))){
+                    setUserid(Integer.parseInt(map1.get("userId")));
+                    setUseraccount(map1.get("useraccount"));
+                    onLoginSuccess();
+                    progressDialog.dismiss();
+                }else {
+                     onLoginFailed();
+                    progressDialog.dismiss();
+                }
+
 
             }
 
@@ -212,4 +231,19 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public static Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
+
+    public static String getUseraccount() {
+        return useraccount;
+    }
+
+    public void setUseraccount(String useraccount) {
+        this.useraccount = useraccount;
+    }
 }

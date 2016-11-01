@@ -30,8 +30,8 @@ import com.example.charmer.moving.contantData.Constant;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
-import com.foamtrace.photopicker.intent.PhotoPreviewIntent;
 import com.google.gson.Gson;
+import com.lidong.photopicker.intent.PhotoPreviewIntent;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
