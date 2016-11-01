@@ -2,6 +2,7 @@ package com.example.charmer.moving;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,12 +19,18 @@ import android.widget.Toast;
 
 import com.example.charmer.moving.contantData.EditTextClearTools;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.example.charmer.moving.pojo.ListActivityBean;
+import com.example.charmer.moving.pojo.LoginInfo;
 import com.google.gson.Gson;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -35,7 +42,7 @@ public class SignupActivity extends AppCompatActivity {
     String APPKEY = "101732155b605";
     String APPSECRETE = "69d1850f4b74100266ab576b64e6cb16";
     ProgressDialog progressDialog;
-
+    public Bitmap QRcode = null;
     int i = 30;
     @InjectView(R.id.input_name)
     EditText _nameText;
@@ -152,10 +159,10 @@ public class SignupActivity extends AppCompatActivity {
     public void signup() {
         Log.d(TAG, "Signup");
 
-        if (!validate()) {
-            onSignupFailed();
-            return;
-        }
+//        if (!validate()) {
+//            onSignupFailed();
+//            return;
+//        }
 
         _signupButton.setEnabled(false);
 
@@ -170,26 +177,33 @@ public class SignupActivity extends AppCompatActivity {
          String mobile = _mobileText.getText().toString();
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
+        QRcode= CodeUtils.createImage(mobile, 400, 400, null);
+        saveBitmaptofile(QRcode,mobile);
 
-        // TODO: Implement your own signup logic here.
-        Signup(name,mobile,password);
-//        new Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        // On complete call either onSignupSuccess or onSignupFailed
-//                        // depending on success
-//
-//                        onSignupSuccess();
-//                        // onSignupFailed();
-//                        progressDialog.dismiss();
-//                    }
-//                }, 3000);
+        File file=new File("/data/data/com.example.charmer.moving/QRcodepicture/"+mobile+".png");
+        System.out.println("=-=-==-==-=-=-=-=-=-=-="+file);
+        sendImg(file);
+        LoginInfo loginInfo= new LoginInfo(name,password,mobile,mobile+".png");
+        Signup(loginInfo);
+      //  Signup(name,mobile,password);
+        new Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        // On complete call either onSignupSuccess or onSignupFailed
+                        // depending on success
+
+                        onSignupSuccess();
+                        // onSignupFailed();
+                        progressDialog.dismiss();
+                    }
+                }, 3000);
     }
 
 
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
-        setResult(RESULT_OK, null);
+        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+        startActivity(intent);
         finish();
     }
 
@@ -328,24 +342,30 @@ public class SignupActivity extends AppCompatActivity {
         SMSSDK.unregisterAllEventHandler();
         super.onDestroy();
     }
-    private void Signup(String name,String mobile,String password) {
+    private void Signup(LoginInfo SignupInfo) {
 
-        RequestParams params = new RequestParams(HttpUtils.host+"");
-        params.addQueryStringParameter("name",name);
-        params.addQueryStringParameter("mobile",mobile);
-        params.addQueryStringParameter("password",password);
+        RequestParams params = new RequestParams(HttpUtils.hoster+"loginservlet");
+        Gson gson =new Gson();
+        String info = gson.toJson(SignupInfo);
+        params.addQueryStringParameter("info",info);
+        params.addQueryStringParameter("state","1");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Gson gson = new Gson();
-                ListActivityBean bean=gson.fromJson(result, ListActivityBean.class);
-                onSignupSuccess();
-                progressDialog.dismiss();
+                if("0".equals(result)) {
+                    Toast.makeText(SignupActivity.this,"此号码已被使用",Toast.LENGTH_SHORT).show();
+                }else if("1".equals(result)){
+                    onSignupFailed();
+                }else{
+                    onSignupSuccess();
+                    progressDialog.dismiss();
+                }
+
             }
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                onSignupFailed();
+
             }
 
             @Override
@@ -359,5 +379,59 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+    }
+    static boolean saveBitmaptofile(Bitmap bmp,String mobile){
+        Bitmap.CompressFormat format= Bitmap.CompressFormat.JPEG;
+        int quality = 100;
+        OutputStream stream = null;
+        try {
+            File cacheDir = new File("/data/data/com.example.charmer.moving/QRcodepicture/");//设置目录参数
+            if(cacheDir.exists()){
+
+            }else{
+                cacheDir.mkdirs();//新建目录
+            }
+
+            stream = new FileOutputStream("/data/data/com.example.charmer.moving/QRcodepicture/"+mobile+".png");
+        } catch (FileNotFoundException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return bmp.compress(format, quality, stream);
+    }
+    private void sendImg(File file) {
+        RequestParams params = new RequestParams(HttpUtils.host + "qrcode");//upload 是你要访问的servlet
+        Log.i("文件",""+file);
+        params.addBodyParameter("file", file);
+
+
+
+        x.http().post(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+//                if("true".equals(result)){
+//                    Toast.makeText(Publish_articles.this,"发布成功",Toast.LENGTH_SHORT).show();
+//                }else {
+//                    Toast.makeText(Publish_articles.this,"发布失败",Toast.LENGTH_SHORT).show();
+//                }
+                System.out.println("---------------===="+result);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
     }
 }

@@ -40,15 +40,14 @@ public class LoginInfo {
 	public LoginInfo(){
 		
 	}
-	public LoginInfo(String loginName, String loginPsd){
+	public LoginInfo(String phoneNum, String loginPsd){
 		super();
-		this.loginName = loginName;
+		this.phoneNum = phoneNum;
 		this.loginPsd = loginPsd;
 	}
-	public LoginInfo(Integer loginId, String loginName, String loginPsd,
+	public LoginInfo(String loginName, String loginPsd,
 			String phoneNum, String qRcode) {
 		super();
-		this.loginId = loginId;
 		this.loginName = loginName;
 		this.loginPsd = loginPsd;
 		this.phoneNum = phoneNum;

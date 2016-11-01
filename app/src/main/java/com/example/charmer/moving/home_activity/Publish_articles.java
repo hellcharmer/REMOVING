@@ -25,12 +25,12 @@ import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.foamtrace.photopicker.ImageCaptureManager;
-import com.foamtrace.photopicker.PhotoPickerActivity;
-import com.foamtrace.photopicker.PhotoPreviewActivity;
-import com.foamtrace.photopicker.SelectModel;
-import com.foamtrace.photopicker.intent.PhotoPickerIntent;
-import com.foamtrace.photopicker.intent.PhotoPreviewIntent;
+import com.lidong.photopicker.ImageCaptureManager;
+import com.lidong.photopicker.PhotoPickerActivity;
+import com.lidong.photopicker.PhotoPreviewActivity;
+import com.lidong.photopicker.SelectModel;
+import com.lidong.photopicker.intent.PhotoPickerIntent;
+import com.lidong.photopicker.intent.PhotoPreviewIntent;
 
 import org.json.JSONArray;
 import org.xutils.common.Callback;
@@ -186,7 +186,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
 
         System.out.println("============" + UUID.randomUUID());
-        return sdf.format(date) + "_" + UUID.randomUUID() + ".jpg";
+        return sdf.format(date) + "_" + UUID.randomUUID() + ".png";
     }
 
     private void fabuhuondong(String userId) {
@@ -224,10 +224,9 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
     private void sendImg() {
         RequestParams params = new RequestParams(HttpUtils.host + "upload");//upload 是你要访问的servlet
 
-
         for (int i=0;i<file.size();i++) {
             Log.i("文件",""+file.get(i));
-            params.addBodyParameter("file", file.get(i));
+            params.addBodyParameter("file",file.get(i));
         }
 
 
