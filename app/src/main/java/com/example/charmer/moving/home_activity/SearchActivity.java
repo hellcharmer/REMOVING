@@ -218,7 +218,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 	}
 	private void getSearchZixunlist(int page,String tv_word) {
 		emptyLayout.showLoading("正在加载，请稍后");
-		RequestParams params = new RequestParams(HttpUtils.host+"searchzixun");
+		RequestParams params = new RequestParams(HttpUtils.hoster+"searchzixun");
 		params.addQueryStringParameter("page",page+"");
 		params.addQueryStringParameter("tv_word",tv_word);
 		x.http().get(params, new Callback.CommonCallback<String>() {
@@ -377,7 +377,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 
 
 
-				xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.host + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
+				xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
 
 
 				// Log.i("====",position+"=="+zixunlist.get(0).likes);

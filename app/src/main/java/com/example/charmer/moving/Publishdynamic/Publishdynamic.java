@@ -16,6 +16,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
@@ -239,7 +240,7 @@ public class Publishdynamic extends AppCompatActivity {
 
         String infoContent =et_infoContent.getText().toString().trim();
         Log.i("publish","infoContent"+infoContent+"");
-        User user = new User(MyApplication.getUser().getUserid());
+        User user = new User(MainActivity.getUser().getUserid());
         Info info = new Info(infoContent,user);
         Gson gson = new Gson();
         String infoList = gson.toJson(info);
@@ -252,7 +253,7 @@ public class Publishdynamic extends AppCompatActivity {
         }
 //        Log.i("file","file"+imageFileLists.get(1));
         requestparams.addQueryStringParameter("infoList",infoList);
-        Log.i("publish","userId"+MyApplication.getUser().getUserid()+"");
+        Log.i("publish","userId"+MainActivity.getUser().getUserid()+"");
         x.http().post(requestparams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

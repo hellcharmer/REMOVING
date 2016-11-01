@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Button;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
@@ -52,7 +53,7 @@ public class GetTokenAsyncTask extends AsyncTask<String,Integer,String> {
 
     @Override
     protected String doInBackground(String... params) {
-       j= MyApplication.getUser().getUserid();
+       j= MainActivity.getUser().getUserid();
         Log.i("OOOOOOOOOO","asdasd"+j);
         RequestParams requestParams2=new RequestParams(HttpUtils.host4+"getalluserstoken");
         x.http().get(requestParams2, new Callback.CommonCallback<String>() {

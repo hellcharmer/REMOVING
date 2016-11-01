@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
@@ -173,7 +174,7 @@ public class ExeInfoEnroll extends AppCompatActivity {
                                     DialogInterface dialogInterface,
                                     int which) {
                                 // TODO Auto-generated method
-                                ExeSharedMthd.cancelEnroll(exerciseId, MyApplication.getUser().getUseraccount(), ExeInfoEnroll.this);
+                                ExeSharedMthd.cancelEnroll(exerciseId, MainActivity.getUser().getUseraccount(), ExeInfoEnroll.this);
                                 finish();
                             }
                         });

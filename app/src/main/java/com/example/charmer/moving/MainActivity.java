@@ -47,7 +47,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static User user =new User();//设置一个默认用户
 
+    public static User getUser() {
+        return user;
+    }
+    public  void setUser(User user) {
+        this.user = user;
+    }
 
     private boolean clicked = false;// 记录加号按钮的点击状态，默认为没有点击
 
@@ -97,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = this.getIntent();
+        user.setUserid(Integer.parseInt(intent.getStringExtra("userId")));
+        user.setUseraccount(intent.getStringExtra("useraccount"));
         setContentView(R.layout.activity_main);
 //       getusertoken();
         //lzy的改动
@@ -464,7 +474,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                j= MyApplication.getUser().getUserid();
+                j= getUser().getUserid();
                 RequestParams requestParams2=new RequestParams(HttpUtils.host4+"getalluserstoken");
                 x.http().get(requestParams2, new Callback.CommonCallback<String>() {
                     @Override

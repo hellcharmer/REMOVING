@@ -44,4 +44,5 @@ dependencies {
     compile files('libs/MobCommons-2016.0921.1136.jar')
     compile name:'SMSSDK-2.1.2',ext:'aar'
     compile name:'SMSSDKGUI-2.1.2',ext:'aar'
+    compile project(path: ':lib-zxing')
 }

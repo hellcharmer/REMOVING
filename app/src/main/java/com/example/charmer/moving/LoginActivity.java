@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.charmer.moving.contantData.EditTextClearTools;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.LoginInfo;
+import com.example.charmer.moving.pojo.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -31,8 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class LoginActivity extends AppCompatActivity {
-    public static Integer userid;
-    public static String useraccount;
+
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
     String mobile;
@@ -150,9 +150,12 @@ public class LoginActivity extends AppCompatActivity {
         moveTaskToBack(true);
     }
 
-    public void onLoginSuccess() {
-        setUseraccount(mobile);
+    public void onLoginSuccess(String str1,String str2) {
+
+        System.out.println("____________"+str1+"+"+str2);
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.putExtra("userId",str1);
+        intent.putExtra("useraccount",str2);
         startActivity(intent);
         _loginButton.setEnabled(true);
         finish();
@@ -201,9 +204,8 @@ public class LoginActivity extends AppCompatActivity {
                 Map<String,String> map1= gson.fromJson(result, type_map);
                 System.out.println("========="+map1.get("result"));
                 if("1".equals(map1.get("result"))){
-                    setUserid(Integer.parseInt(map1.get("userId")));
-                    setUseraccount(map1.get("useraccount"));
-                    onLoginSuccess();
+
+                    onLoginSuccess(map1.get("userId"),map1.get("useraccount"));
                     progressDialog.dismiss();
                 }else {
                      onLoginFailed();
@@ -231,19 +233,5 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public static Integer getUserid() {
-        return userid;
-    }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
-    }
-
-    public static String getUseraccount() {
-        return useraccount;
-    }
-
-    public void setUseraccount(String useraccount) {
-        this.useraccount = useraccount;
-    }
 }

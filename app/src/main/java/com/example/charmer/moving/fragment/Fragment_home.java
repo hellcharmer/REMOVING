@@ -33,6 +33,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.MyView.MyGridView;
@@ -190,7 +191,7 @@ public class Fragment_home extends Fragment {
             public void onClick(View v) {
                 //重新加载数据
                 getExerciseList();
-                getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                getZixunlist(1,MainActivity.getUser().getUseraccount());
             }
         });
         vp_zixun.setCurrentItem(0);
@@ -199,7 +200,7 @@ public class Fragment_home extends Fragment {
 
         emptyLayout.showLoading("正在加载，请稍后");
         getExerciseList();
-        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+        getZixunlist(page_zixun, MainActivity.getUser().getUseraccount());
         //list 的每个点击事件
         lv_zixun.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -431,20 +432,20 @@ public class Fragment_home extends Fragment {
                     case 1000:
                         lv_zixun.setAdapter(adapter1);
                         getExerciseList();
-                        getZixunlist(page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                        getZixunlist(page_zixun,MainActivity.getUser().getUseraccount());
 
                         break;
                     case 1001:
 
 
                         lv_zixun_basketball.setAdapter(adapter2);
-                       getZixunlist_basketball(page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                       getZixunlist_basketball(page_basketball,MainActivity.getUser().getUseraccount());
 
                         break;
                     case 1002:
 
                         lv_zixun_swimming.setAdapter(adapter3);
-                         getZixunlist_swim(page_swim,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                         getZixunlist_swim(page_swim,MainActivity.getUser().getUseraccount());
 
                         break;
                     case 1003:
@@ -547,7 +548,7 @@ public class Fragment_home extends Fragment {
                     @Override
                     public void run() {
                     getExerciseList();
-                      getZixunlist(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                      getZixunlist(1,MainActivity.getUser().getUseraccount());
 
 
                         //调用该方法结束刷新，否则加载圈会一直在
@@ -563,7 +564,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh2.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        getZixunlist_basketball(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                        getZixunlist_basketball(1,MainActivity.getUser().getUseraccount());
                         //调用该方法结束刷新，否则加载圈会一直在
                         mSr_refresh2.setRefreshing(false);
                     }
@@ -576,7 +577,7 @@ public class Fragment_home extends Fragment {
                 mSr_refresh3.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        getZixunlist_swim(1,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                        getZixunlist_swim(1,MainActivity.getUser().getUseraccount());
                         //调用该方法结束刷新，否则加载圈会一直在
                         mSr_refresh3.setRefreshing(false);
                     }
@@ -726,7 +727,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_zixun<totalpage_zixun) {
 
-                    getZixunlist(++page_zixun,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                    getZixunlist(++page_zixun,MainActivity.getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -754,7 +755,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_basketball<totalpage_basketball) {
 
-                    getZixunlist_basketball(++page_basketball,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                    getZixunlist_basketball(++page_basketball,MainActivity.getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -781,7 +782,7 @@ public class Fragment_home extends Fragment {
                 }
                 if(page_swim<totalpage_swimming) {
 
-                    getZixunlist_basketball(++page_swim,((MyApplication)getActivity().getApplication()).getUser().getUseraccount());
+                    getZixunlist_basketball(++page_swim,MainActivity.getUser().getUseraccount());
                 }else {
                     toastUtil.Short(getActivity(),"已经到底了！").show();
                 }
@@ -868,7 +869,7 @@ public class Fragment_home extends Fragment {
 
     private void getZixunlist(int page,String userId) {
 
-        RequestParams params = new RequestParams(HttpUtils.host+"toappmain");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"toappmain");
         params.addQueryStringParameter("page",page+"");
         params.addQueryStringParameter("userId",userId+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -918,12 +919,12 @@ public class Fragment_home extends Fragment {
     private void getExerciseList() {
 
         //GPS定位值==place
-        String str = "http://10.40.5.13:8080/moving/getexercise?exercisetheme=全部主题&exercisetype=全部分类&page=1&place=苏州";
+        String str = HttpUtils.hoster+"getexercise";
         RequestParams params = new RequestParams(str);
-//        params.addQueryStringParameter("exercisetype",requirement.getExercisetype().toString());
-//        params.addQueryStringParameter("exercisetheme",requirement.getExercisetheme().toString());
-
-
+        params.addQueryStringParameter("exercisetype","全部分类");
+        params.addQueryStringParameter("exercisetheme","全部主题");
+        params.addQueryStringParameter("page","1");
+        params.addQueryStringParameter("place","苏州");
 
         x.http().get(params, new Callback.CommonCallback<String>() {
 
@@ -962,7 +963,7 @@ public class Fragment_home extends Fragment {
     }
 
     private void getZixunlist_basketball(int page,String userId) {
-        String url= HttpUtils.host+"toappmain";//访问网络的url
+        String url= HttpUtils.hoster+"toappmain";//访问网络的url
         RequestParams params = new RequestParams(url);
         params.addQueryStringParameter("type","篮球");
         params.addQueryStringParameter("page",page+"");
@@ -1008,7 +1009,7 @@ public class Fragment_home extends Fragment {
 
     private void getZixunlist_swim(int page,String userId) {
 
-        RequestParams params = new RequestParams(HttpUtils.host+"toappmain?type=游泳");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"toappmain?type=游泳");
         params.addQueryStringParameter("page",page+"");
         params.addQueryStringParameter("userId",userId);
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -1053,7 +1054,7 @@ public class Fragment_home extends Fragment {
 
 
     private void addDianZanNum(Integer zixunId){
-        RequestParams params = new RequestParams(HttpUtils.host+"addzannum");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"addzannum");
         params.addQueryStringParameter("zixunId",zixunId+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -1081,7 +1082,7 @@ public class Fragment_home extends Fragment {
     }
 
     private void deleteDianZanNum(Integer zixunId){
-        RequestParams params = new RequestParams(HttpUtils.host+"deletezannum");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
         params.addQueryStringParameter("zixunId",zixunId+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -1255,12 +1256,12 @@ public class Fragment_home extends Fragment {
                 viewHolder.tv_name.setText(URLDecoder.decode(zixun.title,"utf-8"));
                 viewHolder.tv_type.setText(URLDecoder.decode(zixun.type,"utf-8"));
                 viewHolder.tv_content.setText(URLDecoder.decode(zixun.content,"utf-8"));
-                xUtilsImageUtils.display(viewHolder.iv_photo, HttpUtils.host+"userimg/"+ URLDecoder.decode(zixun.publisherimg, "utf-8"),true);
+                xUtilsImageUtils.display(viewHolder.iv_photo, HttpUtils.hoster+"upload/"+ URLDecoder.decode(zixun.publisherimg, "utf-8"),true);
                 if(list.get(position).photoImg.equals("")){
                     viewHolder.iv_picture.setVisibility(View.GONE);
                 }else {
                     viewHolder.iv_picture.setVisibility(View.VISIBLE);
-                    xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.host+"upload/"+ URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
+                    xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
                 }
 
                 // Log.i("====",position+"=="+zixunlist.get(0).likes);

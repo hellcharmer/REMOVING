@@ -24,6 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
@@ -323,7 +324,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExe() {
         String str = HttpUtils.hoster+"getexebypublish";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("publisher",MyApplication.getUser().getUseraccount());
+        params.addQueryStringParameter("publisher", MainActivity.getUser().getUseraccount());
 
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -364,7 +365,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExespart() {
         String str = HttpUtils.hoster+"getexebypart";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
+        params.addQueryStringParameter("participator",MainActivity.getUser().getUseraccount());
         params.addQueryStringParameter("mode","0");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -407,7 +408,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private void getExesenroll() {
         String str = HttpUtils.hoster+"getexebypart";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
+        params.addQueryStringParameter("participator",MainActivity.getUser().getUseraccount());
         params.addQueryStringParameter("mode","1");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -506,7 +507,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                             DialogInterface dialogInterface,
                                             int which) {
                                         // TODO Auto-generated method
-                                        cancelExe(position1,exeinfolist1.get(position1).exerciseId.toString(),MyApplication.getUser().getUseraccount(),ManagerexeActivity.this);
+                                        cancelExe(position1,exeinfolist1.get(position1).exerciseId.toString(),MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
                                     }
                                 });
                         builder.setNegativeButton(
@@ -594,7 +595,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                         DialogInterface dialogInterface,
                                         int which) {
                                     // TODO Auto-generated method
-                                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(),ManagerexeActivity.this);
+                                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
                                 }
                             });
                     builder.setNegativeButton(
@@ -683,7 +684,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                             DialogInterface dialogInterface,
                                             int which) {
                                         // TODO Auto-generated method
-                                        cancelEnroll(position1,exeinfolist3.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(), ManagerexeActivity.this);
+                                        cancelEnroll(position1,exeinfolist3.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(), ManagerexeActivity.this);
                                     }
                                 });
                         builder.setNegativeButton(

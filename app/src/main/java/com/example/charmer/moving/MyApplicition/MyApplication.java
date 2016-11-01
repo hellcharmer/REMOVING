@@ -15,16 +15,8 @@ import io.rong.imkit.RongIM;
  * Created by Charmer on 2016/9/13.
  */
 public class MyApplication extends Application{
-     static Integer userid= LoginActivity.getUserid();
-    static String useraccount=LoginActivity.getUseraccount();
-    public static User getUser() {
-        return user;
-    }
-   public static User user =new User(userid,useraccount);//设置一个默认用户
 
-    public  void setUser(User user) {
-        this.user = user;
-    }
+
     public static Context context;
     @Override
     public void onCreate() {

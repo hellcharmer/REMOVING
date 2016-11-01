@@ -22,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
@@ -306,7 +307,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                                         DialogInterface dialogInterface,
                                         int which) {
                                     // TODO Auto-generated method
-                                    ExeSharedMthd.cancelExe(exerciseId, MyApplication.getUser().getUseraccount(),ExeInfopublisher.this);
+                                    ExeSharedMthd.cancelExe(exerciseId, MainActivity.getUser().getUseraccount(),ExeInfopublisher.this);
                                     finish();
                                      }
                             });

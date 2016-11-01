@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.fragment.WheelDialogFragment;
@@ -201,7 +202,7 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
                     && !"请选方式".equals(mthdslt.getText().toString()) &&!"请选人数".equals(numslt.getText().toString()))
             {
                 //Toast.makeText(PublishExe.this, "提交成功", Toast.LENGTH_SHORT).show();
-                exepub = new Exercises(Long.parseLong(MyApplication.getUser().getUseraccount()), exe_pb_name.getText().toString(), typeslt.getText().toString(),
+                exepub = new Exercises(Long.parseLong(MainActivity.getUser().getUseraccount()), exe_pb_name.getText().toString(), typeslt.getText().toString(),
                        themeslt.getText().toString(), exepb_intro.getText().toString(), exepb_place.getText().toString(),
                        DateUtil.stringToDate(etStartTime.getText().toString()), Double.parseDouble(exepb_cost.getText().toString()), mthdslt.getText().toString(),
                        Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()),"","","");

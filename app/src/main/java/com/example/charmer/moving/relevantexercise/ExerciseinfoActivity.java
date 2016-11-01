@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
@@ -176,12 +177,12 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                                     DialogInterface dialogInterface,
                                     int which) {
                                 // TODO Auto-generated method
-                                if(MyApplication.getUser().getUseraccount().equals(exerciseList.get(0).publisherId.toString())){
+                                if(MainActivity.getUser().getUseraccount().equals(exerciseList.get(0).publisherId.toString())){
                                     Toast.makeText(ExerciseinfoActivity.this,"发布者不能报名自己的活动！",Toast.LENGTH_SHORT).show();
                                 }else if (currectNum>=totalNum){
                                     Toast.makeText(ExerciseinfoActivity.this,"活动人数已满！",Toast.LENGTH_SHORT).show();
                                 }else{
-                                    ExeSharedMthd.tryToEnroll(exerciseId, MyApplication.getUser().getUseraccount(), ExerciseinfoActivity.this);
+                                    ExeSharedMthd.tryToEnroll(exerciseId, MainActivity.getUser().getUseraccount(), ExerciseinfoActivity.this);
                                 }
                             }
                         });

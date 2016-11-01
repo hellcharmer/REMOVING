@@ -193,6 +193,7 @@ public class Fragment_service extends Fragment {
                 VariableExercise.Exercises exercises = exerciseList.get(position);
 
                 try {
+                    System.out.println(exercises);
                     viewHolder.publisher.setText(URLDecoder.decode(exercises.userName,"utf-8"));
                     viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
                     viewHolder.theme.setText(URLDecoder.decode(exercises.theme,"utf-8"));

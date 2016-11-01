@@ -25,6 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.CircularProgress;
 import com.example.charmer.moving.MyView.LoadMoreListView;
@@ -108,7 +109,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         lv_comment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                if(commentList.get(position).childDiscussant==Long.parseLong(MyApplication.getUser().getUseraccount())){
+                if(commentList.get(position).childDiscussant==Long.parseLong(MainActivity.getUser().getUseraccount())){
                     AlertDialog.Builder builder = new AlertDialog.Builder(
                             Zixun_comment.this);
                     builder.setMessage(getString(R.string.delete_sure));
@@ -123,7 +124,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                                         DialogInterface dialogInterface,
                                         int which) {
                                     // TODO Auto-generated method
-                                    ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MyApplication.getUser().getUseraccount()), commentList.get(position).commentTime);
+                                    ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MainActivity.getUser().getUseraccount()), commentList.get(position).commentTime);
                                     lv_comment.setAdapter(adapter);
                                     Delete_comments(comments);
                                     handler =new Handler(){
@@ -264,13 +265,13 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                         iv_comment.setVisibility(View.GONE);
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-                        ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MyApplication.getUser().getUseraccount()), (long) 0, new Date(System.currentTimeMillis()), edt_comment_name.getText().toString(), "");
+                        ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MainActivity.getUser().getUseraccount()), (long) 0, new Date(System.currentTimeMillis()), edt_comment_name.getText().toString(), "");
                         Publish_comments(comments);
                     }else{
                         iv_comment.setVisibility(View.GONE);
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-                        ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MyApplication.getUser().getUseraccount()), childId, new Date(System.currentTimeMillis()), edt_comment_name.getText().toString(), childcontent);
+                        ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MainActivity.getUser().getUseraccount()), childId, new Date(System.currentTimeMillis()), edt_comment_name.getText().toString(), childcontent);
                         Publish_comments(comments);
                     }
                 }

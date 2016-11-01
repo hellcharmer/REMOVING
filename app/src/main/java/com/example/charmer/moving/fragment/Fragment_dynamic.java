@@ -22,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.Publishdynamic.Publishdynamic;
@@ -331,7 +332,7 @@ public class Fragment_dynamic extends BaseFragment {
 
                     RequestParams requestParams1 = new RequestParams(HttpUtils.host_dynamic+"updatelikeservlet");
                     requestParams1.addQueryStringParameter("infoId",info.getInfoId()+"");
-                    requestParams1.addQueryStringParameter("userId",((MyApplication)getActivity().getApplication()).getUser().getUserid()+"");
+                    requestParams1.addQueryStringParameter("userId",MainActivity.getUser().getUserid()+"");
                     x.http().get(requestParams1, new Callback.CommonCallback<String>() {
                         @Override
                         public void onSuccess(String result) {

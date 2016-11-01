@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.MyView.ObservableScrollView;
@@ -154,7 +155,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         String shoucangid =sharedPreferences.getString("shoucangid", "");
 
         if(shoucangid.equals("")){
-           getshoucangstate(((MyApplication)ZixunInfo_xq.this.getApplication()).getUser().getUseraccount());
+           getshoucangstate(MainActivity.getUser().getUseraccount());
         }else {
             String[] shoucang = shoucangid.trim().split(",");
             for (int i = 0; i < shoucang.length; i++) {
@@ -304,7 +305,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
     private void getZixunlistById(String zixunId) {
 
-        RequestParams params = new RequestParams(HttpUtils.host + "querybyId");
+        RequestParams params = new RequestParams(HttpUtils.hoster + "querybyId");
         params.addQueryStringParameter("zixunId", zixunId);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -325,7 +326,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                 //通知listView更新界面
                 //adapter1.notifyDataSetChanged();
                 try {
-                    xUtilsImageUtils.display(xiangxi_author_touxiang, HttpUtils.host+"userimg/"+ URLDecoder.decode(zixunById.get(0).publisherimg, "utf-8"),true);
+                    xUtilsImageUtils.display(xiangxi_author_touxiang, HttpUtils.hoster+"userimg/"+ URLDecoder.decode(zixunById.get(0).publisherimg, "utf-8"),true);
                     imgs = URLDecoder.decode(zixunById.get(0).photoImg, "utf-8").split(",");
                     xiangxi_hide_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
                     home_xiangxi_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
@@ -370,7 +371,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
 
 
-        RequestParams params = new RequestParams(HttpUtils.host+"updatelikeservlet");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"updatelikeservlet");
         params.addQueryStringParameter("zixunId",zixunId);
         params.addQueryStringParameter("userId",userId);
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -404,7 +405,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addshoucang(String userId){
-        RequestParams params = new RequestParams(HttpUtils.host+"addzannum");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"addzannum");
         params.addQueryStringParameter("zixunId",zixunId);
         params.addQueryStringParameter("userId",userId);
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -433,7 +434,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     }
 
     private void deleteshoucang(String userId){
-        RequestParams params = new RequestParams(HttpUtils.host+"deletezannum");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
         params.addQueryStringParameter("zixunId",zixunId);
         params.addQueryStringParameter("userId",userId);
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -496,7 +497,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                 viewHolder = (ViewHolder) convertView.getTag();
             }
             //  System.out.println("=============="+imgs[0]);
-            xUtilsImageUtils.display(viewHolder.image, HttpUtils.host +"upload/"+ imgs[position]);
+            xUtilsImageUtils.display(viewHolder.image, HttpUtils.hoster +"upload/"+ imgs[position]);
             return convertView;
         }
     }
@@ -533,7 +534,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                     startDra = getResources().getDrawable(R.drawable.shoucang);
                     startDra.setBounds(0, 0, startDra.getMinimumWidth(), startDra.getMinimumHeight());
                     home_xiangxi_shoucang.setCompoundDrawables(null, startDra, null, null);
-                    deleteshoucang(((MyApplication)ZixunInfo_xq.this.getApplication()).getUser().getUseraccount());
+                    deleteshoucang(MainActivity.getUser().getUseraccount());
                 }else {
 
                     shoucangid+=zixunId+",";
@@ -543,7 +544,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                     startDra = getResources().getDrawable(R.drawable.shoucang_select);
                     startDra.setBounds(0, 0, startDra.getMinimumWidth(), startDra.getMinimumHeight());
                     home_xiangxi_shoucang.setCompoundDrawables(null, startDra, null, null);
-                    addshoucang(((MyApplication)ZixunInfo_xq.this.getApplication()).getUser().getUseraccount());
+                    addshoucang(MainActivity.getUser().getUseraccount());
                 }
                 count++;
 
