@@ -46,6 +46,9 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
+
     private boolean clicked = false;// 记录加号按钮的点击状态，默认为没有点击
 
     private RelativeLayout plus_rl;
