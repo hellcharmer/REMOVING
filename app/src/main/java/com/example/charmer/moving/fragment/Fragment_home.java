@@ -1148,7 +1148,7 @@ public class Fragment_home extends Fragment {
 
     private class MyAdapter extends BaseAdapter {
         private   List<ListActivityBean.Zixun> list;
-        Map<Integer,Integer> dianzan=new HashMap<Integer, Integer>();
+
         public MyAdapter( List<ListActivityBean.Zixun> list) {
             this.list= list;
         }
