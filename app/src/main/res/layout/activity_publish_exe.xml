@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_publish_exe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.charmer.moving.relevantexercise.PublishExe">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/topbar"
+        android:background="@color/colorSkybule">
+        <RelativeLayout
+            android:id="@+id/finishthis"
+            android:layout_width="48dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finish"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:gravity="left|center"
+            android:layout_marginLeft="15dp"
+            android:text="发布活动"
+            android:textSize="24sp"
+            android:textColor="#fff"
+            android:layout_centerInParent="true"
+            />
+        <Button
+            android:id="@+id/commitbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="提交"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topbar">
+
+
+    <RelativeLayout
+        android:id="@+id/rltv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        >
+
+        <TextView
+            android:id="@+id/exepbname"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="活动名称"
+            android:textSize="18sp"
+            android:gravity="center"
+
+            />
+
+        <EditText
+
+            android:id="@+id/exe_pb_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="@drawable/tvborde"
+            android:layout_below="@id/exepbname"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:maxLength="10"
+            />
+        <TextView
+            android:id="@+id/exepbtype"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="类型与主题"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/exe_pb_name"
+            android:layout_marginTop="15dp"
+            />
+        <LinearLayout
+            android:id="@+id/linlay"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_toRightOf="@id/exepbtype"
+            android:layout_below="@id/exe_pb_name"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            >
+
+        <TextView
+
+            android:id="@+id/typeslt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="请选类型"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#aaaaaaaa"
+            android:background="@drawable/spborde"
+            android:layout_marginRight="5dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/themeslt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="请选主题"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#aaaaaaaa"
+            android:background="@drawable/spborde"
+
+            >
+        </TextView>
+        </LinearLayout>
+    <TextView
+        android:id="@+id/exesttime"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="活动开始时间"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/linlay"
+        />
+
+    <TextView
+        android:layout_below="@id/exesttime"
+        android:id="@+id/et_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/tvborde"
+        />
+
+        <TextView
+            android:id="@+id/exepbnum"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="活动人数"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/et_start_time"
+            />
+
+        <TextView
+            android:id="@+id/exepbcost"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="活动费用"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginRight="30dp"
+            android:layout_alignTop="@id/exepbnum"
+            android:layout_toRightOf="@id/exepbnum"
+            />
+
+        <TextView
+            android:id="@+id/exepbctmth"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="费用方式"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_alignTop="@id/exepbcost"
+            android:layout_toRightOf="@id/exepbcost"
+            />
+
+        <TextView
+
+            android:id="@+id/exepb_num"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="请选人数"
+            android:textSize="20sp"
+            android:textColor="#aaaaaaaa"
+            android:background="@drawable/spborde"
+            android:layout_below="@id/exepbnum"
+            android:layout_toLeftOf="@id/exepbcost"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            >
+        </TextView>
+
+        <EditText
+
+            android:id="@+id/exepb_cost"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="@drawable/tvborde"
+            android:layout_below="@id/exepbcost"
+            android:layout_alignLeft="@id/exepbcost"
+            android:layout_toLeftOf="@id/exepbctmth"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            android:maxLength="4"
+            >
+        </EditText>
+
+
+        <TextView
+
+            android:id="@+id/exepb_ctmth"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="请选方式"
+            android:textSize="20sp"
+            android:textColor="#aaaaaaaa"
+            android:background="@drawable/spborde"
+            android:layout_below="@id/exepbctmth"
+            android:layout_alignLeft="@id/exepbctmth"
+            android:layout_alignParentRight="true"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/exestplace"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="活动地点"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/exepb_num"
+            />
+
+        <EditText
+            android:layout_below="@id/exestplace"
+            android:id="@+id/exepb_place"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="@drawable/tvborde"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:maxLength="20"
+            />
+        <TextView
+            android:id="@+id/exeintro"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="最后说明"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/exepb_place"
+            />
+
+        <EditText
+            android:layout_below="@id/exeintro"
+            android:id="@+id/exepb_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:background="@null"
+            android:hint="点此选填"
+            android:textColorHint="@color/text_gray"
+            android:focusable="true"
+            android:imeOptions="actionDone"
+            android:maxLength="150"
+        />
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

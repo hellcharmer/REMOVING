@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_publish_articles"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.charmer.moving.home_activity.Publish_articles">
+    <RelativeLayout
+        android:id="@+id/home_publish_header"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/background_with_shadow"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/iv_home_return"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/return2"/>
+
+        <TextView
+            android:id="@+id/xiangxi_fengxiang"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/iv_home_return"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/plus_black"
+            android:textSize="20sp"
+            android:text="运动经验分享"/>
+        <ImageView
+            android:id="@+id/iv_publish_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/publish_articles"
+            android:layout_gravity="center_vertical"
+            />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@+id/home_publish_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp"
+        >
+        <LinearLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@+id/home_publish_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/publish_title"
+                android:background="@drawable/line_et_bg"
+                android:layout_marginTop="20dp"
+                android:textColorHint="@color/publish_grey"
+                android:textSize="18sp"
+                android:textCursorDrawable="@null"
+                android:hint="标题"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/publish_content"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColorHint="@color/publish_grey"
+                android:textCursorDrawable="@null"
+                android:background="@null"
+                android:hint="分享运动快乐..."
+                android:gravity="top|left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <com.example.charmer.moving.MyView.GridView_picture
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="@dimen/space_size"
+                android:verticalSpacing="@dimen/space_size" />
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="49dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/common_bottom_bar_normal_bg"
+        />
+    <RelativeLayout
+        android:id="@+id/rl_publish_photo"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/home_photo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="48dp"
+            android:visibility="gone"
+            android:background="@drawable/home_photo_shadow"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_publish_photo"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/plus_black"
+
+                android:textSize="18sp"
+                android:text="拍照"/>
+            <TextView
+                android:id="@+id/tv_publish_album"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/plus_black"
+                android:textSize="18sp"
+                android:text="相册"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+
+        android:id="@+id/home_xiangxi_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_at"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <ImageButton
+                android:id="@+id/home_publish_at"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:src="@drawable/at"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_picture"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <ImageButton
+                android:id="@+id/home_publish_at_picture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:src="@drawable/publish_tupian"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
+
