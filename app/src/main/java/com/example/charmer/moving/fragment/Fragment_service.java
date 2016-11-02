@@ -25,6 +25,7 @@ import android.widget.TextView;
 
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.contantData.ToastUtil;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.relevantexercise.ExerciseinfoActivity;
@@ -55,6 +56,7 @@ public class Fragment_service extends Fragment {
     private Spinner spinner2;
     private Button manager_btn;
     private Button tempbtn;
+    private TextView noData;
     private SwipeRefreshLayout mSr_refresh;
     private boolean isRunning = false;
     private ObjectAnimator mHeaderAnimator;
@@ -87,6 +89,7 @@ public class Fragment_service extends Fragment {
         super.onActivityCreated(savedInstanceState);
         manager_btn = (Button)view.findViewById(R.id.manager);
         tempbtn = (Button)view.findViewById(R.id.temp);
+        noData = (TextView)view.findViewById(R.id.noData);
         lv_exercise = ((LoadMoreListView)view.findViewById(R.id.listview));
         lv_exercise.addHeaderView(View.inflate(getActivity(),R.layout.blankspace,null));
         spinner1 = (Spinner)view.findViewById(R.id.spinner1);
@@ -190,6 +193,7 @@ public class Fragment_service extends Fragment {
                 VariableExercise.Exercises exercises = exerciseList.get(position);
 
                 try {
+                    System.out.println(exercises);
                     viewHolder.publisher.setText(URLDecoder.decode(exercises.userName,"utf-8"));
                     viewHolder.type.setText(URLDecoder.decode(exercises.type,"utf-8"));
                     viewHolder.theme.setText(URLDecoder.decode(exercises.theme,"utf-8"));
@@ -230,8 +234,10 @@ public class Fragment_service extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ExerciseinfoActivity.class);
-                intent.putExtra("exerciseId", exerciseList.get(position-1).exerciseId+"");
-                startActivity(intent);
+                if (position>=1) {
+                    intent.putExtra("exerciseId", exerciseList.get(position - 1).exerciseId + "");
+                    startActivity(intent);
+                }
             }
         });
         lv_exercise.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
@@ -255,6 +261,11 @@ public class Fragment_service extends Fragment {
                         page = 1;
                         getExerciseList(requirement,page);
                         //调用该方法结束刷新，否则加载圈会一直在
+                        if(exerciseList.size()>0){
+                            noData.setText("");
+                        }else{
+                            noData.setText("没有数据呢!");
+                        }
                         mSr_refresh.setRefreshing(false);
                     }
                 },1000);
@@ -282,7 +293,9 @@ public class Fragment_service extends Fragment {
                             return false;
                         } else if (v1 < -3 && !isRunning && direction == 0) {
                             direction = 1;
-                            hideBar();
+                            if(exerciseList.size()>0) {
+                                hideBar();
+                            }
                             mStartY = mEndY;
                             return false;
                         }
@@ -368,7 +381,7 @@ public class Fragment_service extends Fragment {
 
     private void getExerciseList(Requirement requirement,int page) {
         final int currentpage = page;
-        String str = "http://10.40.5.13:8080/moving/getexercise";
+        String str = HttpUtils.hoster+"getexercise";
         RequestParams params = new RequestParams(str);
         params.addQueryStringParameter("exercisetype",requirement.getExercisetype().toString());
         params.addQueryStringParameter("exercisetheme",requirement.getExercisetheme().toString());
@@ -387,9 +400,11 @@ public class Fragment_service extends Fragment {
                 totalPage = bean.totalPage;
                 exerciseList.addAll(bean.exerciseList);
                 //dongtaiList = bean.dongtailist;   error
-                System.out.println(bean.exerciseList);
-
-                Log.i("exerciseList", "exerciseList: "+exerciseList);
+                if(exerciseList.size()>0){
+                    noData.setText("");
+                }else{
+                    noData.setText("没有数据呢!");
+                }
                 //通知listview更新界面
                 adapter.notifyDataSetChanged();
 

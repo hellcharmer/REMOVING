@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
@@ -186,12 +187,12 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
 
         System.out.println("============" + UUID.randomUUID());
-        return sdf.format(date) + "_" + UUID.randomUUID() + ".jpg";
+        return sdf.format(date) + "_" + UUID.randomUUID() + ".png";
     }
 
     private void fabuhuondong(String userId) {
 
-        RequestParams params = new RequestParams(HttpUtils.host+"addzixun");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"addzixun");
         params.addQueryStringParameter("userId",userId);
         params.addQueryStringParameter("title",publish_title.getText().toString());
         params.addQueryStringParameter("picture",str);
@@ -222,12 +223,11 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
     }
 
     private void sendImg() {
-        RequestParams params = new RequestParams(HttpUtils.host + "upload");//upload 是你要访问的servlet
-
+        RequestParams params = new RequestParams(HttpUtils.hoster + "upload");//upload 是你要访问的servlet
 
         for (int i=0;i<file.size();i++) {
             Log.i("文件",""+file.get(i));
-            params.addBodyParameter("file", file.get(i));
+            params.addBodyParameter("file",file.get(i));
         }
 
 
@@ -349,7 +349,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.iv_publish_btn:
                 Toast.makeText(Publish_articles.this,"正在发布...",Toast.LENGTH_SHORT).show();
-                fabuhuondong(((MyApplication)Publish_articles.this.getApplication()).getUser().getUseraccount());
+                fabuhuondong(MainActivity.getUser().getUseraccount());
                 sendImg();
                 break;
 

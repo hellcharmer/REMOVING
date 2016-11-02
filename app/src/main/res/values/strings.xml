@@ -51,6 +51,8 @@
     </string-array>
 
 
+
+
     <string-array name="exepbtype">
         <item>篮球</item>
         <item>足球</item>
@@ -103,6 +105,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete_sure">确定要删除评论吗？</string>
+    <string name="ok">确定</string>
+    <string name="agreejoin_sure">确定同意吗？</string>
+    <string name="cancel_sure">确定取消吗？</string>
+    <string name="enrollExe_sure">确定报名吗？</string>
+    <string name="cancelenrollintro">您将取消报名此活动!</string>
+    <string name="canceljoinExeintro">若发布者不同意将影响您的活动参加率！</string>
+    <string name="cancelExeintro">活动时间前取消将影响您的成功发布率！</string>
+    <string name="ignore_sure">确定忽略吗？</string>
+
 
     <string name="xq_viewpager_indicator">%1$d/%2$d</string>
     <string name="select">%1$s/%2$s</string>

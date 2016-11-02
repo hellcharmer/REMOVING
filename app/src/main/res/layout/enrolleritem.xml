@@ -52,9 +52,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:text="同意"
+            android:textSize="16sp"
             />
 
+        <TextView
+            android:id="@+id/ignore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忽略"
+            android:textColor="@color/colorSkybule"
+            android:layout_below="@id/agreebtn"
+            android:layout_alignLeft="@id/agreebtn"
+            android:layout_marginLeft="30dp"
+            />
     </RelativeLayout>
 
 </RelativeLayout>

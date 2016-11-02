@@ -16,11 +16,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.fragment.WheelDialogFragment;
@@ -52,6 +55,7 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
     private TextView etStartTime;
     private Button commitbtn;
     private Exercises exepub;
+    private RelativeLayout finishthis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +73,7 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
         mthdslt = (TextView) findViewById(R.id.exepb_ctmth);
         mthdslt.setOnClickListener(new tvclick(R.array.exepbcostmthd, mthdslt));
         commitbtn = (Button) findViewById(R.id.commitbtn);
-
+        finishthis =((RelativeLayout) findViewById(R.id.finishthis));
         exe_pb_name = (EditText) findViewById(R.id.exe_pb_name);
         exepb_cost = (EditText) findViewById(R.id.exepb_cost);
         exepb_place = (EditText) findViewById(R.id.exepb_place);
@@ -79,6 +83,12 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
         commitbtn.setOnClickListener(new commitbtn());
 
         findViewById(R.id.rltv).setOnClickListener(new rltvclick());
+        finishthis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private class tvclick implements View.OnClickListener {
@@ -192,10 +202,10 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
                     && !"请选方式".equals(mthdslt.getText().toString()) &&!"请选人数".equals(numslt.getText().toString()))
             {
                 //Toast.makeText(PublishExe.this, "提交成功", Toast.LENGTH_SHORT).show();
-                exepub = new Exercises(Long.parseLong(MyApplication.getUser().getUseraccount()), exe_pb_name.getText().toString(), typeslt.getText().toString(),
+                exepub = new Exercises(Long.parseLong(MainActivity.getUser().getUseraccount()), exe_pb_name.getText().toString(), typeslt.getText().toString(),
                        themeslt.getText().toString(), exepb_intro.getText().toString(), exepb_place.getText().toString(),
                        DateUtil.stringToDate(etStartTime.getText().toString()), Double.parseDouble(exepb_cost.getText().toString()), mthdslt.getText().toString(),
-                       Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()), "FUJKONVNKK","","","");
+                       Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()),"","","");
 
                 sendexepub(exepub);
 

@@ -106,7 +106,7 @@ public class zixunInfo_xiangqing extends AppCompatActivity implements View.OnCli
 
     private void getZixunlistById(String zixunId) {
 
-        RequestParams params = new RequestParams(HttpUtils.host + "querybyId");
+        RequestParams params = new RequestParams(HttpUtils.hoster + "querybyId");
         params.addQueryStringParameter("zixunId", zixunId);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -194,7 +194,7 @@ public class zixunInfo_xiangqing extends AppCompatActivity implements View.OnCli
                 viewHolder = (ViewHolder) convertView.getTag();
             }
             //  System.out.println("=============="+imgs[0]);
-            xUtilsImageUtils.display(viewHolder.image, HttpUtils.host + imgs[position]);
+            xUtilsImageUtils.display(viewHolder.image, HttpUtils.hoster + imgs[position]);
             return convertView;
         }
     }

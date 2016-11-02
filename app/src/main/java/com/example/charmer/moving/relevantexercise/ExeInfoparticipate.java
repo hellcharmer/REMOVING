@@ -1,5 +1,7 @@
 package com.example.charmer.moving.relevantexercise;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,8 +12,11 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
@@ -38,10 +43,11 @@ public class ExeInfoparticipate extends AppCompatActivity {
     private Button canceljoin;
     private TextView name;
     private TextView successfulpublishpercent;
-    private TextView appointmentRate;
+    private TextView publishedNum;
     private ImageView imguser;
     private GridView_picture joinerImgs;
     private ImageView joinerImg;
+    private RelativeLayout finishthis;
     private static final String TAG = "ExerciseinfoActivity";
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     private TextView textintroduce;
@@ -59,11 +65,13 @@ public class ExeInfoparticipate extends AppCompatActivity {
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
         title = ((TextView) findViewById(R.id.titleinfo));
         canceljoin = ((Button) findViewById(R.id.canceljoin));
+        canceljoin.setEnabled(false);
         name = ((TextView) findViewById(R.id.name));
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
-        appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
+        publishedNum = ((TextView) findViewById(R.id.publishedNum));
         imguser = ((ImageView) findViewById(R.id.imguser));
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
+        finishthis =((RelativeLayout) findViewById(R.id.finishthis));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -151,7 +159,42 @@ public class ExeInfoparticipate extends AppCompatActivity {
         canceljoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ExeSharedMthd.cancelJoin(exerciseId, MyApplication.getUser().getUseraccount(),ExeInfoparticipate.this);
+                 AlertDialog.Builder builder = new AlertDialog.Builder(
+                        ExeInfoparticipate.this);
+                builder.setMessage(getString(R.string.cancel_sure));
+                builder.setTitle(R.string.canceljoinExeintro);
+//                    builder.setIcon(getResources().getDrawable(
+//                            R.drawable.delete1));
+                builder.setPositiveButton(
+                        getString(R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(
+                                    DialogInterface dialogInterface,
+                                    int which) {
+                                // TODO Auto-generated method
+                                ExeSharedMthd.cancelJoin(exerciseId, MainActivity.getUser().getUseraccount(),ExeInfoparticipate.this);
+                                finish();
+                            }
+                        });
+                builder.setNegativeButton(
+                        getString(R.string.cancel),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(
+                                    DialogInterface dialogInterface,
+                                    int which) {
+                                // TODO Auto-generated method
+                                // stub
+                                dialogInterface.dismiss();
+                            }
+                        });
+                builder.create().show();
+            }
+        });
+        finishthis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });
@@ -172,12 +215,15 @@ public class ExeInfoparticipate extends AppCompatActivity {
                 exerciseList.addAll(bean.exerciseList);
                 dsListJoin.addAll(bean.dsListJoin);
                 ds = bean.ds;
+                if(exerciseList.size()>0) {
+                    canceljoin.setEnabled(true);
+                }
                 try{
                     title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
                     textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
-                    appointmentRate.setText(ds.appointmentRate);
+                    publishedNum.setText(ds.publishedNum+"");
                     xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
 
                 } catch (UnsupportedEncodingException e) {

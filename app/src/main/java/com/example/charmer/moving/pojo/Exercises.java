@@ -4,20 +4,7 @@ import java.util.Date;
 
 public class Exercises {
 
-    @Override
-	public String toString() {
-		return "Exercises [activeState=" + activeState + ", activityTime="
-				+ activityTime + ", cost=" + cost + ", currentNumber="
-				+ currentNumber + ", exerciseCode=" + exerciseCode
-				+ ", exerciseId=" + exerciseId + ", exerciseIntroduce="
-				+ exerciseIntroduce + ", exerciseTheme=" + exerciseTheme
-				+ ", exerciseTitle=" + exerciseTitle + ", exerciseType="
-				+ exerciseType + ", groupMembers=" + groupMembers
-				+ ", participator=" + participator + ", paymentMethod="
-				+ paymentMethod + ", place=" + place + ", publisherId="
-				+ publisherId + ", releaseTime=" + releaseTime
-				+ ", totalNumber=" + totalNumber + "]";
-	}
+
 	private Long exerciseId;
     private Long publisherId;
     private String exerciseTitle;
@@ -33,7 +20,6 @@ public class Exercises {
     private Date releaseTime;
     private String participator;
     private String groupMembers;
-    private String exerciseCode;
     private String activeState;
     private String enroller;
     
@@ -161,14 +147,6 @@ public class Exercises {
 		this.groupMembers = groupMembers;
 	}
 
-	public String getExerciseCode() {
-		return exerciseCode;
-	}
-
-	public void setExerciseCode(String exerciseCode) {
-		this.exerciseCode = exerciseCode;
-	}
-
 	public String getActiveState() {
 		return activeState;
 	}
@@ -236,7 +214,7 @@ public class Exercises {
 //		this.exerciseCode = exerciseCode;
 //	}
 
-	public Exercises(Long publisherId, String exerciseTitle, String exerciseType, String exerciseTheme, String exerciseIntroduce, String place, Date activityTime, Double cost, String paymentMethod, Integer totalNumber, Date releaseTime, String exerciseCode, String participator, String groupMembers, String enroller) {
+	public Exercises(Long publisherId, String exerciseTitle, String exerciseType, String exerciseTheme, String exerciseIntroduce, String place, Date activityTime, Double cost, String paymentMethod, Integer totalNumber, Date releaseTime, String participator, String groupMembers, String enroller) {
 
 		this.publisherId = publisherId;
 		this.exerciseTitle = exerciseTitle;
@@ -249,7 +227,6 @@ public class Exercises {
 		this.paymentMethod = paymentMethod;
 		this.totalNumber = totalNumber;
 		this.releaseTime = releaseTime;
-		this.exerciseCode = exerciseCode;
 		this.participator = participator;
 		this.groupMembers = groupMembers;
 		this.enroller = enroller;

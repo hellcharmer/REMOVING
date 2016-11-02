@@ -16,6 +16,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
@@ -35,8 +36,6 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -101,7 +100,6 @@ public class Publishdynamic extends AppCompatActivity {
                     public void run() {
                         super.run();
                         insertinfo();
-                        finish();
                     }
                 }.start();
             }
@@ -302,8 +300,7 @@ public class Publishdynamic extends AppCompatActivity {
         dialog.setNegativeButton("是", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-                finish();
+                android.os.Process.killProcess(android.os.Process.myPid());
 
             }
         });

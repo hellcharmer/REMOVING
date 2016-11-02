@@ -1,5 +1,7 @@
 package com.example.charmer.moving.relevantexercise;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,9 +13,11 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
@@ -39,11 +43,12 @@ public class ExerciseinfoActivity extends AppCompatActivity {
     private Button enroll;
     private TextView name;
     private TextView successfulpublishpercent;
-    private TextView appointmentRate;
+    private TextView publishNum;
     private ImageView imguser;
     private Integer currectNum;
     private Integer totalNum;
     private GridView_picture joinerImgs;
+    private RelativeLayout finishthis;
     String exerciseId;
     private ImageView joinerImg;
     private static final String TAG = "ExerciseinfoActivity";
@@ -61,11 +66,13 @@ public class ExerciseinfoActivity extends AppCompatActivity {
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
         title = ((TextView) findViewById(R.id.titleinfo));
         enroll = ((Button) findViewById(R.id.enroll));
+        enroll.setEnabled(false);
         name = ((TextView) findViewById(R.id.name));
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
-        appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
+        publishNum = ((TextView) findViewById(R.id.publishNum));
         imguser = ((ImageView) findViewById(R.id.imguser));
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
+        finishthis =((RelativeLayout) findViewById(R.id.finishthis));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -155,13 +162,49 @@ public class ExerciseinfoActivity extends AppCompatActivity {
         enroll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(MyApplication.getUser().getUseraccount().equals(exerciseList.get(0).publisherId.toString())){
-                    Toast.makeText(ExerciseinfoActivity.this,"发布者不能报名自己的活动！",Toast.LENGTH_SHORT).show();
-                }else if (currectNum>=totalNum){
-                    Toast.makeText(ExerciseinfoActivity.this,"活动人数已满！",Toast.LENGTH_SHORT).show();
-                }else{
-                    ExeSharedMthd.tryToEnroll(exerciseId, MyApplication.getUser().getUseraccount(), ExerciseinfoActivity.this);
-                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(
+                        ExerciseinfoActivity.this);
+                builder.setMessage(getString(R.string.enrollExe_sure));
+                builder.setTitle("您将报名此活动！");
+//                    builder.setIcon(getResources().getDrawable(
+//                            R.drawable.delete1));
+                builder.setPositiveButton(
+                        getString(R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(
+                                    DialogInterface dialogInterface,
+                                    int which) {
+                                // TODO Auto-generated method
+                                if(MainActivity.getUser().getUseraccount().equals(exerciseList.get(0).publisherId.toString())){
+                                    Toast.makeText(ExerciseinfoActivity.this,"发布者不能报名自己的活动！",Toast.LENGTH_SHORT).show();
+                                }else if (currectNum>=totalNum){
+                                    Toast.makeText(ExerciseinfoActivity.this,"活动人数已满！",Toast.LENGTH_SHORT).show();
+                                }else{
+                                    ExeSharedMthd.tryToEnroll(exerciseId, MainActivity.getUser().getUseraccount(), ExerciseinfoActivity.this);
+                                }
+                            }
+                        });
+                builder.setNegativeButton(
+                        getString(R.string.cancel),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(
+                                    DialogInterface dialogInterface,
+                                    int which) {
+                                // TODO Auto-generated method
+                                // stub
+                                dialogInterface.dismiss();
+                            }
+                        });
+                builder.create().show();
+            }
+        });
+        finishthis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
@@ -181,15 +224,16 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                 exerciseList.addAll(bean.exerciseList);
                 dsListJoin.addAll(bean.dsListJoin);
                 ds = bean.ds;
+                if(exerciseList.size()>0) {
+                    enroll.setEnabled(true);
+                }
                 try{
                     title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
                     textintroduce.setText(URLDecoder.decode(bean.exerciseList.get(0).exerciseIntroduce,"utf-8"));
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
-                    appointmentRate.setText(ds.appointmentRate);
+                    publishNum.setText(ds.publishedNum+"");
                     xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
-
-
 
             } catch (UnsupportedEncodingException e) {
 

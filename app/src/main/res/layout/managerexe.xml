@@ -8,7 +8,18 @@
         android:id="@+id/titletop"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/themeblue">
+        android:background="@color/colorSkybule">
+        <RelativeLayout
+            android:id="@+id/finishthis"
+            android:layout_width="48dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finish"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

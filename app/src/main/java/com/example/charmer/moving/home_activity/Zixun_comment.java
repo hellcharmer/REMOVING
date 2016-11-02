@@ -1,17 +1,23 @@
 package com.example.charmer.moving.home_activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextPaint;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,7 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.charmer.moving.MyApplicition.MyApplication;
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyView.CircularProgress;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.R;
@@ -41,7 +47,7 @@ import java.util.List;
 import me.weyye.library.EmptyLayout;
 
 public class Zixun_comment extends AppCompatActivity implements View.OnClickListener {
-    private ImageView iv_comment_return;
+    private RelativeLayout iv_comment_return;
     private TextView xiangxi_author;
     private RelativeLayout zixun_comment_header;
     private SwipeRefreshLayout comment_sr_refresh;
@@ -58,8 +64,13 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
     String zixunId = "";
     private List<ListActivityBean.Comments> commentList = new ArrayList<ListActivityBean.Comments>();
     private ImageView iv_comment_sort;
+    private RelativeLayout rl_comment_sort;
     private ToastUtil toastUtil;
     private CircularProgress pb_publish_comment;
+    private boolean flag=true;//true为评论状态，false为回复状态
+    private long childId=0;
+    private String childcontent="";
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,15 +103,77 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         lv_comment.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
             @Override
             public void onloadMore() {
-                System.out.println("-----=-=-===========");
                 loadCommentMore();
             }
         });
+        lv_comment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                if(commentList.get(position).childDiscussant==Long.parseLong(MainActivity.getUser().getUseraccount())){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                            Zixun_comment.this);
+                    builder.setMessage(getString(R.string.delete_sure));
+                    builder.setTitle(getString(R.string.delete));
+                    builder.setIcon(getResources().getDrawable(
+                            R.drawable.delete1));
+                    builder.setPositiveButton(
+                            getString(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(
+                                        DialogInterface dialogInterface,
+                                        int which) {
+                                    // TODO Auto-generated method
+                                    ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MainActivity.getUser().getUseraccount()), commentList.get(position).commentTime);
+                                    lv_comment.setAdapter(adapter);
+                                    Delete_comments(comments);
+                                    handler =new Handler(){
+                                        @Override
+                                        public void handleMessage(Message msg) {
+                                            super.handleMessage(msg);
+                                            switch (msg.what){
+                                                case 0:
+                                                    commentList.remove(commentList.get(position));
+                                                    adapter.notifyDataSetChanged();
+                                                    break;
+                                            }
+                                        }
+                                    };
 
+                                }
+                            });
+                    builder.setNegativeButton(
+                            getString(R.string.cancel),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(
+                                        DialogInterface dialogInterface,
+                                        int which) {
+                                    // TODO Auto-generated method
+                                    // stub
+                                    dialogInterface.dismiss();
+                                }
+                            });
+                    builder.create().show();
+                }else {
+
+                    edt_comment_name.requestFocus();
+                    edt_comment_name.setFocusable(true);
+                    InputMethodManager inputManager = (InputMethodManager)edt_comment_name.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputManager.showSoftInput(edt_comment_name, 0);
+                    childId = commentList.get(position).childDiscussant;
+                    childcontent = commentList.get(position).childComment;
+                    edt_comment_name.setHint("回复" + commentList.get(position).childDiscussantName + "的评论:");
+
+                    flag = false;
+                }
+            }
+        });
 
     }
 
     private void initData() {
+
         emptyLayout.bindView(lv_comment);
         Intent intent = this.getIntent();
         zixunId = intent.getStringExtra("zixunId");
@@ -112,7 +185,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
     private void initView() {
 
 
-        iv_comment_return = (ImageView) findViewById(R.id.iv_comment_return);
+        iv_comment_return = (RelativeLayout) findViewById(R.id.iv_comment_return);
         iv_comment_return.setOnClickListener(this);
         xiangxi_author = (TextView) findViewById(R.id.xiangxi_author);
 
@@ -131,7 +204,8 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         activity_zixun_comment = (RelativeLayout) findViewById(R.id.activity_zixun_comment);
 
         iv_comment_sort = (ImageView) findViewById(R.id.iv_comment_sort);
-        iv_comment_sort.setOnClickListener(this);
+        rl_comment_sort = (RelativeLayout) findViewById(R.id.rl_comment_sort);
+        rl_comment_sort.setOnClickListener(this);
         pb_publish_comment = (CircularProgress) findViewById(R.id.pb_publish_comment);
         comment_sr_refresh.setColorSchemeColors(ContextCompat.getColor(Zixun_comment.this,R.color.refresh_circle));
         comment_sr_refresh.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
@@ -172,7 +246,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_comment_sort:
+            case R.id.rl_comment_sort:
                 if (iv_sortcount % 2 == 0) {
                     commentList.clear();
                     iv_comment_sort.setImageResource(R.drawable.ic_ascending);
@@ -190,13 +264,24 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                 if(edt_comment_name.getText().toString().equals("")) {
 
                 }else{
-                    iv_comment.setVisibility(View.GONE);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-                    ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MyApplication.getUser().getUseraccount()), (long) 0, new Date(System.currentTimeMillis()), edt_comment_name.getText().toString(), "");
-                    Publish_comments(comments);
-                    getCommentslist(page_comment, zixunId, state);
+                    if(flag==true) {
+                        iv_comment.setVisibility(View.GONE);
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                        ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MainActivity.getUser().getUseraccount()), (long) 0, new Date(System.currentTimeMillis()), edt_comment_name.getText().toString(), "");
+                        Publish_comments(comments);
+                    }else{
+                        iv_comment.setVisibility(View.GONE);
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                        ListActivityBean.Comments comments = new ListActivityBean.Comments(Integer.parseInt(zixunId), Long.parseLong(MainActivity.getUser().getUseraccount()), childId, new Date(System.currentTimeMillis()), edt_comment_name.getText().toString(), childcontent);
+                        Publish_comments(comments);
+                    }
                 }
+                break;
+            case R.id.iv_comment_return:
+                finish();
+                break;
         }
     }
 
@@ -242,6 +327,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
             public void onSuccess(String result) {
                 if("true".equals(result)){
                     edt_comment_name.setText("");
+                    getCommentslist(page_comment, zixunId, state);
                     Toast.makeText(Zixun_comment.this,"发布成功",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(Zixun_comment.this,"发布失败",Toast.LENGTH_SHORT).show();
@@ -270,7 +356,43 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         });
 
     }
+    private void Delete_comments(final ListActivityBean.Comments comments) {
+        RequestParams params = new RequestParams(HttpUtils.hoster + "updatecomments");
+        Gson gson =new Gson();
+        String comment=gson.toJson(comments);
+        params.addQueryStringParameter("comment",comment);
+        params.addQueryStringParameter("choice", "1");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                if("true".equals(result)){
+                    Message msg = handler.obtainMessage();
+                    msg.what = 0;
+                    handler.sendMessage(msg);
+                    Toast.makeText(Zixun_comment.this,"删除成功",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(Zixun_comment.this,"删除失败",Toast.LENGTH_SHORT).show();
+                }
 
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                Toast.makeText(Zixun_comment.this,"删除失败",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
     private void getCommentslist(int page, String zixunId, String state) {
 
         RequestParams params = new RequestParams(HttpUtils.hoster + "getcomments");
@@ -386,7 +508,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                     viewHolder.tv_comment_content.setText("回复" + comment.fatherDiscussantName + "的评论：" + comment.childComment);
                 }
 
-                xUtilsImageUtils.display(viewHolder.iv_comment_photo, HttpUtils.hoster + "upload/" + comment.childDiscussantImg);
+                xUtilsImageUtils.display(viewHolder.iv_comment_photo, HttpUtils.hoster + "upload/" + comment.childDiscussantImg,true);
                 viewHolder.tv_comment_watchmore.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -418,5 +540,14 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         TextView tv_comment_time;
         TextView tv_comment_watchmore;
 
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(edt_comment_name.getText().toString().equals("")&&edt_comment_name.getHint()!="添加评论"&&keyCode==KeyEvent.KEYCODE_BACK){
+            edt_comment_name.setHint("添加评论");
+            flag=true;
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

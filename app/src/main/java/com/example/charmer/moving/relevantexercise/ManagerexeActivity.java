@@ -1,10 +1,14 @@
 package com.example.charmer.moving.relevantexercise;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,12 +18,16 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.google.gson.Gson;
 
@@ -42,11 +50,18 @@ public class ManagerexeActivity extends AppCompatActivity {
     private Button cancelExe;
     private Button cancelJoin;
     private Button cancelEnroll;
+    private TextView noData1;
+    private TextView noData2;
+    private TextView noData3;
     ViewPager pager = null;
     PagerTabStrip tabStrip = null;
     private ListView exelist1;
     private ListView exelist2;
     private ListView exelist3;
+    private SwipeRefreshLayout mSr_refresh;
+    private SwipeRefreshLayout mSr_refresh2;
+    private SwipeRefreshLayout mSr_refresh3;
+    private RelativeLayout finishthis;
     ArrayList<View> viewContainter = new ArrayList<View>();
     List<String> titleContainer = new ArrayList<String>();
     public String TAG = "tag";
@@ -61,6 +76,8 @@ public class ManagerexeActivity extends AppCompatActivity {
 
         pager = (ViewPager) this.findViewById(R.id.vper);
         tabStrip = (PagerTabStrip) this.findViewById(R.id.strip);
+        finishthis =((RelativeLayout) findViewById(R.id.finishthis));
+
 
         //取消tab下面的长横线
        // titleStrip.setDrawFullUnderline(false);
@@ -74,9 +91,37 @@ public class ManagerexeActivity extends AppCompatActivity {
         View view2 = LayoutInflater.from(this).inflate(R.layout.blanklistsupply, null);
         View view3 = LayoutInflater.from(this).inflate(R.layout.blanklistenroll, null);
 
+        mSr_refresh = (SwipeRefreshLayout) view1.findViewById(R.id.exeitemrefresh);
+        //设置下拉刷新加载圈的颜色
+        mSr_refresh.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
+        //设置下拉加载圈出现距离顶部的位置
+        mSr_refresh.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
+        //设置下拉加载圈转动时距离顶部的位置
+        mSr_refresh.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.swipe_progress_to_top));
+
+        mSr_refresh2 = (SwipeRefreshLayout) view2.findViewById(R.id.exeitem2refresh);
+        //设置下拉刷新加载圈的颜色
+        mSr_refresh2.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
+        //设置下拉加载圈出现距离顶部的位置
+        mSr_refresh2.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
+        //设置下拉加载圈转动时距离顶部的位置
+        mSr_refresh2.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.swipe_progress_to_top));
+
+        mSr_refresh3 = (SwipeRefreshLayout) view3.findViewById(R.id.exeitem3refresh);
+        //设置下拉刷新加载圈的颜色
+        mSr_refresh3.setColorSchemeColors(getResources().getColor(R.color.refreshcolor));
+        //设置下拉加载圈出现距离顶部的位置
+        mSr_refresh3.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
+        //设置下拉加载圈转动时距离顶部的位置
+        mSr_refresh3.setProgressViewEndTarget(true, getResources().getDimensionPixelOffset(R.dimen.swipe_progress_to_top));
+
+        bindEvents();
         exelist1 = (ListView)view1.findViewById(R.id.exeitem);
         exelist2 = (ListView)view2.findViewById(R.id.exeitem2);
         exelist3 = (ListView)view3.findViewById(R.id.exeitem3);
+        noData1 = (TextView) view1.findViewById(R.id.noData);
+        noData2 = (TextView) view2.findViewById(R.id.noData);
+        noData3 = (TextView) view3.findViewById(R.id.noData);
         //viewpager开始添加view
         viewContainter.add(view1);
         viewContainter.add(view2);
@@ -167,7 +212,8 @@ public class ManagerexeActivity extends AppCompatActivity {
         getExe();
         exelist2.setAdapter(adapter2);
         getExespart();
-
+        exelist3.setAdapter(adapter3);
+        getExesenroll();
         exelist1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -195,16 +241,90 @@ public class ManagerexeActivity extends AppCompatActivity {
 
             }
         });
+        finishthis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("+++++++++++++++onRestart");
+        exelist1.setAdapter(adapter1);
+        getExe();
+        exelist2.setAdapter(adapter2);
+        getExespart();
+        exelist3.setAdapter(adapter3);
+        getExesenroll();
+    }
 
+    private void bindEvents() {
+        mSr_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getExe();
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        if(exeinfolist1.size()>0){
+                            noData1.setText("");
+                        }else{
+                            noData1.setText("没有数据呢!");
+                        }
+                        mSr_refresh.setRefreshing(false);
+                    }
+                }, 1000);
+            }
+        });
+        mSr_refresh2.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getExespart();
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        if(exeinfolist2.size()>0){
+                            noData2.setText("");
+                        }else{
+                            noData2.setText("没有数据呢!");
+                        }
+                        mSr_refresh2.setRefreshing(false);
+                    }
+                }, 1000);
+            }
+        });
+        mSr_refresh3.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh3.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getExesenroll();
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        if(exeinfolist3.size()>0){
+                            noData3.setText("");
+                        }else{
+                            noData3.setText("没有数据呢!");
+                        }
+                        mSr_refresh3.setRefreshing(false);
+                    }
+                }, 1000);
+            }
+        });
+
+    }
 
     private void getExe() {
-        String str = "http://10.40.5.13:8080/moving/getexebypublish";
+        String str = HttpUtils.hoster+"getexebypublish";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("publisher",MyApplication.getUser().getUseraccount());
+        params.addQueryStringParameter("publisher", MainActivity.getUser().getUseraccount());
 
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -214,7 +334,11 @@ public class ManagerexeActivity extends AppCompatActivity {
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exeinfolist1.addAll(bean.exerciseList);
                 //dongtaiList = bean.dongtailist;   error
-                System.out.println(bean.exerciseList);
+                if(exeinfolist1.size()>0){
+                    noData1.setText("");
+                }else{
+                    noData1.setText("没有数据呢!");
+                }
                 //通知listview更新界面
                 adapter1.notifyDataSetChanged();
 
@@ -239,9 +363,9 @@ public class ManagerexeActivity extends AppCompatActivity {
     }
 
     private void getExespart() {
-        String str = "http://10.40.5.13:8080/moving/getexebypart";
+        String str = HttpUtils.hoster+"getexebypart";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
+        params.addQueryStringParameter("participator",MainActivity.getUser().getUseraccount());
         params.addQueryStringParameter("mode","0");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -252,7 +376,11 @@ public class ManagerexeActivity extends AppCompatActivity {
                     VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                     exeinfolist2.addAll(bean.exerciseList);
                     //dongtaiList = bean.dongtailist;   error
-                    System.out.println(bean.exerciseList);
+                    if(exeinfolist2.size()>0){
+                        noData2.setText("");
+                    }else{
+                        noData2.setText("没有数据呢!");
+                    }
                     //通知listview更新界面
                     adapter2.notifyDataSetChanged();
                 }
@@ -278,9 +406,9 @@ public class ManagerexeActivity extends AppCompatActivity {
     }
 
     private void getExesenroll() {
-        String str = "http://10.40.5.13:8080/moving/getexebypart";
+        String str = HttpUtils.hoster+"getexebypart";
         RequestParams params = new RequestParams(str);
-        params.addQueryStringParameter("participator",MyApplication.getUser().getUseraccount());
+        params.addQueryStringParameter("participator",MainActivity.getUser().getUseraccount());
         params.addQueryStringParameter("mode","1");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -290,6 +418,11 @@ public class ManagerexeActivity extends AppCompatActivity {
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exeinfolist3.addAll(bean.exerciseList);
                 //dongtaiList = bean.dongtailist;   error
+                if(exeinfolist3.size()>0){
+                    noData3.setText("");
+                }else{
+                    noData3.setText("没有数据呢!");
+                }
                 //通知listview更新界面
                 adapter3.notifyDataSetChanged();
 
@@ -360,8 +493,36 @@ public class ManagerexeActivity extends AppCompatActivity {
                 cancelExe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Toast.makeText(ManagerexeActivity.this,exeinfolist1.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
-                         ExeSharedMthd.cancelExe(exeinfolist1.get(position1).exerciseId.toString(),ManagerexeActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ManagerexeActivity.this);
+                        builder.setMessage(getString(R.string.cancel_sure));
+                        builder.setTitle(R.string.cancelExeintro);
+//                    builder.setIcon(getResources().getDrawable(
+//                            R.drawable.delete1));
+                        builder.setPositiveButton(
+                                getString(R.string.ok),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        cancelExe(position1,exeinfolist1.get(position1).exerciseId.toString(),MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
+                                    }
+                                });
+                        builder.setNegativeButton(
+                                getString(R.string.cancel),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        // stub
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+                        builder.create().show();
                     }
                 });
             } catch (UnsupportedEncodingException e) {
@@ -420,8 +581,37 @@ public class ManagerexeActivity extends AppCompatActivity {
             cancelJoin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ExeSharedMthd.cancelJoin(exeinfolist2.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(),ManagerexeActivity.this);
-                    //Toast.makeText(ManagerexeActivity.this,exeinfolist2.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                            ManagerexeActivity.this);
+                    builder.setMessage(getString(R.string.cancel_sure));
+                    builder.setTitle(R.string.canceljoinExeintro);
+//                    builder.setIcon(getResources().getDrawable(
+//                            R.drawable.delete1));
+                    builder.setPositiveButton(
+                            getString(R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(
+                                        DialogInterface dialogInterface,
+                                        int which) {
+                                    // TODO Auto-generated method
+                                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
+                                }
+                            });
+                    builder.setNegativeButton(
+                            getString(R.string.cancel),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(
+                                        DialogInterface dialogInterface,
+                                        int which) {
+                                    // TODO Auto-generated method
+                                    // stub
+                                    dialogInterface.dismiss();
+                                }
+                            });
+                    builder.create().show();
+
                 }
             });
         } catch (UnsupportedEncodingException e) {
@@ -480,8 +670,36 @@ public class ManagerexeActivity extends AppCompatActivity {
                 cancelEnroll.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Toast.makeText(ManagerexeActivity.this,exeinfolist3.get(position1).exerciseId.toString(),Toast.LENGTH_LONG).show();
-                        ExeSharedMthd.cancelEnroll(exeinfolist3.get(position1).exerciseId.toString(), MyApplication.getUser().getUseraccount(), ManagerexeActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ManagerexeActivity.this);
+                        builder.setMessage(getString(R.string.cancel_sure));
+                        builder.setTitle(R.string.cancelenrollintro);
+//                    builder.setIcon(getResources().getDrawable(
+//                            R.drawable.delete1));
+                        builder.setPositiveButton(
+                                getString(R.string.ok),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        cancelEnroll(position1,exeinfolist3.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(), ManagerexeActivity.this);
+                                    }
+                                });
+                        builder.setNegativeButton(
+                                getString(R.string.cancel),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        // stub
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+                        builder.create().show();
                     }
                 });
 
@@ -500,6 +718,122 @@ public class ManagerexeActivity extends AppCompatActivity {
         TextView activityTime ;
         TextView releaseTime ;
         TextView theme;
+
+    }
+
+    public void cancelExe(int position,String exerciseId,String publisher,Context contexts){
+        final int position1 = position;
+        final Context context = contexts;
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+        params.addQueryStringParameter("publisher",publisher);
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("choice","3");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    Toast.makeText(context,"取消活动成功！",Toast.LENGTH_SHORT).show();
+                    exeinfolist1.remove(position1);
+                    adapter1.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
+    public void cancelJoin(int position,String exerciseId,String joiner,Context contexts){
+        final Context context = contexts;
+        final int position1 =position;
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("choice","2");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
+                    exeinfolist2.remove(position1);
+                    adapter2.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+    public void cancelEnroll(int position,String exerciseId,String joiner,Context contexts){
+        final int position1 = position;
+        final Context context = contexts;
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("choice","1");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    Toast.makeText(context,"报名取消成功！",Toast.LENGTH_SHORT).show();
+                    exeinfolist3.remove(position1);
+                    adapter3.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
 
     }
 }

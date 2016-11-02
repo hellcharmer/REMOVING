@@ -72,4 +72,13 @@
                 />
         </RelativeLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/noData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="没有数据呢!"
+        android:textSize="24sp"
+        />
 </RelativeLayout>

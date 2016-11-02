@@ -35,6 +35,7 @@ import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.example.charmer.moving.MainActivity;
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
@@ -587,7 +588,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     private void Rong() {
         //        //异步回调刷新数据??有用？？3天后：有用 >_<
         RequestParams requestParams1 = new RequestParams(HttpUtils.host4 + "getuser");
-        requestParams1.addQueryStringParameter("userid", +((MyApplication) getActivity().getApplication()).getUser().getUserid() + "");
+        requestParams1.addQueryStringParameter("userid", +MainActivity.getUser().getUserid() + "");
         x.http().get(requestParams1, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -596,7 +597,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                 Type type = new TypeToken<User>() {
                 }.getType();
                 user = gson.fromJson(result, type);
-                RongIM.getInstance().refreshUserInfoCache(new UserInfo(((MyApplication) getActivity().getApplication()).getUser().getUserid() + "", user.getUsername(), Uri.parse(HttpUtils.host4 + user.getUserimg())));
+                RongIM.getInstance().refreshUserInfoCache(new UserInfo(MainActivity.getUser().getUserid() + "", user.getUsername(), Uri.parse(HttpUtils.host4 + user.getUserimg())));
                 //刷新所有好友的头像
                 refreshImg();
             }

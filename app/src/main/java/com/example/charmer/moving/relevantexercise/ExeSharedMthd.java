@@ -1,8 +1,11 @@
 package com.example.charmer.moving.relevantexercise;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.Toast;
 
+import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 
 import org.xutils.common.Callback;
@@ -14,8 +17,27 @@ import org.xutils.x;
  */
 
 public class ExeSharedMthd {
+    private static int reAction = 0;
 
-    private  static int reAction= 0;
+    public int getReAction() {
+        return reAction;
+    }
+
+//    public static void setReAction(int reAction) {
+//        ExeSharedMthd.reAction = reAction;
+//    }
+//        private static Handler handler = new Handler(){
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            switch (msg.what){
+//                case 0:
+//                    break;
+//                case 1:
+//                    break;
+//            }
+//        }
+//    };
 
     public static void tryToEnroll(String exerciseId,String joiner,Context contexts){
         final Context context = contexts;
@@ -61,8 +83,8 @@ public class ExeSharedMthd {
 
     }
 
-    public static int agreeJoin(String exerciseId,String joiner,Context contexts){
-        reAction = 0;
+    public static void agreeJoin(String exerciseId,String joiner,Context contexts){
+
         final Context context = contexts;
         String str = HttpUtils.hoster+"enrollexe";
         RequestParams params = new RequestParams(str);
@@ -79,7 +101,7 @@ public class ExeSharedMthd {
                 }else
                 if ("1".equals(result)){
                     Toast.makeText(context,"操作成功！",Toast.LENGTH_SHORT).show();
-                    reAction = 1;
+
                 }else
                 {
                     Toast.makeText(context,"操作失败！",Toast.LENGTH_SHORT).show();
@@ -102,12 +124,10 @@ public class ExeSharedMthd {
 
             }
         });
-        System.out.println("=====2-=--==222"+reAction);
-            return reAction;
     }
 
-    public static int cancelEnroll(String exerciseId,String joiner,Context contexts){
-        reAction = 0;
+    public static void cancelEnroll(String exerciseId,String joiner,Context contexts){
+
         final Context context = contexts;
         String str = HttpUtils.hoster+"cancelany";
         RequestParams params = new RequestParams(str);
@@ -121,7 +141,7 @@ public class ExeSharedMthd {
                 System.out.println(result);
                 if ("true".equals(result)){
                 Toast.makeText(context,"报名取消成功！",Toast.LENGTH_SHORT).show();
-                    reAction = 1;
+
                 }else {
                     Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
                 }
@@ -142,12 +162,12 @@ public class ExeSharedMthd {
 
             }
         });
-        return reAction;
+
     }
 
-    public static int cancelJoin(String exerciseId,String joiner,Context contexts){
+    public static void cancelJoin(String exerciseId,String joiner,Context contexts){
         final Context context = contexts;
-        reAction = 0;
+
         String str = HttpUtils.hoster+"cancelany";
         RequestParams params = new RequestParams(str);
 
@@ -160,7 +180,6 @@ public class ExeSharedMthd {
                 System.out.println(result);
                 if ("true".equals(result)){
                     Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
-                    reAction = 1;
                 }else {
                     Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
                 }
@@ -181,15 +200,13 @@ public class ExeSharedMthd {
 
             }
         });
-        return reAction;
     }
 
-    public static int cancelExe(String exerciseId,Context contexts){
+    public static void cancelExe(String exerciseId,String publisher,Context contexts){
         final Context context = contexts;
-        reAction = 0;
         String str = HttpUtils.hoster+"cancelany";
         RequestParams params = new RequestParams(str);
-
+        params.addQueryStringParameter("publisher",publisher);
         params.addQueryStringParameter("exerciseId",exerciseId);
         params.addQueryStringParameter("choice","3");
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -198,7 +215,6 @@ public class ExeSharedMthd {
                 System.out.println(result);
                 if ("true".equals(result)){
                     Toast.makeText(context,"取消活动成功！",Toast.LENGTH_SHORT).show();
-                    reAction = 1;
                 }else {
                     Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
                 }
@@ -219,7 +235,6 @@ public class ExeSharedMthd {
 
             }
         });
-        return reAction;
     }
 
 
