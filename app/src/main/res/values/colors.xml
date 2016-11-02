@@ -36,4 +36,10 @@
     <color name="bright_grey">#dedede</color>
     <color name="lightgrey">#d3d3d3</color><!--亮灰色 -->
 
+    <color name="Red">#F00</color>
+    <color name="Yello">#FF0</color>
+    <color name="Blue">#00F</color>
+    <color name="Green">#0F0</color>
+
+
 </resources>

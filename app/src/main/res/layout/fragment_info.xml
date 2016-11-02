@@ -59,17 +59,10 @@
             android:dividerHeight="10dp"
             android:overScrollMode="never"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
         </com.example.charmer.moving.MyView.LoadMoreListView>
-        <!--<ListView-->
-            <!--android:id="@+id/lv_info"-->
-            <!--android:layout_below="@+id/rl_title"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_marginTop="10dp">-->
-        <!--</ListView>-->
+
     </android.support.v4.widget.SwipeRefreshLayout>
     </RelativeLayout>
     <View

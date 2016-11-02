@@ -43,14 +43,14 @@
         android:layout_height="24dp" />
         <TextView
             android:id="@+id/xiangxi_author"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/xiangxi_author_touxiang"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:text="张三"/>
         <ImageView
             android:layout_width="wrap_content"
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:text="lisi"
             android:layout_centerHorizontal="true"
             />
@@ -88,9 +88,11 @@
         >
         <TextView
             android:id="@+id/home_xiangxi_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:text="内容"
             android:layout_centerHorizontal="true"
             />
@@ -142,18 +144,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" >
-            <Button
-                android:id="@+id/home_xiangxi_dianzan"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/main_bottom_item_bg"
-                android:drawableTop="@drawable/dianzan"
-                android:textColor="@color/home_xiangxi_buttom"
-                android:text="点赞"
-                android:onClick="onTabClicked"
-                android:paddingBottom="2dip"
-                android:paddingTop="7dip"
-                />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -169,7 +160,7 @@
                 android:drawableTop="@drawable/shoucang"
                 android:textColor="@color/home_xiangxi_buttom"
                 android:text="收藏"
-                android:onClick="onTabClicked"
+
                 android:paddingBottom="2dip"
                 android:paddingTop="7dip"
                 />
@@ -188,7 +179,7 @@
                 android:drawableTop="@drawable/pinglun1"
                 android:textColor="@color/home_xiangxi_buttom"
                 android:text="评论"
-                android:onClick="onTabClicked"
+
                 android:paddingBottom="2dip"
                 android:paddingTop="7dip"
                 />

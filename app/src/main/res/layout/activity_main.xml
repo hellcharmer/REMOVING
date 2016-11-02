@@ -98,14 +98,9 @@
                 android:onClick="onTabClicked"
                 android:paddingBottom="5dip"
                 android:paddingTop="7dip"
-                 android:visibility="gone"
+
                 />
-                <ImageView
-                    android:id="@+id/iv_huan"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/huan"
-                    />
+
         </RelativeLayout>
 
         <RelativeLayout

@@ -372,7 +372,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 
 
 				//Log.i("TAG",(URLDecoder.decode(zixun.timeStamp,"utf-8")));
-				viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.collections+"人收藏 ·"+zixun.publisher+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
+				viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.likes+"人收藏 ·"+zixun.publisher+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
 				viewHolder.tv_name.setText(URLDecoder.decode(zixun.title,"utf-8"));
 
 

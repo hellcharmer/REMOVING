@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_talk"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.charmer.moving.friendchat.SearchTalk">
+    <RelativeLayout
+        android:id="@+id/rl_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/searchshape"
+            android:hint="搜索"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:id="@+id/edsearchsr"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+           android:layout_marginLeft="5dp"
+            android:src="@drawable/search"
+            android:layout_marginTop="10dp"
+            />
+         <ImageView
+             android:id="@+id/iv_cancel1"
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_alignParentRight="true"
+             android:layout_marginTop="10dp"
+             android:layout_marginRight="10dp"
+             android:src="@drawable/searchcancel"
+            android:visibility="gone"
+             />
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/frsearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_search"
+        android:background="#d0d0d0"
+        >
+    </FrameLayout>
+
+</RelativeLayout>

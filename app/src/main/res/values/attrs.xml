@@ -43,7 +43,17 @@
         <attr name="npv_AlternativeHint" format="reference|string" />
 
     </declare-styleable>
+    <declare-styleable name="CircularProgress">
+        <attr name="borderWidth1" format="dimension" />
+    </declare-styleable>
 
+    <declare-styleable name="RatioImageView">
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="NineGridLayout">
+        <attr name="sapcing" format="dimension"/>
+    </declare-styleable>
 </resources>
 
 

@@ -1,19 +1,27 @@
 package com.example.charmer.moving.relevantexercise;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 
@@ -24,23 +32,37 @@ import org.xutils.x;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExeInfopublisher extends AppCompatActivity {
 
 
     private BaseAdapter adapter;
+    private BaseAdapter imgadapter;
+    private BaseAdapter enrolleradapter;
     private ListView lv_exercise;
+    private ListView lvenrollers;
     private TextView title ;
     private Button cancelexe;
     private TextView name;
     private TextView successfulpublishpercent;
     private TextView appointmentRate;
     private ImageView imguser;
+    private GridView_picture joinerImgs;
     private static final String TAG = "ExerciseinfoActivity";
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     private TextView textintroduce;
+    private ImageView joinerImg;
     private String exerciseId;
+    private ImageView enrollerImg;
+    private TextView enrollerinfonum;
+    private TextView enrollerinforate;
+    private TextView enrollerName;
+    private Button agreebtn;
     VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
+    final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
+    final List<VariableExercise.DataSummary> dsListEnroll = new ArrayList<VariableExercise.DataSummary>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +77,8 @@ public class ExeInfopublisher extends AppCompatActivity {
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
         appointmentRate = ((TextView) findViewById(R.id.appointmentRate));
         imguser = ((ImageView) findViewById(R.id.imguser));
+        joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
+        lvenrollers = ((ListView)findViewById(R.id.lvenrollers));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -107,19 +131,102 @@ public class ExeInfopublisher extends AppCompatActivity {
             }
         };
         lv_exercise.setAdapter(adapter);
+
+        imgadapter = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return dsListJoin.size();
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return dsListJoin.get(position);
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                convertView = View.inflate(ExeInfopublisher.this, R.layout.joinerimg, null);
+                joinerImg= (ImageView) convertView.findViewById(R.id.joinerImg);
+                VariableExercise.DataSummary vds = dsListJoin.get(position);
+                xUtilsImageUtils.display(joinerImg, HttpUtils.hoster+"upload/"+vds.userImg);
+                System.out.println("==-=-=-=-=-=-"+vds.userImg);
+
+                return convertView;
+            }
+        };
+
+        joinerImgs.setAdapter(imgadapter);
+
+        enrolleradapter = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return dsListEnroll.size();
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return dsListEnroll.get(position);
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                final int position1 = position;
+
+                lvenrollers.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListEnroll.size()));
+
+                convertView = View.inflate(ExeInfopublisher.this, R.layout.enrolleritem, null);
+                enrollerImg = ((ImageView) convertView.findViewById(R.id.enrollerImg));
+                enrollerinfonum = ((TextView) convertView.findViewById(R.id.enrollerinfonum));
+                enrollerinforate = ((TextView) convertView.findViewById(R.id.enrollerinforate));
+                enrollerName = ((TextView) convertView.findViewById(R.id.enrollerName));
+                agreebtn = ((Button) convertView.findViewById(R.id.agreebtn));
+                VariableExercise.DataSummary vds = dsListEnroll.get(position);
+                System.out.println("+++++++++++++22+++++++++"+dsListEnroll);
+                xUtilsImageUtils.display(enrollerImg, HttpUtils.hoster+"upload/"+vds.userImg);
+                enrollerinfonum.setText(enrollerinfonum.getText().toString()+vds.joinedNum);
+                enrollerinforate.setText(enrollerinforate.getText().toString()+vds.appointmentRate);
+                enrollerName.setText(vds.userName);
+                agreebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(ExeInfopublisher.this,dsListEnroll.get(position1).userName.toString(),Toast.LENGTH_SHORT).show();
+                        ExeSharedMthd.agreeJoin(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
+
+                        getExerciseList(exerciseId);
+
+
+                    }
+                });
+
+                return convertView;
+            }
+        };
+
+        lvenrollers.setAdapter(enrolleradapter);
+
         getExerciseList(exerciseId);
 
         cancelexe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(1==ExeSharedMthd.cancelExe(exerciseId,ExeInfopublisher.this)){
-                    finish();
-                }
+                ExeSharedMthd.cancelExe(exerciseId,ExeInfopublisher.this);
+                finish();
+
             }
         });
     }
     private void getExerciseList(String exerciseId) {
-        String str = "http://10.40.5.13:8080/moving/getexebyid";
+        String str = HttpUtils.hoster+"getexebyid";
         RequestParams params = new RequestParams(str);
 
         params.addQueryStringParameter("exerciseId",exerciseId);
@@ -131,6 +238,11 @@ public class ExeInfopublisher extends AppCompatActivity {
                 exerciseList.clear();
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exerciseList.addAll(bean.exerciseList);
+                dsListJoin.clear();
+                dsListJoin.addAll(bean.dsListJoin);
+                dsListEnroll.clear();
+                dsListEnroll.addAll(bean.dsListEnroll);
+                lvenrollers.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListEnroll.size()));
                 ds = bean.ds;
                 try{
                     title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
@@ -138,7 +250,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                     name.setText(ds.userName);
                     successfulpublishpercent.setText(ds.successfulpublishpercent);
                     appointmentRate.setText(ds.appointmentRate);
-                    xUtilsImageUtils.display(imguser,"http://10.40.5.13:8080/moving/upload/"+ds.userImg);
+                    xUtilsImageUtils.display(imguser,HttpUtils.hoster+"upload/"+ds.userImg);
 
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -146,7 +258,8 @@ public class ExeInfopublisher extends AppCompatActivity {
                 Log.i("exerciseList", "exerciseList: "+exerciseList);
                 //通知listview更新界面
                 adapter.notifyDataSetChanged();
-
+                imgadapter.notifyDataSetChanged();
+                enrolleradapter.notifyDataSetChanged();
             }
 
             @Override

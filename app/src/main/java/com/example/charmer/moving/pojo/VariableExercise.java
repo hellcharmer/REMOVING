@@ -10,6 +10,8 @@ public class VariableExercise {
     public int totalPage;
     public ArrayList<Exercises> exerciseList;
     public DataSummary ds;
+    public ArrayList<DataSummary> dsListEnroll;
+    public ArrayList<DataSummary> dsListJoin;
 
     public static class Exercises{
         public Long exerciseId;

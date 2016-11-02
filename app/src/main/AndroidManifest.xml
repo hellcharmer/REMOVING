@@ -6,7 +6,7 @@
         android:targetSdkVersion="15" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
 
 
     <application
@@ -30,8 +30,10 @@
         <activity android:name=".home_activity.ZixunInfo_xq" />
         <activity android:name=".relevantexercise.ExeInfopublisher" />
         <activity android:name=".relevantexercise.ExeInfoparticipate" />
-
-        <activity android:name=".friendchat.ConversationActivity">
+        <activity
+            android:name=".friendchat.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -49,23 +51,35 @@
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
         <activity android:name=".home_activity.Publish_articles" />
         <activity android:name=".Publishdynamic.Publishdynamic"></activity>
+        <activity
+            android:name=".friendchat.ConversationListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="io.rong.fast"
+                    android:pathPrefix="/conversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".friendchat.Test"></activity>
+        <activity android:name=".friendchat.SearchTalk"></activity>
         <activity android:name=".home_activity.Publish_articles"></activity>
         <activity android:name=".home_activity.SearchActivity"></activity>
 
-        <activity
-            android:name="com.foamtrace.photopicker.PhotoPickerActivity"
-            android:theme="@style/PhotoPickerTheme"
-            android:configChanges="orientation|screenSize"
-            />
-        <activity android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
-            android:theme="@style/PhotoPickerTheme"
-            />
 
         <activity android:name="com.lidong.photopicker.PhotoPickerActivity"
             android:theme="@style/PhotoPickerTheme"
             android:configChanges="orientation|screenSize"></activity>
         <activity android:name="com.lidong.photopicker.PhotoPreviewActivity"
             android:theme="@style/PhotoPickerTheme"></activity>
+        <activity android:name=".home_activity.Zixun_comment" />
+        <activity android:name=".home_activity.Zixun_comment_more"></activity>
+        <activity android:name=".Publishdynamic.ImagePagerActivity"></activity>
     </application>
 
 </manifest>

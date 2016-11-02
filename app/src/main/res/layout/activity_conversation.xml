@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_conversation"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.charmer.moving.friendchat.ConversationActivity">
-
+    android:orientation="vertical">
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="50dp"
+     >
+     <TextView
+         android:id="@+id/username"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:text="用户明字"
+         android:textColor="#000"
+         android:gravity="center"
+         />
+ </RelativeLayout>
     <fragment
         android:id="@+id/conversation"
         android:name="io.rong.imkit.fragment.ConversationFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-</RelativeLayout>
+</LinearLayout>
