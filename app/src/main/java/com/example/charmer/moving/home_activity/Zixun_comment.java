@@ -26,7 +26,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.CircularProgress;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.R;
@@ -48,7 +47,7 @@ import java.util.List;
 import me.weyye.library.EmptyLayout;
 
 public class Zixun_comment extends AppCompatActivity implements View.OnClickListener {
-    private ImageView iv_comment_return;
+    private RelativeLayout iv_comment_return;
     private TextView xiangxi_author;
     private RelativeLayout zixun_comment_header;
     private SwipeRefreshLayout comment_sr_refresh;
@@ -65,6 +64,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
     String zixunId = "";
     private List<ListActivityBean.Comments> commentList = new ArrayList<ListActivityBean.Comments>();
     private ImageView iv_comment_sort;
+    private RelativeLayout rl_comment_sort;
     private ToastUtil toastUtil;
     private CircularProgress pb_publish_comment;
     private boolean flag=true;//true为评论状态，false为回复状态
@@ -156,13 +156,15 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                             });
                     builder.create().show();
                 }else {
-                    childId = commentList.get(position).childDiscussant;
-                    childcontent = commentList.get(position).childComment;
-                    edt_comment_name.setHint("回复" + commentList.get(position).childDiscussantName + "的评论");
+
                     edt_comment_name.requestFocus();
                     edt_comment_name.setFocusable(true);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.showSoftInputFromInputMethod(edt_comment_name.getWindowToken(),0);
+                    InputMethodManager inputManager = (InputMethodManager)edt_comment_name.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputManager.showSoftInput(edt_comment_name, 0);
+                    childId = commentList.get(position).childDiscussant;
+                    childcontent = commentList.get(position).childComment;
+                    edt_comment_name.setHint("回复" + commentList.get(position).childDiscussantName + "的评论:");
+
                     flag = false;
                 }
             }
@@ -183,7 +185,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
     private void initView() {
 
 
-        iv_comment_return = (ImageView) findViewById(R.id.iv_comment_return);
+        iv_comment_return = (RelativeLayout) findViewById(R.id.iv_comment_return);
         iv_comment_return.setOnClickListener(this);
         xiangxi_author = (TextView) findViewById(R.id.xiangxi_author);
 
@@ -202,7 +204,8 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         activity_zixun_comment = (RelativeLayout) findViewById(R.id.activity_zixun_comment);
 
         iv_comment_sort = (ImageView) findViewById(R.id.iv_comment_sort);
-        iv_comment_sort.setOnClickListener(this);
+        rl_comment_sort = (RelativeLayout) findViewById(R.id.rl_comment_sort);
+        rl_comment_sort.setOnClickListener(this);
         pb_publish_comment = (CircularProgress) findViewById(R.id.pb_publish_comment);
         comment_sr_refresh.setColorSchemeColors(ContextCompat.getColor(Zixun_comment.this,R.color.refresh_circle));
         comment_sr_refresh.setDistanceToTriggerSync(getResources().getDimensionPixelOffset(R.dimen.swipe_progress_appear_offset));
@@ -243,7 +246,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_comment_sort:
+            case R.id.rl_comment_sort:
                 if (iv_sortcount % 2 == 0) {
                     commentList.clear();
                     iv_comment_sort.setImageResource(R.drawable.ic_ascending);
@@ -275,6 +278,10 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                         Publish_comments(comments);
                     }
                 }
+                break;
+            case R.id.iv_comment_return:
+                finish();
+                break;
         }
     }
 

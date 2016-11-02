@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,7 +22,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.MyView.ObservableScrollView;
 import com.example.charmer.moving.R;
@@ -32,7 +30,6 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
-import com.lidong.photopicker.intent.PhotoPreviewIntent;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -47,7 +44,8 @@ import java.util.List;
 public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListener {
 
     private TextView home_xiangxi_title;
-    private ImageView iv_home_return;
+    private RelativeLayout iv_home_return;
+    private RelativeLayout iv_home_hide_return;
     private ImageView xiangxi_author_touxiang;
     private TextView xiangxi_author;
     private RelativeLayout home_xiangxi_header;
@@ -112,11 +110,16 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         bindEvents();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        initData();
+    }
 
     private void initView() {
         home_xiangxi_title = ((TextView) findViewById(R.id.home_xiangxi_title));
-        iv_home_return = (ImageView) findViewById(R.id.iv_home_return);
-
+        iv_home_return = (RelativeLayout) findViewById(R.id.iv_home_return);
+        iv_home_hide_return=(RelativeLayout) findViewById(R.id.iv_home_hide_return);
         xiangxi_author_touxiang = (ImageView) findViewById(R.id.xiangxi_author_touxiang);
 
         xiangxi_author = (TextView) findViewById(R.id.xiangxi_author);
@@ -182,15 +185,15 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
     private void bindEvents(){
         // preview
-        home_xiangxi_picture.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                PhotoPreviewIntent intent = new PhotoPreviewIntent(ZixunInfo_xq.this);
-                intent.setCurrentItem(position);
-                intent.setPhotoPaths((ArrayList<String>)imgs_list);
-                startActivityForResult(intent, REQUEST_PREVIEW_CODE);
-            }
-        });
+//        home_xiangxi_picture.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                PhotoPreviewIntent intent = new PhotoPreviewIntent(ZixunInfo_xq.this);
+//                intent.setCurrentItem(position);
+//                intent.setPhotoPaths((ArrayList<String>)imgs_list);
+//                startActivityForResult(intent, REQUEST_PREVIEW_CODE);
+//            }
+//        });
 
         sl_home_picture.setOnTouchListener(new View.OnTouchListener() {
             private float mEndY;
@@ -240,6 +243,12 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                finish();
+            }
+        });
+        iv_home_hide_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -326,12 +335,13 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                 //通知listView更新界面
                 //adapter1.notifyDataSetChanged();
                 try {
-                    xUtilsImageUtils.display(xiangxi_author_touxiang, HttpUtils.hoster+"userimg/"+ URLDecoder.decode(zixunById.get(0).publisherimg, "utf-8"),true);
+                    xUtilsImageUtils.display(xiangxi_author_touxiang, HttpUtils.hoster+"upload/"+ URLDecoder.decode(zixunById.get(0).publisherimg, "utf-8"),true);
                     imgs = URLDecoder.decode(zixunById.get(0).photoImg, "utf-8").split(",");
+                    xiangxi_author.setText(URLDecoder.decode(zixunById.get(0).publisher,"utf-8"));
                     xiangxi_hide_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
                     home_xiangxi_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
                     home_xiangxi_content.setText(URLDecoder.decode(zixunById.get(0).content, "utf-8"));
-                    home_xiangxi_pinglun.setText(zixunById.get(0).pingluns);
+                    home_xiangxi_pinglun.setText(zixunById.get(0).pingluns+"");
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
