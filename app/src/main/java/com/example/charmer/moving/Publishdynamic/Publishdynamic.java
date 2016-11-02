@@ -240,7 +240,7 @@ public class Publishdynamic extends AppCompatActivity {
 
         String infoContent =et_infoContent.getText().toString().trim();
         Log.i("publish","infoContent"+infoContent+"");
-        User user = new User(MainActivity.getUser().getUserid());
+        User user = new User(MyApplication.getUser().getUserid());
         Info info = new Info(infoContent,user);
         Gson gson = new Gson();
         String infoList = gson.toJson(info);
@@ -252,8 +252,12 @@ public class Publishdynamic extends AppCompatActivity {
             requestparams.addBodyParameter("file"+i,imageFileLists.get(i));
         }
 //        Log.i("file","file"+imageFileLists.get(1));
-        requestparams.addQueryStringParameter("infoList",infoList);
-        Log.i("publish","userId"+MainActivity.getUser().getUserid()+"");
+        try {
+            requestparams.addQueryStringParameter("infoList", URLEncoder.encode(infoList,"utf-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        Log.i("publish","userId"+MyApplication.getUser().getUserid()+"");
         x.http().post(requestparams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

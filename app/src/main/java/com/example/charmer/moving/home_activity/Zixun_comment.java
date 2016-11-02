@@ -476,7 +476,6 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
 
             if (convertView == null) {
                 viewHolder = new ViewHolder();
-
                 convertView = View.inflate(Zixun_comment.this, R.layout.zixun_comment_list, null);
                 viewHolder.iv_comment_photo = ((ImageView) convertView.findViewById(R.id.iv_comment_photo));
                 viewHolder.tv_comment_name = ((TextView) convertView.findViewById(R.id.tv_comment_name));

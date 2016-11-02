@@ -2,69 +2,71 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/iv_photoImg"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/friends_selected"
-        android:layout_marginLeft="20dp"/>
-    <TextView
-        android:id="@+id/tv_infoName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ellen"
-        android:textColor="#000000"
-        android:layout_toRightOf="@+id/iv_photoImg"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"/>
-    <TextView
-        android:id="@+id/tv_infoContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我们爱运动我们爱运动"
-        android:layout_toRightOf="@id/iv_photoImg"
-        android:lines="2"
-        android:ellipsize="end"
-        android:textColor="#000000"
-        android:layout_below="@+id/tv_infoName"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_photoImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/friends_selected"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:id="@+id/tv_infoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ellen"
+            android:textColor="#000000"
+            android:layout_toRightOf="@+id/iv_photoImg"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/tv_infoContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我们爱运动我们爱运动"
+            android:layout_toRightOf="@id/iv_photoImg"
+            android:lines="2"
+            android:ellipsize="end"
+            android:textColor="#000000"
+            android:layout_below="@+id/tv_infoName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"/>
     </RelativeLayout>
     <LinearLayout
         android:id="@+id/ll_imgs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <com.example.charmer.moving.MyView.GridView_picture
-            android:id="@+id/gridview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:numColumns="3"
-            android:stretchMode="columnWidth"
-            android:columnWidth="90dp"
-            >
-        </com.example.charmer.moving.MyView.GridView_picture>
-        <!--<GridView-->
+       <com.example.charmer.moving.view.NineGridTestLayout
+           xmlns:app="http://schemas.android.com/apk/res-auto"
+           android:id="@+id/ng_grid"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"
+           app:sapcing="4dp">
+
+    </com.example.charmer.moving.view.NineGridTestLayout>
+        <!--<com.example.charmer.moving.MyView.GridView_picture-->
             <!--android:id="@+id/gridview"-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:numColumns="auto_fit"-->
-            <!--android:columnWidth="90dp"-->
+            <!--android:gravity="center"-->
+            <!--android:numColumns="3"-->
             <!--android:stretchMode="columnWidth"-->
-            <!--android:verticalSpacing="10dp"-->
-            <!--android:horizontalSpacing="10dp"-->
-            <!--android:gravity="center">-->
-        <!--</GridView>-->
+            <!--android:columnWidth="90dp"-->
+            <!--&gt;-->
+        <!--</com.example.charmer.moving.MyView.GridView_picture>-->
+
     </LinearLayout>
 
 
     <RelativeLayout
+        android:id="@+id/rl_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_imgs">
@@ -75,30 +77,43 @@
             android:text="18:32"
             android:textColor="#a9b7b7"
             android:padding="7dp"
-            android:layout_marginLeft="20dp"/>
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="25dp"
-            android:src="@drawable/remarkinfo"
-            android:layout_marginTop="4dp"
-            android:layout_marginLeft="220dp"
-            android:layout_toRightOf="@+id/tv_infoDate"            />
+            android:layout_alignParentLeft="true"/>
+        />
         <CheckBox
             android:id="@+id/iv_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="7dp"
+            android:focusable="false"
             style="@style/dizan_checkbox"
-            android:background="@drawable/dizan_selector"
-            android:layout_marginLeft="330dp" />
+            android:layout_marginLeft="315dp" />
         <TextView
             android:id="@+id/tv_likeNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/iv_like"
+            android:layout_alignParentRight="true"
             android:padding="7dp"
             android:text="201"/>
     </RelativeLayout>
+    <com.example.charmer.moving.MyView.MyListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_commentlist">
+    </com.example.charmer.moving.MyView.MyListView>
 
 
+    <TextView
+
+        android:id="@+id/btn_input_comment"
+        android:hint="评论"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="14dp"
+        android:textColor="#000000"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_input_comment"
+        android:textColorHint="#aaaaaa"
+        />
 </LinearLayout>

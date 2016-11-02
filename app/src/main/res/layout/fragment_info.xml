@@ -4,37 +4,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_dynamic"
     >
 
-
-    <!--<RadioGroup-->
-        <!--android:id="@+id/rg_two"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
 <RelativeLayout
     android:id="@+id/rl_title"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="40dp"
     android:background="@color/themeblue">
         <TextView
             android:id="@+id/rb_guys"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:text="好友动态"
-            android:textSize="25sp"
+            android:textSize="18sp"
             android:textColor="#fff">
         </TextView>
-        <!--/>-->
+
         <ImageView
             android:id="@+id/iv_publish"
             android:layout_width="20dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="13dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/publish_dynamic"
            />
@@ -66,17 +59,10 @@
             android:dividerHeight="10dp"
             android:overScrollMode="never"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
         </com.example.charmer.moving.MyView.LoadMoreListView>
-        <!--<ListView-->
-            <!--android:id="@+id/lv_info"-->
-            <!--android:layout_below="@+id/rl_title"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_marginTop="10dp">-->
-        <!--</ListView>-->
+
     </android.support.v4.widget.SwipeRefreshLayout>
     </RelativeLayout>
     <View

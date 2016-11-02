@@ -107,7 +107,7 @@ public class Fragment_home extends Fragment {
 //    int home_huodong_listHeight;
 //    int home_zixun_listviewHeight;
  //   int huodong_zixunHeight;
-   // private BaseAdapter adapter;
+//    private BaseAdapter adapter;
     View view;
     View lv_zixun_head;
     int page_zixun = 1;//第一页
