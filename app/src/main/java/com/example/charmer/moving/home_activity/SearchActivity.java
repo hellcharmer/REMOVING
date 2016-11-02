@@ -203,7 +203,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 
 					getSearchZixunlist(++page_zixun,word);
 				}else {
-					Toast.makeText(SearchActivity.this,"已经到底了！",Toast.LENGTH_SHORT).show();
+					toastUtil.Short(SearchActivity.this, "已经到底了！").show();
 				}
 
 				SearchActivity.this.runOnUiThread(new Runnable() {
@@ -224,6 +224,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 		x.http().get(params, new Callback.CommonCallback<String>() {
 			@Override
 			public void onSuccess(String result) {
+				System.out.println("========"+result);
 				Gson gson = new Gson();
 				ListActivityBean bean=gson.fromJson(result, ListActivityBean.class);
 				totalpage_zixun = bean.page;
@@ -358,6 +359,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 				viewHolder.iv_picture = ((ImageView) convertView.findViewById(R.id.iv_searchresult_picture));
 				viewHolder.tv_xiangxi = ((TextView) convertView.findViewById(R.id.tv_searchresult_tg));
 				viewHolder.tv_name = ((TextView) convertView.findViewById(R.id.tv_searchresult_title));
+				viewHolder.tv_type = ((TextView) convertView.findViewById(R.id.tv_searchresult_type));
 				//字体加粗
 				TextPaint tp = viewHolder.tv_name.getPaint();
 				tp.setFakeBoldText(true);
@@ -374,9 +376,9 @@ public class SearchActivity extends Activity implements OnClickListener {
 				//Log.i("TAG",(URLDecoder.decode(zixun.timeStamp,"utf-8")));
 				viewHolder.tv_xiangxi.setText(URLDecoder.decode(zixun.likes+"人收藏 ·"+zixun.publisher+" · "+ DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(zixun.timeStamp,"utf-8"))) ,"utf-8"));
 				viewHolder.tv_name.setText(URLDecoder.decode(zixun.title,"utf-8"));
+				viewHolder.tv_type.setText(URLDecoder.decode(zixun.type,"utf-8"));
 
-
-
+				System.out.println(zixun.photoImg);
 				xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
 
 
@@ -398,7 +400,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 		TextView tv_word;
 
 		ImageView iv_picture;
-
+		TextView tv_type;
 		TextView tv_xiangxi;
 		TextView tv_name;
 	}
