@@ -1,0 +1,121 @@
+<resources>
+    <string name="app_name">MOVING</string>
+    <string name="search">搜索</string>
+    <string name="publisherName">发布者名字</string>
+    <string name="type">活动类别</string>
+    <string name="title">活动名称</string>
+    <string name="theme">活动主题</string>
+    <string name="place">活动地点</string>
+    <string name="activityTime">活动时间</string>
+    <string name="costdesc">总花费:</string>
+    <string name="cost">活动花费</string>
+    <string name="paymentMethoddesc">付费方式:</string>
+    <string name="paymentMethod">付费方式</string>
+    <string name="currentNumberdesc">当前人数:</string>
+    <string name="currentNumber">当前人数</string>
+    <string name="totalNumberdesc">总人数:</string>
+    <string name="totalNumber">总人数</string>
+    <string name="exercises">活动</string>
+    <string name="exercisesinfoes">活动详情</string>
+    <string name="manager">管理</string>
+    <string name="exemanager">活动管理</string>
+    <string name="releasetime">发布于</string>
+    <string-array name="exercisetype">
+        <item>全部分类</item>
+        <item>篮球</item>
+        <item>足球</item>
+        <item>乒乓</item>
+        <item>羽毛球</item>
+        <item>网球</item>
+        <item>游泳</item>
+    </string-array>
+    <string-array name="exercisetheme">
+        <item>全部主题</item>
+        <item>一起玩</item>
+        <item>教教我</item>
+        <item>比一比</item>
+        <item>交朋友</item>
+
+    </string-array>
+    <string name="action_settings">Settings</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>交朋友</item>
+    </string-array>
+
+
+    <string-array name="exepbtype">
+        <item>篮球</item>
+        <item>足球</item>
+        <item>乒乓</item>
+        <item>羽毛球</item>
+        <item>网球</item>
+        <item>游泳</item>
+    </string-array>
+
+    <string-array name="exepbtheme">
+        <item>一起玩</item>
+        <item>教教我</item>
+        <item>比一比</item>
+        <item>交朋友</item>
+    </string-array>
+    <string-array name="exepbnumber">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>12</item>
+        <item>22</item>
+    </string-array>
+    <string-array name="exepbcostmthd">
+        <item>AA制</item>
+        <item>我买单</item>
+        <item>你请客</item>
+    </string-array>
+    <string name="app_cancel">取消</string>
+    <string name="app_sure">确定</string>
+
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+
+    <!-- 小标题字体style -->
+    <style name="SmallTitleString">
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 大标题字体style -->
+    <style name="BigTitleString">
+        <item name="android:textColor">@color/plus_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete_sure">确定要删除评论吗？</string>
+    <string name="ok">确定</string>
+    <string name="agreejoin_sure">确定同意吗？</string>
+    <string name="cancel_sure">确定取消吗？</string>
+    <string name="enrollExe_sure">确定报名吗？</string>
+    <string name="cancelenrollintro">您将取消报名此活动!</string>
+    <string name="canceljoinExeintro">若发布者不同意将影响您的活动参加率！</string>
+    <string name="cancelExeintro">活动时间前取消将影响您的成功发布率！</string>
+    <string name="ignore_sure">确定忽略吗？</string>
+
+
+    <string name="xq_viewpager_indicator">%1$d/%2$d</string>
+    <string name="select">%1$s/%2$s</string>
+
+
+</resources>
