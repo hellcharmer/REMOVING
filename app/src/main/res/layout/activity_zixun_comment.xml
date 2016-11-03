@@ -4,47 +4,9 @@
     android:id="@+id/activity_zixun_comment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="com.example.charmer.moving.home_activity.Zixun_comment">
 
-        <RelativeLayout
-            android:id="@+id/zixun_comment_header"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@color/colorSkybule"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
-            <ImageView
-                android:id="@+id/iv_comment_return"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cha"/>
-            <TextView
-                android:id="@+id/xiangxi_author"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/iv_comment_return"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorWhite"
-                android:textSize="18sp"
-                android:text="评论"/>
-            <ImageView
-                android:id="@+id/iv_comment_sort"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_descending"/>
-
-        </RelativeLayout>
-
-        <me.weyye.library.EmptyLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <me.weyye.library.EmptyLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/emptyLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -57,12 +19,7 @@
             android:id="@+id/comment_sr_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             >
-
-
-
-
             <com.example.charmer.moving.MyView.LoadMoreListView
                 android:id="@+id/lv_comment"
                 android:overScrollMode="never"
@@ -70,7 +27,8 @@
                 android:layout_height="wrap_content">
 
             </com.example.charmer.moving.MyView.LoadMoreListView>
-        </android.support.v4.widget.SwipeRefreshLayout>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
         </me.weyye.library.EmptyLayout>
     <RelativeLayout
         android:id="@+id/comment_bottom"
@@ -102,7 +60,7 @@
             android:src="@drawable/comment1"/>
         <EditText android:id="@+id/edt_comment_name"
             android:textColorHint="@color/text_gray"
-            android:hint="添加评论"
+            android:hint="添加评论:"
             android:layout_marginLeft="5dp"
             android:textCursorDrawable="@drawable/color_cursor"
             android:backgroundTint="@color/colorSkybule"
@@ -111,5 +69,49 @@
             android:layout_toLeftOf="@id/iv_comment"
             />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/zixun_comment_header"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorSkybule"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <RelativeLayout
+            android:id="@+id/iv_comment_return"
+
+            android:layout_width="48dp"
+            android:layout_height="48dp">
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/finish"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/xiangxi_author"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_comment_return"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:text="评论"/>
+        <RelativeLayout
+            android:id="@+id/rl_comment_sort"
+            android:layout_alignParentRight="true"
+            android:layout_width="48dp"
+            android:layout_height="48dp">
+        <ImageView
+            android:id="@+id/iv_comment_sort"
+           android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_descending"/>
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

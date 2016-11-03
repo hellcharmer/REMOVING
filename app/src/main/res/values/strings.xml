@@ -87,6 +87,22 @@
     </string-array>
     <string name="app_cancel">取消</string>
     <string name="app_sure">确定</string>
+
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+
+    <!-- 小标题字体style -->
+    <style name="SmallTitleString">
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 大标题字体style -->
+    <style name="BigTitleString">
+        <item name="android:textColor">@color/plus_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <string name="delete">删除</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -99,5 +115,10 @@
     <string name="canceljoinExeintro">若发布者不同意将影响您的活动参加率！</string>
     <string name="cancelExeintro">活动时间前取消将影响您的成功发布率！</string>
     <string name="ignore_sure">确定忽略吗？</string>
+
+
+    <string name="xq_viewpager_indicator">%1$d/%2$d</string>
+    <string name="select">%1$s/%2$s</string>
+
 
 </resources>

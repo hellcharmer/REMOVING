@@ -1,11 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/rl_login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="mine"
-        android:textSize="30sp"
-        />
+        android:layout_height="200dp"
+        android:background="#fcfcfc"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_userimg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/touxiang" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_login"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/iv_userimg"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="18dp"-->
+            <!--android:background="#d9d9d9"-->
+            <!--android:text="请登录账号"-->
+            <!--android:textSize="18dp" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_button"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/rl_login"
+        android:layout_marginTop="15dp"
+        android:background="#fffcfc"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/rb_publish"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:padding="6dp"
+            android:text="资讯"
+            android:textColor="#818080"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/rb_auction"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:padding="6dp"
+            android:text="动态"
+            android:textColor="#818080"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/rb_myorder"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:padding="6dp"
+            android:text="活动"
+            android:textColor="#818080"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_button"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_myfriends"
+                style="@style/radiotab"
+                android:background="#ffffff"
+                android:text="我的资料"
+
+                />
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f2f2f2" />
+
+            <RadioButton
+                android:id="@+id/rb_mycare"
+                style="@style/radiotab"
+                android:background="#ffffff"
+                android:text="我的好友" />
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f2f2f2" />
+
+            <RadioButton
+                android:id="@+id/rb_mywallet"
+                style="@style/radiotab"
+                android:background="#ffffff"
+                android:text="我的关注" />
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f2f2f2" />
+
+            <RadioButton
+                android:id="@+id/rb_mynotice"
+                style="@style/radiotab"
+                android:background="#ffffff"
+                android:text="我的收藏" />
+            <!-- 分割线 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f2f2f2" />
+        </RadioGroup>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text=" 退出当前帐号"
+            android:textSize="20sp"
+            android:background="#f33e16"/>
+    </LinearLayout>
 </RelativeLayout>

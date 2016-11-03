@@ -8,7 +8,7 @@
 
         android:id="@+id/hs_view"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorSkybule"
         android:scrollbars="none"
         >
@@ -16,7 +16,7 @@
         <LinearLayout
             android:id="@+id/title_lay"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:orientation="vertical"
             android:layout_gravity="center_vertical"
             >
@@ -30,6 +30,7 @@
             </LinearLayout>
 
             <ImageView
+                android:layout_marginTop="38dp"
                 android:id="@+id/img1"
                 android:layout_width="0dp"
                 android:layout_height="10dp"
@@ -38,6 +39,7 @@
                 />
         </LinearLayout>
     </HorizontalScrollView>
+
     <LinearLayout
         android:layout_marginTop="50dp"
         android:visibility="visible"
@@ -66,7 +68,7 @@
         android:id="@+id/strut_new1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         />
 
     <android.support.v4.view.ViewPager

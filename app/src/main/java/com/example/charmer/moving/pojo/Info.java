@@ -2,6 +2,7 @@ package com.example.charmer.moving.pojo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Info implements Serializable{
 	/**
@@ -15,6 +16,7 @@ public class Info implements Serializable{
 	private boolean infoState;
     private String infoPhotoImg;
     private Integer infoLikeNum;
+	public boolean isShowAll;
     public Integer getInfoLikeNum() {
 		return infoLikeNum;
 	}
@@ -119,6 +121,28 @@ public class Info implements Serializable{
 		this.infoContent = infoContent;
 		this.user = user;
 	}
+
+	private List<Remark> remark;
+	public List<Remark> getRemark() {
+		return remark;
+	}
+	public void setRemark(List<Remark> remark) {
+		this.remark = remark;
+	}
+	public Info(Integer infoId, String infoContent, Timestamp infoDate,
+				boolean infoState, String infoPhotoImg, Integer infoLikeNum,
+				User user,List<Remark> remark) {
+		super();
+		this.infoId = infoId;
+		this.infoContent = infoContent;
+		this.infoDate = infoDate;
+		this.infoState = infoState;
+		this.infoPhotoImg = infoPhotoImg;
+		this.infoLikeNum = infoLikeNum;
+		this.user = user;
+		this.remark = remark;
+	}
+
 }
 
 

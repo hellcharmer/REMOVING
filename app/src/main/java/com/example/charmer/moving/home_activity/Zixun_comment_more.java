@@ -79,7 +79,12 @@ public class Zixun_comment_more extends AppCompatActivity implements View.OnClic
                 loadCommentMore();
             }
         });
-
+        iv_comment_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
     private void initData() {

@@ -1,9 +1,7 @@
 package com.example.charmer.moving;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +17,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.contantData.EditTextClearTools;
+import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.pojo.LoginInfo;
+import com.google.gson.Gson;
+
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -40,6 +45,7 @@ public class ForgetPsdActivity extends AppCompatActivity {
 //    @Bind(R.id.btn_signup) Button _signupButton;
 //    @Bind(R.id.link_login) TextView _loginLink;
     int i = 30;
+     ProgressDialog progressDialog;
 
     @InjectView(R.id.input_mobile)
     EditText _mobileText;
@@ -158,7 +164,7 @@ public class ForgetPsdActivity extends AppCompatActivity {
 
         _signupButton.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(ForgetPsdActivity.this,
+         progressDialog = new ProgressDialog(ForgetPsdActivity.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("正在找回密码...");
@@ -170,24 +176,22 @@ public class ForgetPsdActivity extends AppCompatActivity {
         String reEnterPassword = _reEnterPasswordText.getText().toString();
 
         // TODO: Implement your own signup logic here.
-        SharedPreferences sharedPreferences = ForgetPsdActivity.this.getSharedPreferences("mobile", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-        editor.putString("number", mobile);
-        editor.commit();
-        new Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onSignupSuccess or onSignupFailed
-                        // depending on success
-                        onSuccess();
-                        // onSignupFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+        LoginInfo loginInfo= new LoginInfo(mobile,password);
+        findAnswer(loginInfo);
+//        new Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        // On complete call either onSignupSuccess or onSignupFailed
+//                        // depending on success
+//                        onSuccess();
+//                        // onSignupFailed();
+//                        progressDialog.dismiss();
+//                    }
+//                }, 3000);
     }
 
 
-    public void onSuccess() {
+    public void onfindSuccess() {
         _signupButton.setEnabled(true);
         Intent intent = new Intent(ForgetPsdActivity.this, LoginActivity.class);
         startActivity(intent);
@@ -324,5 +328,46 @@ public class ForgetPsdActivity extends AppCompatActivity {
         SMSSDK.unregisterAllEventHandler();
         super.onDestroy();
     }
+    private void findAnswer(LoginInfo SignupInfo) {
 
+        RequestParams params = new RequestParams(HttpUtils.hoster+"loginservlet");
+        Gson gson =new Gson();
+        String info = gson.toJson(SignupInfo);
+        params.addQueryStringParameter("info",info);
+        params.addQueryStringParameter("state","3");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                if("true".equals(result)) {
+
+                    Toast.makeText(ForgetPsdActivity.this,"找回成功！",Toast.LENGTH_SHORT).show();
+                    onfindSuccess();
+                    progressDialog.dismiss();
+                }else{
+
+                    onFailed();
+                    progressDialog.dismiss();
+                }
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                Toast.makeText(getBaseContext(), "网络连接失败！", Toast.LENGTH_LONG).show();
+                _signupButton.setEnabled(true);
+                progressDialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
 }

@@ -182,7 +182,7 @@ public class SignupActivity extends AppCompatActivity {
         saveBitmaptofile(QRcode,mobile);
 
         File file=new File("/data/data/com.example.charmer.moving/QRcodepicture/"+mobile+".png");
-        System.out.println("=-=-==-==-=-=-=-=-=-=-="+file);
+
         sendImg(file);
         LoginInfo loginInfo= new LoginInfo(name,password,mobile,mobile+".png");
         Signup(loginInfo);
@@ -203,7 +203,7 @@ public class SignupActivity extends AppCompatActivity {
 
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
-        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
@@ -405,17 +405,12 @@ public class SignupActivity extends AppCompatActivity {
         RequestParams params = new RequestParams(HttpUtils.host + "qrcode");//upload 是你要访问的servlet
         Log.i("文件",""+file);
         params.addBodyParameter("file", file);
-
+        params.addBodyParameter("fikongle","ss");
 
 
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-//                if("true".equals(result)){
-//                    Toast.makeText(Publish_articles.this,"发布成功",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    Toast.makeText(Publish_articles.this,"发布失败",Toast.LENGTH_SHORT).show();
-//                }
                 System.out.println("---------------===="+result);
             }
 
