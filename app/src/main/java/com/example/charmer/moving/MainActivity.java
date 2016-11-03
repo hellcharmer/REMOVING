@@ -21,7 +21,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.contantData.Constant;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.fragment.Fragment_dynamic;
@@ -30,7 +29,6 @@ import com.example.charmer.moving.fragment.Fragment_home;
 import com.example.charmer.moving.fragment.Fragment_mine;
 import com.example.charmer.moving.fragment.Fragment_service;
 import com.example.charmer.moving.friendchat.RongImChat;
-import com.example.charmer.moving.home_activity.Publish_articles;
 import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.StatusBarCompat;
 import com.google.gson.Gson;
@@ -392,8 +390,8 @@ public class MainActivity extends AppCompatActivity {
             iv_fabuhuodong.setClickable(clicked? true : false);
             v.startAnimation(alpha_button);
             plus_im.performClick();
-            Intent intent =new Intent(MainActivity.this,Publish_articles.class);
-            startActivity(intent);
+//            Intent intent =new Intent(MainActivity.this,Publish_articles.class);
+//            startActivity(intent);
         }
     };
     private View.OnClickListener onClickListener = new View.OnClickListener() {

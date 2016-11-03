@@ -178,7 +178,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
                             }
                         });
                 builder.setNegativeButton(
-                        getString(R.string.cancel),
+                        getString(R.string.app_cancel),
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(

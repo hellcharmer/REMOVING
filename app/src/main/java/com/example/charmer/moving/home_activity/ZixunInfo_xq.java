@@ -32,7 +32,6 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
-import com.lidong.photopicker.intent.PhotoPreviewIntent;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -182,15 +181,15 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
     private void bindEvents(){
         // preview
-        home_xiangxi_picture.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                PhotoPreviewIntent intent = new PhotoPreviewIntent(ZixunInfo_xq.this);
-                intent.setCurrentItem(position);
-                intent.setPhotoPaths((ArrayList<String>)imgs_list);
-                startActivityForResult(intent, REQUEST_PREVIEW_CODE);
-            }
-        });
+//        home_xiangxi_picture.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                PhotoPreviewIntent intent = new PhotoPreviewIntent(ZixunInfo_xq.this);
+//                intent.setCurrentItem(position);
+//                intent.setPhotoPaths((ArrayList<String>)imgs_list);
+//                startActivityForResult(intent, REQUEST_PREVIEW_CODE);
+//            }
+//        });
 
         sl_home_picture.setOnTouchListener(new View.OnTouchListener() {
             private float mEndY;

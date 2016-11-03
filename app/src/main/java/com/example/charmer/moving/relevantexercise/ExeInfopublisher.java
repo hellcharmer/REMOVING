@@ -231,7 +231,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                                     }
                                 });
                         builder.setNegativeButton(
-                                getString(R.string.cancel),
+                                getString(R.string.app_cancel),
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(
@@ -267,7 +267,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                                     }
                                 });
                         builder.setNegativeButton(
-                                getString(R.string.cancel),
+                                getString(R.string.app_cancel),
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(
@@ -312,7 +312,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                                      }
                             });
                     builder.setNegativeButton(
-                            getString(R.string.cancel),
+                            getString(R.string.app_cancel),
                             new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(

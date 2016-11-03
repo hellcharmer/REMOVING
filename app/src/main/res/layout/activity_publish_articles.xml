@@ -82,8 +82,7 @@
                 android:id="@+id/gridView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:horizontalSpacing="@dimen/space_size"
-                android:verticalSpacing="@dimen/space_size" />
+                 />
         </LinearLayout>
     </ScrollView>
     <TextView

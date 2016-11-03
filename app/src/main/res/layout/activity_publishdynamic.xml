@@ -55,7 +55,5 @@
         android:id="@+id/gridView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:horizontalSpacing="@dimen/space_size"
-        android:numColumns="3"
-        android:verticalSpacing="@dimen/space_size" />
+        />
 </LinearLayout>

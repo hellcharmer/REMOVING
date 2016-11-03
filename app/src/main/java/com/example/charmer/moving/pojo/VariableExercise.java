@@ -55,6 +55,10 @@ public class VariableExercise {
         public String successfulpublishpercent;
         public Integer joinedNum;
         public String appointmentRate;
+        public String QRcode;
+        public String personalsay;
+        public Integer articles;
+        public Integer collections;
     }
 
     @Override
