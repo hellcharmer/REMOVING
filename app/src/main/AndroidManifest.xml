@@ -94,7 +94,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.foamtrace.photopicker.PhotoPickerActivity"
             android:theme="@style/PhotoPickerTheme"
