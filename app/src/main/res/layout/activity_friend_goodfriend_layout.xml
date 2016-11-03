@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+   <ImageView
+       android:id="@+id/iv_toux"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:layout_marginTop="10dp"
+       android:layout_marginLeft="20dp"
+       android:src="@drawable/tou"
+       />
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户名字"
+        android:textColor="#000"
+        android:layout_toRightOf="@id/iv_toux"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="30dp"
+        />
+    <ImageView
+        android:id="@+id/i_tip"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/tv_username"
+        android:layout_alignBottom="@id/tv_username"
+        android:layout_marginLeft="20dp"
+        />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/nowact"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/nowact"
+            android:layout_alignLeft="@id/tv_username"
+            android:layout_below="@id/tv_username"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_nowact"
+        android:layout_toRightOf="@id/nowact"
+        android:text="最新参加的活动"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:layout_alignBottom="@id/nowact"
+
+        />
+     <View
+         android:layout_width="300dp"
+         android:layout_height="2dp"
+         android:background="#38ADF8"
+         android:layout_toRightOf="@id/iv_toux"
+         android:layout_below="@id/tv_nowact"
+         android:layout_marginTop="20dp"
+         ></View>
+
+</RelativeLayout>

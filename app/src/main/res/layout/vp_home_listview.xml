@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <HorizontalScrollView
+
+        android:id="@+id/hs_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSkybule"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/title_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/lay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+            </LinearLayout>
+
+            <ImageView
+                android:layout_marginTop="38dp"
+                android:id="@+id/img1"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="@color/colorWhite"
+                android:layout_gravity="bottom"
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:visibility="visible"
+        android:clickable="true"
+        android:background="#0280FC"
+        android:gravity="center_vertical"
+        android:id="@+id/home_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/bt_search_home"
+            android:drawableLeft="@drawable/tab_home_find_search2"
+            android:padding="8dp"
+            android:paddingTop="8dp"
+            android:drawablePadding="8dp"
+            android:layout_margin="7dp"
+            android:background="@drawable/search_button_selector"
+            android:textColor="#99ffffff"
+            android:text="@string/search"
+            android:gravity="left|center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:id="@+id/strut_new1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@id/strut_new1"
+        android:background="@color/colorWhite"
+        android:id="@+id/vp_zixun"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v4.view.ViewPager>
+
+
+
+</RelativeLayout>
