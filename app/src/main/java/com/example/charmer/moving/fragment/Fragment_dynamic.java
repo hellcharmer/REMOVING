@@ -33,7 +33,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.Publishdynamic.Publishdynamic;
 import com.example.charmer.moving.R;
@@ -755,7 +754,7 @@ public class Fragment_dynamic extends BaseFragment {
             Toast.makeText(getActivity(), "评论不能为空！", Toast.LENGTH_SHORT).show();
         } else {
             //生成评论数据
-            Remark remark = new Remark(infoId,((MyApplication)getActivity().getApplication()).getUser().getUserid(),
+            Remark remark = new Remark(infoId,MainActivity.getUser().getUserid(),
                     input_comment.getText().toString()+"",FatherDiscount,"");
             Log.i("info", "sendRemark: "+remark);
             RequestParams params = new RequestParams(HttpUtils.host_dynamic + "sendremark");

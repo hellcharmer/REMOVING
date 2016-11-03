@@ -15,9 +15,9 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Info;
@@ -36,6 +36,8 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -240,7 +242,7 @@ public class Publishdynamic extends AppCompatActivity {
 
         String infoContent =et_infoContent.getText().toString().trim();
         Log.i("publish","infoContent"+infoContent+"");
-        User user = new User(MyApplication.getUser().getUserid());
+        User user = new User(MainActivity.getUser().getUserid());
         Info info = new Info(infoContent,user);
         Gson gson = new Gson();
         String infoList = gson.toJson(info);
@@ -257,7 +259,7 @@ public class Publishdynamic extends AppCompatActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        Log.i("publish","userId"+MyApplication.getUser().getUserid()+"");
+        Log.i("publish","userId"+MainActivity.getUser().getUserid()+"");
         x.http().post(requestparams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

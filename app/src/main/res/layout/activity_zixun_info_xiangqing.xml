@@ -104,18 +104,18 @@
             />
 
     </RelativeLayout>
-    <com.example.charmer.moving.MyView.GridView_picture
-        android:id="@+id/home_xiangxi_picture"
-        android:layout_below="@id/rl_home_content"
+    <!--<com.example.charmer.moving.MyView.GridView_picture-->
+        <!--android:id="@+id/home_xiangxi_picture"-->
+        <!--android:layout_below="@id/rl_home_content"-->
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:numColumns="3"
-        android:stretchMode="columnWidth"
-        >
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:numColumns="3"-->
+        <!--android:stretchMode="columnWidth"-->
+        <!--&gt;-->
 
-    </com.example.charmer.moving.MyView.GridView_picture>
+    <!--</com.example.charmer.moving.MyView.GridView_picture>-->
 
 </RelativeLayout>
 

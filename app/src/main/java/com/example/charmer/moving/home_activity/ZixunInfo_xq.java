@@ -30,7 +30,6 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
-import com.lidong.photopicker.intent.PhotoPreviewIntent;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -131,7 +130,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
         home_xiangxi_content = (TextView) findViewById(R.id.home_xiangxi_content);
         xiangxi_hide_title = (TextView) findViewById(R.id.xiangxi_hide_title);
-        home_xiangxi_picture = (GridView_picture) findViewById(R.id.home_xiangxi_picture);
+       // home_xiangxi_picture = (GridView_picture) findViewById(R.id.home_xiangxi_picture);
 
 
 

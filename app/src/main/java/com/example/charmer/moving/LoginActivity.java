@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.example.charmer.moving.contantData.EditTextClearTools;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.LoginInfo;
-import com.example.charmer.moving.pojo.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -52,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     @InjectView(R.id.link_signup)
     TextView _signupLink;
 
-
+    SharedPreferences sharedPreferences ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -116,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = _passwordText.getText().toString();
         LoginInfo loginInfo= new LoginInfo(mobile,password);
         Login(loginInfo);
-        SharedPreferences sharedPreferences = LoginActivity.this.getSharedPreferences("mobile", Context.MODE_PRIVATE);
+        sharedPreferences= LoginActivity.this.getSharedPreferences("sp_mobile", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
         editor.putString("number", mobile);
         editor.commit();
@@ -152,7 +151,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginSuccess(String str1,String str2) {
 
-        System.out.println("____________"+str1+"+"+str2);
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.putExtra("userId",str1);
         intent.putExtra("useraccount",str2);
@@ -202,9 +200,11 @@ public class LoginActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 Type type_map = new TypeToken<Map<String,String>>(){}.getType();
                 Map<String,String> map1= gson.fromJson(result, type_map);
-                System.out.println("========="+map1.get("result"));
                 if("1".equals(map1.get("result"))){
-
+                    SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+                    editor.putString("userId",map1.get("userId"));
+                    editor.putString("useraccount",map1.get("useraccount"));
+                    editor.commit();
                     onLoginSuccess(map1.get("userId"),map1.get("useraccount"));
                     progressDialog.dismiss();
                 }else {
@@ -217,7 +217,9 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                Toast.makeText(LoginActivity.this,"网络连接失败",Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+                _loginButton.setEnabled(true);
             }
 
             @Override

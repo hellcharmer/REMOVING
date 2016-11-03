@@ -14,9 +14,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
 
     <application
         android:name=".MyApplicition.MyApplication"
@@ -25,13 +23,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".fragment.one_activity" />
         <activity android:name=".relevantexercise.ExerciseinfoActivity" />
         <activity android:name=".relevantexercise.ManagerexeActivity" />
@@ -52,13 +44,11 @@
                     android:pathPrefix="/conversation/"
                     android:scheme="rong" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".relevantexercise.ExeInfoparticipate" />
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
         <activity android:name=".home_activity.Publish_articles" />
-        <activity android:name=".Publishdynamic.Publishdynamic"></activity>
+        <activity android:name=".Publishdynamic.Publishdynamic" />
         <activity
             android:name=".friendchat.ConversationListActivity"
             android:screenOrientation="portrait"
@@ -74,10 +64,8 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name=".friendchat.Test"></activity>
-        <activity android:name=".friendchat.SearchTalk"></activity>
-        <activity android:name=".home_activity.Publish_articles" />
-        <activity android:name=".Publishdynamic.Publishdynamic" />
+        <activity android:name=".friendchat.Test" />
+        <activity android:name=".friendchat.SearchTalk" />
         <activity android:name=".home_activity.SearchActivity" />
         <activity
             android:name="com.lidong.photopicker.PhotoPickerActivity"
@@ -87,17 +75,12 @@
             android:name="com.lidong.photopicker.PhotoPreviewActivity"
             android:theme="@style/PhotoPickerTheme" />
         <activity android:name=".home_activity.Zixun_comment" />
-        <activity android:name=".home_activity.Zixun_comment_more"></activity>
-        <activity android:name=".Publishdynamic.ImagePagerActivity"></activity>
-
+        <activity android:name=".home_activity.Zixun_comment_more" />
+        <activity android:name=".Publishdynamic.ImagePagerActivity" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.Dark">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SignupActivity"
@@ -107,9 +90,16 @@
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
