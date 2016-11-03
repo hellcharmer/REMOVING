@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/libs" />
             <option value="$PROJECT_DIR$/libs/pulltoRefresh" />
+            <option value="$PROJECT_DIR$/photopicker" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
