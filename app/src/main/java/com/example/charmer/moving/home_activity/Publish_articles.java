@@ -76,7 +76,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
     private ArrayList<String> imagePaths = null;
     private ImageCaptureManager captureManager; // 相机拍照处理类
     private List<File> file=new ArrayList<File>();
-    private String str="";
+
     private GridView_picture gridView;
     private int columnWidth;
     private GridAdapter gridAdapter;
@@ -188,9 +188,9 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         return sdf.format(date) + "_" + UUID.randomUUID() + ".jpg";
     }
 
-    private void fabuhuondong(String userId) {
+    private void fabuhuondong(String userId,String str) {
 
-        RequestParams params = new RequestParams(HttpUtils.host+"addzixun");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"addzixun");
         params.addQueryStringParameter("userId",userId);
         params.addQueryStringParameter("title",publish_title.getText().toString());
         params.addQueryStringParameter("picture",str);
@@ -199,7 +199,11 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
             @Override
             public void onSuccess(String result) {
 
-
+                if("true".equals(result)){
+                    Toast.makeText(Publish_articles.this,"发布成功",Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(Publish_articles.this,"发布失败",Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -221,7 +225,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
     }
 
     private void sendImg() {
-        RequestParams params = new RequestParams(HttpUtils.host + "upload");//upload 是你要访问的servlet
+        RequestParams params = new RequestParams(HttpUtils.hoster + "upload");//upload 是你要访问的servlet
 
 
         for (int i=0;i<file.size();i++) {
@@ -234,11 +238,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-//                if("true".equals(result)){
-//                    Toast.makeText(Publish_articles.this,"发布成功",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    Toast.makeText(Publish_articles.this,"发布失败",Toast.LENGTH_SHORT).show();
-//                }
+                fabuhuondong(MainActivity.getUser().getUseraccount(),result);
                 System.out.println("---------------===="+result);
             }
 
@@ -349,7 +349,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.iv_publish_btn:
                 Toast.makeText(Publish_articles.this,"正在发布...",Toast.LENGTH_SHORT).show();
-                fabuhuondong(MainActivity.getUser().getUseraccount());
+
                 sendImg();
                 break;
 
@@ -365,10 +365,10 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         for(int i=0;i<imagePaths.size();i++){
             //头像的存储完整路径
             file.add(i,new File(imagePaths.get(i)));
-            System.out.println(imagePaths.size());
-//            /storage/emulated/0/Pictures/
-            str = str +imagePaths.get(i).substring(29)+",";
-            System.out.println("str========="+str);
+//            System.out.println(imagePaths.size());
+////            /storage/emulated/0/Pictures/
+ //         str = str +imagePaths.get(i).substring(29)+",";
+//            System.out.println("str========="+str);
         }
 
         try{
