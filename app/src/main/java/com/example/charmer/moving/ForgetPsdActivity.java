@@ -31,6 +31,8 @@ import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 
 public class ForgetPsdActivity extends AppCompatActivity {
+
+
     private static final String TAG = "ForgetPsdActivity";
     String APPKEY = "101732155b605";
     String APPSECRETE = "69d1850f4b74100266ab576b64e6cb16";
