@@ -32,12 +32,12 @@
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
@@ -68,24 +68,24 @@
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\src\\main\\res\\layout\\fragment_capture.xml"
     },
     {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
         "source": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
+        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
         "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",

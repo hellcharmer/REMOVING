@@ -187,22 +187,23 @@ public class SignupActivity extends AppCompatActivity {
         LoginInfo loginInfo= new LoginInfo(name,password,mobile,mobile+".png");
         Signup(loginInfo);
       //  Signup(name,mobile,password);
-        new Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onSignupSuccess or onSignupFailed
-                        // depending on success
-
-                        onSignupSuccess();
-                        // onSignupFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+//        new Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        // On complete call either onSignupSuccess or onSignupFailed
+//                        // depending on success
+//
+//                        onSignupSuccess();
+//                        // onSignupFailed();
+//                        progressDialog.dismiss();
+//                    }
+//                }, 3000);
     }
 
 
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
+        Toast.makeText(getBaseContext(), "注册成功", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
@@ -355,6 +356,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onSuccess(String result) {
                 if("0".equals(result)) {
                     Toast.makeText(SignupActivity.this,"此号码已被使用",Toast.LENGTH_SHORT).show();
+                    _signupButton.setEnabled(true);
                 }else if("1".equals(result)){
                     onSignupFailed();
                 }else{
@@ -402,7 +404,7 @@ public class SignupActivity extends AppCompatActivity {
         return bmp.compress(format, quality, stream);
     }
     private void sendImg(File file) {
-        RequestParams params = new RequestParams(HttpUtils.host + "qrcode");//upload 是你要访问的servlet
+        RequestParams params = new RequestParams(HttpUtils.hoster + "qrcode");//upload 是你要访问的servlet
         Log.i("文件",""+file);
         params.addBodyParameter("file", file);
         params.addBodyParameter("fikongle","ss");
