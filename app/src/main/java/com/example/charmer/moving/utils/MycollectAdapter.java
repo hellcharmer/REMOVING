@@ -48,7 +48,7 @@ public class MycollectAdapter extends RecyclerView.Adapter<MycollectAdapter.View
         ZixunInfo zixun = exerciseList.get(i);
         viewHolder.tv_xiangxi.setText(zixun.getZixun_likes()+"人收藏 ·"+zixun.getPublisher()+" · "+ DateUtils.getGapTimeFromNow(zixun.getZixun_issuedate()));
         viewHolder.tv_name.setText(zixun.getZixun_name());
-        xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + zixun.getZixun_photo().split(",")[0]);
+        xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + "zixunpictures"+zixun.getZixun_photo().split(",")[0]);
 
     }
 

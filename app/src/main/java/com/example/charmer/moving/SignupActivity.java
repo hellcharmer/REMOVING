@@ -402,7 +402,7 @@ public class SignupActivity extends AppCompatActivity {
         return bmp.compress(format, quality, stream);
     }
     private void sendImg(File file) {
-        RequestParams params = new RequestParams(HttpUtils.host + "qrcode");//upload 是你要访问的servlet
+        RequestParams params = new RequestParams(HttpUtils.hoster+ "qrcode");//upload 是你要访问的servlet
         Log.i("文件",""+file);
         params.addBodyParameter("file", file);
         params.addBodyParameter("fikongle","ss");
