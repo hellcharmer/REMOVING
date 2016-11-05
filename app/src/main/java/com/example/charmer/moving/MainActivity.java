@@ -41,6 +41,10 @@ import org.xutils.x;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
+import cn.jpush.android.api.JPushInterface;
+import cn.jpush.android.api.TagAliasCallback;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -145,6 +149,17 @@ public class MainActivity extends AppCompatActivity {
         tabs[0].setSelected(true);
         plus_yuan.setVisibility(View.VISIBLE);
         plus_im.setVisibility(View.VISIBLE);
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
+        JPushInterface.setAlias(this, //上下文对象
+                intent.getStringExtra("useraccount"), //别名
+                new TagAliasCallback() {//回调接口,i=0表示成功,其它设置失败
+                    @Override
+                    public void gotResult(int i, String s, Set<String> set) {
+                        Log.d("alias", "set alias result is" + i);
+                    }
+                });
+
     }
 
 

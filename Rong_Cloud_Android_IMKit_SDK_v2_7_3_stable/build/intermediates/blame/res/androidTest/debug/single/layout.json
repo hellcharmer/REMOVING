@@ -52,12 +52,12 @@
         "source": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_item_public_service_input_menu_item.xml"
     },
     {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_cs_alert_warning.xml",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_cs_alert_warning.xml"
-    },
-    {
         "merged": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_cs_alert_human_evaluation.xml",
         "source": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_cs_alert_human_evaluation.xml"
+    },
+    {
+        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_cs_alert_warning.xml",
+        "source": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\layout\\rc_cs_alert_warning.xml"
     },
     {
         "merged": "F:\\ANDROID\\appworkspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_mention_members.xml",

@@ -581,7 +581,7 @@ public class ManagerexeActivity extends AppCompatActivity {
             viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
             viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
             viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
-
+            System.out.println("-----------"+exercises.isScan);
             if(!exercises.isScan){
                 isscan.setVisibility(View.GONE);
             }

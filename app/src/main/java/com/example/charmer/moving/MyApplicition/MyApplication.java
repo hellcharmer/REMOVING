@@ -8,6 +8,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import org.xutils.x;
 
+import cn.jpush.android.api.JPushInterface;
 import io.rong.imkit.RongIM;
 
 /**
@@ -25,6 +26,7 @@ public class MyApplication extends Application{
         x.Ext.setDebug(org.xutils.BuildConfig.DEBUG); // 是否输出debug日志, 开启debug会影响性能.
         context = getApplicationContext();
         RongIM.init(this);
+
     }
     public static Context getContext(){return context;}
 
