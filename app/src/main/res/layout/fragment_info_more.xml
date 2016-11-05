@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <RelativeLayout
@@ -96,6 +97,7 @@
             android:text="201"/>
     </RelativeLayout>
     <com.example.charmer.moving.MyView.MyListView
+        android:focusable="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lv_commentlist">
@@ -103,7 +105,7 @@
 
 
     <TextView
-
+        android:focusable="false"
         android:id="@+id/btn_input_comment"
         android:hint="评论"
         android:paddingLeft="5dp"

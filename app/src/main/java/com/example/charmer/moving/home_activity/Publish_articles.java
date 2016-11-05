@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -20,18 +19,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.lidong.photopicker.ImageCaptureManager;
-import com.lidong.photopicker.PhotoPickerActivity;
-import com.lidong.photopicker.PhotoPreviewActivity;
-import com.lidong.photopicker.SelectModel;
-import com.lidong.photopicker.intent.PhotoPickerIntent;
-import com.lidong.photopicker.intent.PhotoPreviewIntent;
 
 import org.json.JSONArray;
 import org.xutils.common.Callback;
@@ -39,7 +30,6 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -76,7 +66,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
     private static final int REQUEST_CAMERA_CODE = 11;
     private static final int REQUEST_PREVIEW_CODE = 22;
     private ArrayList<String> imagePaths = null;
-    private ImageCaptureManager captureManager; // 相机拍照处理类
+
     private List<File> file=new ArrayList<File>();
     private String str="";
     private GridView gridView;
@@ -128,19 +118,10 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
 
         // Item Width
         int screenWidth = getResources().getDisplayMetrics().widthPixels;
-        int columnSpace = getResources().getDimensionPixelOffset(R.dimen.space_size);
-        columnWidth = (screenWidth - columnSpace * (cols-1)) / cols;
 
-        // preview
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                PhotoPreviewIntent intent = new PhotoPreviewIntent(Publish_articles.this);
-                intent.setCurrentItem(position);
-                intent.setPhotoPaths(imagePaths);
-                startActivityForResult(intent, REQUEST_PREVIEW_CODE);
-            }
-        });
+
+
+
 
         tv_publish_photo.setOnClickListener(this);
         tv_publish_album.setOnClickListener(this);
@@ -261,17 +242,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
 
 
     private void getPicFromCamera() {
-        try {
-            if(captureManager == null){
-                captureManager = new ImageCaptureManager(Publish_articles.this);
-            }
-            Intent intent = captureManager.dispatchTakePictureIntent();
 
-            startActivityForResult(intent, ImageCaptureManager.REQUEST_TAKE_PHOTO);
-        } catch (IOException e) {
-            Toast.makeText(Publish_articles.this, "相机无法启动", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -282,25 +253,12 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
             switch (requestCode) {
                 // 选择照片
                 case REQUEST_CAMERA_CODE:
-                    loadAdpater(data.getStringArrayListExtra(PhotoPickerActivity.EXTRA_RESULT));
                     break;
                 // 预览
                 case REQUEST_PREVIEW_CODE:
-                    loadAdpater(data.getStringArrayListExtra(PhotoPreviewActivity.EXTRA_RESULT));
-                    break;
-                // 调用相机拍照
-                case ImageCaptureManager.REQUEST_TAKE_PHOTO:
-                    if(captureManager.getCurrentPhotoPath() != null) {
-                        captureManager.galleryAddPic();
 
-                        ArrayList<String> paths = new ArrayList<>();
-                        paths.add(captureManager.getCurrentPhotoPath());
-                        loadAdpater(paths);
-                    }
-                    if (data != null) {
-
-                    }
                     break;
+
 
             }
         }
@@ -311,21 +269,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
 
 
 
-    private void getPicFromPhoto() {
-        PhotoPickerIntent intent = new PhotoPickerIntent(Publish_articles.this);
-        intent.setSelectModel(SelectModel.MULTI);
-        intent.setShowCarema(true); // 是否显示拍照
-        intent.setMaxTotal(9); // 最多选择照片数量，默认为9
-        intent.setSelectedPaths(imagePaths); // 已选中的照片地址， 用于回显选中状态
 
-//                ImageConfig config = new ImageConfig();
-//                config.minHeight = 400;
-//                config.minWidth = 400;
-//                config.mimeType = new String[]{"image/jpeg", "image/png"};
-//                config.minSize = 1 * 1024 * 1024; // 1Mb
-//                intent.setImageConfig(config);
-        startActivityForResult(intent, REQUEST_CAMERA_CODE);
-    }
 
     @Override
     public void onClick(View v) {
@@ -340,7 +284,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.tv_publish_album:
-                getPicFromPhoto();
+
                 clicked = !clicked;
                 home_photo.setVisibility(View.GONE);
 
@@ -421,13 +365,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
             }else {
                 imageView = (ImageView) convertView.getTag();
             }
-            Glide.with(Publish_articles.this)
-                    .load(new File(getItem(position)))
-                    .placeholder(R.mipmap.default_error)
-                    .error(R.mipmap.default_error)
-                    .centerCrop()
-                    .crossFade()
-                    .into(imageView);
+
             return convertView;
         }
     }

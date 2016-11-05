@@ -86,6 +86,7 @@
         <item>你请客</item>
     </string-array>
     <string name="app_cancel">取消</string>
+    <string name="cancel">取消</string>
     <string name="app_sure">确定</string>
 
     <item name="tag_first" type="id"></item>
@@ -105,6 +106,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete">删除</string>
     <string name="delete_sure">确定要删除评论吗？</string>
     <string name="ok">确定</string>
     <string name="agreejoin_sure">确定同意吗？</string>

@@ -1,3 +1,3 @@
-include ':app', ':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable', ':photopicker'
-include ':libs:pulltorefresh' ,':app'
+include ':app', ':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable'
+include ':libs:pulltorefresh'
 include ':library','lib-zxing'

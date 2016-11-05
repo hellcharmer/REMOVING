@@ -12,7 +12,4 @@ public class HttpUtils {
     public static final String host4="http://10.40.5.27:8080/friendsys1/";
     public static final String host_dynamic = "http://10.40.5.63:8080/dynamic/";
     public static final String hoster="http://10.40.5.13:8080/moving/";
-
-
-
 }

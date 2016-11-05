@@ -6371,7 +6371,7 @@
         ]
     },
     {
-        "outputFile": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -6383,7 +6383,7 @@
                     "endOffset": 441
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -6404,7 +6404,7 @@
                     "endOffset": 4713
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -6425,7 +6425,7 @@
                     "endOffset": 9604
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 147,
                         "startColumn": 4,
@@ -6446,7 +6446,7 @@
                     "endOffset": 9840
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 277,
                         "startColumn": 4,
@@ -6467,7 +6467,7 @@
                     "endOffset": 10279
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 286,
                         "startColumn": 4,
@@ -6488,7 +6488,7 @@
                     "endOffset": 10907
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 303,
                         "startColumn": 4,
@@ -6509,7 +6509,7 @@
                     "endOffset": 11325
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 327,
                         "startColumn": 4,
@@ -6530,7 +6530,7 @@
                     "endOffset": 11876
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 343,
                         "startColumn": 4,
@@ -6551,7 +6551,7 @@
                     "endOffset": 12007
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 364,
                         "startColumn": 4,
@@ -6571,7 +6571,7 @@
                     "endOffset": 12065
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 369,
                         "startColumn": 4,
@@ -6590,7 +6590,7 @@
                     "endOffset": 12120
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 370,
                         "startColumn": 4,
@@ -6609,7 +6609,7 @@
                     "endOffset": 12177
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 371,
                         "startColumn": 4,
@@ -6628,7 +6628,7 @@
                     "endOffset": 12238
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 372,
                         "startColumn": 4,
@@ -6647,7 +6647,7 @@
                     "endOffset": 12292
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 373,
                         "startColumn": 4,
@@ -6666,7 +6666,7 @@
                     "endOffset": 12338
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 374,
                         "startColumn": 4,
@@ -6685,7 +6685,7 @@
                     "endOffset": 12400
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 375,
                         "startColumn": 4,
@@ -6704,7 +6704,7 @@
                     "endOffset": 12447
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 376,
                         "startColumn": 4,
@@ -6723,7 +6723,7 @@
                     "endOffset": 12523
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 377,
                         "startColumn": 4,
@@ -6742,7 +6742,7 @@
                     "endOffset": 12596
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 378,
                         "startColumn": 4,
@@ -6761,7 +6761,7 @@
                     "endOffset": 12665
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 379,
                         "startColumn": 4,
@@ -6780,7 +6780,7 @@
                     "endOffset": 12722
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 380,
                         "startColumn": 4,
@@ -6799,7 +6799,7 @@
                     "endOffset": 12771
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 381,
                         "startColumn": 4,
@@ -6818,7 +6818,7 @@
                     "endOffset": 12817
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 382,
                         "startColumn": 4,
@@ -6837,7 +6837,7 @@
                     "endOffset": 12870
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 383,
                         "startColumn": 4,
@@ -6856,7 +6856,7 @@
                     "endOffset": 12923
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 384,
                         "startColumn": 4,
@@ -6875,7 +6875,7 @@
                     "endOffset": 12976
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 385,
                         "startColumn": 4,
@@ -6894,7 +6894,7 @@
                     "endOffset": 13031
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 386,
                         "startColumn": 4,
@@ -6913,7 +6913,7 @@
                     "endOffset": 13078
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 387,
                         "startColumn": 4,
@@ -6932,7 +6932,7 @@
                     "endOffset": 13131
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 388,
                         "startColumn": 4,
@@ -6951,7 +6951,7 @@
                     "endOffset": 13180
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 389,
                         "startColumn": 4,
@@ -6970,7 +6970,7 @@
                     "endOffset": 13234
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 390,
                         "startColumn": 4,
@@ -6989,7 +6989,7 @@
                     "endOffset": 13287
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 391,
                         "startColumn": 4,
@@ -7008,7 +7008,7 @@
                     "endOffset": 13381
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 392,
                         "startColumn": 4,
@@ -7027,7 +7027,7 @@
                     "endOffset": 13442
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 393,
                         "startColumn": 4,
@@ -7046,7 +7046,7 @@
                     "endOffset": 13498
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 394,
                         "startColumn": 4,
@@ -7065,7 +7065,7 @@
                     "endOffset": 13562
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 395,
                         "startColumn": 4,
@@ -7084,7 +7084,7 @@
                     "endOffset": 13614
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 396,
                         "startColumn": 4,
@@ -7103,7 +7103,7 @@
                     "endOffset": 13679
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 397,
                         "startColumn": 4,
@@ -7122,7 +7122,7 @@
                     "endOffset": 13743
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 398,
                         "startColumn": 4,
@@ -7141,7 +7141,7 @@
                     "endOffset": 13808
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 399,
                         "startColumn": 4,
@@ -7160,7 +7160,7 @@
                     "endOffset": 13878
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 400,
                         "startColumn": 4,
@@ -7179,7 +7179,7 @@
                     "endOffset": 13947
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 401,
                         "startColumn": 4,
@@ -7198,7 +7198,7 @@
                     "endOffset": 14013
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 402,
                         "startColumn": 4,
@@ -7217,7 +7217,7 @@
                     "endOffset": 14061
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 403,
                         "startColumn": 4,
@@ -7236,7 +7236,7 @@
                     "endOffset": 14118
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 404,
                         "startColumn": 4,
@@ -7255,7 +7255,7 @@
                     "endOffset": 14174
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 405,
                         "startColumn": 4,
@@ -7274,7 +7274,7 @@
                     "endOffset": 14251
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 406,
                         "startColumn": 4,
@@ -7293,7 +7293,7 @@
                     "endOffset": 14309
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 407,
                         "startColumn": 4,
@@ -7312,7 +7312,7 @@
                     "endOffset": 14366
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 408,
                         "startColumn": 4,
@@ -7331,7 +7331,7 @@
                     "endOffset": 14414
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 409,
                         "startColumn": 4,
@@ -7350,7 +7350,7 @@
                     "endOffset": 14467
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 410,
                         "startColumn": 4,
@@ -7369,7 +7369,7 @@
                     "endOffset": 14516
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 411,
                         "startColumn": 4,
@@ -7388,7 +7388,7 @@
                     "endOffset": 14570
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 412,
                         "startColumn": 4,
@@ -7407,7 +7407,7 @@
                     "endOffset": 14625
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 413,
                         "startColumn": 4,
@@ -7426,7 +7426,7 @@
                     "endOffset": 14679
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 414,
                         "startColumn": 4,
@@ -7445,7 +7445,7 @@
                     "endOffset": 15613
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 430,
                         "startColumn": 4,
@@ -7464,7 +7464,7 @@
                     "endOffset": 15675
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 431,
                         "startColumn": 4,
@@ -7483,7 +7483,7 @@
                     "endOffset": 15737
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 432,
                         "startColumn": 4,
@@ -7502,7 +7502,7 @@
                     "endOffset": 15779
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 433,
                         "startColumn": 4,
@@ -7521,7 +7521,7 @@
                     "endOffset": 15816
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 434,
                         "startColumn": 4,
@@ -7540,7 +7540,7 @@
                     "endOffset": 15859
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 435,
                         "startColumn": 4,
@@ -7559,7 +7559,7 @@
                     "endOffset": 15898
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 436,
                         "startColumn": 4,
@@ -7578,7 +7578,7 @@
                     "endOffset": 15939
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 437,
                         "startColumn": 4,
@@ -7597,7 +7597,7 @@
                     "endOffset": 15979
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 438,
                         "startColumn": 4,
@@ -7616,7 +7616,7 @@
                     "endOffset": 16032
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 439,
                         "startColumn": 4,
@@ -7635,7 +7635,7 @@
                     "endOffset": 16087
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 440,
                         "startColumn": 4,
@@ -7654,7 +7654,7 @@
                     "endOffset": 16139
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 441,
                         "startColumn": 4,
@@ -7673,7 +7673,7 @@
                     "endOffset": 16189
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 442,
                         "startColumn": 4,
@@ -7692,7 +7692,7 @@
                     "endOffset": 16240
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 443,
                         "startColumn": 4,
@@ -7711,7 +7711,7 @@
                     "endOffset": 16282
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 444,
                         "startColumn": 4,
@@ -7730,7 +7730,7 @@
                     "endOffset": 16323
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 445,
                         "startColumn": 4,
@@ -7749,7 +7749,7 @@
                     "endOffset": 16361
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 446,
                         "startColumn": 4,
@@ -7768,7 +7768,7 @@
                     "endOffset": 16398
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 447,
                         "startColumn": 4,
@@ -7787,7 +7787,7 @@
                     "endOffset": 16434
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 448,
                         "startColumn": 4,
@@ -7806,7 +7806,7 @@
                     "endOffset": 16482
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 449,
                         "startColumn": 4,
@@ -7825,7 +7825,7 @@
                     "endOffset": 16525
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 450,
                         "startColumn": 4,
@@ -7844,7 +7844,7 @@
                     "endOffset": 16570
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 451,
                         "startColumn": 4,
@@ -7863,7 +7863,7 @@
                     "endOffset": 16608
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 452,
                         "startColumn": 4,
@@ -7882,7 +7882,7 @@
                     "endOffset": 16646
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 453,
                         "startColumn": 4,
@@ -7901,7 +7901,7 @@
                     "endOffset": 16684
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 454,
                         "startColumn": 4,
@@ -7920,7 +7920,7 @@
                     "endOffset": 16722
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 455,
                         "startColumn": 4,
@@ -7939,7 +7939,7 @@
                     "endOffset": 16760
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 456,
                         "startColumn": 4,
@@ -7958,7 +7958,7 @@
                     "endOffset": 16798
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 457,
                         "startColumn": 4,
@@ -7977,7 +7977,7 @@
                     "endOffset": 16836
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 458,
                         "startColumn": 4,
@@ -7996,7 +7996,7 @@
                     "endOffset": 16874
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 459,
                         "startColumn": 4,
@@ -8015,7 +8015,7 @@
                     "endOffset": 16912
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 460,
                         "startColumn": 4,
@@ -8034,7 +8034,7 @@
                     "endOffset": 16950
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 461,
                         "startColumn": 4,
@@ -8053,7 +8053,7 @@
                     "endOffset": 17000
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 462,
                         "startColumn": 4,
@@ -8072,7 +8072,7 @@
                     "endOffset": 17039
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 463,
                         "startColumn": 4,
@@ -8091,7 +8091,7 @@
                     "endOffset": 17076
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 464,
                         "startColumn": 4,
@@ -8110,7 +8110,7 @@
                     "endOffset": 17113
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 465,
                         "startColumn": 4,
@@ -8129,7 +8129,7 @@
                     "endOffset": 17150
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 466,
                         "startColumn": 4,
@@ -8148,7 +8148,7 @@
                     "endOffset": 17202
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 467,
                         "startColumn": 4,
@@ -8167,7 +8167,7 @@
                     "endOffset": 17238
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 468,
                         "startColumn": 4,
@@ -8186,7 +8186,7 @@
                     "endOffset": 17274
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 469,
                         "startColumn": 4,
@@ -8205,7 +8205,7 @@
                     "endOffset": 17312
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 470,
                         "startColumn": 4,
@@ -8224,7 +8224,7 @@
                     "endOffset": 17353
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 471,
                         "startColumn": 4,
@@ -8243,7 +8243,7 @@
                     "endOffset": 17400
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 472,
                         "startColumn": 4,
@@ -8262,7 +8262,7 @@
                     "endOffset": 17441
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 473,
                         "startColumn": 4,
@@ -8281,7 +8281,7 @@
                     "endOffset": 17486
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 474,
                         "startColumn": 4,
@@ -8300,7 +8300,7 @@
                     "endOffset": 17539
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 475,
                         "startColumn": 4,
@@ -8319,7 +8319,7 @@
                     "endOffset": 17591
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 476,
                         "startColumn": 4,
@@ -8338,7 +8338,7 @@
                     "endOffset": 17629
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 477,
                         "startColumn": 4,
@@ -8357,7 +8357,7 @@
                     "endOffset": 17666
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 478,
                         "startColumn": 4,
@@ -8376,7 +8376,7 @@
                     "endOffset": 17710
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 479,
                         "startColumn": 4,
@@ -8395,7 +8395,7 @@
                     "endOffset": 17747
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 480,
                         "startColumn": 4,
@@ -8414,7 +8414,7 @@
                     "endOffset": 17785
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 481,
                         "startColumn": 4,
@@ -8433,7 +8433,7 @@
                     "endOffset": 17830
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 482,
                         "startColumn": 4,
@@ -8452,7 +8452,7 @@
                     "endOffset": 17866
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 483,
                         "startColumn": 4,
@@ -8471,7 +8471,7 @@
                     "endOffset": 17913
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 484,
                         "startColumn": 4,
@@ -8490,7 +8490,7 @@
                     "endOffset": 17966
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 485,
                         "startColumn": 4,
@@ -8509,7 +8509,7 @@
                     "endOffset": 18006
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 486,
                         "startColumn": 4,
@@ -8528,7 +8528,7 @@
                     "endOffset": 18068
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 487,
                         "startColumn": 4,
@@ -8547,7 +8547,7 @@
                     "endOffset": 18138
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 488,
                         "startColumn": 4,
@@ -8566,7 +8566,7 @@
                     "endOffset": 18209
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 489,
                         "startColumn": 4,
@@ -8585,7 +8585,7 @@
                     "endOffset": 18259
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 490,
                         "startColumn": 4,
@@ -8604,7 +8604,7 @@
                     "endOffset": 18307
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 491,
                         "startColumn": 4,
@@ -8623,7 +8623,7 @@
                     "endOffset": 18368
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 492,
                         "startColumn": 4,
@@ -8642,7 +8642,7 @@
                     "endOffset": 18425
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 493,
                         "startColumn": 4,
@@ -8661,7 +8661,7 @@
                     "endOffset": 18495
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 494,
                         "startColumn": 4,
@@ -8680,7 +8680,7 @@
                     "endOffset": 18556
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 495,
                         "startColumn": 4,
@@ -8699,7 +8699,7 @@
                     "endOffset": 18635
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 496,
                         "startColumn": 4,
@@ -8718,7 +8718,7 @@
                     "endOffset": 18694
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 497,
                         "startColumn": 4,
@@ -8737,7 +8737,7 @@
                     "endOffset": 18759
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 498,
                         "startColumn": 4,
@@ -8756,7 +8756,7 @@
                     "endOffset": 18823
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 499,
                         "startColumn": 4,
@@ -8775,7 +8775,7 @@
                     "endOffset": 18890
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 500,
                         "startColumn": 4,
@@ -8794,7 +8794,7 @@
                     "endOffset": 18958
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 501,
                         "startColumn": 4,
@@ -8813,7 +8813,7 @@
                     "endOffset": 19023
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 502,
                         "startColumn": 4,
@@ -8832,7 +8832,7 @@
                     "endOffset": 19086
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 503,
                         "startColumn": 4,
@@ -8851,7 +8851,7 @@
                     "endOffset": 19152
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 504,
                         "startColumn": 4,
@@ -8870,7 +8870,7 @@
                     "endOffset": 19219
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 505,
                         "startColumn": 4,
@@ -8889,7 +8889,7 @@
                     "endOffset": 19291
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 506,
                         "startColumn": 4,
@@ -8908,7 +8908,7 @@
                     "endOffset": 19357
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 507,
                         "startColumn": 4,
@@ -8927,7 +8927,7 @@
                     "endOffset": 19426
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 508,
                         "startColumn": 4,
@@ -8946,7 +8946,7 @@
                     "endOffset": 19493
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 509,
                         "startColumn": 4,
@@ -8965,7 +8965,7 @@
                     "endOffset": 19555
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 510,
                         "startColumn": 4,
@@ -8984,7 +8984,7 @@
                     "endOffset": 19611
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 511,
                         "startColumn": 4,
@@ -9003,7 +9003,7 @@
                     "endOffset": 19663
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 512,
                         "startColumn": 4,
@@ -9022,7 +9022,7 @@
                     "endOffset": 19725
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 513,
                         "startColumn": 4,
@@ -9041,7 +9041,7 @@
                     "endOffset": 19780
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 514,
                         "startColumn": 4,
@@ -9060,7 +9060,7 @@
                     "endOffset": 19842
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 515,
                         "startColumn": 4,
@@ -9079,7 +9079,7 @@
                     "endOffset": 19910
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 516,
                         "startColumn": 4,
@@ -9098,7 +9098,7 @@
                     "endOffset": 19961
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 517,
                         "startColumn": 4,
@@ -9117,7 +9117,7 @@
                     "endOffset": 20018
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 518,
                         "startColumn": 4,
@@ -9136,7 +9136,7 @@
                     "endOffset": 20073
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 519,
                         "startColumn": 4,
@@ -9155,7 +9155,7 @@
                     "endOffset": 20130
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 520,
                         "startColumn": 4,
@@ -9174,7 +9174,7 @@
                     "endOffset": 20185
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 521,
                         "startColumn": 4,
@@ -9193,7 +9193,7 @@
                     "endOffset": 20237
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 522,
                         "startColumn": 4,
@@ -9212,7 +9212,7 @@
                     "endOffset": 20278
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 523,
                         "startColumn": 4,
@@ -9231,7 +9231,7 @@
                     "endOffset": 20330
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 524,
                         "startColumn": 4,
@@ -9250,7 +9250,7 @@
                     "endOffset": 20372
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 525,
                         "startColumn": 4,
@@ -9269,7 +9269,7 @@
                     "endOffset": 20444
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 526,
                         "startColumn": 4,
@@ -9288,7 +9288,7 @@
                     "endOffset": 20519
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 527,
                         "startColumn": 4,
@@ -9307,7 +9307,7 @@
                     "endOffset": 20598
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 528,
                         "startColumn": 4,
@@ -9326,7 +9326,7 @@
                     "endOffset": 20670
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 529,
                         "startColumn": 4,
@@ -9345,7 +9345,7 @@
                     "endOffset": 20742
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 530,
                         "startColumn": 4,
@@ -9364,7 +9364,7 @@
                     "endOffset": 20812
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 531,
                         "startColumn": 4,
@@ -9383,7 +9383,7 @@
                     "endOffset": 20883
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 532,
                         "startColumn": 4,
@@ -9402,7 +9402,7 @@
                     "endOffset": 20950
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 533,
                         "startColumn": 4,
@@ -9421,7 +9421,7 @@
                     "endOffset": 21024
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 534,
                         "startColumn": 4,
@@ -9440,7 +9440,7 @@
                     "endOffset": 21093
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 535,
                         "startColumn": 4,
@@ -9459,7 +9459,7 @@
                     "endOffset": 21156
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 536,
                         "startColumn": 4,
@@ -9478,7 +9478,7 @@
                     "endOffset": 21236
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 537,
                         "startColumn": 4,
@@ -9497,7 +9497,7 @@
                     "endOffset": 21307
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 538,
                         "startColumn": 4,
@@ -9516,7 +9516,7 @@
                     "endOffset": 21378
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 539,
                         "startColumn": 4,
@@ -9535,7 +9535,7 @@
                     "endOffset": 21445
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 540,
                         "startColumn": 4,
@@ -9554,7 +9554,7 @@
                     "endOffset": 21514
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 541,
                         "startColumn": 4,
@@ -9573,7 +9573,7 @@
                     "endOffset": 21588
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 542,
                         "startColumn": 4,
@@ -9592,7 +9592,7 @@
                     "endOffset": 21632
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 543,
                         "startColumn": 4,
@@ -9611,7 +9611,7 @@
                     "endOffset": 21692
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 544,
                         "startColumn": 4,
@@ -9630,7 +9630,7 @@
                     "endOffset": 21754
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 545,
                         "startColumn": 4,
@@ -9649,7 +9649,7 @@
                     "endOffset": 21809
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 546,
                         "startColumn": 4,
@@ -9668,7 +9668,7 @@
                     "endOffset": 21853
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 547,
                         "startColumn": 4,
@@ -9687,7 +9687,7 @@
                     "endOffset": 21897
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 548,
                         "startColumn": 4,
@@ -9706,7 +9706,7 @@
                     "endOffset": 21947
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 549,
                         "startColumn": 4,
@@ -9725,7 +9725,7 @@
                     "endOffset": 21995
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 550,
                         "startColumn": 4,
@@ -9744,7 +9744,7 @@
                     "endOffset": 22056
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 551,
                         "startColumn": 4,
@@ -9763,7 +9763,7 @@
                     "endOffset": 22119
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 552,
                         "startColumn": 4,
@@ -9782,7 +9782,7 @@
                     "endOffset": 22182
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 553,
                         "startColumn": 4,
@@ -9801,7 +9801,7 @@
                     "endOffset": 22226
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 554,
                         "startColumn": 4,
@@ -9820,7 +9820,7 @@
                     "endOffset": 22307
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 555,
                         "startColumn": 4,
@@ -9839,7 +9839,7 @@
                     "endOffset": 22388
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 556,
                         "startColumn": 4,
@@ -9858,7 +9858,7 @@
                     "endOffset": 22460
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 557,
                         "startColumn": 4,
@@ -9877,7 +9877,7 @@
                     "endOffset": 22549
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 558,
                         "startColumn": 4,
@@ -9896,7 +9896,7 @@
                     "endOffset": 22637
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 559,
                         "startColumn": 4,
@@ -9915,7 +9915,7 @@
                     "endOffset": 22715
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 560,
                         "startColumn": 4,
@@ -9934,7 +9934,7 @@
                     "endOffset": 22796
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 561,
                         "startColumn": 4,
@@ -9953,7 +9953,7 @@
                     "endOffset": 22882
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 562,
                         "startColumn": 4,
@@ -9972,7 +9972,7 @@
                     "endOffset": 22943
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 563,
                         "startColumn": 4,
@@ -9991,7 +9991,7 @@
                     "endOffset": 22997
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 564,
                         "startColumn": 4,
@@ -10010,7 +10010,7 @@
                     "endOffset": 23049
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 565,
                         "startColumn": 4,
@@ -10029,7 +10029,7 @@
                     "endOffset": 23115
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 566,
                         "startColumn": 4,
@@ -10048,7 +10048,7 @@
                     "endOffset": 23178
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 567,
                         "startColumn": 4,
@@ -10067,7 +10067,7 @@
                     "endOffset": 23241
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 568,
                         "startColumn": 4,
@@ -10086,7 +10086,7 @@
                     "endOffset": 23304
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 569,
                         "startColumn": 4,
@@ -10105,7 +10105,7 @@
                     "endOffset": 23365
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 570,
                         "startColumn": 4,
@@ -10124,7 +10124,7 @@
                     "endOffset": 23427
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 571,
                         "startColumn": 4,
@@ -10143,7 +10143,7 @@
                     "endOffset": 23490
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 572,
                         "startColumn": 4,
@@ -10162,7 +10162,7 @@
                     "endOffset": 23567
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 573,
                         "startColumn": 4,
@@ -10181,7 +10181,7 @@
                     "endOffset": 23629
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 574,
                         "startColumn": 4,
@@ -10200,7 +10200,7 @@
                     "endOffset": 23689
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 575,
                         "startColumn": 4,
@@ -10219,7 +10219,7 @@
                     "endOffset": 23765
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 576,
                         "startColumn": 4,
@@ -10238,7 +10238,7 @@
                     "endOffset": 23829
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 577,
                         "startColumn": 4,
@@ -10257,7 +10257,7 @@
                     "endOffset": 23877
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 578,
                         "startColumn": 4,
@@ -10276,7 +10276,7 @@
                     "endOffset": 23951
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 579,
                         "startColumn": 4,
@@ -10295,7 +10295,7 @@
                     "endOffset": 24016
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 580,
                         "startColumn": 4,
@@ -10314,7 +10314,7 @@
                     "endOffset": 24076
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 581,
                         "startColumn": 4,
@@ -10333,7 +10333,7 @@
                     "endOffset": 24138
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 582,
                         "startColumn": 4,
@@ -10352,7 +10352,7 @@
                     "endOffset": 24193
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 583,
                         "startColumn": 4,
@@ -10371,7 +10371,7 @@
                     "endOffset": 24243
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 584,
                         "startColumn": 4,
@@ -10390,7 +10390,7 @@
                     "endOffset": 24288
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 585,
                         "startColumn": 4,
@@ -10409,7 +10409,7 @@
                     "endOffset": 24337
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 586,
                         "startColumn": 4,
@@ -10428,7 +10428,7 @@
                     "endOffset": 24398
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 587,
                         "startColumn": 4,
@@ -10447,7 +10447,7 @@
                     "endOffset": 24459
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 588,
                         "startColumn": 4,
@@ -10466,7 +10466,7 @@
                     "endOffset": 24540
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 589,
                         "startColumn": 4,
@@ -10485,7 +10485,7 @@
                     "endOffset": 24598
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 590,
                         "startColumn": 4,
@@ -10504,7 +10504,7 @@
                     "endOffset": 24655
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 591,
                         "startColumn": 4,
@@ -10523,7 +10523,7 @@
                     "endOffset": 24713
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 592,
                         "startColumn": 4,
@@ -10542,7 +10542,7 @@
                     "endOffset": 24774
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 593,
                         "startColumn": 4,
@@ -10561,7 +10561,7 @@
                     "endOffset": 24838
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 594,
                         "startColumn": 4,
@@ -10580,7 +10580,7 @@
                     "endOffset": 24900
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 595,
                         "startColumn": 4,
@@ -10599,7 +10599,7 @@
                     "endOffset": 24958
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 596,
                         "startColumn": 4,
@@ -10618,7 +10618,7 @@
                     "endOffset": 25019
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 597,
                         "startColumn": 4,
@@ -10637,7 +10637,7 @@
                     "endOffset": 25077
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 598,
                         "startColumn": 4,
@@ -10656,7 +10656,7 @@
                     "endOffset": 25125
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 599,
                         "startColumn": 4,
@@ -10675,7 +10675,7 @@
                     "endOffset": 25171
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 600,
                         "startColumn": 4,
@@ -10694,7 +10694,7 @@
                     "endOffset": 25220
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 601,
                         "startColumn": 4,
@@ -10713,7 +10713,7 @@
                     "endOffset": 25259
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 602,
                         "startColumn": 4,
@@ -10732,7 +10732,7 @@
                     "endOffset": 25311
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 603,
                         "startColumn": 4,
@@ -10751,7 +10751,7 @@
                     "endOffset": 25370
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 604,
                         "startColumn": 4,
@@ -10770,7 +10770,7 @@
                     "endOffset": 25422
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 605,
                         "startColumn": 4,
@@ -10789,7 +10789,7 @@
                     "endOffset": 25471
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 606,
                         "startColumn": 4,
@@ -10808,7 +10808,7 @@
                     "endOffset": 25518
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 607,
                         "startColumn": 4,
@@ -10827,7 +10827,7 @@
                     "endOffset": 25564
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 608,
                         "startColumn": 4,
@@ -10846,7 +10846,7 @@
                     "endOffset": 25621
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 609,
                         "startColumn": 4,
@@ -10865,7 +10865,7 @@
                     "endOffset": 25685
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 610,
                         "startColumn": 4,
@@ -10884,7 +10884,7 @@
                     "endOffset": 25754
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 611,
                         "startColumn": 4,
@@ -10903,7 +10903,7 @@
                     "endOffset": 25814
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 612,
                         "startColumn": 4,
@@ -10922,7 +10922,7 @@
                     "endOffset": 25872
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 613,
                         "startColumn": 4,
@@ -10941,7 +10941,7 @@
                     "endOffset": 25930
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 614,
                         "startColumn": 4,
@@ -10960,7 +10960,7 @@
                     "endOffset": 25989
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 615,
                         "startColumn": 4,
@@ -10979,7 +10979,7 @@
                     "endOffset": 26059
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 616,
                         "startColumn": 4,
@@ -10998,7 +10998,7 @@
                     "endOffset": 26119
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 617,
                         "startColumn": 4,
@@ -11017,7 +11017,7 @@
                     "endOffset": 26185
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 618,
                         "startColumn": 4,
@@ -11036,7 +11036,7 @@
                     "endOffset": 26260
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 619,
                         "startColumn": 4,
@@ -11055,7 +11055,7 @@
                     "endOffset": 26316
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 620,
                         "startColumn": 4,
@@ -11074,7 +11074,7 @@
                     "endOffset": 26383
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 621,
                         "startColumn": 4,
@@ -11093,7 +11093,7 @@
                     "endOffset": 26461
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 622,
                         "startColumn": 4,
@@ -11112,7 +11112,7 @@
                     "endOffset": 26526
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 623,
                         "startColumn": 4,
@@ -11131,7 +11131,7 @@
                     "endOffset": 26581
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 624,
                         "startColumn": 4,
@@ -11150,7 +11150,7 @@
                     "endOffset": 26648
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 625,
                         "startColumn": 4,
@@ -11169,7 +11169,7 @@
                     "endOffset": 26708
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 626,
                         "startColumn": 4,
@@ -11188,7 +11188,7 @@
                     "endOffset": 26782
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 627,
                         "startColumn": 4,
@@ -11207,7 +11207,7 @@
                     "endOffset": 26831
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 628,
                         "startColumn": 4,
@@ -11226,7 +11226,7 @@
                     "endOffset": 26889
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 629,
                         "startColumn": 4,
@@ -11245,7 +11245,7 @@
                     "endOffset": 26938
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 630,
                         "startColumn": 4,
@@ -11264,7 +11264,7 @@
                     "endOffset": 26996
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 631,
                         "startColumn": 4,
@@ -11283,7 +11283,7 @@
                     "endOffset": 27053
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 632,
                         "startColumn": 4,
@@ -11302,7 +11302,7 @@
                     "endOffset": 27102
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 633,
                         "startColumn": 4,
@@ -11321,7 +11321,7 @@
                     "endOffset": 27165
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 634,
                         "startColumn": 4,
@@ -11340,7 +11340,7 @@
                     "endOffset": 27221
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 635,
                         "startColumn": 4,
@@ -11359,7 +11359,7 @@
                     "endOffset": 27270
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 636,
                         "startColumn": 4,
@@ -11378,7 +11378,7 @@
                     "endOffset": 27327
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 637,
                         "startColumn": 4,
@@ -11397,7 +11397,7 @@
                     "endOffset": 27392
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 638,
                         "startColumn": 4,
@@ -11416,7 +11416,7 @@
                     "endOffset": 27446
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 639,
                         "startColumn": 4,
@@ -11435,7 +11435,7 @@
                     "endOffset": 27510
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 640,
                         "startColumn": 4,
@@ -11454,7 +11454,7 @@
                     "endOffset": 27559
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 641,
                         "startColumn": 4,
@@ -11473,7 +11473,7 @@
                     "endOffset": 27607
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 642,
                         "startColumn": 4,
@@ -11492,7 +11492,7 @@
                     "endOffset": 27655
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 643,
                         "startColumn": 4,
@@ -11511,7 +11511,7 @@
                     "endOffset": 27706
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 644,
                         "startColumn": 4,
@@ -11530,7 +11530,7 @@
                     "endOffset": 27755
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 645,
                         "startColumn": 4,
@@ -11549,7 +11549,7 @@
                     "endOffset": 27818
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 646,
                         "startColumn": 4,
@@ -11568,7 +11568,7 @@
                     "endOffset": 27883
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 647,
                         "startColumn": 4,
@@ -11587,7 +11587,7 @@
                     "endOffset": 27943
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 648,
                         "startColumn": 4,
@@ -11606,7 +11606,7 @@
                     "endOffset": 28001
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 649,
                         "startColumn": 4,
@@ -11625,7 +11625,7 @@
                     "endOffset": 28063
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 650,
                         "startColumn": 4,
@@ -11644,7 +11644,7 @@
                     "endOffset": 28120
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 651,
                         "startColumn": 4,
@@ -11663,7 +11663,7 @@
                     "endOffset": 28165
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 652,
                         "startColumn": 4,
@@ -11682,7 +11682,7 @@
                     "endOffset": 28222
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 653,
                         "startColumn": 4,
@@ -11701,7 +11701,7 @@
                     "endOffset": 28272
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 654,
                         "startColumn": 4,
@@ -11720,7 +11720,7 @@
                     "endOffset": 28330
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 655,
                         "startColumn": 4,
@@ -11739,7 +11739,7 @@
                     "endOffset": 28406
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 656,
                         "startColumn": 4,
@@ -11758,7 +11758,7 @@
                     "endOffset": 28456
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 657,
                         "startColumn": 4,
@@ -11777,7 +11777,7 @@
                     "endOffset": 28505
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 658,
                         "startColumn": 4,
@@ -11796,7 +11796,7 @@
                     "endOffset": 28560
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 659,
                         "startColumn": 4,
@@ -11815,7 +11815,7 @@
                     "endOffset": 28601
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 660,
                         "startColumn": 4,
@@ -11834,7 +11834,7 @@
                     "endOffset": 28653
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 661,
                         "startColumn": 4,
@@ -11853,7 +11853,7 @@
                     "endOffset": 28714
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 662,
                         "startColumn": 4,
@@ -11872,7 +11872,7 @@
                     "endOffset": 28775
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 663,
                         "startColumn": 4,
@@ -11891,7 +11891,7 @@
                     "endOffset": 28844
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 664,
                         "startColumn": 4,
@@ -11910,7 +11910,7 @@
                     "endOffset": 28908
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 665,
                         "startColumn": 4,
@@ -11929,7 +11929,7 @@
                     "endOffset": 28973
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 666,
                         "startColumn": 4,
@@ -11948,7 +11948,7 @@
                     "endOffset": 29047
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 667,
                         "startColumn": 4,
@@ -11967,7 +11967,7 @@
                     "endOffset": 29125
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 668,
                         "startColumn": 4,
@@ -11986,7 +11986,7 @@
                     "endOffset": 29172
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 669,
                         "startColumn": 4,
@@ -12005,7 +12005,7 @@
                     "endOffset": 29222
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 670,
                         "startColumn": 4,
@@ -12024,7 +12024,7 @@
                     "endOffset": 29281
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 671,
                         "startColumn": 4,
@@ -12043,7 +12043,7 @@
                     "endOffset": 29338
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 672,
                         "startColumn": 4,
@@ -12062,7 +12062,7 @@
                     "endOffset": 29386
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 673,
                         "startColumn": 4,
@@ -12081,7 +12081,7 @@
                     "endOffset": 29437
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 674,
                         "startColumn": 4,
@@ -12100,7 +12100,7 @@
                     "endOffset": 29486
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 675,
                         "startColumn": 4,
@@ -12119,7 +12119,7 @@
                     "endOffset": 29540
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 676,
                         "startColumn": 4,
@@ -12138,7 +12138,7 @@
                     "endOffset": 29591
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 677,
                         "startColumn": 4,
@@ -12157,7 +12157,7 @@
                     "endOffset": 29642
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 678,
                         "startColumn": 4,
@@ -12176,7 +12176,7 @@
                     "endOffset": 29692
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 679,
                         "startColumn": 4,
@@ -12195,7 +12195,7 @@
                     "endOffset": 29755
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 680,
                         "startColumn": 4,
@@ -12214,7 +12214,7 @@
                     "endOffset": 29798
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 681,
                         "startColumn": 4,
@@ -12233,7 +12233,7 @@
                     "endOffset": 29849
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 682,
                         "startColumn": 4,
@@ -12252,7 +12252,7 @@
                     "endOffset": 29894
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 683,
                         "startColumn": 4,
@@ -12271,7 +12271,7 @@
                     "endOffset": 29931
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 684,
                         "startColumn": 4,
@@ -12290,7 +12290,7 @@
                     "endOffset": 29982
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 685,
                         "startColumn": 4,
@@ -12309,7 +12309,7 @@
                     "endOffset": 30045
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 686,
                         "startColumn": 4,
@@ -12329,7 +12329,7 @@
                     "endOffset": 30676
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 687,
                         "startColumn": 4,
@@ -12350,7 +12350,7 @@
                     "endOffset": 30898
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 696,
                         "startColumn": 4,
@@ -12371,7 +12371,7 @@
                     "endOffset": 31106
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 700,
                         "startColumn": 4,
@@ -12392,7 +12392,7 @@
                     "endOffset": 31374
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 704,
                         "startColumn": 4,
@@ -12413,7 +12413,7 @@
                     "endOffset": 31764
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 709,
                         "startColumn": 4,
@@ -12434,7 +12434,7 @@
                     "endOffset": 32259
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 716,
                         "startColumn": 4,
@@ -12455,7 +12455,7 @@
                     "endOffset": 32342
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 725,
                         "startColumn": 4,
@@ -12476,7 +12476,7 @@
                     "endOffset": 32424
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 728,
                         "startColumn": 4,
@@ -12497,7 +12497,7 @@
                     "endOffset": 32602
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 731,
                         "startColumn": 4,
@@ -12518,7 +12518,7 @@
                     "endOffset": 32685
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 734,
                         "startColumn": 4,
@@ -12539,7 +12539,7 @@
                     "endOffset": 32973
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 737,
                         "startColumn": 4,
@@ -12560,7 +12560,7 @@
                     "endOffset": 33055
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 742,
                         "startColumn": 4,
@@ -12581,7 +12581,7 @@
                     "endOffset": 33517
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 745,
                         "startColumn": 4,
@@ -12602,7 +12602,7 @@
                     "endOffset": 33771
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 753,
                         "startColumn": 4,
@@ -12623,7 +12623,7 @@
                     "endOffset": 34144
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 758,
                         "startColumn": 4,
@@ -12644,7 +12644,7 @@
                     "endOffset": 34492
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 765,
                         "startColumn": 4,
@@ -12665,7 +12665,7 @@
                     "endOffset": 34845
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 772,
                         "startColumn": 4,
@@ -12686,7 +12686,7 @@
                     "endOffset": 35243
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 779,
                         "startColumn": 4,
@@ -12707,7 +12707,7 @@
                     "endOffset": 35456
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 787,
                         "startColumn": 4,
@@ -12728,7 +12728,7 @@
                     "endOffset": 35708
                 },
                 "from": {
-                    "file": "D:\\gaobo\\andriod workspace\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "G:\\android_project\\MOVING\\MOVING\\Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 791,
                         "startColumn": 4,

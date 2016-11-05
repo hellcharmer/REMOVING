@@ -143,7 +143,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                                 }
                             });
                     builder.setNegativeButton(
-                            getString(R.string.cancel),
+                            getString(R.string.app_cancel),
                             new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(

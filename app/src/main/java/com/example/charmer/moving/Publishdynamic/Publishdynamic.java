@@ -9,26 +9,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
-import com.bumptech.glide.Glide;
+
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Info;
 import com.example.charmer.moving.pojo.User;
 import com.google.gson.Gson;
-import com.lidong.photopicker.ImageCaptureManager;
-import com.lidong.photopicker.PhotoPickerActivity;
-import com.lidong.photopicker.PhotoPreviewActivity;
-import com.lidong.photopicker.SelectModel;
-import com.lidong.photopicker.intent.PhotoPickerIntent;
-import com.lidong.photopicker.intent.PhotoPreviewIntent;
 
 import org.json.JSONArray;
 import org.xutils.common.Callback;
@@ -36,17 +28,21 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+
+
 public class Publishdynamic extends AppCompatActivity {
     private static final int REQUEST_CAMERA_CODE = 10;  //相机
     private static final int REQUEST_PREVIEW_CODE = 20;  //图片预览
     private ArrayList<String> imagePaths = new ArrayList<>();  //存放图片路径
-    private ImageCaptureManager captureManager; // 相机拍照处理类
+
     private GridView gridView;
     private GridAdapter gridAdapter;
     private ImageView mButton;
@@ -69,24 +65,7 @@ public class Publishdynamic extends AppCompatActivity {
         gridView.setNumColumns(cols);
 
         // preview 列表视图
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String imgs = (String) parent.getItemAtPosition(position);
-                if ("000000".equals(imgs) ){
-                    PhotoPickerIntent intent = new PhotoPickerIntent(getApplicationContext());
-                    intent.setSelectModel(SelectModel.MULTI);
-                    intent.setShowCarema(true); // 是否显示拍照
-                    intent.setMaxTotal(9); // 最多选择照片数量，默认为9
-                    intent.setSelectedPaths(imagePaths); // 已选中的照片地址， 用于回显选中状态
-                    startActivityForResult(intent, REQUEST_CAMERA_CODE); //相机拍照
-                }else{
-                    PhotoPreviewIntent intent = new PhotoPreviewIntent(getApplicationContext());
-                    intent.setCurrentItem(position);
-                    startActivityForResult(intent, REQUEST_PREVIEW_CODE);  //选择图库
-                }
-            }
-        });
+
 
         imagePaths.add("000000");
         gridAdapter = new GridAdapter(imagePaths);
@@ -100,10 +79,12 @@ public class Publishdynamic extends AppCompatActivity {
                     public void run() {
                         super.run();
                         insertinfo();
+                        finish();
                     }
                 }.start();
             }
         });
+
 
         iv_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,18 +106,7 @@ public class Publishdynamic extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK) {
             switch (requestCode) {
-                // 选择照片
-                case REQUEST_CAMERA_CODE:
-                    ArrayList<String> list = data.getStringArrayListExtra(PhotoPickerActivity.EXTRA_RESULT);
-                    Log.i("publish", "list: " + "list = [" + list.size());
-                    loadAdpater(list);
-                    break;
-                // 预览
-                case REQUEST_PREVIEW_CODE:
-                    ArrayList<String> ListExtra = data.getStringArrayListExtra(PhotoPreviewActivity.EXTRA_RESULT);
-//                    Log.d(TAG, "ListExtra: " + "ListExtra = [" + ListExtra.size());
-                    loadAdpater(ListExtra);
-                    break;
+
             }
         }
     }
@@ -211,13 +181,7 @@ public class Publishdynamic extends AppCompatActivity {
             if (path.equals("000000")){
                 holder.image.setImageResource(R.mipmap.ic_photo_upload);
             }else {
-                Glide.with(getApplicationContext())
-                        .load(path)
-                        .placeholder(R.mipmap.default_error)
-                        .error(R.mipmap.default_error)
-                        .centerCrop()
-                        .crossFade()
-                        .into(holder.image);
+
             }
             return convertView;
         }
@@ -240,7 +204,7 @@ public class Publishdynamic extends AppCompatActivity {
 
         String infoContent =et_infoContent.getText().toString().trim();
         Log.i("publish","infoContent"+infoContent+"");
-        User user = new User(MyApplication.getUser().getUserid());
+        User user = new User(MainActivity.getUser().getUserid());
         Info info = new Info(infoContent,user);
         Gson gson = new Gson();
         String infoList = gson.toJson(info);
@@ -257,7 +221,7 @@ public class Publishdynamic extends AppCompatActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        Log.i("publish","userId"+MyApplication.getUser().getUserid()+"");
+        Log.i("publish","userId"+MainActivity.getUser().getUserid()+"");
         x.http().post(requestparams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

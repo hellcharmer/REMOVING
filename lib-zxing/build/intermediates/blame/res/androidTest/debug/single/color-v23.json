@@ -1,10 +1,10 @@
 [
     {
-        "merged": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "F:\\ANDROID\\appworkspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "D:\\gaobo\\andriod workspace\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "G:\\android_project\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "G:\\android_project\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v23\\abc_color_highlight_material.xml"
     }
 ]

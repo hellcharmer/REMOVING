@@ -21,7 +21,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.contantData.Constant;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.fragment.Fragment_dynamic;
@@ -105,7 +104,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
-        user.setUserid(Integer.parseInt(intent.getStringExtra("userId")));
+//        user.setUserid(Integer.parseInt(intent.getStringExtra("userId")));
+        user.setUsername("xiao");
+        user.setUserid(22);
         user.setUseraccount(intent.getStringExtra("useraccount"));
         setContentView(R.layout.activity_main);
 //       getusertoken();
