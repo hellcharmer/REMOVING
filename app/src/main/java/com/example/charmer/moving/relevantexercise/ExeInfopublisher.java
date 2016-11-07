@@ -5,23 +5,33 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.home_activity.Zixun_comment;
+import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
@@ -97,6 +107,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         lvenrollers = ((ListView)findViewById(R.id.lvenrollers));
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));
+
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -150,6 +161,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
         };
         lv_exercise.setAdapter(adapter);
 
+
         imgadapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -177,8 +189,8 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 return convertView;
             }
         };
-
         joinerImgs.setAdapter(imgadapter);
+
 
         enrolleradapter = new BaseAdapter() {
             @Override
@@ -202,19 +214,25 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
 
                 lvenrollers.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListEnroll.size()));
 
+                Toast.makeText(ExeInfopublisher.this, ""+dsListEnroll.size(), Toast.LENGTH_SHORT).show();
                 convertView = View.inflate(ExeInfopublisher.this, R.layout.enrolleritem, null);
+
                 enrollerImg = ((ImageView) convertView.findViewById(R.id.enrollerImg));
                 enrollerinfonum = ((TextView) convertView.findViewById(R.id.enrollerinfonum));
                 enrollerinforate = ((TextView) convertView.findViewById(R.id.enrollerinforate));
                 enrollerName = ((TextView) convertView.findViewById(R.id.enrollerName));
                 agreebtn = ((Button) convertView.findViewById(R.id.agreebtn));
                 ignore = ((TextView) convertView.findViewById(R.id.ignore));
+
+
                 VariableExercise.DataSummary vds = dsListEnroll.get(position);
-                System.out.println("+++++++++++++22+++++++++"+dsListEnroll);
+                System.out.println("+++++++++++++22+++++++++"+vds);
                 xUtilsImageUtils.display(enrollerImg, HttpUtils.hoster+"upload/"+vds.userImg);
                 enrollerinfonum.setText(enrollerinfonum.getText().toString()+vds.joinedNum);
                 enrollerinforate.setText(enrollerinforate.getText().toString()+vds.appointmentRate);
                 enrollerName.setText(vds.userName);
+
+
                 agreebtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -222,8 +240,6 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                                 ExeInfopublisher.this);
                         builder.setMessage(getString(R.string.agreejoin_sure));
                         builder.setTitle(dsListEnroll.get(position1).userName+"请求参加您的活动");
-//                        builder.setIcon(getResources().getDrawable(
-//                                R.drawable.delete1));
                         builder.setPositiveButton(
                                 getString(R.string.ok),
                                 new DialogInterface.OnClickListener() {
@@ -232,7 +248,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                                             DialogInterface dialogInterface,
                                             int which) {
                                         // TODO Auto-generated method
-                                        agreeJoin(position1,exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
+                                        agreeJoin(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
                                     }
                                 });
                         builder.setNegativeButton(
@@ -258,8 +274,6 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                                 ExeInfopublisher.this);
                         builder.setMessage(getString(R.string.ignore_sure));
                         builder.setTitle("您将忽略"+dsListEnroll.get(position1).userName+"的请求!");
-//                        builder.setIcon(getResources().getDrawable(
-//                                R.drawable.delete1));
                         builder.setPositiveButton(
                                 getString(R.string.ok),
                                 new DialogInterface.OnClickListener() {
@@ -268,7 +282,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                                             DialogInterface dialogInterface,
                                             int which) {
                                         // TODO Auto-generated method
-                                        ignoreEnroll(position1,exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
+                                        ignoreEnroll(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
                                     }
                                 });
                         builder.setNegativeButton(
@@ -287,9 +301,11 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                     }
                 });
                 return convertView;
+
+
+
             }
         };
-
         lvenrollers.setAdapter(enrolleradapter);
 
         getExerciseList(exerciseId);
@@ -338,13 +354,6 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 finish();
             }
         });
-        saoyisao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cameraTask();
-            }
-        });
-
     }
     private void getExerciseList(String exerciseId) {
         String str = HttpUtils.hoster+"getexebyid";
@@ -355,6 +364,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
+                System.out.println("result++++++++++++++++"+result);
                 Gson gson = new Gson();
                 exerciseList.clear();
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
@@ -364,7 +374,12 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                     dsListJoin.addAll(bean.dsListJoin);
                 }
                 dsListEnroll.clear();
+                System.out.println("-------------11-----------------_");
                 dsListEnroll.addAll(bean.dsListEnroll);
+                System.out.println("dsdds_______+++++"+dsListEnroll);
+                System.out.println("dsdds_______+++++"+dsListEnroll.size());
+                System.out.println("dsdds_______+++++"+dsListEnroll.get(0));
+                System.out.println("dsdds_______+++++"+dsListEnroll.get(0).userName);
                 lvenrollers.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListEnroll.size()));
                 ds = bean.ds;
                 if(exerciseList.size()>0) {
@@ -381,7 +396,6 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-                Log.i("exerciseList", "exerciseList: "+exerciseList);
                 //通知listview更新界面
 
                 imgadapter.notifyDataSetChanged();
@@ -407,8 +421,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
 
     }
 
-    private void agreeJoin(int position1,String exerciseId,String joiner,Context contexts){
-        final int position =position1;
+    private void agreeJoin(String exerciseId,String joiner,Context contexts){
         final String exeId = exerciseId;
         final Context context = contexts;
         String str = HttpUtils.hoster+"enrollexe";
@@ -427,8 +440,6 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 if ("1".equals(result)){
                     Toast.makeText(context,"操作成功！",Toast.LENGTH_SHORT).show();
                     getExerciseList(exeId);
-//                    dsListEnroll.remove(position);
-//                    enrolleradapter.notifyDataSetChanged();
                 }else
                 {
                     Toast.makeText(context,"操作失败！",Toast.LENGTH_SHORT).show();
@@ -612,5 +623,33 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
             }
         });
 
+    }
+
+    private void jPush(String joiner){
+        String str = HttpUtils.hoster+"jdpushservlet";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("alias",joiner);
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
     }
 }

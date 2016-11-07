@@ -4,12 +4,31 @@ android {
     compileSdkVersion 23
     buildToolsVersion "24.0.2"
 
-    defaultConfig {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+        defaultConfig {
         applicationId "com.example.charmer.moving"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+            multiDexEnabled true
+            applicationId "com.example.charmer.moving" //JPush上注册的包名.
+
+            ndk {
+                //选择要添加的对应cpu类型的.so库。
+                abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a','x86', 'x86_64'
+                // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+            }
+
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : applicationId,
+                    JPUSH_APPKEY : "fc436fb7fc5cff5e3034e056", //JPush上注册的包名对应的appkey.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+            ]
     }
     buildTypes {
         release {
@@ -17,9 +36,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    defaultConfig {
-        multiDexEnabled true
-    }
+
+
 }
 
 
@@ -39,18 +57,17 @@ dependencies {
     compile 'com.baoyz.swipemenulistview:library:1.3.0'
     compile project(':Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable')
     compile project(':library')
-
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.android.support:support-v4:23.4.0'
     compile files('libs/MobTools-2016.0921.1136.jar')
     compile files('libs/MobCommons-2016.0921.1136.jar')
-    compile name:'SMSSDK-2.1.2',ext:'aar'
-    compile name:'SMSSDKGUI-2.1.2',ext:'aar'
-    compile 'pub.devrel:easypermissions:0.2.0'
+    compile name: 'SMSSDK-2.1.2', ext: 'aar'
+    compile name: 'SMSSDKGUI-2.1.2', ext: 'aar'
     compile project(path: ':lib-zxing')
     compile project(':photopicker')
     compile 'com.android.support:design:23.2.1'
     compile 'com.jaeger.statusbaruitl:library:1.1.1'
     compile 'jp.wasabeef:glide-transformations:2.0.1'
     compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
+    compile 'cn.jiguang:jpush:2.2.0'
 }

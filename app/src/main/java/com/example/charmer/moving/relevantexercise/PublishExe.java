@@ -230,9 +230,9 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
                 System.out.println("+_+_+_+__"+result);
                 if ("true".equals(result)){
                     Toast.makeText(PublishExe.this, "发布成功", Toast.LENGTH_SHORT).show();
-//                    finish();
-//                    Intent intent = new Intent(PublishExe.this, ManagerexeActivity.class);
-//                    startActivity(intent);
+                    finish();
+                    Intent intent = new Intent(PublishExe.this, ManagerexeActivity.class);
+                    startActivity(intent);
 
                 }else{
                     Toast.makeText(PublishExe.this, "发布失败", Toast.LENGTH_SHORT).show();
