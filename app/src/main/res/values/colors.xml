@@ -9,6 +9,7 @@
     <color name="common_bottom_bar_normal_bg">#eee</color>
     <color name="exeinfomid">#FFF9E4</color>
     <color name="colorSkybule">#0099ff</color>
+    <color name="colorSkybule_light">#ff0099ff</color>
     <color name="colorWhite">#ffffff</color>
     <color name="white_grey">#FFF8DC</color>
     <color name="text_gray">#D1D1D1</color>

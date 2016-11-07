@@ -349,7 +349,6 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.iv_publish_btn:
                 Toast.makeText(Publish_articles.this,"正在发布...",Toast.LENGTH_SHORT).show();
-
                 sendImg();
                 break;
 

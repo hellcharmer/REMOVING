@@ -4,10 +4,64 @@
     android:id="@+id/activity_fankui"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.charmer.moving.mine_activity.Fankui">
+    <RelativeLayout
+        android:id="@+id/titletop"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorSkybule">
+        <RelativeLayout
+            android:id="@+id/finishthis"
+            android:layout_width="48dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finish"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/finishthis"
+            android:text="反馈至MOING"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            />
+        <TextView
+            android:id="@+id/send_advice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
+            android:text="发送"/>
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titletop"
+        >
+        <EditText
+            android:id="@+id/et_write_comment"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/home_shape"
+            android:gravity="top|left"
+            android:textSize="14dp"
+            android:textColorHint="#cac8c8"
+            android:hint="您的意见将帮助我们改进服务"
+            />
+
+    </RelativeLayout>
 </RelativeLayout>

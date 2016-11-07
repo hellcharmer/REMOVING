@@ -14,9 +14,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
 
     <application
         android:name=".MyApplicition.MyApplication"
@@ -25,9 +23,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".fragment.one_activity" />
         <activity android:name=".relevantexercise.ExerciseinfoActivity" />
         <activity android:name=".relevantexercise.ManagerexeActivity" />
@@ -48,13 +44,10 @@
                     android:pathPrefix="/conversation/"
                     android:scheme="rong" />
             </intent-filter>
-
         </activity>
         <activity android:name=".relevantexercise.PublishExe" />
         <activity android:name=".relevantexercise.ExeInfoEnroll" />
-        <activity android:name=".home_activity.Publish_articles" >
-
-        </activity>
+        <activity android:name=".home_activity.Publish_articles" />
         <activity
             android:name=".friendchat.ConversationListActivity"
             android:screenOrientation="portrait"
@@ -73,15 +66,12 @@
         <activity android:name=".friendchat.Test" />
         <activity android:name=".friendchat.SearchTalk" />
         <activity android:name=".home_activity.SearchActivity" />
-
         <activity android:name=".home_activity.Zixun_comment" />
         <activity android:name=".home_activity.Zixun_comment_more" />
         <activity android:name=".Publishdynamic.ImagePagerActivity" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.Dark">
-
-        </activity>
+            android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".SignupActivity"
             android:theme="@style/AppTheme.Dark" />
@@ -90,13 +80,10 @@
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
-        <activity android:name=".Homepage">
-
-        </activity>
-
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".Homepage" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -106,10 +93,16 @@
         </activity>
         <activity
             android:name="com.foamtrace.photopicker.PhotoPickerActivity"
-            android:theme="@style/PhotoPickerTheme"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
-            android:theme="@style/PhotoPickerTheme"/>
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity android:name=".mine_activity.Personal_information" />
+        <activity android:name=".mine_activity.About" />
+        <activity android:name=".mine_activity.Fankui" />
+        <activity android:name=".mine_activity.Articles" />
+        <activity android:name=".mine_activity.Shoucang"></activity>
     </application>
 
 </manifest>

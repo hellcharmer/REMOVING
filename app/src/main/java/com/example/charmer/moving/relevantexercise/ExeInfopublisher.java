@@ -1,38 +1,33 @@
 package com.example.charmer.moving.relevantexercise;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.example.charmer.moving.home_activity.Zixun_comment;
-import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -43,7 +38,11 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExeInfopublisher extends AppCompatActivity {
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
+
+public class ExeInfopublisher extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
 
     private BaseAdapter adapter;
@@ -233,7 +232,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                                             DialogInterface dialogInterface,
                                             int which) {
                                         // TODO Auto-generated method
-                                        agreeJoin(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
+                                        agreeJoin(position1,exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
                                     }
                                 });
                         builder.setNegativeButton(
@@ -269,7 +268,7 @@ public class ExeInfopublisher extends AppCompatActivity {
                                             DialogInterface dialogInterface,
                                             int which) {
                                         // TODO Auto-generated method
-                                        ignoreEnroll(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
+                                        ignoreEnroll(position1,exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
                                     }
                                 });
                         builder.setNegativeButton(
@@ -408,7 +407,8 @@ public class ExeInfopublisher extends AppCompatActivity {
 
     }
 
-    private void agreeJoin(String exerciseId,String joiner,Context contexts){
+    private void agreeJoin(int position1,String exerciseId,String joiner,Context contexts){
+        final int position =position1;
         final String exeId = exerciseId;
         final Context context = contexts;
         String str = HttpUtils.hoster+"enrollexe";
@@ -427,6 +427,8 @@ public class ExeInfopublisher extends AppCompatActivity {
                 if ("1".equals(result)){
                     Toast.makeText(context,"操作成功！",Toast.LENGTH_SHORT).show();
                     getExerciseList(exeId);
+//                    dsListEnroll.remove(position);
+//                    enrolleradapter.notifyDataSetChanged();
                 }else
                 {
                     Toast.makeText(context,"操作失败！",Toast.LENGTH_SHORT).show();
@@ -452,7 +454,8 @@ public class ExeInfopublisher extends AppCompatActivity {
     }
 
 
-    private void ignoreEnroll(String exerciseId,String joiner,Context contexts){
+    private void ignoreEnroll(int position1,String exerciseId,String joiner,Context contexts){
+        final int position =position1;
         final String exeId = exerciseId;
         final Context context = contexts;
         String str = HttpUtils.hoster+"enrollexe";
@@ -467,9 +470,11 @@ public class ExeInfopublisher extends AppCompatActivity {
                 System.out.println(result);
                 if ("true".equals(result)) {
                     Toast.makeText(context,"忽略成功！",Toast.LENGTH_SHORT).show();
-                    getExerciseList(exeId);
+                    //getExerciseList(exeId);
+                    dsListEnroll.remove(position);
+                    enrolleradapter.notifyDataSetChanged();
                 }else{
-                    Toast.makeText(context,"忽略成功！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,"忽略失败！",Toast.LENGTH_SHORT).show();
                 }
             }
 

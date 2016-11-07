@@ -3,6 +3,7 @@ package com.example.charmer.moving;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,7 +23,6 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.LoginInfo;
 import com.google.gson.Gson;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
-
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -179,8 +179,9 @@ public class SignupActivity extends AppCompatActivity {
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
         QRcode= CodeUtils.createImage(mobile, 400, 400, null);
+        Bitmap  bitmap = BitmapFactory.decodeResource(SignupActivity.this.getResources(), R.drawable.morentouxiang);
         saveBitmaptofile(QRcode,mobile);
-
+        saveBitmaptofile(bitmap,"morentouxiang");
         File file=new File("/data/data/com.example.charmer.moving/QRcodepicture/"+mobile+".png");
 
         sendImg(file);

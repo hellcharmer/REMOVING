@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/xiangxi_fengxiang"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/iv_home_return"
             android:layout_gravity="center_vertical"

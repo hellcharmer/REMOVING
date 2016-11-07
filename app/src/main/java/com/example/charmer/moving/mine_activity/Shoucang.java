@@ -1,7 +1,9 @@
 package com.example.charmer.moving.mine_activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.example.charmer.moving.R;
 
 public class Shoucang extends AppCompatActivity {
 

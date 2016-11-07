@@ -1,6 +1,5 @@
 package com.example.charmer.moving.MyView;
 
-import com.example.circleimageviewdemo_1.R;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -21,6 +20,8 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+
+import com.example.charmer.moving.R;
 
 public class CircleImageView extends ImageView {
 
