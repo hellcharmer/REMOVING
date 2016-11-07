@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_events"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.charmer.moving.relevantexercise.EventsActivity">
+
+    <RelativeLayout
+        android:id="@+id/titletop"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorSkybule">
+        <RelativeLayout
+            android:id="@+id/finishthis"
+            android:layout_width="48dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finish"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/choiceplace"
+            android:textSize="24sp"
+            android:textColor="#fff"
+            />
+        <Button
+            android:id="@+id/Determine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="确定"
+            android:textSize="20sp"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/destinationView"
+        android:layout_below="@id/titletop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_below="@id/destinationView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    </com.amap.api.maps.MapView>
+</RelativeLayout>

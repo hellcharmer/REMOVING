@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
@@ -142,12 +143,20 @@ public class ExeInfoEnroll extends AppCompatActivity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
+                final int position1 = position;
                 convertView = View.inflate(ExeInfoEnroll.this, R.layout.joinerimg, null);
                 joinerImg= (ImageView) convertView.findViewById(R.id.joinerImg);
                 VariableExercise.DataSummary vds = dsListJoin.get(position);
                 xUtilsImageUtils.display(joinerImg, HttpUtils.hoster+"upload/"+vds.userImg);
                 System.out.println("==-=-=-=-=-=-"+vds.userImg);
-
+                joinerImg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent1 = new Intent(ExeInfoEnroll.this, Homepage.class);
+                        intent1.putExtra("user",dsListJoin.get(position1).userAccount.toString());
+                        startActivity(intent1);
+                    }
+                });
                 return convertView;
             }
         };
@@ -155,6 +164,16 @@ public class ExeInfoEnroll extends AppCompatActivity {
         joinerImgs.setAdapter(imgadapter);
 
         getExerciseList(exerciseId);
+
+        imguser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(ExeInfoEnroll.this, Homepage.class);
+                System.out.println("++++"+exerciseList.get(0).publisherId);
+                intent1.putExtra("user",exerciseList.get(0).publisherId);
+                startActivity(intent1);
+            }
+        });
 
         cancelEnroll.setOnClickListener(new View.OnClickListener() {
             @Override

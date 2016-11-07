@@ -12,6 +12,7 @@ public class VariableExercise {
     public DataSummary ds;
     public ArrayList<DataSummary> dsListEnroll;
     public ArrayList<DataSummary> dsListJoin;
+    public ArrayList<DataSummary> dsListcancel;
 
     public static class Exercises{
         public Long exerciseId;
