@@ -5,33 +5,23 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.example.charmer.moving.home_activity.Zixun_comment;
-import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
@@ -282,7 +272,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                                             DialogInterface dialogInterface,
                                             int which) {
                                         // TODO Auto-generated method
-                                        ignoreEnroll(exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
+                                        ignoreEnroll(position1,exerciseId,dsListEnroll.get(position1).userAccount.toString(),ExeInfopublisher.this);
                                     }
                                 });
                         builder.setNegativeButton(

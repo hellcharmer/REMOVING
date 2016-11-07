@@ -33,7 +33,7 @@
                 android:id="@+id/iv_head"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/people_icon"
+                android:src="@drawable/morentouxiang"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
             <RelativeLayout

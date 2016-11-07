@@ -75,7 +75,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
     private static final int REQUEST_PREVIEW_CODE = 22;
     private ArrayList<String> imagePaths = null;
     private ImageCaptureManager captureManager; // 相机拍照处理类
-    private List<File> file=new ArrayList<File>();
+    private List<File> file = new ArrayList<File>();
 
     private GridView_picture gridView;
     private int columnWidth;
@@ -105,7 +105,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         rl_publish_photo = (RelativeLayout) findViewById(R.id.rl_publish_photo);
 
 
-        home_publish_at = (ImageButton) findViewById(R.id.home_publish_at);
+//        home_publish_at = (ImageButton) findViewById(R.id.home_publish_at);
 
         btn_container_at = (RelativeLayout) findViewById(R.id.btn_container_at);
 
@@ -127,7 +127,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         // Item Width
         int screenWidth = getResources().getDisplayMetrics().widthPixels;
         int columnSpace = getResources().getDimensionPixelOffset(R.dimen.space_size);
-        columnWidth = (screenWidth - columnSpace * (cols-1)) / cols;
+        columnWidth = (screenWidth - columnSpace * (cols - 1)) / cols;
 
         // preview
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -175,7 +175,12 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
 
             }
         });
-
+        iv_home_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -188,21 +193,22 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         return sdf.format(date) + "_" + UUID.randomUUID() + ".jpg";
     }
 
-    private void fabuhuondong(String userId,String str) {
+    private void fabuhuondong(String userId, String str) {
 
-        RequestParams params = new RequestParams(HttpUtils.hoster+"addzixun");
-        params.addQueryStringParameter("userId",userId);
-        params.addQueryStringParameter("title",publish_title.getText().toString());
-        params.addQueryStringParameter("picture",str);
-        params.addQueryStringParameter("content",publish_content.getText().toString());
+        RequestParams params = new RequestParams(HttpUtils.hoster + "addzixun");
+        params.addQueryStringParameter("userId", userId);
+        params.addQueryStringParameter("title", publish_title.getText().toString());
+        params.addQueryStringParameter("picture", str);
+        params.addQueryStringParameter("content", publish_content.getText().toString());
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
 
-                if("true".equals(result)){
-                    Toast.makeText(Publish_articles.this,"发布成功",Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(Publish_articles.this,"发布失败",Toast.LENGTH_SHORT).show();
+                if ("true".equals(result)) {
+                    Toast.makeText(Publish_articles.this, "发布成功", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(Publish_articles.this, "发布失败", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -228,18 +234,19 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         RequestParams params = new RequestParams(HttpUtils.hoster + "upload");//upload 是你要访问的servlet
 
 
-        for (int i=0;i<file.size();i++) {
-            Log.i("文件",""+file.get(i));
+        for (int i = 0; i < file.size(); i++) {
+            Log.i("文件", "" + file.get(i));
             params.addBodyParameter("file", file.get(i));
             params.addBodyParameter("fileName", "fileName");
+            params.addQueryStringParameter("choice","0");
         }
 
 
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                fabuhuondong(MainActivity.getUser().getUseraccount(),result);
-                System.out.println("---------------===="+result);
+                fabuhuondong(MainActivity.getUser().getUseraccount(), result);
+                System.out.println("---------------====" + result);
             }
 
             @Override
@@ -262,7 +269,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
 
     private void getPicFromCamera() {
         try {
-            if(captureManager == null){
+            if (captureManager == null) {
                 captureManager = new ImageCaptureManager(Publish_articles.this);
             }
             Intent intent = captureManager.dispatchTakePictureIntent();
@@ -278,7 +285,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 // 选择照片
                 case REQUEST_CAMERA_CODE:
@@ -290,7 +297,7 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
                     break;
                 // 调用相机拍照
                 case ImageCaptureManager.REQUEST_TAKE_PHOTO:
-                    if(captureManager.getCurrentPhotoPath() != null) {
+                    if (captureManager.getCurrentPhotoPath() != null) {
                         captureManager.galleryAddPic();
 
                         ArrayList<String> paths = new ArrayList<>();
@@ -306,9 +313,6 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         }
 
     }
-
-
-
 
 
     private void getPicFromPhoto() {
@@ -348,39 +352,39 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
 
                 break;
             case R.id.iv_publish_btn:
-                Toast.makeText(Publish_articles.this,"正在发布...",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Publish_articles.this, "正在发布...", Toast.LENGTH_SHORT).show();
                 sendImg();
                 break;
 
         }
     }
 
-    private void loadAdpater(ArrayList<String> paths){
-        if(imagePaths == null){
+    private void loadAdpater(ArrayList<String> paths) {
+        if (imagePaths == null) {
             imagePaths = new ArrayList<>();
         }
         imagePaths.clear();
         imagePaths.addAll(paths);
-        for(int i=0;i<imagePaths.size();i++){
+        for (int i = 0; i < imagePaths.size(); i++) {
             //头像的存储完整路径
-            file.add(i,new File(imagePaths.get(i)));
+            file.add(i, new File(imagePaths.get(i)));
 //            System.out.println(imagePaths.size());
 ////            /storage/emulated/0/Pictures/
- //         str = str +imagePaths.get(i).substring(29)+",";
+            //         str = str +imagePaths.get(i).substring(29)+",";
 //            System.out.println("str========="+str);
         }
 
-        try{
+        try {
             JSONArray obj = new JSONArray(imagePaths);
             Log.e("--", obj.toString());
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if(gridAdapter == null){
+        if (gridAdapter == null) {
             gridAdapter = new GridAdapter(imagePaths);
             gridView.setAdapter(gridAdapter);
-        }else {
+        } else {
             gridAdapter.notifyDataSetChanged();
         }
     }
@@ -410,14 +414,14 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView imageView;
-            if(convertView == null){
+            if (convertView == null) {
                 convertView = getLayoutInflater().inflate(R.layout.item_image, null);
                 imageView = (ImageView) convertView.findViewById(R.id.imageView);
                 convertView.setTag(imageView);
                 // 重置ImageView宽高
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(columnWidth, columnWidth);
                 imageView.setLayoutParams(params);
-            }else {
+            } else {
                 imageView = (ImageView) convertView.getTag();
             }
             Glide.with(Publish_articles.this)

@@ -106,7 +106,7 @@
 
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".Homepage" />
+
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -128,11 +128,5 @@
         <activity android:name=".mine_activity.Shoucang"></activity>
     </application>
 
-            android:theme="@style/PhotoPickerTheme"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
-            android:theme="@style/PhotoPickerTheme"/>
 
-
-</application>
 </manifest>

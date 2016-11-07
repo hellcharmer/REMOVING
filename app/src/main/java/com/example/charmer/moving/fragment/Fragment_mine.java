@@ -106,7 +106,7 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
         if (cacheDir.exists()&&cacheDir1.exists()) {
             String head = "/data/data/com.example.charmer.moving/myImg/"+userimg;
             String qrcode = "/data/data/com.example.charmer.moving/QRcodepicture/"+userqrcode;
-            System.out.println("123445678876246543265432=========");
+
             Bitmap bm = BitmapFactory.decodeFile(head);
             Bitmap bm1 = BitmapFactory.decodeFile(qrcode);
             iv_head.setImageBitmap(bm);
@@ -114,7 +114,7 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
 
         } else {
             //从网络拿数据
-            System.out.println("------------22222222");
+
             getInfo();
         }
     }

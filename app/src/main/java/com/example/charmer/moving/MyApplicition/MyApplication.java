@@ -9,7 +9,6 @@ import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 import org.xutils.x;
 
-import cn.jpush.android.api.JPushInterface;
 import io.rong.imkit.RongIM;
 
 /**
