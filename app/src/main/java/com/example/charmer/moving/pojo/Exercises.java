@@ -22,8 +22,16 @@ public class Exercises {
     private String groupMembers;
     private String activeState;
     private String enroller;
-    
-    
+	private boolean isScan;
+
+	public boolean isScan() {
+		return isScan;
+	}
+
+	public void setScan(boolean isScan) {
+		this.isScan = isScan;
+	}
+
 
 	public Long getExerciseId() {
 		return exerciseId;

@@ -57,7 +57,7 @@ public class MyartAdapter extends RecyclerView.Adapter<MyartAdapter.ViewHolder> 
             viewHolder.iv_picture.setVisibility(View.GONE);
         }else {
             viewHolder.iv_picture.setVisibility(View.VISIBLE);
-            xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + zixun.getZixun_photo().split(",")[0]);
+            xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + "zixunpictures"+zixun.getZixun_photo().split(",")[0]);
         }
 
     }

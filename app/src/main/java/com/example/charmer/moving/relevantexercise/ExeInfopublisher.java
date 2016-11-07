@@ -1,33 +1,38 @@
 package com.example.charmer.moving.relevantexercise;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.home_activity.Zixun_comment;
+import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
-import com.uuzuche.lib_zxing.activity.CaptureActivity;
-import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -38,11 +43,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
-import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.AppSettingsDialog;
-import pub.devrel.easypermissions.EasyPermissions;
-
-public class ExeInfopublisher extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+public class ExeInfopublisher extends AppCompatActivity {
 
 
     private BaseAdapter adapter;
@@ -215,7 +216,6 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 enrollerinfonum.setText(enrollerinfonum.getText().toString()+vds.joinedNum);
                 enrollerinforate.setText(enrollerinforate.getText().toString()+vds.appointmentRate);
                 enrollerName.setText(vds.userName);
-
                 agreebtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -294,7 +294,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
         lvenrollers.setAdapter(enrolleradapter);
 
         getExerciseList(exerciseId);
-
+        enrolleradapter.notifyDataSetChanged();
         cancelexe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -360,9 +360,10 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 exerciseList.clear();
                 VariableExercise bean = gson.fromJson(result, VariableExercise.class);
                 exerciseList.addAll(bean.exerciseList);
-                System.out.println("=-=-=-="+exerciseList.get(0).currentNumber);
-                dsListJoin.clear();
-                dsListJoin.addAll(bean.dsListJoin);
+                if(bean.dsListJoin.size()!=0) {
+                    dsListJoin.clear();
+                    dsListJoin.addAll(bean.dsListJoin);
+                }
                 dsListEnroll.clear();
                 dsListEnroll.addAll(bean.dsListEnroll);
                 lvenrollers.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListEnroll.size()));

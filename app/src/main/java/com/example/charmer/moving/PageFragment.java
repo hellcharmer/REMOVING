@@ -42,11 +42,13 @@ public class PageFragment extends Fragment {
     final List<ZixunInfo> exerciseList2 = new ArrayList<ZixunInfo>();
     final List<Exercises> exerciseList3 = new ArrayList<Exercises>();
     final List<Exercises> exerciseList4 = new ArrayList<Exercises>();
-    public static PageFragment newInstance(int page) {
+    private static String useraccount;
+    public static PageFragment newInstance(int page,String user) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         PageFragment pageFragment = new PageFragment();
         pageFragment.setArguments(args);
+        useraccount = user;
         return pageFragment;
     }
 
@@ -102,7 +104,7 @@ public class PageFragment extends Fragment {
                 String str = HttpUtils.hoster+"getpersonalinfo";
                 RequestParams params = new RequestParams(str);
                 //params.addQueryStringParameter("user",MainActivity.getUser().getUseraccount());
-                params.addQueryStringParameter("user","13154623281");
+                params.addQueryStringParameter("user",useraccount);
                 params.addQueryStringParameter("state",state+"");
                 x.http().get(params, new Callback.CommonCallback<String>() {
                     @Override

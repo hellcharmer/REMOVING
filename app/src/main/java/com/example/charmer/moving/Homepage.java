@@ -1,6 +1,7 @@
 package com.example.charmer.moving;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -48,10 +49,14 @@ public class Homepage extends AppCompatActivity {
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private CoordinatorLayout root_layout;
     private VariableExercise.DataSummary ds =new VariableExercise.DataSummary();
+    private String useraccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        Intent intent = this.getIntent();
+        useraccount = intent.getStringExtra("user");
+
         AppBarLayout app_bar_layout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -86,7 +91,7 @@ public class Homepage extends AppCompatActivity {
         collections = (TextView)findViewById(R.id.collections);
         publish = (TextView)findViewById(R.id.publish);
         join = (TextView)findViewById(R.id.join);
-        ViewPagerAdapter vpAdapter = new ViewPagerAdapter(getSupportFragmentManager(), this);
+        ViewPagerAdapter vpAdapter = new ViewPagerAdapter(getSupportFragmentManager(), this,useraccount);
         main_vp_container.setAdapter(vpAdapter);
         main_vp_container.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener
                 (toolbar_tab));
@@ -131,7 +136,7 @@ public class Homepage extends AppCompatActivity {
         String str = HttpUtils.hoster+"getpersonalinfo";
         RequestParams params = new RequestParams(str);
         //params.addQueryStringParameter("user",MainActivity.getUser().getUseraccount());
-        params.addQueryStringParameter("user","13154623281");
+        params.addQueryStringParameter("user",useraccount);
         params.addQueryStringParameter("state","0");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override

@@ -29,6 +29,7 @@ public class VariableExercise {
         public String activityTime;
         public String exerciseIntroduce;
         public String releaseTime;
+        public boolean isScan;
         @Override
         public String toString() {
             return "Exercises{" +
