@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyView.PullToZoomListView;
 import com.example.charmer.moving.MyView.RoundImageView;
 import com.example.charmer.moving.R;
@@ -25,6 +26,7 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Info;
 import com.example.charmer.moving.utils.CommonAdapter;
 import com.example.charmer.moving.utils.DensityUtil;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.example.charmer.moving.utils.StatusBarUtils;
 import com.example.charmer.moving.utils.ViewHolder;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
@@ -75,6 +77,7 @@ public class MineDynamic extends AppCompatActivity implements PullToZoomListView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mine_dynamic);
         mContext = this;
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         initView();
         initData();
         StatusBarUtils.from(this)
@@ -270,7 +273,7 @@ public class MineDynamic extends AppCompatActivity implements PullToZoomListView
 
     private void getData() {
         RequestParams params = new RequestParams(HttpUtils.host_dynamic + "queryinfobyuserid");
-        params.addBodyParameter("userid", 3+"");
+        params.addBodyParameter("userid", MainActivity.getUser().getUserid()+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

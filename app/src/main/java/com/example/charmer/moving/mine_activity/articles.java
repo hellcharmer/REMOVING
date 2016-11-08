@@ -2,6 +2,7 @@ package com.example.charmer.moving.mine_activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.PersonalInfo;
 import com.example.charmer.moving.pojo.ZixunInfo;
 import com.example.charmer.moving.utils.MyartAdapter;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -35,6 +37,7 @@ public class Articles extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articles);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         initView();
 
         SharedPreferences sharedPreferences = Articles.this.getSharedPreferences("sp_mobile", Context.MODE_PRIVATE);

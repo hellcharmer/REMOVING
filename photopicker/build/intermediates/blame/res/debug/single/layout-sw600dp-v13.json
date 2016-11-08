@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\layout_snackbar.xml",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\layout-sw600dp\\layout_snackbar.xml"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\layout_snackbar.xml",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\layout-sw600dp\\layout_snackbar.xml"
     }

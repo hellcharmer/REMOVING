@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
@@ -27,6 +28,7 @@ import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -70,7 +72,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.managerexe);
-
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         pager = (ViewPager) this.findViewById(R.id.vper);
         tabStrip = (PagerTabStrip) this.findViewById(R.id.strip);
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));

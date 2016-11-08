@@ -35,6 +35,7 @@ import android.widget.TextView;
 
 import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.MyView.MyGridView;
 import com.example.charmer.moving.R;
@@ -1432,7 +1433,7 @@ public class Fragment_home extends Fragment {
         params.addQueryStringParameter("exercisetype","全部分类");
         params.addQueryStringParameter("exercisetheme","全部主题");
         params.addQueryStringParameter("page","1");
-        params.addQueryStringParameter("place","苏州");
+        params.addQueryStringParameter("place", MyApplication.getLocation());
 
         x.http().get(params, new Callback.CommonCallback<String>() {
 

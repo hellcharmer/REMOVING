@@ -399,9 +399,10 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
 
 
-        RequestParams params = new RequestParams(HttpUtils.hoster+"updatelikeservlet");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
         params.addQueryStringParameter("zixunId",zixunId);
         params.addQueryStringParameter("userId",userId);
+        params.addQueryStringParameter("state","2");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -433,9 +434,10 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addshoucang(String userId){
-        RequestParams params = new RequestParams(HttpUtils.hoster+"addzannum");
+        RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
         params.addQueryStringParameter("zixunId",zixunId);
         params.addQueryStringParameter("userId",userId);
+        params.addQueryStringParameter("state","1");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -465,6 +467,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
         params.addQueryStringParameter("zixunId",zixunId);
         params.addQueryStringParameter("userId",userId);
+        params.addQueryStringParameter("state","0");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

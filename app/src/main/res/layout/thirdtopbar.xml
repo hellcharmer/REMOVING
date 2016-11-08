@@ -25,13 +25,7 @@
             android:layout_alignParentRight="true"
             android:text="@string/manager"
             />
-        <Button
-            android:id="@+id/temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/manager"
-            android:text="发布"
-            />
+
     </RelativeLayout>
 
 </LinearLayout>

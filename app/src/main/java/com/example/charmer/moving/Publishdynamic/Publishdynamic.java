@@ -2,6 +2,7 @@ package com.example.charmer.moving.Publishdynamic;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Info;
 import com.example.charmer.moving.pojo.User;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.foamtrace.photopicker.ImageCaptureManager;
 import com.foamtrace.photopicker.PhotoPickerActivity;
 import com.foamtrace.photopicker.PhotoPreviewActivity;
@@ -57,6 +59,7 @@ public class Publishdynamic extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publishdynamic);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         gridView = (GridView) findViewById(R.id.gridView);
         mButton = (ImageView) findViewById(R.id.button);
         et_infoContent= (EditText)findViewById(R.id.et_content);

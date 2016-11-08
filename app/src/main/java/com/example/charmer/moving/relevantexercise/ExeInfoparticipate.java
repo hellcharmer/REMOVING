@@ -3,8 +3,9 @@ package com.example.charmer.moving.relevantexercise;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +16,13 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
 import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 
@@ -60,6 +60,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exe_infoparticipate);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         Intent intent = this.getIntent();
         exerciseId = intent.getStringExtra("exerciseId");
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));

@@ -1,48 +1,39 @@
 package com.example.charmer.moving.relevantexercise;
 
-import android.app.DatePickerDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.view.ActionMode;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.fragment.WheelDialogFragment;
 import com.example.charmer.moving.pojo.Exercises;
 import com.example.charmer.moving.utils.DateUtil;
 import com.example.charmer.moving.utils.ResUtil;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
-import java.lang.reflect.Field;
 import java.util.Calendar;
 import java.util.Date;
-
-import butterknife.OnClick;
 
 public class PublishExe extends AppCompatActivity  implements View.OnTouchListener {
 
@@ -66,7 +57,7 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish_exe);
-
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         etStartTime = (TextView) this.findViewById(R.id.et_start_time);
         etStartTime.setOnTouchListener(this);
         typeslt = (TextView) findViewById(R.id.typeslt);

@@ -2,6 +2,7 @@ package com.example.charmer.moving.home_activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.text.TextUtils;
@@ -28,6 +29,7 @@ import com.example.charmer.moving.contantData.ToastUtil;
 import com.example.charmer.moving.db.SearchHistorysDao;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.DateUtils;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 
@@ -69,7 +71,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search);
-
+		StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
 		dao = new SearchHistorysDao(this);
 		historywordsList = dao.findAll();
 		//自定义toast布局

@@ -31,6 +31,7 @@ import com.example.charmer.moving.fragment.Fragment_service;
 import com.example.charmer.moving.friendchat.RongImChat;
 import com.example.charmer.moving.home_activity.Publish_articles;
 import com.example.charmer.moving.pojo.User;
+import com.example.charmer.moving.relevantexercise.PublishExe;
 import com.example.charmer.moving.utils.StatusBarCompat;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -182,8 +183,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.exercise:
                 newIndex = 2;//选中第三项
-                plus_yuan.setVisibility(View.GONE);
-                plus_im.setVisibility(View.GONE);
+                plus_yuan.setVisibility(View.VISIBLE);
+                plus_im.setVisibility(View.VISIBLE);
                 break;
             case R.id.friends:
                 newIndex = 3;//选中第四项
@@ -415,8 +416,34 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             // TODO Auto-generated method stub
+            clicked = !clicked;
+            // 两个按钮的显示隐藏
+            dishui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            guoshui_tv.setVisibility(clicked ? View.VISIBLE : View.GONE);
+
+            iv_fabuhuodong.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            iv_write.setVisibility(clicked ? View.VISIBLE : View.GONE);
+            // 加号旋转
+            plus_im.startAnimation(clicked ? rotate_anticlockwise
+                    : rotate_clockwise);
+            // 按钮显示隐藏效果
+            dishui_tv.startAnimation(clicked ? scale_max : scale_min);
+            guoshui_tv.startAnimation(clicked ? scale_max : scale_min);
+            iv_fabuhuodong.startAnimation(clicked ? scale_max : scale_min);
+            iv_write.startAnimation(clicked ? scale_max : scale_min);
+            // 背景色的改变
+            plus_rl.setBackgroundColor(clicked ? Color
+                    .parseColor("#aaffffff") : Color.TRANSPARENT);
+            // 背景是否可点击，用于控制Framelayout层下面的视图是否可点击
+            plus_rl.setClickable(clicked);
+            iv_write.setClickable(clicked? true : false);
+            dishui_tv.setClickable(clicked? true : false);
+            guoshui_tv.setClickable(clicked? true : false);
+            iv_fabuhuodong.setClickable(clicked? true : false);
             v.startAnimation(alpha_button);
             plus_im.performClick();
+            Intent intent = new Intent(MainActivity.this, PublishExe.class);
+            startActivity(intent);
         }
     };
 

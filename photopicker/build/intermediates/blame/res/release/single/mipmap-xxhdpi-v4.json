@@ -16,12 +16,40 @@
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\asy.png"
     },
     {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\default_check.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\default_check.png"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\btn_unselected.png",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_unselected.png"
     },
     {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\btn_selected.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_selected.png"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\btn_selected.png",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_selected.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\asv.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\asv.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\asy.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\asy.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\default_error.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\default_error.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\btn_unselected.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_unselected.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\ic_action_discard.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\ic_action_discard.png"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4\\default_error.png",

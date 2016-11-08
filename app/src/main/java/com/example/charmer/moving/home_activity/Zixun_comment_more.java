@@ -2,6 +2,7 @@ package com.example.charmer.moving.home_activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.example.charmer.moving.contantData.ToastUtil;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.CommonAdapter;
 import com.example.charmer.moving.utils.DateUtils;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.example.charmer.moving.utils.ViewHolder;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -53,6 +55,7 @@ public class Zixun_comment_more extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_zixun_comment_more);
         View v = View.inflate(Zixun_comment_more.this, R.layout.layout_toast_view, null);
         toastUtil = new ToastUtil(Zixun_comment_more.this, v, 200);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         initView();
         initData();
         bindEvents();

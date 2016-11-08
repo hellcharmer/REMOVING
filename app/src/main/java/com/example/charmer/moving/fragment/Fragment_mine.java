@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.charmer.moving.Homepage;
+import com.example.charmer.moving.Publishdynamic.MineDynamic;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.mine_activity.About;
@@ -245,7 +246,8 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
                 startActivity(intent_articles);
                 break;
             case R.id.person_rl_dynamic:
-
+                Intent intent_dynamic = new Intent(getActivity(),MineDynamic.class);
+                startActivity(intent_dynamic);
                 break;
             case R.id.person_rl_exercise:
                 Intent intent_exercise = new Intent(getActivity(),ManagerexeActivity.class);

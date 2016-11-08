@@ -1,5 +1,6 @@
 package com.example.charmer.moving.mine_activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.utils.StatusBarCompat;
 
 
 public class Fankui extends AppCompatActivity {
@@ -20,9 +22,11 @@ public class Fankui extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fankui);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         et_write_comment = (EditText) findViewById(R.id.et_write_comment);
         send_advice = (TextView) findViewById(R.id.send_advice);
         finishthis = (RelativeLayout) findViewById(R.id.finishthis);
+
         finishthis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

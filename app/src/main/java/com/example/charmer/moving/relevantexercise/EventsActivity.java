@@ -32,8 +32,8 @@ import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.utils.StatusBarCompat;
 
 public class EventsActivity extends AppCompatActivity implements AMap.OnMapClickListener,LocationSource,AMapLocationListener,
         AMap.OnMapLongClickListener, AMap.OnCameraChangeListener,AMap.OnMapTouchListener,GeocodeSearch.OnGeocodeSearchListener {
@@ -66,7 +66,7 @@ public class EventsActivity extends AppCompatActivity implements AMap.OnMapClick
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_events);
-
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         mapView = (MapView) findViewById(R.id.map);
 
         mapView.onCreate(savedInstanceState);// 此方法必须重写

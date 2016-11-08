@@ -274,7 +274,8 @@ public class Fragment_dynamic extends BaseFragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                getData(dynamic_pageNo);
+
+//                getData(dynamic_pageNo);
             }
 
             @Override
@@ -358,7 +359,7 @@ public class Fragment_dynamic extends BaseFragment {
             flag.put(position,false);
             isliked.put(position,true);
             ImageView userimg = viewHolder.getViewById(R.id.iv_photoImg);
-            xUtilsImageUtils.display(userimg, HttpUtils.host_dynamic + info.getUser().getUserimg(), true);
+            xUtilsImageUtils.display(userimg, HttpUtils.host_dynamic +"upload/"+ info.getUser().getUserimg(), true);
             TextView username = viewHolder.getViewById(R.id.tv_infoName);
             username.setText(info.getUser().getUsername());
             Log.i("info", "convert:username ");

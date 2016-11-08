@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -27,9 +28,11 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.charmer.moving.LoginActivity;
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -82,11 +85,13 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
     private RelativeLayout person_rl_signature;
     private RelativeLayout person_rl_loginout;
     private TextView iv_mysignature;
+    private TextView iv_myaddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_information);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         sharedPreferences = Personal_information.this.getSharedPreferences("sp_mobile", Context.MODE_PRIVATE);
         builder = new AlertDialog.Builder(
                 Personal_information.this);
@@ -107,6 +112,8 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
         iv_myusername.setText(username);
         iv_mysex.setText(sex);
         iv_mysignature.setText(signature);
+        iv_myaddress.setText(MyApplication.getLocation());
+        System.out.println("111111111111111111111111111111==="+iv_myaddress.getText().toString()+"======-------"+(MyApplication.getLocation()));
     }
 
     private void initView() {
@@ -133,6 +140,9 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
         person_rl_loginout = (RelativeLayout) findViewById(R.id.person_rl_loginout);
         person_rl_loginout.setOnClickListener(this);
         iv_mysignature = (TextView) findViewById(R.id.iv_mysignature);
+
+        iv_myaddress = (TextView) findViewById(R.id.iv_myaddress);
+
 
     }
 
@@ -213,7 +223,7 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
                         Personal_information.this);
                 view = inflater.inflate(R.layout.myqrcode, null);
                 dilog_myqrcode = (ImageView) view.findViewById(R.id.dilog_myqrcode);
-                File cacheDir = new File("/data/data/com.example.charmer.moving/QRcodepicture/"+myqrcode);
+                File cacheDir = new File("/data/data/com.example.charmer.moving/QRcodepicture/" + myqrcode);
                 if (cacheDir.exists()) {
                     String qrcode = "/data/data/com.example.charmer.moving/QRcodepicture/" + myqrcode;
                     Bitmap bm = BitmapFactory.decodeFile(qrcode);
@@ -229,7 +239,7 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
 
                 view = inflater.inflate(R.layout.dilog_personalupdate, null);
                 tv_title = (TextView) view.findViewById(R.id.tv_title);
-                tv_title.setText("修改性别" );
+                tv_title.setText("修改性别");
 
                 ed_updatainfo = (EditText) view.findViewById(R.id.ed_updatainfo);
                 ed_updatainfo.setText(iv_mysex.getText().toString());
@@ -312,28 +322,27 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
                 startActivity(intent);
                 break;
             case R.id.finishthis:
-               finish();
+                finish();
                 break;
         }
     }
-
 
 
     private void sendImg() {
         RequestParams params = new RequestParams(HttpUtils.hoster + "upload");//upload 是你要访问的servlet
         params.addBodyParameter("fileName", "fileName");
         params.addBodyParameter("file", file);
-        params.addQueryStringParameter("choice","1");
-        params.addQueryStringParameter("user",useraccount);
+        params.addQueryStringParameter("choice", "1");
+        params.addQueryStringParameter("user", useraccount);
 //        params.addBodyParameter("file",file1);
 
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-                editor.putString("userimg",result.split(",")[0]);
+                editor.putString("userimg", result.split(",")[0]);
                 editor.commit();
-                updateuserinfo("userimg",result.split(",")[0]);
+                updateuserinfo("userimg", result.split(",")[0]);
                 Toast.makeText(Personal_information.this, "修改成功", Toast.LENGTH_SHORT).show();
             }
 
@@ -467,11 +476,11 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
             return;
         } else {
             if ("username".equals(temp)) {
-                updateuserinfo("username",updateinfo);
+                updateuserinfo("username", updateinfo);
             } else if ("usersex".equals(temp)) {
-                updateuserinfo("usersex",updateinfo);
+                updateuserinfo("usersex", updateinfo);
             } else if ("signature".equals(temp)) {
-                updateuserinfo("signature",updateinfo);
+                updateuserinfo("signature", updateinfo);
             }
 
 
@@ -481,23 +490,24 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
 
 
     }
+
     private void getInfo() {
         RequestParams params = new RequestParams(HttpUtils.hoster + "getpersonalinfo");//upload 是你要访问的servlet
-        params.addQueryStringParameter("user",useraccount);
-        params.addQueryStringParameter("state","5");
+        params.addQueryStringParameter("user", useraccount);
+        params.addQueryStringParameter("state", "5");
         x.http().get(params, new Callback.CommonCallback<String>() {
 
             @Override
             public void onSuccess(String result) {
                 Gson gson = new Gson();
-                final VariableExercise.DataSummary dataSummary=gson.fromJson(result,VariableExercise.DataSummary.class);
+                final VariableExercise.DataSummary dataSummary = gson.fromJson(result, VariableExercise.DataSummary.class);
                 //网络图片下载到本地
 
-                Glide.with(Personal_information.this).load(HttpUtils.hoster+"qrcode/"+dataSummary.QRcode).asBitmap().into(new SimpleTarget<Bitmap>() {
+                Glide.with(Personal_information.this).load(HttpUtils.hoster + "qrcode/" + dataSummary.QRcode).asBitmap().into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                         dilog_myqrcode.setImageBitmap(resource);
-                        saveBitmaptofile_Qrcode(resource,dataSummary.QRcode);
+                        saveBitmaptofile_Qrcode(resource, dataSummary.QRcode);
                     }
                 }); //方法中设置asBitmap可以设置回调类型
             }
@@ -519,19 +529,20 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
         });
 
     }
-    static boolean saveBitmaptofile_Qrcode(Bitmap bmp,String mobile){
-        Bitmap.CompressFormat format= Bitmap.CompressFormat.JPEG;
+
+    static boolean saveBitmaptofile_Qrcode(Bitmap bmp, String mobile) {
+        Bitmap.CompressFormat format = Bitmap.CompressFormat.JPEG;
         int quality = 100;
         OutputStream stream = null;
         try {
             File cacheDir = new File("/data/data/com.example.charmer.moving/QRcodepicture/");//设置目录参数
-            if(cacheDir.exists()){
+            if (cacheDir.exists()) {
 
-            }else{
+            } else {
                 cacheDir.mkdirs();//新建目录
             }
 
-            stream = new FileOutputStream("/data/data/com.example.charmer.moving/QRcodepicture/"+mobile);
+            stream = new FileOutputStream("/data/data/com.example.charmer.moving/QRcodepicture/" + mobile);
         } catch (FileNotFoundException e) {
 // TODO Auto-generated catch block
             e.printStackTrace();
@@ -539,16 +550,17 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
 
         return bmp.compress(format, quality, stream);
     }
-    private void updateuserinfo(final String temp,final String content){
+
+    private void updateuserinfo(final String temp, final String content) {
         RequestParams params = new RequestParams(HttpUtils.hoster + "updateuserinfo");//upload 是你要访问的servlet
-        params.addQueryStringParameter("user",useraccount);
-        params.addQueryStringParameter("state",temp);
-        params.addQueryStringParameter("content",content);
+        params.addQueryStringParameter("user", useraccount);
+        params.addQueryStringParameter("state", temp);
+        params.addQueryStringParameter("content", content);
         x.http().get(params, new Callback.CommonCallback<String>() {
 
             @Override
             public void onSuccess(String result) {
-                if("true".equals(result)){
+                if ("true".equals(result)) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
 
                     if ("username".equals(temp)) {
@@ -562,10 +574,9 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
                         editor.putString("signature", content);
                     }
                     editor.commit();
-                }else {
-                    Toast.makeText(Personal_information.this,"修改失败",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Personal_information.this, "修改失败", Toast.LENGTH_SHORT).show();
                 }
-
 
 
             }

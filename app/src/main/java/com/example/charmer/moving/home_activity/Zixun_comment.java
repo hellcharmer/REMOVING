@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -33,6 +34,7 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.contantData.ToastUtil;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.DateUtils;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 
@@ -78,6 +80,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_zixun_comment);
         View v = View.inflate(Zixun_comment.this, R.layout.layout_toast_view, null);
         toastUtil = new ToastUtil(Zixun_comment.this, v, 200);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         initView();
         initData();
         bindEvents();

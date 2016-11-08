@@ -30,6 +30,7 @@ import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Remark;
 import com.example.charmer.moving.pojo.User;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.example.charmer.moving.view.NineGridTestLayout;
 import com.google.gson.Gson;
@@ -70,6 +71,7 @@ public class one_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_info_one);
         Integer userid = MainActivity.getUser().getUserid();
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         getuserbyuserid(userid);
         initView();
         initData();

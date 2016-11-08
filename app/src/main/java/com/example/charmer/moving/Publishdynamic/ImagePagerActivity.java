@@ -1,5 +1,6 @@
 package com.example.charmer.moving.Publishdynamic;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.photoView.ImageDetailFragment;
+import com.example.charmer.moving.utils.StatusBarCompat;
+
 import java.util.List;
 
 public class ImagePagerActivity extends FragmentActivity {
@@ -27,6 +30,7 @@ public class ImagePagerActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_pager);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         pagerPosition = getIntent().getIntExtra(EXTRA_IMAGE_INDEX, 0);
         List<String> urls = getIntent().getStringArrayListExtra(EXTRA_IMAGE_URLS);
 

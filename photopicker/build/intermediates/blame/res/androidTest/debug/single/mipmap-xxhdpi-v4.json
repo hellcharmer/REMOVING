@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\default_check.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\default_check.png"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\btn_selected.png",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\btn_selected.png"
     },
@@ -16,6 +20,10 @@
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\default_error.png"
     },
     {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\btn_selected.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\btn_selected.png"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\asy.png",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\asy.png"
     },
@@ -24,7 +32,27 @@
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\btn_unselected.png"
     },
     {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\ic_action_discard.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\ic_action_discard.png"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\asv.png",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\asv.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\default_error.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\default_error.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\asv.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\asv.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\asy.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\asy.png"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\btn_unselected.png",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\btn_unselected.png"
     }
 ]

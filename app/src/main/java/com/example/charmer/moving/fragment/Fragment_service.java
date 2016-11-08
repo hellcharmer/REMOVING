@@ -25,12 +25,12 @@ import android.widget.TextView;
 
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.R;
+import com.example.charmer.moving.contantData.Constant;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.contantData.ToastUtil;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.relevantexercise.ExerciseinfoActivity;
 import com.example.charmer.moving.relevantexercise.ManagerexeActivity;
-import com.example.charmer.moving.relevantexercise.PublishExe;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 
@@ -55,7 +55,7 @@ public class Fragment_service extends Fragment {
     private Spinner spinner1;
     private Spinner spinner2;
     private Button manager_btn;
-    private Button tempbtn;
+   // private Button tempbtn;
     private TextView noData;
     private SwipeRefreshLayout mSr_refresh;
     private boolean isRunning = false;
@@ -66,10 +66,12 @@ public class Fragment_service extends Fragment {
     private LinearLayout mBottom_bar;
     private LinearLayout mHead_bar;
     private LinearLayout spinnercon;
+    private ObjectAnimator plusAnimator;
     //private RelativeLayout ball;
     private int i = 0;
     private int page = 1;
     private int totalPage;
+    private RelativeLayout plus_rl;
     ToastUtil toastUtil;
     Requirement requirement = new Requirement("全部分类","全部主题");
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
@@ -88,10 +90,11 @@ public class Fragment_service extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         manager_btn = (Button)view.findViewById(R.id.manager);
-        tempbtn = (Button)view.findViewById(R.id.temp);
+        //tempbtn = (Button)view.findViewById(R.id.temp);
         noData = (TextView)view.findViewById(R.id.noData);
         lv_exercise = ((LoadMoreListView)view.findViewById(R.id.listview));
         lv_exercise.addHeaderView(View.inflate(getActivity(),R.layout.blankspace,null));
+        plus_rl=(RelativeLayout)getActivity().findViewById(R.id.plus_rl);
         spinner1 = (Spinner)view.findViewById(R.id.spinner1);
         spinner2 = (Spinner)view.findViewById(R.id.spinner2);
 
@@ -223,13 +226,13 @@ public class Fragment_service extends Fragment {
             }
         });
 
-        tempbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PublishExe.class);
-                startActivity(intent);
-            }
-        });
+//        tempbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), PublishExe.class);
+//                startActivity(intent);
+//            }
+//        });
         lv_exercise.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -319,10 +322,12 @@ public class Fragment_service extends Fragment {
         mHeaderAnimator = ObjectAnimator.ofFloat(mHead_bar, "translationY", -mHead_bar.getHeight());
         mBottomAnimator = ObjectAnimator.ofFloat(mBottom_bar, "translationY", mBottom_bar.getHeight());
         spinnerconAnimator = ObjectAnimator.ofFloat(spinnercon, "translationY", -spinnercon.getHeight());
+        plusAnimator= ObjectAnimator.ofFloat(plus_rl, "translationY", Constant.displayHeight);
         //ballAnimator = ObjectAnimator.ofFloat(ball, "translationY",200);
         mHeaderAnimator.setDuration(500).start();
         mBottomAnimator.setDuration(400).start();
         spinnerconAnimator.setDuration(500).start();
+        plusAnimator.setDuration(300).start();
         //ballAnimator.setDuration(300).start();
         mHeaderAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -343,9 +348,11 @@ public class Fragment_service extends Fragment {
         mBottomAnimator = ObjectAnimator.ofFloat(mBottom_bar,"translationY", 0);
         spinnerconAnimator = ObjectAnimator.ofFloat(spinnercon,"translationY", 0);
         //ballAnimator = ObjectAnimator.ofFloat(spinnercon,"translationY", 0);
+        plusAnimator = ObjectAnimator.ofFloat(plus_rl, "translationY", 0);
         mHeaderAnimator.setDuration(300).start();
         mBottomAnimator.setDuration(400).start();
         spinnerconAnimator.setDuration(300).start();
+        plusAnimator.setDuration(500).start();
         //ballAnimator.setDuration(300).start();
     }
 

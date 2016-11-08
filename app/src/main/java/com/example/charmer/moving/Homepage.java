@@ -2,6 +2,7 @@ package com.example.charmer.moving;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -23,6 +24,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.PersonalInfo;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.example.charmer.moving.utils.StatusBarCompat;
 import com.example.charmer.moving.utils.ViewPagerAdapter;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -54,6 +56,7 @@ public class Homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
         Intent intent = this.getIntent();
         useraccount = intent.getStringExtra("user");
 
