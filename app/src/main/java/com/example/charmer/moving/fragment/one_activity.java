@@ -288,7 +288,7 @@ public class one_activity extends AppCompatActivity {
                 holder.childDiscussantName.setText(remark.childDiscussantName + " (回复 " + remark.fatherDiscussantName + " )");
             }
             holder.commentTime.setText(remark.commentTime + "");
-            xUtilsImageUtils.display(holder.childDiscussantImg, HttpUtils.host_dynamic + remark.getChildDiscussantImg());
+            xUtilsImageUtils.display(holder.childDiscussantImg, HttpUtils.host_dynamic +"upload/"+ remark.getChildDiscussantImg());
             holder.childComment.setText(remark.childComment);
             if (MainActivity.getUser().getUserid().equals(remark.getChildDiscussant())) {
                 holder.delete.setText("删除");

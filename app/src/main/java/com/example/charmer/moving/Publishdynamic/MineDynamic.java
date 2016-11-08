@@ -229,7 +229,7 @@ public class MineDynamic extends AppCompatActivity implements PullToZoomListView
         @Override
         public void convert(ViewHolder viewHolder, Info info, int position) {
             ImageView userimg = viewHolder.getViewById(R.id.iv_photoImg);
-            xUtilsImageUtils.display(userimg, HttpUtils.host_dynamic + info.getUser().getUserimg(), true);
+            xUtilsImageUtils.display(userimg, HttpUtils.host_dynamic + "upload/"+info.getUser().getUserimg(), true);
             TextView infoContent = viewHolder.getViewById(R.id.tv_infoContent);
             infoContent.setText(info.getInfoContent());
             TextView infoDate = viewHolder.getViewById(R.id.tv_infoDate);
