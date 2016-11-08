@@ -193,47 +193,50 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         return sdf.format(date) + "_" + UUID.randomUUID() + ".jpg";
     }
 
-    private void fabuhuondong(String userId, String str) {
-
-        RequestParams params = new RequestParams(HttpUtils.hoster + "addzixun");
-        params.addQueryStringParameter("userId", userId);
-        params.addQueryStringParameter("title", publish_title.getText().toString());
-        params.addQueryStringParameter("picture", str);
-        params.addQueryStringParameter("content", publish_content.getText().toString());
-        x.http().get(params, new Callback.CommonCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-
-                if ("true".equals(result)) {
-                    Toast.makeText(Publish_articles.this, "发布成功", Toast.LENGTH_SHORT).show();
-                    finish();
-                } else {
-                    Toast.makeText(Publish_articles.this, "发布失败", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-        });
-
-    }
+//    private void fabuhuondong(String userId, String str) {
+//
+//        RequestParams params = new RequestParams(HttpUtils.hoster + "addzixun");
+//            params.addQueryStringParameter("userId", userId);
+//            params.addQueryStringParameter("title", publish_title.getText().toString());
+////            params.addQueryStringParameter("picture", str);
+//            params.addQueryStringParameter("content", publish_content.getText().toString());
+//            x.http().get(params, new Callback.CommonCallback<String>() {
+//            @Override
+//            public void onSuccess(String result) {
+//
+//                if ("true".equals(result)) {
+//                    Toast.makeText(Publish_articles.this, "发布成功", Toast.LENGTH_SHORT).show();
+//                    finish();
+//                } else {
+//                    Toast.makeText(Publish_articles.this, "发布失败", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Throwable ex, boolean isOnCallback) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(CancelledException cex) {
+//
+//            }
+//
+//            @Override
+//            public void onFinished() {
+//
+//            }
+//        });
+//
+//    }
 
     private void sendImg() {
         RequestParams params = new RequestParams(HttpUtils.hoster + "upload");//upload 是你要访问的servlet
 
+        params.addQueryStringParameter("userId", MainActivity.getUser().getUseraccount());
+        params.addQueryStringParameter("title", publish_title.getText().toString());
 
+        params.addQueryStringParameter("content", publish_content.getText().toString());
         for (int i = 0; i < file.size(); i++) {
             Log.i("文件", "" + file.get(i));
             params.addBodyParameter("file", file.get(i));
@@ -245,8 +248,12 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                fabuhuondong(MainActivity.getUser().getUseraccount(), result);
-                System.out.println("---------------====" + result);
+                if ("true".equals(result)) {
+                    Toast.makeText(Publish_articles.this, "发布成功", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(Publish_articles.this, "发布失败", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override

@@ -338,6 +338,13 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 }
 
         });
+        saoyisao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cameraTask();
+
+            }
+        });
         finishthis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

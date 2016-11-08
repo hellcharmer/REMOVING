@@ -535,24 +535,24 @@ public class Fragment_home extends Fragment {
 
                         break;
                     case 1003:
-                        lv_zixun_swimming.setAdapter(adapter4);
-                        getZixunlist_run(page_swim,MainActivity.getUser().getUseraccount());
+                        lv_zixun_running.setAdapter(adapter4);
+                        getZixunlist_run(page_run,MainActivity.getUser().getUseraccount());
                         break;
                     case 1004:
-                        lv_zixun_swimming.setAdapter(adapter5);
-                        getZixunlist_football(page_swim,MainActivity.getUser().getUseraccount());
+                        lv_zixun_football.setAdapter(adapter5);
+                        getZixunlist_football(page_football,MainActivity.getUser().getUseraccount());
                         break;
                     case 1005:
-                        lv_zixun_swimming.setAdapter(adapter6);
-                        getZixunlist_pingpang(page_swim,MainActivity.getUser().getUseraccount());
+                        lv_zixun_pingpang.setAdapter(adapter6);
+                        getZixunlist_pingpang(page_pingpang,MainActivity.getUser().getUseraccount());
                         break;
                     case 1006:
-                        lv_zixun_swimming.setAdapter(adapter7);
-                        getZixunlist_wangqiu(page_swim,MainActivity.getUser().getUseraccount());
+                        lv_zixun_wangqiu.setAdapter(adapter7);
+                        getZixunlist_wangqiu(page_wangqiu,MainActivity.getUser().getUseraccount());
                         break;
                     case 1007:
-                        lv_zixun_swimming.setAdapter(adapter8);
-                        getZixunlist_qita(page_swim,MainActivity.getUser().getUseraccount());
+                        lv_zixun_qita.setAdapter(adapter8);
+                        getZixunlist_qita(page_qita,MainActivity.getUser().getUseraccount());
                         break;
                     default:
                         break;
@@ -1152,7 +1152,7 @@ public class Fragment_home extends Fragment {
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-
+                System.out.println("-----------"+result);
                 Gson gson = new Gson();
                 ListActivityBean bean=gson.fromJson(result, ListActivityBean.class);
                 totalpage_run=bean.page;

@@ -324,16 +324,17 @@ public class Personal_information extends AppCompatActivity implements View.OnCl
         params.addBodyParameter("fileName", "fileName");
         params.addBodyParameter("file", file);
         params.addQueryStringParameter("choice","1");
+        params.addQueryStringParameter("user",useraccount);
 //        params.addBodyParameter("file",file1);
 
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
                 editor.putString("userimg",result.split(",")[0]);
                 editor.commit();
                 updateuserinfo("userimg",result.split(",")[0]);
+                Toast.makeText(Personal_information.this, "修改成功", Toast.LENGTH_SHORT).show();
             }
 
             @Override

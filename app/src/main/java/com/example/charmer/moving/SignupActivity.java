@@ -160,10 +160,10 @@ public class SignupActivity extends AppCompatActivity {
     public void signup() {
         Log.d(TAG, "Signup");
 
-//        if (!validate()) {
-//            onSignupFailed();
-//            return;
-//        }
+        if (!validate()) {
+            onSignupFailed();
+            return;
+        }
 
         _signupButton.setEnabled(false);
 
@@ -358,6 +358,7 @@ public class SignupActivity extends AppCompatActivity {
                 if("0".equals(result)) {
                     Toast.makeText(SignupActivity.this,"此号码已被使用",Toast.LENGTH_SHORT).show();
                     _signupButton.setEnabled(true);
+                    progressDialog.dismiss();
                 }else if("1".equals(result)){
                     onSignupFailed();
                 }else{
