@@ -201,7 +201,7 @@ public class Fragment_service extends Fragment {
                     viewHolder.place.setText(URLDecoder.decode(exercises.place,"utf-8"));
                     viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
                     viewHolder.currentNumber.setText(URLDecoder.decode(exercises.currentNumber.toString(),"utf-8"));
-                    xUtilsImageUtils.display(viewHolder.userImage,"http://10.40.5.13:8080/moving/upload/"+exercises.userImage);
+                    xUtilsImageUtils.display(viewHolder.userImage,HttpUtils.hoster+"upload/"+exercises.userImage);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }

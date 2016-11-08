@@ -42,14 +42,20 @@
         android:text="时间"
         android:layout_toRightOf="@id/iv_comment_photo"
         android:layout_below="@id/tv_comment_content"/>
-    <TextView
+    <RelativeLayout
         android:id="@+id/tv_comment_watchmore"
+        android:layout_width="80dp"
+        android:layout_height="26dp"
+        android:layout_below="@id/tv_comment_content"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:layout_marginRight="20dp">
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="查看对话"
-        android:visibility="gone"
-        android:layout_below="@id/tv_comment_content"
+       android:layout_centerInParent="true"
         android:textColor="@color/border_clo"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"/>
+    />
+    </RelativeLayout>
 </RelativeLayout>

@@ -97,6 +97,7 @@
                     android:layout_height="120dp"
                     android:src="@mipmap/app_icon"
                     android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
                     />
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -266,21 +267,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/nobordeframe"
-            android:layout_marginTop="15dp"
             android:layout_below="@id/joiner"
+            android:layout_marginTop="15dp"
             android:layout_margin="10dp">
 
-            <com.example.charmer.moving.MyView.MyListView
+            <ListView
                 android:id="@+id/lvenrollers"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:touchscreenBlocksFocus="true"
                 >
 
+            </ListView>
+
+<!--
+
+            <com.example.charmer.moving.MyView.MyListView
+                android:id="@+id/lvenrollers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f00"
+                android:touchscreenBlocksFocus="true"
+                >
+
             </com.example.charmer.moving.MyView.MyListView>
+-->
 
 
-            </RelativeLayout>
+        </RelativeLayout>
 
         </RelativeLayout>
     </ScrollView>

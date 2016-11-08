@@ -29,6 +29,7 @@ public class VariableExercise {
         public String activityTime;
         public String exerciseIntroduce;
         public String releaseTime;
+        public boolean isScan;
         @Override
         public String toString() {
             return "Exercises{" +
@@ -55,6 +56,10 @@ public class VariableExercise {
         public String successfulpublishpercent;
         public Integer joinedNum;
         public String appointmentRate;
+        public String QRcode;
+        public String personalsay;
+        public Integer articles;
+        public Integer collections;
     }
 
     @Override

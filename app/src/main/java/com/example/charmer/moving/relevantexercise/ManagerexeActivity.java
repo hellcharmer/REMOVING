@@ -29,6 +29,7 @@ import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.foamtrace.photopicker.Image;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -62,6 +63,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private SwipeRefreshLayout mSr_refresh2;
     private SwipeRefreshLayout mSr_refresh3;
     private RelativeLayout finishthis;
+    private ImageView isscan;
     ArrayList<View> viewContainter = new ArrayList<View>();
     List<String> titleContainer = new ArrayList<String>();
     public String TAG = "tag";
@@ -511,7 +513,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                     }
                                 });
                         builder.setNegativeButton(
-                                getString(R.string.cancel),
+                                getString(R.string.app_cancel),
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(
@@ -565,6 +567,8 @@ public class ManagerexeActivity extends AppCompatActivity {
             viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
             viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
             cancelJoin = (Button) convertView.findViewById(R.id.cancelJoin);
+            isscan = (ImageView) convertView.findViewById(R.id.isscan);
+
             convertView.setTag(viewHolder);//缓存对象
         }else{
             viewHolder = (ViewHolder)convertView.getTag();
@@ -577,6 +581,10 @@ public class ManagerexeActivity extends AppCompatActivity {
             viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
             viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
             viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
+
+            if(!exercises.isScan){
+                isscan.setVisibility(View.GONE);
+            }
 
             cancelJoin.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -599,7 +607,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                 }
                             });
                     builder.setNegativeButton(
-                            getString(R.string.cancel),
+                            getString(R.string.app_cancel),
                             new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(
@@ -688,7 +696,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                     }
                                 });
                         builder.setNegativeButton(
-                                getString(R.string.cancel),
+                                getString(R.string.app_cancel),
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(

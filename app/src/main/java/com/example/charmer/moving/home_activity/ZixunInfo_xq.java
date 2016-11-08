@@ -13,8 +13,6 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,8 +27,8 @@ import com.example.charmer.moving.contantData.Constant;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
+import com.example.charmer.moving.view.NineGridTestLayout;
 import com.google.gson.Gson;
-
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -65,7 +63,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     private List<ListActivityBean.Zixun> zixunById = new ArrayList<ListActivityBean.Zixun>();
     private String[] imgs=new String[9];
     private List<String> imgs_list=new ArrayList<String>();
-    private MyAdapter gridview_adapter;
+
     private static final int REQUEST_PREVIEW_CODE = 22;
     private ObservableScrollView sl_home_picture;
     private ObjectAnimator home_xiangxi_bottomAnimator;
@@ -100,6 +98,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
             }
         }
     };
+    private NineGridTestLayout layout_nine_grid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +121,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         iv_home_return = (RelativeLayout) findViewById(R.id.iv_home_return);
         iv_home_hide_return=(RelativeLayout) findViewById(R.id.iv_home_hide_return);
         xiangxi_author_touxiang = (ImageView) findViewById(R.id.xiangxi_author_touxiang);
-
+        layout_nine_grid = ((NineGridTestLayout) findViewById(R.id.layout_nine_grid));
         xiangxi_author = (TextView) findViewById(R.id.xiangxi_author);
 
         home_xiangxi_header = (RelativeLayout) findViewById(R.id.home_xiangxi_header);
@@ -131,7 +130,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
         home_xiangxi_content = (TextView) findViewById(R.id.home_xiangxi_content);
         xiangxi_hide_title = (TextView) findViewById(R.id.xiangxi_hide_title);
-        home_xiangxi_picture = (GridView_picture) findViewById(R.id.home_xiangxi_picture);
+       // home_xiangxi_picture = (GridView_picture) findViewById(R.id.home_xiangxi_picture);
 
 
 
@@ -346,20 +345,29 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-                if (imgs[0].equals("")) {
-                    home_xiangxi_picture.setVisibility(View.GONE);
+//
+                List<String> urlsList = new ArrayList<String>();
+                //取出gridview
 
-                }else {
-                    for(int i=0;i<imgs.length;i++){
-                        imgs_list.add("/storage/emulated/0/Pictures/"+imgs[i]);
+                if ( zixunById.get(0).photoImg!= null && !"".equals(zixunById.get(0).photoImg)) {
+
+
+
+                    if(imgs.length>0) {
+                        for (int i = 0; i < imgs.length; i++) {
+
+                            urlsList.add(HttpUtils.hoster+"zixunpictures/"+imgs[i]);
+                        }
+                        layout_nine_grid.setUrlList(urlsList);
+                        layout_nine_grid.setIsShowAll(zixunById.get(0).isShowAll);
                     }
-                    //为GridView设置适配器
-
-                    gridview_adapter = new MyAdapter(ZixunInfo_xq.this, imgs);
-                    home_xiangxi_picture.setAdapter(gridview_adapter);
+                } else if("".equals(zixunById.get(0).photoImg ) && zixunById.get(0).photoImg  == null){
+                    layout_nine_grid.notifyDataSetChanged();
 
                 }
-            }
+
+                }
+
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
@@ -473,45 +481,45 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
     }
     //自定义适配器
-    private class MyAdapter extends BaseAdapter {
-        //上下文对象
-        private Context context;
-        private String[] imgs;
-        //图片数组
-
-        MyAdapter(Context context, String[] imgs) {
-            this.context = context;
-            this.imgs = imgs;
-        }
-
-        public int getCount() {
-            return imgs.length;
-        }
-
-        public Object getItem(int item) {
-            return item;
-        }
-
-        public long getItemId(int id) {
-            return id;
-        }
-
-        //创建View方法
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder viewHolder;
-            if (convertView == null) {
-                viewHolder = new ViewHolder();
-                convertView = View.inflate(ZixunInfo_xq.this, R.layout.home_xiangxi_picture_item, null);
-                viewHolder.image = (ImageView) convertView.findViewById(R.id.image);
-                convertView.setTag(viewHolder);
-            } else {
-                viewHolder = (ViewHolder) convertView.getTag();
-            }
-            //  System.out.println("=============="+imgs[0]);
-            xUtilsImageUtils.display(viewHolder.image, HttpUtils.hoster +"upload/"+ imgs[position]);
-            return convertView;
-        }
-    }
+//    private class MyAdapter extends BaseAdapter {
+//        //上下文对象
+//        private Context context;
+//        private String[] imgs;
+//        //图片数组
+//
+//        MyAdapter(Context context, String[] imgs) {
+//            this.context = context;
+//            this.imgs = imgs;
+//        }
+//
+//        public int getCount() {
+//            return imgs.length;
+//        }
+//
+//        public Object getItem(int item) {
+//            return item;
+//        }
+//
+//        public long getItemId(int id) {
+//            return id;
+//        }
+//
+//        //创建View方法
+//        public View getView(int position, View convertView, ViewGroup parent) {
+//            ViewHolder viewHolder;
+//            if (convertView == null) {
+//                viewHolder = new ViewHolder();
+//                convertView = View.inflate(ZixunInfo_xq.this, R.layout.home_xiangxi_picture_item, null);
+//                viewHolder.image = (ImageView) convertView.findViewById(R.id.image);
+//                convertView.setTag(viewHolder);
+//            } else {
+//                viewHolder = (ViewHolder) convertView.getTag();
+//            }
+//            //  System.out.println("=============="+imgs[0]);
+//            xUtilsImageUtils.display(viewHolder.image, HttpUtils.hoster +"upload/"+ imgs[position]);
+//            return convertView;
+//        }
+//    }
 
     class ViewHolder {
         public ImageView image;

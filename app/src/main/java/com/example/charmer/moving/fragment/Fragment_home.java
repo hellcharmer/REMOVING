@@ -1501,7 +1501,7 @@ public class Fragment_home extends Fragment {
                     viewHolder.iv_picture.setVisibility(View.GONE);
                 }else {
                     viewHolder.iv_picture.setVisibility(View.VISIBLE);
-                    xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
+                    xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster +"zixunpictures/"+ URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
                 }
 
                 // Log.i("====",position+"=="+zixunlist.get(0).likes);

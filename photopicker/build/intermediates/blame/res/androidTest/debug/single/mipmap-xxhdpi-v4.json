@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\btn_unselected.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\btn_unselected.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\ic_action_discard.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\ic_action_discard.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\btn_selected.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\btn_selected.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\default_check.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\default_check.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\asv.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\asv.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\asy.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\asy.png"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxhdpi-v4\\default_error.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxhdpi-v4\\default_error.png"
+    }
+]

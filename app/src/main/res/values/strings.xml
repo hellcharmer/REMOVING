@@ -104,6 +104,7 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <string name="delete">删除</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="delete">删除</string>

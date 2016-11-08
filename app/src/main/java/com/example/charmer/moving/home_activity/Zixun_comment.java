@@ -410,7 +410,6 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                 System.out.println(bean.commentList);
                 totalpage_comment = bean.page;
 
-                System.out.println("------------"+bean.page);
                 if (page_comment == 1) {
 
 
@@ -482,7 +481,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
                 viewHolder.tv_comment_name = ((TextView) convertView.findViewById(R.id.tv_comment_name));
                 viewHolder.tv_comment_content = ((TextView) convertView.findViewById(R.id.tv_comment_content));
                 viewHolder.tv_comment_time = ((TextView) convertView.findViewById(R.id.tv_comment_time));
-                viewHolder.tv_comment_watchmore = ((TextView) convertView.findViewById(R.id.tv_comment_watchmore));
+                viewHolder.tv_comment_watchmore = ((RelativeLayout) convertView.findViewById(R.id.tv_comment_watchmore));
                 //字体加粗
                 TextPaint tp = viewHolder.tv_comment_name.getPaint();
                 tp.setFakeBoldText(true);
@@ -538,7 +537,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
         TextView tv_comment_name;
         TextView tv_comment_content;
         TextView tv_comment_time;
-        TextView tv_comment_watchmore;
+       RelativeLayout tv_comment_watchmore;
 
     }
     @Override
