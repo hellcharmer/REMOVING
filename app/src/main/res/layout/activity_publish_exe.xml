@@ -31,13 +31,19 @@
             android:textColor="#fff"
             android:layout_centerInParent="true"
             />
-        <Button
+
+        <RelativeLayout
             android:id="@+id/commitbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="提交"
-            />
+            android:layout_width="48dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pubexe"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -250,18 +256,34 @@
             android:layout_below="@id/exepb_num"
             />
 
-        <EditText
+        <RelativeLayout
+            android:id="@+id/gaode"
             android:layout_below="@id/exestplace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gaodeimg"
+            android:src="@drawable/gaode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            />
+        <EditText
+            android:layout_toLeftOf="@id/gaodeimg"
             android:id="@+id/exepb_place"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:gravity="center"
             android:background="@drawable/tvborde"
-            android:singleLine="true"
             android:imeOptions="actionDone"
-            android:maxLength="20"
+
             />
+
+        </RelativeLayout>
         <TextView
             android:id="@+id/exeintro"
             android:layout_width="wrap_content"
@@ -270,7 +292,7 @@
             android:textSize="18sp"
             android:gravity="center"
             android:layout_marginRight="15dp"
-            android:layout_below="@id/exepb_place"
+            android:layout_below="@id/gaode"
             />
 
         <EditText

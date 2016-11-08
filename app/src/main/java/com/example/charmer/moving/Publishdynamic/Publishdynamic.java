@@ -38,11 +38,8 @@ import org.xutils.x;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 public class Publishdynamic extends AppCompatActivity {
     private static final int REQUEST_CAMERA_CODE = 10;  //相机
@@ -55,7 +52,7 @@ public class Publishdynamic extends AppCompatActivity {
     private EditText et_infoContent;
     private List<File> imageFileLists=new ArrayList<File>();  //存放图片集合文件
     private ImageView iv_cancel;
-
+    private String infoList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,15 +73,16 @@ public class Publishdynamic extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String imgs = (String) parent.getItemAtPosition(position);
                 if ("000000".equals(imgs) ){
-                    PhotoPickerIntent intent = new PhotoPickerIntent(getApplicationContext());
+                    PhotoPickerIntent intent = new PhotoPickerIntent(Publishdynamic.this);
                     intent.setSelectModel(SelectModel.MULTI);
                     intent.setShowCarema(true); // 是否显示拍照
-                    intent.setMaxTotal(9); // 最多选择照片数量，默认为9
+                    intent.setMaxTotal(15); // 最多选择照片数量，默认为9
                     intent.setSelectedPaths(imagePaths); // 已选中的照片地址， 用于回显选中状态
                     startActivityForResult(intent, REQUEST_CAMERA_CODE); //相机拍照
                 }else{
-                    PhotoPreviewIntent intent = new PhotoPreviewIntent(getApplicationContext());
+                    PhotoPreviewIntent intent = new PhotoPreviewIntent(Publishdynamic.this);
                     intent.setCurrentItem(position);
+                    intent.setPhotoPaths(imagePaths);
                     startActivityForResult(intent, REQUEST_PREVIEW_CODE);  //选择图库
                 }
             }
@@ -102,6 +100,7 @@ public class Publishdynamic extends AppCompatActivity {
                     public void run() {
                         super.run();
                         insertinfo();
+
                     }
                 }.start();
             }
@@ -178,7 +177,7 @@ public class Publishdynamic extends AppCompatActivity {
         private LayoutInflater inflater;
         public GridAdapter(ArrayList<String> listUrls) {
             this.listUrls = listUrls;
-            if(listUrls.size() == 10){
+            if(listUrls.size() == 16){
                 listUrls.remove(listUrls.size()-1);
             }
             inflater = LayoutInflater.from(getApplicationContext());
@@ -228,16 +227,6 @@ public class Publishdynamic extends AppCompatActivity {
         }
     }
 
-    // 使用系统当前日期加以调整作为照片的名称
-    private String getPhotoFileName() {
-        Date date = new Date(System.currentTimeMillis());
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        System.out.println("============" + UUID.randomUUID());
-        Log.e("UUID:",UUID.randomUUID()+"");
-        return sdf.format(date) + "_" + UUID.randomUUID() + ".jpg";
-    }
-
-
     private void insertinfo(){
 
         String infoContent =et_infoContent.getText().toString().trim();
@@ -245,10 +234,10 @@ public class Publishdynamic extends AppCompatActivity {
         User user = new User(MainActivity.getUser().getUserid());
         Info info = new Info(infoContent,user);
         Gson gson = new Gson();
-        String infoList = gson.toJson(info);
+        infoList = gson.toJson(info);
         Log.i("publish","infoList"+infoList);
         RequestParams requestparams = new RequestParams(HttpUtils.host_dynamic+"insertinfoservlet");
-
+        requestparams.addBodyParameter("test","kkjk");
 
         for (int i=0;i<imageFileLists.size();i++){
             requestparams.addBodyParameter("file"+i,imageFileLists.get(i));
@@ -265,7 +254,7 @@ public class Publishdynamic extends AppCompatActivity {
             public void onSuccess(String result) {
 
                 Toast.makeText(getApplicationContext(),"发布动态成功",Toast.LENGTH_LONG).show();
-
+                finish();
             }
 
             @Override
@@ -302,7 +291,9 @@ public class Publishdynamic extends AppCompatActivity {
         dialog.setNegativeButton("是", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                android.os.Process.killProcess(android.os.Process.myPid());
+                imageFileLists.clear();
+                infoList=null;
+               finish();
 
             }
         });
