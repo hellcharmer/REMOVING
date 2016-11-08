@@ -600,7 +600,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                         DialogInterface dialogInterface,
                                         int which) {
                                     // TODO Auto-generated method
-                                    cancelRequest(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
+                                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
                                 }
                             });
                     builder.setNegativeButton(
@@ -764,7 +764,11 @@ public class ManagerexeActivity extends AppCompatActivity {
         });
     }
 
+<<<<<<< HEAD
+    public void cancelJoin(int position,String exerciseId,String joiner,Context contexts){
+=======
     public void cancelRequest(int position,String exerciseId,String joiner,Context contexts){
+>>>>>>> 62ba73e678e38c1fdffcce195464cbf9088fb329
         final Context context = contexts;
         final int position1 =position;
         String str = HttpUtils.hoster+"cancelany";

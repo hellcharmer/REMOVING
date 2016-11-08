@@ -1,6 +1,7 @@
 package com.example.charmer.moving.utils;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,7 +12,7 @@ import java.util.List;
  * Created by dliu on 2016/9/30.
  */
 public abstract class CommonAdapter<T> extends BaseAdapter {
-
+    private LayoutInflater mInflater;
     Context context;
     List<T> lists;
     int layoutId;
@@ -21,9 +22,9 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         this.lists=lists;
         this.layoutId=layoutId;
 
+        mInflater = LayoutInflater.from(context);
+
     }
-
-
 
 
     @Override
@@ -44,8 +45,8 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     //找到控件，赋值
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
-        ViewHolder viewHolder=ViewHolder.get(context,layoutId,convertView,parent);
+        ViewHolder viewHolder=null;
+        viewHolder=ViewHolder.get(context,layoutId,convertView,parent);
         convert(viewHolder,lists.get(position),position);
         return viewHolder.getConvertView();
     }

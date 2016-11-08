@@ -35,7 +35,8 @@ public class RongImChat {
     }
     public void startChat (String account){
 
-        RequestParams requestParams =new RequestParams(HttpUtils.host4+"getuserbyacc");
+        RequestParams requestParams =new RequestParams(HttpUtils.host4+"getuser");
+        requestParams.addQueryStringParameter("choice",1+"");
         requestParams.addQueryStringParameter("account",account);
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
             @Override

@@ -2,6 +2,7 @@ package com.example.charmer.moving.MyApplicition;
 
 import android.app.Application;
 import android.content.Context;
+
 import android.util.Log;
 
 import com.amap.api.location.AMapLocation;
@@ -58,6 +59,7 @@ public class MyApplication extends Application{
         RongIM.init(this);
         ZXingLibrary.initDisplayOpinion(this);
 
+    }
 
 
         //初始化AMapLocationClientOption对象

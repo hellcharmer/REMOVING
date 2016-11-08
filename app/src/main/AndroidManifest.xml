@@ -4,7 +4,10 @@
 
 
 
-    <!--允许程序打开网络套接字-->
+
+
+    <!--  </>值来自开发者平台取得的AppKey-->
+
     <uses-permission android:name="android.permission.INTERNET" />
     <!--允许程序设置内置sd卡的写权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,10 +25,17 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
 
 
     <application
@@ -88,6 +98,12 @@
         <activity android:name=".friendchat.SearchTalk" />
         <activity android:name=".home_activity.SearchActivity" />
         <activity android:name=".home_activity.Zixun_comment" />
+        <activity android:name=".friendchat.UserInfo" />
+        <activity android:name=".friendchat.Createqun" />
+        <activity android:name=".friendchat.Creatqun2" />
+        <activity android:name=".friendchat.PostAcyivity"></activity>
+
+
         <activity android:name=".home_activity.Zixun_comment_more" />
         <activity android:name=".Publishdynamic.ImagePagerActivity" />
         <activity
@@ -136,6 +152,5 @@
 
     </activity>
 
-    </application>
 
 </manifest>

@@ -23,29 +23,32 @@
         android:layout_alignLeft="@id/progressbar"
         android:layout_below="@id/progressbar"
         />
-
       <com.example.charmer.moving.utils.NoScrollViewPager
           android:layout_width="match_parent"
-          android:layout_height="fill_parent"
+          android:layout_height="match_parent"
           android:id="@+id/vp_friend"
           android:layout_below="@+id/rl_toptitle" />
-
-
-
    <RelativeLayout
        android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
+       android:layout_height="40dp"
        android:id="@+id/rl_toptitle"
        >
     <com.example.charmer.moving.utils.Friend_titlebar
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:id="@+id/fd_talk"
         app:left="@drawable/tou"
         app:rihgt="@drawable/goodfriend"
         app:toutext="会话"
         />
-
+       <ImageView
+           android:id="@+id/hongyuan"
+           android:layout_width="20dp"
+           android:layout_height="20dp"
+           android:layout_marginLeft="40dp"
+           android:src="@drawable/hongyuan"
+           android:visibility="gone"
+           />
       <com.example.charmer.moving.utils.Friend_titlebar
           android:layout_width="match_parent"
           android:layout_height="50dp"
@@ -76,10 +79,10 @@
    </RelativeLayout>
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/ll_sreach"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="40dp">
        <EditText
            android:layout_width="match_parent"
            android:layout_height="match_parent"
@@ -89,6 +92,9 @@
            android:textColor="#fff"
            android:textColorHint="#fff"
            android:id="@+id/edsearch"
+
+           android:focusable="false"
+           android:clickable="true"
            />
     </LinearLayout>
 

@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+    android:layout_height="70dp"
+    >
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="3"
-        android:textSize="100dp"
-        />
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/qunimg"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_toRightOf="@id/qunimg"
+            android:id="@+id/qun_name"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            />
+        <View
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:background="#38ADF8"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            ></View>
+    </RelativeLayout>
+
+
 </RelativeLayout>

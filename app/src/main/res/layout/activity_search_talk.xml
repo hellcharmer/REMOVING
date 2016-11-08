@@ -9,38 +9,61 @@
         android:id="@+id/rl_search"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="#fff"
         android:focusable="true"
         android:focusableInTouchMode="true"
         >
-
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/rl_search1"
+        >
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
             android:background="@drawable/searchshape"
             android:hint="搜索"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="#fff"
             android:textColorHint="#fff"
             android:id="@+id/edsearchsr"
+            android:focusable="false"
+            android:clickable="true"
             />
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-           android:layout_marginLeft="5dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/search"
-            android:layout_marginTop="10dp"
             />
-         <ImageView
-             android:id="@+id/iv_cancel1"
-             android:layout_width="30dp"
-             android:layout_height="30dp"
-             android:layout_alignParentRight="true"
-             android:layout_marginTop="10dp"
-             android:layout_marginRight="10dp"
-             android:src="@drawable/searchcancel"
+        <ImageView
+            android:id="@+id/iv_cancel1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/searchcancel"
             android:visibility="gone"
-             />
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            />
     </RelativeLayout>
+     <TextView
+         android:id="@+id/finish"
+         android:layout_marginLeft="2dp"
+         android:layout_centerVertical="true"
+         android:layout_width="40dp"
+         android:layout_height="40dp"
+         android:layout_toRightOf="@id/rl_search1"
+         android:text="取消"
+         android:textSize="18dp"
+         android:gravity="center"
+         android:layout_alignParentRight="true"
+         />
+    </RelativeLayout>
+
     <FrameLayout
         android:id="@+id/frsearch"
         android:layout_width="match_parent"
@@ -49,5 +72,108 @@
         android:background="#d0d0d0"
         >
     </FrameLayout>
+    <RelativeLayout
+        android:id="@+id/llsearchp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/rl_search"
+        android:background="#fff"
+        android:visibility="visible"
+        >
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moving"
+            android:textColor="#515151"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="7dp"
+            />
+        <View
+            android:id="@+id/fen"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+             android:background="#ccc"
+            android:layout_below="@id/tv1"
+            android:layout_alignLeft="@id/tv1"
+            />
+        <ImageView
+            android:layout_alignLeft="@id/tv1"
+            android:id="@+id/iv1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/fen"
+            android:src="@drawable/searchgreen"
+            />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/iv1"
+            android:id="@+id/searchre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索人:"
+            android:textSize="30dp"
+            android:textColor="#000"
+            android:layout_below="@id/fen"
+            />
+        <TextView
+            android:id="@+id/tvpeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/searchre"
+            android:layout_alignBottom="@id/searchre"
+            android:text=""
+            android:textSize="25dp"
+            android:textColor="#1296db"
+            />
+        <View
+        android:id="@+id/fen1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        android:layout_below="@id/tvpeople"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlsearch2"
+        android:layout_below="@id/llsearchp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:visibility="visible"
+        >
+        <ImageView
+            android:layout_marginLeft="7dp"
+            android:id="@+id/iv2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/searchgreen"
+            />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/iv2"
+            android:id="@+id/searchre2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索群:"
+            android:textSize="30dp"
+            android:textColor="#000"
+
+            />
+        <TextView
+            android:id="@+id/tvqun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/searchre2"
+            android:layout_alignBottom="@id/searchre2"
+            android:text=""
+            android:textSize="25dp"
+            android:textColor="#1296db"
+            />
+
+    </RelativeLayout>
 
 </RelativeLayout>

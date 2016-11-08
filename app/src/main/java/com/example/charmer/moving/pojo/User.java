@@ -139,7 +139,7 @@ public class User implements Parcelable {
         this.userimg = userimg;
     }
 
-    public boolean isUsersex() {
+    public boolean getUsersex() {
         return usersex;
     }
 

@@ -34,8 +34,6 @@
         android:layout_height="wrap_content"
         android:textSize="14dp"
         android:textColor="#000000"
-        android:text="内容"
-        android:layout_marginLeft="6dp"
-        />
+        android:text="  内容"/>
 
 </RelativeLayout>

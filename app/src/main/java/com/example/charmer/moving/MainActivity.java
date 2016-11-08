@@ -519,7 +519,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 j= getUser().getUserid();
-                RequestParams requestParams2=new RequestParams(HttpUtils.host4+"getalluserstoken");
+                RequestParams requestParams2=new RequestParams(HttpUtils.host4+"tokenservlet");
                 x.http().get(requestParams2, new Callback.CommonCallback<String>() {
                     @Override
                     public void onSuccess(String result) {

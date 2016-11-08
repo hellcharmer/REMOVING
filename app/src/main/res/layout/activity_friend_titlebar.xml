@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="40dp"
     android:background="#49a6f5">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></RelativeLayout>
     <ImageView
         android:id="@+id/left"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="2dp"
         android:layout_marginLeft="15dp"
         android:src="@drawable/tou"
@@ -16,17 +19,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="会话"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:layout_centerInParent="true"
         android:textColor="#fff"
         />
     <ImageView
         android:id="@+id/right"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/goodfriend"
-        android:layout_toRightOf="@id/toutext"
-        android:layout_marginLeft="110dp"
+        android:layout_alignParentRight="true"
 
         />
 

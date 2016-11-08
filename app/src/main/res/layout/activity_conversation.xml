@@ -4,18 +4,85 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
  <RelativeLayout
+     android:id="@+id/haoyou"
      android:layout_width="match_parent"
      android:layout_height="50dp"
+     android:visibility="gone"
      >
+     <ImageView
+         android:id="@+id/iv_userimg"
+         android:layout_width="48dp"
+         android:layout_height="48dp"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="10dp"
+         />
      <TextView
          android:id="@+id/username"
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:text="用户明字"
+         android:text=""
          android:textColor="#000"
          android:gravity="center"
+         android:textSize="30dp"
          />
+
  </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/qun"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:id="@+id/qunuserimg"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/tv_qunname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="#000"
+            android:gravity="center"
+            android:textSize="30dp"
+            />
+        <ImageView
+            android:id="@+id/tuiqun"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/tuiqun"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tlz"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:id="@+id/tlzimg"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/tzl1"
+            />
+        <TextView
+            android:id="@+id/tlzname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="#000"
+            android:gravity="center"
+            android:textSize="30dp"
+            />
+    </RelativeLayout>
     <fragment
         android:id="@+id/conversation"
         android:name="io.rong.imkit.fragment.ConversationFragment"
