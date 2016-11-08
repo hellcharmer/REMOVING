@@ -379,7 +379,7 @@ public class SearchActivity extends Activity implements OnClickListener {
 				viewHolder.tv_type.setText(URLDecoder.decode(zixun.type,"utf-8"));
 
 				System.out.println(zixun.photoImg);
-				xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster + URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
+				xUtilsImageUtils.display(viewHolder.iv_picture, HttpUtils.hoster +"zixunpictures/"+ URLDecoder.decode(zixun.photoImg, "utf-8").split(",")[0]);
 
 
 				// Log.i("====",position+"=="+zixunlist.get(0).likes);

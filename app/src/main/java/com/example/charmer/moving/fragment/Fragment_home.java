@@ -678,6 +678,71 @@ public class Fragment_home extends Fragment {
                 },1000);
             }
         });
+        mSr_refresh4.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh4.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getZixunlist_run(1,MainActivity.getUser().getUseraccount());
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh4.setRefreshing(false);
+                    }
+                },1000);
+            }
+        });
+        mSr_refresh5.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh5.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getZixunlist_football(1,MainActivity.getUser().getUseraccount());
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh5.setRefreshing(false);
+                    }
+                },1000);
+            }
+        });
+        mSr_refresh6.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh6.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getZixunlist_pingpang(1,MainActivity.getUser().getUseraccount());
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh6.setRefreshing(false);
+                    }
+                },1000);
+            }
+        });
+        mSr_refresh7.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh7.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getZixunlist_wangqiu(1,MainActivity.getUser().getUseraccount());
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh7.setRefreshing(false);
+                    }
+                },1000);
+            }
+        });
+        mSr_refresh8.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSr_refresh8.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getZixunlist_qita(1,MainActivity.getUser().getUseraccount());
+                        //调用该方法结束刷新，否则加载圈会一直在
+                        mSr_refresh8.setRefreshing(false);
+                    }
+                },1000);
+            }
+        });
         lv_zixun.setOnTouchListener(new View.OnTouchListener() {
             private float mEndY;
             private float mStartY;
@@ -784,6 +849,186 @@ public class Fragment_home extends Fragment {
                 return false;
             }
         });
+        lv_zixun_running.setOnTouchListener(new View.OnTouchListener() {
+            private float mEndY;
+            private float mStartY;
+            private int direction;//0表示向上，1表示向下
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        mStartY = event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        mEndY = event.getY();
+                        float v1 = mEndY - mStartY;
+
+                        if (v1 > 3 && !isRunning&& direction == 1) {
+                            direction = 0;
+                            showBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        } else if (v1 < -3 && !isRunning && direction == 0) {
+                            direction = 1;
+                            hideBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        }
+                        mStartY = mEndY;
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return false;
+            }
+        });
+        lv_zixun_football.setOnTouchListener(new View.OnTouchListener() {
+            private float mEndY;
+            private float mStartY;
+            private int direction;//0表示向上，1表示向下
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        mStartY = event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        mEndY = event.getY();
+                        float v1 = mEndY - mStartY;
+
+                        if (v1 > 3 && !isRunning&& direction == 1) {
+                            direction = 0;
+                            showBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        } else if (v1 < -3 && !isRunning && direction == 0) {
+                            direction = 1;
+                            hideBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        }
+                        mStartY = mEndY;
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return false;
+            }
+        });
+        lv_zixun_pingpang.setOnTouchListener(new View.OnTouchListener() {
+            private float mEndY;
+            private float mStartY;
+            private int direction;//0表示向上，1表示向下
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        mStartY = event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        mEndY = event.getY();
+                        float v1 = mEndY - mStartY;
+
+                        if (v1 > 3 && !isRunning&& direction == 1) {
+                            direction = 0;
+                            showBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        } else if (v1 < -3 && !isRunning && direction == 0) {
+                            direction = 1;
+                            hideBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        }
+                        mStartY = mEndY;
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return false;
+            }
+        });
+        lv_zixun_wangqiu.setOnTouchListener(new View.OnTouchListener() {
+            private float mEndY;
+            private float mStartY;
+            private int direction;//0表示向上，1表示向下
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        mStartY = event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        mEndY = event.getY();
+                        float v1 = mEndY - mStartY;
+
+                        if (v1 > 3 && !isRunning&& direction == 1) {
+                            direction = 0;
+                            showBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        } else if (v1 < -3 && !isRunning && direction == 0) {
+                            direction = 1;
+                            hideBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        }
+                        mStartY = mEndY;
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return false;
+            }
+        });
+        lv_zixun_qita.setOnTouchListener(new View.OnTouchListener() {
+            private float mEndY;
+            private float mStartY;
+            private int direction;//0表示向上，1表示向下
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        mStartY = event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        mEndY = event.getY();
+                        float v1 = mEndY - mStartY;
+
+                        if (v1 > 3 && !isRunning&& direction == 1) {
+                            direction = 0;
+                            showBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        } else if (v1 < -3 && !isRunning && direction == 0) {
+                            direction = 1;
+                            hideBar();
+
+                            mStartY = mEndY;
+                            return false;
+                        }
+                        mStartY = mEndY;
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return false;
+            }
+        });
         lv_zixun.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
             @Override
             public void onloadMore() {
@@ -805,7 +1050,41 @@ public class Fragment_home extends Fragment {
                 loadSwimmingMore();
             }
         });
-
+        lv_zixun_running.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
+                //System.out.println("==================1");
+                loadRunningMore();
+            }
+        });
+        lv_zixun_football.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
+                //System.out.println("==================1");
+                loadFootballMore();
+            }
+        });
+        lv_zixun_pingpang.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
+                //System.out.println("==================1");
+                loadPingpangMore();
+            }
+        });
+        lv_zixun_wangqiu.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
+                //System.out.println("==================1");
+                loadWangqiuMore();
+            }
+        });
+        lv_zixun_qita.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+            @Override
+            public void onloadMore() {
+                //System.out.println("==================1");
+                loadQitaMore();
+            }
+        });
        }
 
     private void loadZixunMore() {
@@ -886,6 +1165,141 @@ public class Fragment_home extends Fragment {
                     public void run() {
 
                         lv_zixun_swimming.setLoadCompleted();
+                    }
+                });
+            }
+        }.start();
+    }
+    private void loadRunningMore() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(page_run<totalpage_run) {
+
+                    getZixunlist_basketball(++page_run,MainActivity.getUser().getUseraccount());
+                }else {
+                    toastUtil.Short(getActivity(),"已经到底了！").show();
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        lv_zixun_running.setLoadCompleted();
+                    }
+                });
+            }
+        }.start();
+    }
+    private void loadFootballMore() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(page_football<totalpage_football) {
+
+                    getZixunlist_basketball(++page_football,MainActivity.getUser().getUseraccount());
+                }else {
+                    toastUtil.Short(getActivity(),"已经到底了！").show();
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        lv_zixun_football.setLoadCompleted();
+                    }
+                });
+            }
+        }.start();
+    }
+    private void loadPingpangMore() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(page_pingpang<totalpage_pingpang) {
+
+                    getZixunlist_basketball(++page_pingpang,MainActivity.getUser().getUseraccount());
+                }else {
+                    toastUtil.Short(getActivity(),"已经到底了！").show();
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        lv_zixun_pingpang.setLoadCompleted();
+                    }
+                });
+            }
+        }.start();
+    }
+    private void loadWangqiuMore() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(page_wangqiu<totalpage_wangqiu) {
+
+                    getZixunlist_basketball(++page_wangqiu,MainActivity.getUser().getUseraccount());
+                }else {
+                    toastUtil.Short(getActivity(),"已经到底了！").show();
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        lv_zixun_wangqiu.setLoadCompleted();
+                    }
+                });
+            }
+        }.start();
+    }
+    private void loadQitaMore() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(page_qita<totalpage_qita) {
+
+                    getZixunlist_basketball(++page_qita,MainActivity.getUser().getUseraccount());
+                }else {
+                    toastUtil.Short(getActivity(),"已经到底了！").show();
+                }
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        lv_zixun_qita.setLoadCompleted();
                     }
                 });
             }
