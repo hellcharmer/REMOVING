@@ -16,20 +16,20 @@
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\anim\\snackbar_out.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\anim\\snackbar_out.xml"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\anim\\abc_popup_exit.xml"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\anim\\fab_in.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\anim\\fab_in.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\anim\\snackbar_out.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\anim\\snackbar_out.xml"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",

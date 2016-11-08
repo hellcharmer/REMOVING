@@ -131,7 +131,7 @@ public class one_activity extends AppCompatActivity {
     private void initData() {
         Intent intent = getIntent();
         String userimg = intent.getStringExtra("userimg");
-        xUtilsImageUtils.display(iv_photoImg, HttpUtils.host_dynamic + userimg, true);
+        xUtilsImageUtils.display(iv_photoImg, HttpUtils.host_dynamic +"upload/"+ userimg, true);
         String username = intent.getStringExtra("username");
         tv_infoName.setText(username);
         String infoDate = intent.getStringExtra("infoDate");

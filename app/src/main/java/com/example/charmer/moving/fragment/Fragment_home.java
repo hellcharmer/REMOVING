@@ -198,21 +198,20 @@ public class Fragment_home extends Fragment {
         initData();
         //绑定
         emptyLayout.bindView(lv_zixun);
-        emptyLayout.setOnButtonClick(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //重新加载数据
-                getExerciseList();
-                getZixunlist(1,MainActivity.getUser().getUseraccount());
-            }
-        });
+        emptyLayout.bindView(lv_zixun_basketball);
+        emptyLayout.bindView(lv_zixun_swimming);
+        emptyLayout.bindView(lv_zixun_running);
+        emptyLayout.bindView(lv_zixun_football);
+        emptyLayout.bindView(lv_zixun_pingpang);
+        emptyLayout.bindView(lv_zixun_wangqiu);
+        emptyLayout.bindView(lv_zixun_qita);
         vp_zixun.setCurrentItem(0);
         lv_zixun.setAdapter(adapter1);
 
 
         emptyLayout.showLoading("正在加载，请稍后");
         getExerciseList();
-        getZixunlist(page_zixun, MainActivity.getUser().getUseraccount());
+
         //list 的每个点击事件
         lv_zixun.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -310,9 +309,9 @@ public class Fragment_home extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        emptyLayout.showLoading("正在加载，请稍后");
-        getExerciseList();
-        getZixunlist(page_zixun, MainActivity.getUser().getUseraccount());
+//        emptyLayout.showLoading("正在加载，请稍后");
+
+        getZixunlist(1, MainActivity.getUser().getUseraccount());
     }
 
     private void initlistviews() {
@@ -519,7 +518,7 @@ public class Fragment_home extends Fragment {
                     case 1000:
                         lv_zixun.setAdapter(adapter1);
                         getExerciseList();
-                        getZixunlist(page_zixun,MainActivity.getUser().getUseraccount());
+
 
                         break;
                     case 1001:
@@ -1409,7 +1408,7 @@ public class Fragment_home extends Fragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
+                emptyLayout.showError("加载失败，下拉重新加载"); // 显示失败
             }
 
             @Override
@@ -1446,9 +1445,10 @@ public class Fragment_home extends Fragment {
                 exerciseList.addAll(bean.exerciseList);
                 //dongtaiList = bean.dongtailist;   error
                 System.out.println(bean.exerciseList);
-                // 成功
-                emptyLayout.showSuccess();
+
+
                 adapter_huodong.notifyDataSetChanged();
+                getZixunlist(page_zixun, MainActivity.getUser().getUseraccount());
 
             }
 

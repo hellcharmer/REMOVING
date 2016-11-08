@@ -7,7 +7,6 @@
     tools:context="com.example.charmer.moving.home_activity.ZixunInfo_xq">
 
 
-
     <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -44,7 +43,7 @@
         android:layout_toRightOf="@id/iv_home_return"
         android:layout_marginTop="15dp"
        android:layout_marginLeft="15dp"
-        android:src="@drawable/people_icon"
+
         android:layout_width="24dp"
         android:layout_height="24dp" />
         <TextView
@@ -57,7 +56,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            android:text="张三"/>
+           />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,6 +64,7 @@
             android:layout_marginRight="20dp"
            android:layout_alignParentRight="true"
             android:src="@drawable/three_point"
+            android:visibility="invisible"
             android:layout_gravity="center_vertical"
             />
     </RelativeLayout>
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            android:text="lisi"
+
             android:layout_centerHorizontal="true"
             />
 
@@ -99,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:text="内容"
+
             android:layout_centerHorizontal="true"
             />
 
@@ -241,5 +241,27 @@
 
 
     </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pb_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_centerInParent="true">
+            <com.example.charmer.moving.MyView.CircularProgress
+                android:id="@+id/cp"
+                android:layout_width="32dp"
+                android:layout_gravity="center"
+                android:layout_height="32dp"
+                />
+            <TextView
+                android:layout_below="@+id/cp"
+                android:id="@+id/tvLoadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="正在加载" />
+        </LinearLayout>
 </RelativeLayout>
+
 </FrameLayout>

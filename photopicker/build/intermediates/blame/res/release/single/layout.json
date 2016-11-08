@@ -4,12 +4,12 @@
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_subheader.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\layout\\design_navigation_item_subheader.xml"
-    },
-    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_item_layout.xml",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_subheader.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\layout\\item_folder.xml",

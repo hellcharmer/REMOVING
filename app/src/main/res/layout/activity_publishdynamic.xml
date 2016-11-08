@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/themeblue">
+        android:background="@color/colorSkybule">
         <ImageView
             android:id="@+id/iv_cancel"
             android:layout_width="30dp"
@@ -21,8 +21,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="发说说"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="发动态"
             android:id="@+id/textView"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
@@ -42,6 +43,9 @@
         android:id="@+id/et_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"
         android:gravity="top"
         android:inputType="textMultiLine"

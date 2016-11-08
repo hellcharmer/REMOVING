@@ -3,12 +3,9 @@ package com.example.charmer.moving;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-
-import com.example.charmer.moving.utils.StatusBarCompat;
 
 /**
  * Create by asus on 2016/11/3.
@@ -19,7 +16,6 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        StatusBarCompat.compat(this, Color.parseColor("#006BD8"));
         new Handler().postDelayed(
                 new Runnable() {
                     public void run() {

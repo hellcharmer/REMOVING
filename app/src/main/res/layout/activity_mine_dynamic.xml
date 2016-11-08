@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <com.example.charmer.moving.MyView.PullToZoomListView
+
         android:id="@+id/ptzlv_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +28,7 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
-            android:text="生活如此多娇"
+            android:text="我的动态"
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_title_big_size"
             android:textStyle="bold" />
@@ -97,7 +98,7 @@
             android:padding="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/icon_setting_white"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
     </RelativeLayout>
 </RelativeLayout>

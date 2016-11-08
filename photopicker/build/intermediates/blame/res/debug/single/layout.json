@@ -40,12 +40,12 @@
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
@@ -84,20 +84,20 @@
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\item_camera.xml",
-        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\layout\\item_camera.xml"
-    },
-    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\item_camera.xml",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\layout\\item_camera.xml"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\item_folder.xml",
@@ -128,12 +128,12 @@
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_lines.xml"
-    },
-    {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\activity_photopicker.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\src\\main\\res\\layout\\activity_photopicker.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_lines.xml"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",

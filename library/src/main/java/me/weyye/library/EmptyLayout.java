@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -19,7 +18,7 @@ public class EmptyLayout extends FrameLayout {
     private View mEmptyView;
     private View mBindView;
     private View mErrorView;
-    private Button mBtnReset;
+    private TextView mBtnReset;
     private View mLoadingView;
     private TextView mEmptyText;
     private TextView tvLoadingText;
@@ -56,7 +55,7 @@ public class EmptyLayout extends FrameLayout {
         //错误时的布局
         int errorLayout = ta.getResourceId(R.styleable.EmptyLayout_elErrorLayout, R.layout.layout_error);
         mErrorView = View.inflate(context, errorLayout, null);
-        mBtnReset = (Button) mErrorView.findViewById(R.id.btnReset);
+        mBtnReset = (TextView) mErrorView.findViewById(R.id.btnReset);
         addView(mErrorView, params);
 
         //全部隐藏

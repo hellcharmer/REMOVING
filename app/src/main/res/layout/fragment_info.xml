@@ -6,43 +6,31 @@
     android:layout_height="match_parent"
     android:background="#fff">
 
-<RelativeLayout
-    android:id="@+id/rl_title"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:background="@color/themeblue">
-        <TextView
-            android:id="@+id/rb_guys"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="好友动态"
-            android:textSize="18sp"
-            android:textColor="#fff">
-        </TextView>
-
-        <ImageView
-            android:id="@+id/iv_publish"
-            android:layout_width="20dp"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="8dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/publish_dynamic"
-           />
-</RelativeLayout>
     <!--<com.example.charmer.moving.defineview.TitleBar-->
         <!--android:id="@+id/titlebar"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"/>-->
+        <LinearLayout
+            android:id="@+id/pb_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_centerInParent="true">
+        <com.example.charmer.moving.MyView.CircularProgress
+        android:id="@+id/cp"
+        android:layout_width="32dp"
+            android:layout_gravity="center"
+        android:layout_height="32dp"
+            />
+    <TextView
+        android:layout_below="@+id/cp"
+        android:id="@+id/tvLoadingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-        <ProgressBar
-        android:id="@+id/pb_load"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        style="?android:attr/progressBarStyle"
-        android:visibility="visible"
-            android:layout_centerInParent="true"/>
+        android:text="正在加载" />
+        </LinearLayout>
     <RelativeLayout
         android:id="@+id/rl_test"
         android:layout_below="@+id/rl_title"
@@ -70,5 +58,33 @@
         android:layout_height="1dp"
         android:background="#ff0000"
         android:layout_marginTop="60dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorSkybule"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+            <TextView
+                android:id="@+id/rb_guys"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="好友动态"
+                android:textSize="18sp"
+                android:textColor="#fff">
+            </TextView>
+
+            <ImageView
+                android:id="@+id/iv_publish"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/publish_dynamic"
+               />
+    </RelativeLayout>
 
 </RelativeLayout>

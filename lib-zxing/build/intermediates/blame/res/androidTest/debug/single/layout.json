@@ -1,15 +1,15 @@
 [
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_list_menu_item_radio.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_part_time.xml",
-        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_time.xml"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_activity_chooser_view.xml",

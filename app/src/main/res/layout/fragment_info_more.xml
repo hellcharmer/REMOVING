@@ -2,6 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
     android:descendantFocusability="blocksDescendants"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
@@ -52,16 +55,6 @@
            app:sapcing="4dp">
 
     </com.example.charmer.moving.view.NineGridTestLayout>
-        <!--<com.example.charmer.moving.MyView.GridView_picture-->
-            <!--android:id="@+id/gridview"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:gravity="center"-->
-            <!--android:numColumns="3"-->
-            <!--android:stretchMode="columnWidth"-->
-            <!--android:columnWidth="90dp"-->
-            <!--&gt;-->
-        <!--</com.example.charmer.moving.MyView.GridView_picture>-->
 
     </LinearLayout>
 
@@ -84,7 +77,7 @@
             android:id="@+id/iv_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="7dp"
+            android:paddingTop="7dp"
             android:focusable="false"
             style="@style/dizan_checkbox"
             android:layout_marginLeft="315dp" />
@@ -93,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:padding="7dp"
+            android:paddingTop="7dp"
             android:text="201"/>
     </RelativeLayout>
     <com.example.charmer.moving.MyView.MyListView

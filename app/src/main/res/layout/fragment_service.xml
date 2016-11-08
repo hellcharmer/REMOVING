@@ -73,12 +73,25 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/noData"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="没有数据呢!"
-        android:textSize="24sp"
-        />
+    <LinearLayout
+        android:id="@+id/pb_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_centerInParent="true">
+        <com.example.charmer.moving.MyView.CircularProgress
+            android:id="@+id/cp"
+            android:layout_width="32dp"
+            android:layout_gravity="center"
+            android:layout_height="32dp"
+            />
+        <TextView
+            android:layout_below="@+id/cp"
+            android:id="@+id/tvLoadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="正在加载" />
+    </LinearLayout>
 </RelativeLayout>

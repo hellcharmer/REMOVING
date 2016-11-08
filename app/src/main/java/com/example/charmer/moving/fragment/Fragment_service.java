@@ -75,6 +75,7 @@ public class Fragment_service extends Fragment {
     ToastUtil toastUtil;
     Requirement requirement = new Requirement("全部分类","全部主题");
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
+    private LinearLayout pb_load;
 
 
     @Nullable
@@ -91,13 +92,13 @@ public class Fragment_service extends Fragment {
         super.onActivityCreated(savedInstanceState);
         manager_btn = (Button)view.findViewById(R.id.manager);
         //tempbtn = (Button)view.findViewById(R.id.temp);
-        noData = (TextView)view.findViewById(R.id.noData);
+//        noData = (TextView)view.findViewById(R.id.noData);
         lv_exercise = ((LoadMoreListView)view.findViewById(R.id.listview));
         lv_exercise.addHeaderView(View.inflate(getActivity(),R.layout.blankspace,null));
         plus_rl=(RelativeLayout)getActivity().findViewById(R.id.plus_rl);
         spinner1 = (Spinner)view.findViewById(R.id.spinner1);
         spinner2 = (Spinner)view.findViewById(R.id.spinner2);
-
+        pb_load = ((LinearLayout) view.findViewById(R.id.pb_load));
         mBottom_bar = (LinearLayout) getActivity().findViewById(R.id.main_bottom);
         mHead_bar = (LinearLayout) view.findViewById(R.id.headexericse);
         spinnercon = (LinearLayout) view.findViewById(R.id.spinnercon);
@@ -265,9 +266,10 @@ public class Fragment_service extends Fragment {
                         getExerciseList(requirement,page);
                         //调用该方法结束刷新，否则加载圈会一直在
                         if(exerciseList.size()>0){
-                            noData.setText("");
+//                            noData.setText("");
+                            pb_load.setVisibility(View.GONE);
                         }else{
-                            noData.setText("没有数据呢!");
+//                            noData.setText("没有数据呢!");
                         }
                         mSr_refresh.setRefreshing(false);
                     }
@@ -408,9 +410,10 @@ public class Fragment_service extends Fragment {
                 exerciseList.addAll(bean.exerciseList);
                 //dongtaiList = bean.dongtailist;   error
                 if(exerciseList.size()>0){
-                    noData.setText("");
+//                    noData.setText("");
+                    pb_load.setVisibility(View.GONE);
                 }else{
-                    noData.setText("没有数据呢!");
+//                    noData.setText("没有数据呢!");
                 }
                 //通知listview更新界面
                 adapter.notifyDataSetChanged();

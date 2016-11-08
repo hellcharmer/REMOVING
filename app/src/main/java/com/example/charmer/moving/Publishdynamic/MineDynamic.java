@@ -119,6 +119,12 @@ public class MineDynamic extends AppCompatActivity implements PullToZoomListView
         ptzlv_container.setOnScrollListener(this);
         //添加刷新监听和加载更多监听
         ptzlv_container.setPullToZoomListViewListener(this);
+        ib_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
     private void initData() {

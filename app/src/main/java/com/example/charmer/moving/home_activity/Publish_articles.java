@@ -243,14 +243,16 @@ public class Publish_articles extends AppCompatActivity implements View.OnClickL
             Log.i("文件", "" + file.get(i));
             params.addBodyParameter("file", file.get(i));
             params.addBodyParameter("fileName", "fileName");
-            params.addQueryStringParameter("choice","0");
+
         }
+        params.addQueryStringParameter("choice","0");
 
 
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                if ("true".equals(result)) {
+                System.out.println("============333333===="+result);
+                if ("true".equals(result.split(",")[result.split(",").length])) {
                     Toast.makeText(Publish_articles.this, "发布成功", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {

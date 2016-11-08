@@ -62,31 +62,31 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout rl_home_xiangxi_title;
     private LinearLayout home_xiangxi_bottom;
     private List<ListActivityBean.Zixun> zixunById = new ArrayList<ListActivityBean.Zixun>();
-    private String[] imgs=new String[9];
-    private List<String> imgs_list=new ArrayList<String>();
+    private String[] imgs = new String[9];
+    private List<String> imgs_list = new ArrayList<String>();
 
     private static final int REQUEST_PREVIEW_CODE = 22;
     private ObservableScrollView sl_home_picture;
     private ObjectAnimator home_xiangxi_bottomAnimator;
     private ObjectAnimator rl_home_xiangxi_titleAnimator;
     private boolean isRunning = false;
-    private int count=0;
-    String zixunId="";
+    private int count = 0;
+    String zixunId = "";
     Drawable startDra;
     SharedPreferences sharedPreferences;
     String useraccount;
-    private Handler handler = new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case 0:
-                     count = (Integer)msg.obj;
-                    if(count%2==0){
+                    count = (Integer) msg.obj;
+                    if (count % 2 == 0) {
                         startDra = getResources().getDrawable(R.drawable.shoucang);
                         startDra.setBounds(0, 0, startDra.getMinimumWidth(), startDra.getMinimumHeight());
                         home_xiangxi_shoucang.setCompoundDrawables(null, startDra, null, null);
-                    }else {
+                    } else {
                         startDra = getResources().getDrawable(R.drawable.shoucang_select);
                         startDra.setBounds(0, 0, startDra.getMinimumWidth(), startDra.getMinimumHeight());
                         home_xiangxi_shoucang.setCompoundDrawables(null, startDra, null, null);
@@ -95,12 +95,13 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                 case 1:
 
 
-                    handler.sendEmptyMessageDelayed(1,1000);
+                    handler.sendEmptyMessageDelayed(1, 1000);
                     break;
             }
         }
     };
     private NineGridTestLayout layout_nine_grid;
+    private LinearLayout pb_load;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +122,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     private void initView() {
         home_xiangxi_title = ((TextView) findViewById(R.id.home_xiangxi_title));
         iv_home_return = (RelativeLayout) findViewById(R.id.iv_home_return);
-        iv_home_hide_return=(RelativeLayout) findViewById(R.id.iv_home_hide_return);
+        iv_home_hide_return = (RelativeLayout) findViewById(R.id.iv_home_hide_return);
         xiangxi_author_touxiang = (ImageView) findViewById(R.id.xiangxi_author_touxiang);
         layout_nine_grid = ((NineGridTestLayout) findViewById(R.id.layout_nine_grid));
         xiangxi_author = (TextView) findViewById(R.id.xiangxi_author);
@@ -132,8 +133,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
         home_xiangxi_content = (TextView) findViewById(R.id.home_xiangxi_content);
         xiangxi_hide_title = (TextView) findViewById(R.id.xiangxi_hide_title);
-       // home_xiangxi_picture = (GridView_picture) findViewById(R.id.home_xiangxi_picture);
-
+        // home_xiangxi_picture = (GridView_picture) findViewById(R.id.home_xiangxi_picture);
 
 
         btn_container_dianzan = (RelativeLayout) findViewById(R.id.btn_container_dianzan);
@@ -150,17 +150,19 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
         sl_home_picture = (ObservableScrollView) findViewById(R.id.sl_home_picture);
 
+        pb_load = (LinearLayout) findViewById(R.id.pb_load);
+
     }
 
     private void initData() {
         Intent intent = this.getIntent();
-         zixunId = intent.getStringExtra("zixunId");
+        zixunId = intent.getStringExtra("zixunId");
         getZixunlistById(zixunId);
-        String shoucangid =sharedPreferences.getString("shoucangid", "");
+        String shoucangid = sharedPreferences.getString("shoucangid", "");
         useraccount = intent.getStringExtra("user");
-        if(shoucangid.equals("")){
-           getshoucangstate(MainActivity.getUser().getUseraccount());
-        }else {
+        if (shoucangid.equals("")) {
+            getshoucangstate(MainActivity.getUser().getUseraccount());
+        } else {
             String[] shoucang = shoucangid.trim().split(",");
             for (int i = 0; i < shoucang.length; i++) {
                 if (zixunId.equals(shoucang[i])) {
@@ -183,8 +185,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
-    private void bindEvents(){
+    private void bindEvents() {
         // preview
 //        home_xiangxi_picture.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -200,9 +201,10 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
             private float mEndY;
             private float mStartY;
             private int direction;//0表示向上，1表示向下
+
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()){
+                switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         mStartY = event.getY();
                         break;
@@ -210,7 +212,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                         mEndY = event.getY();
                         float v1 = mEndY - mStartY;
 
-                        if (v1 > 3 && !isRunning&& direction == 1) {
+                        if (v1 > 3 && !isRunning && direction == 1) {
                             direction = 0;
                             showBar();
                             rl_home_xiangxi_title.setVisibility(View.VISIBLE);
@@ -235,7 +237,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         sl_home_picture.setScrollViewListener(new ScrollViewListener() {
             @Override
             public void onScrollChanged(ObservableScrollView scrollView, int x, int y, int oldx, int oldy) {
-                if(y<=48&&!isRunning){
+                if (y <= 48 && !isRunning) {
                     hidetitleBar();
                 }
             }
@@ -243,7 +245,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         iv_home_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               finish();
+                finish();
             }
         });
         iv_home_hide_return.setOnClickListener(new View.OnClickListener() {
@@ -255,8 +257,8 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         xiangxi_author_touxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(ZixunInfo_xq.this, Homepage.class);
-                intent.putExtra("user",useraccount);
+                Intent intent = new Intent(ZixunInfo_xq.this, Homepage.class);
+                intent.putExtra("user", useraccount);
                 startActivity(intent);
             }
         });
@@ -294,6 +296,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
     public void hidetitleBar() {
 
         rl_home_xiangxi_titleAnimator = ObjectAnimator.ofFloat(rl_home_xiangxi_title, "translationY", -rl_home_xiangxi_title.getHeight());
@@ -314,9 +317,10 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
     public void showBar() {
         home_xiangxi_bottomAnimator = ObjectAnimator.ofFloat(home_xiangxi_bottom, "translationY", 0);
-        rl_home_xiangxi_titleAnimator=ObjectAnimator.ofFloat(rl_home_xiangxi_title, "translationY", 0);
+        rl_home_xiangxi_titleAnimator = ObjectAnimator.ofFloat(rl_home_xiangxi_title, "translationY", 0);
         home_xiangxi_bottomAnimator.setDuration(300).start();
         rl_home_xiangxi_titleAnimator.setDuration(300).start();
     }
@@ -340,17 +344,17 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
                 zixunById.clear();
                 zixunById.addAll(bean.zixunlist);
-
+                pb_load.setVisibility(View.GONE);
                 //通知listView更新界面
                 //adapter1.notifyDataSetChanged();
                 try {
-                    xUtilsImageUtils.display(xiangxi_author_touxiang, HttpUtils.hoster+"upload/"+ URLDecoder.decode(zixunById.get(0).publisherimg, "utf-8"),true);
+                    xUtilsImageUtils.display(xiangxi_author_touxiang, HttpUtils.hoster + "upload/" + URLDecoder.decode(zixunById.get(0).publisherimg, "utf-8"), true);
                     imgs = URLDecoder.decode(zixunById.get(0).photoImg, "utf-8").split(",");
-                    xiangxi_author.setText(URLDecoder.decode(zixunById.get(0).publisher,"utf-8"));
+                    xiangxi_author.setText(URLDecoder.decode(zixunById.get(0).publisher, "utf-8"));
                     xiangxi_hide_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
                     home_xiangxi_title.setText(URLDecoder.decode(zixunById.get(0).title, "utf-8"));
                     home_xiangxi_content.setText(URLDecoder.decode(zixunById.get(0).content, "utf-8"));
-                    home_xiangxi_pinglun.setText(zixunById.get(0).pingluns+"");
+                    home_xiangxi_pinglun.setText(zixunById.get(0).pingluns + "");
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
@@ -358,24 +362,23 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
                 List<String> urlsList = new ArrayList<String>();
                 //取出gridview
 
-                if ( zixunById.get(0).photoImg!= null && !"".equals(zixunById.get(0).photoImg)) {
+                if (zixunById.get(0).photoImg != null && !"".equals(zixunById.get(0).photoImg)) {
 
 
-
-                    if(imgs.length>0) {
+                    if (imgs.length > 0) {
                         for (int i = 0; i < imgs.length; i++) {
 
-                            urlsList.add(HttpUtils.hoster+"zixunpictures/"+imgs[i]);
+                            urlsList.add(HttpUtils.hoster + "zixunpictures/" + imgs[i]);
                         }
                         layout_nine_grid.setUrlList(urlsList);
                         layout_nine_grid.setIsShowAll(zixunById.get(0).isShowAll);
                     }
-                } else if("".equals(zixunById.get(0).photoImg ) && zixunById.get(0).photoImg  == null){
+                } else if ("".equals(zixunById.get(0).photoImg) && zixunById.get(0).photoImg == null) {
                     layout_nine_grid.notifyDataSetChanged();
 
                 }
 
-                }
+            }
 
 
             @Override
@@ -395,19 +398,19 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         });
 
     }
+
     private void getshoucangstate(String userId) {
 
 
-
-        RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
-        params.addQueryStringParameter("zixunId",zixunId);
-        params.addQueryStringParameter("userId",userId);
-        params.addQueryStringParameter("state","2");
+        RequestParams params = new RequestParams(HttpUtils.hoster + "deletezannum");
+        params.addQueryStringParameter("zixunId", zixunId);
+        params.addQueryStringParameter("userId", userId);
+        params.addQueryStringParameter("state", "2");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                if("true".equals(result)){
-                    count=1;
+                if ("true".equals(result)) {
+                    count = 1;
                     Message msg = handler.obtainMessage();
                     msg.what = 0;
                     msg.obj = count;
@@ -433,11 +436,11 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    private void addshoucang(String userId){
-        RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
-        params.addQueryStringParameter("zixunId",zixunId);
-        params.addQueryStringParameter("userId",userId);
-        params.addQueryStringParameter("state","1");
+    private void addshoucang(String userId) {
+        RequestParams params = new RequestParams(HttpUtils.hoster + "deletezannum");
+        params.addQueryStringParameter("zixunId", zixunId);
+        params.addQueryStringParameter("userId", userId);
+        params.addQueryStringParameter("state", "1");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -463,11 +466,11 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void deleteshoucang(String userId){
-        RequestParams params = new RequestParams(HttpUtils.hoster+"deletezannum");
-        params.addQueryStringParameter("zixunId",zixunId);
-        params.addQueryStringParameter("userId",userId);
-        params.addQueryStringParameter("state","0");
+    private void deleteshoucang(String userId) {
+        RequestParams params = new RequestParams(HttpUtils.hoster + "deletezannum");
+        params.addQueryStringParameter("zixunId", zixunId);
+        params.addQueryStringParameter("userId", userId);
+        params.addQueryStringParameter("state", "0");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -549,28 +552,28 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.home_xiangxi_shoucang:
-                String shoucangid =sharedPreferences.getString("shoucangid", "");
-                if(count%2!=0){
-                    String [] shoucang =shoucangid.split(",");
-                    String shoucangid_new="";
-                    for (String string :shoucang){
-                        if(!string.equals(zixunId)){
-                            shoucangid_new+=string+",";
+                String shoucangid = sharedPreferences.getString("shoucangid", "");
+                if (count % 2 != 0) {
+                    String[] shoucang = shoucangid.split(",");
+                    String shoucangid_new = "";
+                    for (String string : shoucang) {
+                        if (!string.equals(zixunId)) {
+                            shoucangid_new += string + ",";
                         }
                     }
                     SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-                    editor.putString("shoucangid",shoucangid_new);
+                    editor.putString("shoucangid", shoucangid_new);
                     editor.commit();//提交修改
 
                     startDra = getResources().getDrawable(R.drawable.shoucang);
                     startDra.setBounds(0, 0, startDra.getMinimumWidth(), startDra.getMinimumHeight());
                     home_xiangxi_shoucang.setCompoundDrawables(null, startDra, null, null);
                     deleteshoucang(MainActivity.getUser().getUseraccount());
-                }else {
+                } else {
 
-                    shoucangid+=zixunId+",";
+                    shoucangid += zixunId + ",";
                     SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-                    editor.putString("shoucangid",shoucangid);
+                    editor.putString("shoucangid", shoucangid);
                     editor.commit();//提交修改
                     startDra = getResources().getDrawable(R.drawable.shoucang_select);
                     startDra.setBounds(0, 0, startDra.getMinimumWidth(), startDra.getMinimumHeight());
@@ -581,16 +584,15 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.home_xiangxi_pinglun:
-                    Intent intent = new Intent(ZixunInfo_xq.this,Zixun_comment.class);
-                    intent.putExtra("zixunId",zixunId);
-                    startActivity(intent);
+                Intent intent = new Intent(ZixunInfo_xq.this, Zixun_comment.class);
+                intent.putExtra("zixunId", zixunId);
+                startActivity(intent);
                 break;
             default:
 
                 break;
         }
     }
-
 
 
     @Override

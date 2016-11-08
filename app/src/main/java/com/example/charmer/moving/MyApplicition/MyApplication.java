@@ -59,7 +59,7 @@ public class MyApplication extends Application{
         RongIM.init(this);
         ZXingLibrary.initDisplayOpinion(this);
 
-    }
+
 
 
         //初始化AMapLocationClientOption对象

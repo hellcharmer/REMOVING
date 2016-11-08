@@ -36,12 +36,12 @@
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\drawable-xhdpi\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\drawable-xhdpi\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\drawable-xhdpi\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\drawable-xhdpi\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",

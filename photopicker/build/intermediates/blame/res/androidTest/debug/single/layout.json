@@ -128,12 +128,12 @@
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\select_dialog_multichoice_material.xml",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\design_navigation_item_subheader.xml",
@@ -148,12 +148,12 @@
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_simple.xml",
-        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_simple.xml"
-    },
-    {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_image_preview.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_image_preview.xml"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_simple.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_media_cancel_action.xml",
@@ -180,12 +180,12 @@
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\design_navigation_item_separator.xml",
-        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\layout\\design_navigation_item_separator.xml"
-    },
-    {
         "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_photopicker.xml",
         "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_photopicker.xml"
+    },
+    {
+        "merged": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "D:\\gaobo\\andriod workspace\\REMOVING\\photopicker\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_bar_up_container.xml",

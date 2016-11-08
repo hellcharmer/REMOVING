@@ -6,7 +6,6 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -30,7 +29,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -95,7 +93,7 @@ public class Fragment_dynamic extends BaseFragment {
     @InjectView(R.id.lv_info)
     LoadMoreListView lvInfo;
     @InjectView(R.id.pb_load)
-    ProgressBar pbLoad;
+    LinearLayout pbLoad;
     @InjectView(R.id.iv_publish)
     ImageView ivPublish;
     private NineGridTestLayout nineGridTestLayout;
@@ -111,8 +109,8 @@ public class Fragment_dynamic extends BaseFragment {
     private TextView btn_publish_comment;
     private TextView comment;
     private ListView lv_commentlist;
-    private TextView tv_cancel;
-    private TextView tv_delete;
+    private RelativeLayout tv_cancel;
+    private RelativeLayout tv_delete;
     private String username;
 
     private Handler handler = new Handler(){
@@ -192,6 +190,7 @@ public class Fragment_dynamic extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
+        Toast.makeText(getActivity(),"dgdfyhy",Toast.LENGTH_SHORT).show();
         getData(1);
     }
 
@@ -667,16 +666,10 @@ public class Fragment_dynamic extends BaseFragment {
 
         bottomAnimator = ObjectAnimator.ofFloat(mBottom, "translationY", 0);
         bottomAnimator.setDuration(400).start();
-        rl_title.getBackground().setAlpha(255);
-        rb_guys.setTextColor(Color.WHITE);
-        ivPublish.setImageResource(R.drawable.publish_dynamic);
 
     }
 
     private void hideBar() {
-        rl_title.getBackground().setAlpha(50);
-        rb_guys.setTextColor(Color.BLACK);
-        ivPublish.setImageResource(R.drawable.publish_black);
         bottomAnimator = ObjectAnimator.ofFloat(mBottom, "translationY", mBottom.getHeight());
         bottomAnimator.setDuration(400).start();
         bottomAnimator.addListener(new AnimatorListenerAdapter() {
@@ -927,14 +920,14 @@ public class Fragment_dynamic extends BaseFragment {
         // 如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
         // 我觉得这里是API的一个bug
         popupWindow.setBackgroundDrawable(dw);
-        tv_cancel = ((TextView) view.findViewById(R.id.tv_cancel));
+        tv_cancel = ((RelativeLayout) view.findViewById(R.id.tv_cancel));
         tv_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popupWindow.dismiss();
             }
         });
-        tv_delete = ((TextView) view.findViewById(R.id.tv_delete));
+        tv_delete = ((RelativeLayout) view.findViewById(R.id.tv_delete));
         tv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
