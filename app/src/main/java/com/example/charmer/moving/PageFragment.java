@@ -1,6 +1,5 @@
 package com.example.charmer.moving;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -9,13 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Exercises;
 import com.example.charmer.moving.pojo.PersonalInfo;
 import com.example.charmer.moving.pojo.ZixunInfo;
-import com.example.charmer.moving.utils.MyAdapter;
 import com.example.charmer.moving.utils.MyartAdapter;
 import com.example.charmer.moving.utils.MycollectAdapter;
 import com.example.charmer.moving.utils.MytryAdapter;

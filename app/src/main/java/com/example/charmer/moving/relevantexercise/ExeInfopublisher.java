@@ -1,5 +1,6 @@
 package com.example.charmer.moving.relevantexercise;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,6 +36,8 @@ import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -45,7 +48,11 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExeInfopublisher extends AppCompatActivity {
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
+
+public class ExeInfopublisher extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
 
     private BaseAdapter adapter;
@@ -78,6 +85,12 @@ public class ExeInfopublisher extends AppCompatActivity {
     final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
     final List<VariableExercise.DataSummary> dsListEnroll = new ArrayList<VariableExercise.DataSummary>();
     final List<VariableExercise.DataSummary> dsListcancel = new ArrayList<VariableExercise.DataSummary>();
+    private RelativeLayout saoyisao;
+    /**
+     * 扫描跳转Activity RequestCode
+     */
+    public static final int REQUEST_CODE = 111;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +98,7 @@ public class ExeInfopublisher extends AppCompatActivity {
         Intent intent = this.getIntent();
         exerciseId = intent.getStringExtra("exerciseId");
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));
+        saoyisao = ((RelativeLayout) findViewById(R.id.saoyisao));
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
         title = ((TextView) findViewById(R.id.titleinfo));
         cancelexe = ((Button) findViewById(R.id.cancelexe));
@@ -738,6 +752,115 @@ public class ExeInfopublisher extends AppCompatActivity {
         TextView paymentMethod ;
         TextView currentNumber ;
         TextView totalNumber ;
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        /**
+         * 处理二维码扫描结果
+         */
+        if (requestCode == REQUEST_CODE) {
+            //处理扫描结果（在界面上显示）
+            if (null != data) {
+                Bundle bundle = data.getExtras();
+                if (bundle == null) {
+                    return;
+                }
+                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+                    String result = bundle.getString(CodeUtils.RESULT_STRING);
+                    Toast.makeText(this, "签到成功", Toast.LENGTH_LONG).show();
+                    Saoyisao(exerciseId,result);
+                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+                    Toast.makeText(ExeInfopublisher.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+    }
+    /**
+     * 请求CAMERA权限码
+     */
+    public static final int REQUEST_CAMERA_PERM = 101;
+
+
+    /**
+     * EsayPermissions接管权限处理逻辑
+     *
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+
+    @AfterPermissionGranted(REQUEST_CAMERA_PERM)
+    public void cameraTask() {
+        if (EasyPermissions.hasPermissions(this, Manifest.permission.CAMERA)) {
+            // Have permission, do the thing!
+            Intent intent = new Intent(getApplication(), CaptureActivity.class);
+            startActivityForResult(intent, REQUEST_CODE);
+        } else {
+            // Ask for one permission
+            EasyPermissions.requestPermissions(this, "需要请求camera权限",
+                    REQUEST_CAMERA_PERM, Manifest.permission.CAMERA);
+        }
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+            new AppSettingsDialog.Builder(this, "当前App需要申请camera权限,需要打开设置页面么?")
+                    .setTitle("权限申请")
+                    .setPositiveButton("确认")
+                    .setNegativeButton("取消", null /* click listener */)
+                    .setRequestCode(REQUEST_CAMERA_PERM)
+                    .build()
+                    .show();
+        }
+    }
+    private void Saoyisao(String huodongId,String useraccount) {
+
+        RequestParams params = new RequestParams(HttpUtils.hoster+"scanjoiner");
+        params.addQueryStringParameter("exerciseId",huodongId);
+        params.addQueryStringParameter("joiner",useraccount);
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+
+               if("true".equals(result)){
+                   Toast.makeText(ExeInfopublisher.this,"签到成功",Toast.LENGTH_SHORT).show();
+               }else {
+                   Toast.makeText(ExeInfopublisher.this,"签到失败",Toast.LENGTH_SHORT).show();
+               }
+
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                // Log.i(TAG,ex.toString());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
     }
 
     private void jPush(String joiner){

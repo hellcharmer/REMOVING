@@ -29,6 +29,7 @@ import com.example.charmer.moving.fragment.Fragment_home;
 import com.example.charmer.moving.fragment.Fragment_mine;
 import com.example.charmer.moving.fragment.Fragment_service;
 import com.example.charmer.moving.friendchat.RongImChat;
+import com.example.charmer.moving.home_activity.Publish_articles;
 import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.StatusBarCompat;
 import com.google.gson.Gson;
@@ -107,8 +108,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
+        System.out.println(intent.getStringExtra("userId")+"111111111111");
         user.setUserid(Integer.parseInt(intent.getStringExtra("userId")));
         user.setUseraccount(intent.getStringExtra("useraccount"));
+
         setContentView(R.layout.activity_main);
 //       getusertoken();
         //lzy的改动
@@ -405,8 +408,8 @@ public class MainActivity extends AppCompatActivity {
             iv_fabuhuodong.setClickable(clicked? true : false);
             v.startAnimation(alpha_button);
             plus_im.performClick();
-//            Intent intent =new Intent(MainActivity.this,Publish_articles.class);
-//            startActivity(intent);
+            Intent intent =new Intent(MainActivity.this,Publish_articles.class);
+            startActivity(intent);
         }
     };
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -474,6 +477,9 @@ public class MainActivity extends AppCompatActivity {
             dishui_tv.setClickable(clicked? true : false);
             guoshui_tv.setClickable(clicked? true : false);
             iv_fabuhuodong.setClickable(clicked? true : false);
+            return true;
+        }else if(Fragment_mine.rl_qrcode.getVisibility()==View.VISIBLE){
+            Fragment_mine.rl_qrcode.setVisibility(View.GONE);
             return true;
         }
         return super.onKeyDown(keyCode, event);

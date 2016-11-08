@@ -29,7 +29,18 @@
             android:textSize="24sp"
             android:textColor="#fff"
             />
-
+        <RelativeLayout
+            android:id="@+id/saoyisao"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/saoyisao2"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
     </RelativeLayout>
 
     <LinearLayout

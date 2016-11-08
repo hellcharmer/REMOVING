@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MOVING.iml" filepath="$PROJECT_DIR$/MOVING.iml" />
+      <module fileurl="file://$PROJECT_DIR$/REMOVING.iml" filepath="$PROJECT_DIR$/REMOVING.iml" />
       <module fileurl="file://$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable.iml" filepath="$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable/Rong_Cloud_Android_IMKit_SDK_v2_7_3_stable.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-zxing/lib-zxing.iml" filepath="$PROJECT_DIR$/lib-zxing/lib-zxing.iml" />

@@ -130,11 +130,17 @@
         </activity>
         <activity
             android:name="com.foamtrace.photopicker.PhotoPickerActivity"
-            android:theme="@style/PhotoPickerTheme"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
-            android:theme="@style/PhotoPickerTheme"/>
-
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity android:name=".mine_activity.Personal_information" />
+        <activity android:name=".mine_activity.About" />
+        <activity android:name=".mine_activity.Fankui" />
+        <activity android:name=".mine_activity.Articles" />
+        <activity android:name=".mine_activity.Shoucang"></activity>
+    </application>
         <activity android:name=".relevantexercise.EventsActivity">
 
         </activity>

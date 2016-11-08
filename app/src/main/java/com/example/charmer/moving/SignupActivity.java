@@ -3,6 +3,7 @@ package com.example.charmer.moving;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,7 +23,6 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.LoginInfo;
 import com.google.gson.Gson;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
-
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -179,30 +179,32 @@ public class SignupActivity extends AppCompatActivity {
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
         QRcode= CodeUtils.createImage(mobile, 400, 400, null);
+        Bitmap  bitmap = BitmapFactory.decodeResource(SignupActivity.this.getResources(), R.drawable.morentouxiang);
         saveBitmaptofile(QRcode,mobile);
-
+        saveBitmaptofile(bitmap,"morentouxiang");
         File file=new File("/data/data/com.example.charmer.moving/QRcodepicture/"+mobile+".png");
 
         sendImg(file);
         LoginInfo loginInfo= new LoginInfo(name,password,mobile,mobile+".png");
         Signup(loginInfo);
       //  Signup(name,mobile,password);
-        new Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onSignupSuccess or onSignupFailed
-                        // depending on success
-
-                        onSignupSuccess();
-                        // onSignupFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+//        new Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        // On complete call either onSignupSuccess or onSignupFailed
+//                        // depending on success
+//
+//                        onSignupSuccess();
+//                        // onSignupFailed();
+//                        progressDialog.dismiss();
+//                    }
+//                }, 3000);
     }
 
 
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
+        Toast.makeText(getBaseContext(), "注册成功", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
@@ -355,6 +357,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onSuccess(String result) {
                 if("0".equals(result)) {
                     Toast.makeText(SignupActivity.this,"此号码已被使用",Toast.LENGTH_SHORT).show();
+                    _signupButton.setEnabled(true);
                 }else if("1".equals(result)){
                     onSignupFailed();
                 }else{
@@ -402,7 +405,7 @@ public class SignupActivity extends AppCompatActivity {
         return bmp.compress(format, quality, stream);
     }
     private void sendImg(File file) {
-        RequestParams params = new RequestParams(HttpUtils.hoster+ "qrcode");//upload 是你要访问的servlet
+        RequestParams params = new RequestParams(HttpUtils.hoster + "qrcode");//upload 是你要访问的servlet
         Log.i("文件",""+file);
         params.addBodyParameter("file", file);
         params.addBodyParameter("fikongle","ss");

@@ -76,7 +76,7 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 if (verticalOffset <= -head_layout.getHeight() / 2) {
-                    mCollapsingToolbarLayout.setTitle("史鑫燚");
+                    mCollapsingToolbarLayout.setTitle(ds.userName);
                 } else {
                     mCollapsingToolbarLayout.setTitle("");
                 }
@@ -145,7 +145,7 @@ public class Homepage extends AppCompatActivity {
                 PersonalInfo bean = gson.fromJson(result, PersonalInfo.class);
                 ds = bean.ds;
                 userName.setText(ds.userName);
-                xUtilsImageUtils.display(head_iv,HttpUtils.hoster+"upload/"+ds.userImg);
+                xUtilsImageUtils.display(head_iv,HttpUtils.hoster+"upload/"+ds.userImg,true);
                 if(ds.personalsay!=null&&!"".equals(ds.personalsay)){
                     personalsay.setText(ds.personalsay);
                 }

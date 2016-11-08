@@ -33,6 +33,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.MyView.MyGridView;
@@ -44,6 +45,7 @@ import com.example.charmer.moving.home_activity.SearchActivity;
 import com.example.charmer.moving.home_activity.ZixunInfo_xq;
 import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
+import com.example.charmer.moving.relevantexercise.ExerciseinfoActivity;
 import com.example.charmer.moving.utils.DateUtils;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -214,16 +216,17 @@ public class Fragment_home extends Fragment {
         lv_zixun.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+               // toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position-1).zixunId+"");
+                intent.putExtra("user",zixunlist.get(position-1).publisheraccount);
                 startActivity(intent);
             }
         });
         lv_zixun_basketball.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+                //toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position).zixunId+"");
                 startActivity(intent);
@@ -232,7 +235,7 @@ public class Fragment_home extends Fragment {
         lv_zixun_swimming.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+                //toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position).zixunId+"");
                 startActivity(intent);
@@ -241,7 +244,7 @@ public class Fragment_home extends Fragment {
         lv_zixun_running.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+               // toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position).zixunId+"");
                 startActivity(intent);
@@ -250,7 +253,7 @@ public class Fragment_home extends Fragment {
         lv_zixun_football.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+                //toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position).zixunId+"");
                 startActivity(intent);
@@ -259,7 +262,7 @@ public class Fragment_home extends Fragment {
         lv_zixun_pingpang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+                //toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position).zixunId+"");
                 startActivity(intent);
@@ -268,7 +271,7 @@ public class Fragment_home extends Fragment {
         lv_zixun_wangqiu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+               // toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position).zixunId+"");
                 startActivity(intent);
@@ -277,7 +280,7 @@ public class Fragment_home extends Fragment {
         lv_zixun_qita.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
+               // toastUtil.Short(getActivity(),"这是第"+(position)+"个").show();
                 Intent intent = new Intent(getActivity(), ZixunInfo_xq.class);
                 intent.putExtra("zixunId",zixunlist.get(position).zixunId+"");
                 startActivity(intent);
@@ -291,8 +294,24 @@ public class Fragment_home extends Fragment {
                 startActivity(intent);
             }
         });
+        gv_shouye_huodong.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ExerciseinfoActivity.class);
+                intent.putExtra("exerciseId",exerciseList.get(position).exerciseId+"");
+                startActivity(intent);
+            }
+        });
 
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        emptyLayout.showLoading("正在加载，请稍后");
+        getExerciseList();
+        getZixunlist(page_zixun, MainActivity.getUser().getUseraccount());
     }
 
     private void initlistviews() {
@@ -1481,6 +1500,14 @@ public class Fragment_home extends Fragment {
 //
 //                });
 
+                viewHolder.iv_photo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent =new Intent(getActivity(), Homepage.class);
+                        intent.putExtra("user",zixunlist.get(position).publisheraccount);
+                        startActivity(intent);
+                    }
+                });
                 convertView.setTag(viewHolder);//缓存对象
             }else{
                 viewHolder=(ViewHolder)convertView.getTag();
@@ -1578,9 +1605,10 @@ public class Fragment_home extends Fragment {
 
             VariableExercise.Exercises exercises = exerciseList.get(position);
             try {
-
+                System.out.println("============"+viewHolder.huodong_tx+"----------"+exercises.userImage);
+                xUtilsImageUtils.display(viewHolder.huodong_tx, HttpUtils.hoster+"upload/"+ URLDecoder.decode(exercises.userImage, "utf-8"),true);
                 viewHolder.huongdong_Title.setText(URLDecoder.decode(exercises.title,"utf-8"));
-                viewHolder.huodong_xiangxi.setText(exercises.exerciseId + "·"+DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(exercises.activityTime,"utf-8"))));
+                viewHolder.huodong_xiangxi.setText(URLDecoder.decode(exercises.userName,"utf-8") + "·"+DateUtils.getGapTimeFromNow(DateUtils.stringToDate(URLDecoder.decode(exercises.activityTime,"utf-8"))));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }

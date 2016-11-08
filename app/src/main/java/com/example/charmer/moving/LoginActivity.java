@@ -199,11 +199,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(String result) {
                 Gson gson = new Gson();
                 Type type_map = new TypeToken<Map<String,String>>(){}.getType();
-                Map<String,String> map1= gson.fromJson(result, type_map);
+                Map<String,String> map1= gson.fromJson(result,type_map);
                 if("1".equals(map1.get("result"))){
+                    System.out.println(result);
                     SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+                    System.out.println("============="+map1.get("userId"));
                     editor.putString("userId",map1.get("userId"));
                     editor.putString("useraccount",map1.get("useraccount"));
+                    editor.putString("userimg",map1.get("userimg"));
+                    editor.putString("username",map1.get("username"));
+                    editor.putString("sex",map1.get("sex"));
+                    editor.putString("myqrcode",map1.get("myqrcode"));
+                    editor.putString("signature",map1.get("signature"));
                     editor.commit();
                     onLoginSuccess(map1.get("userId"),map1.get("useraccount"));
                     progressDialog.dismiss();

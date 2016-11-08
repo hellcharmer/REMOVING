@@ -4,13 +4,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
-import com.foamtrace.photopicker.Image;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -40,8 +37,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.OnItemClick;
 
 public class ManagerexeActivity extends AppCompatActivity {
 
