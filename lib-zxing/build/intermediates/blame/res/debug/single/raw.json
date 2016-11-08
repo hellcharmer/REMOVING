@@ -6,5 +6,9 @@
     {
         "merged": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
         "source": "G:\\android_project\\MOVING\\MOVING\\lib-zxing\\src\\main\\res\\raw\\beep.ogg"
+    },
+    {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\lib-zxing\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\lib-zxing\\src\\main\\res\\raw\\beep.ogg"
     }
 ]

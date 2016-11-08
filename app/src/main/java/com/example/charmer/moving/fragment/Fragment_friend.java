@@ -190,7 +190,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                         for (Friend i : friends) {
                             if (i.getFriendid().equals(s)) {
                                 Log.i("提供了", "用户" + s);
-                                return new UserInfo(i.getFriendid() + "", i.getName(), Uri.parse(HttpUtils.host4 + i.getUser().getUserimg()));
+                                return new UserInfo(i.getFriendid() + "", i.getName(), Uri.parse(HttpUtils.hostpc+ i.getUser().getUserimg()));
                             }
                         }
                         return null;
@@ -375,7 +375,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                                 Integer friendid = friends.get(position).getFriendid();
                                 RequestParams requestParams = new RequestParams(HttpUtils.host4 + "friendservlet");
                                 //获取用户ID
-                                requestParams.addQueryStringParameter("friendid", 1 + "");
+                                requestParams.addQueryStringParameter("choice", 1 + "");
                                 requestParams.addQueryStringParameter("friendid", friendid + "");
                                 x.http().get(requestParams, new Callback.CommonCallback<String>() {
                                     @Override
@@ -636,7 +636,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
             }else{
             tv_nowact.setText(friend.getContent());}
             ImageView iv_toux = ((ImageView) viewHolder.getViewById(R.id.iv_toux));
-            xUtilsImageUtils.display(iv_toux, HttpUtils.host4 + str, true);
+            xUtilsImageUtils.display(iv_toux, HttpUtils.host4+"upload/" + str, true);
             ImageView i_tip = ((ImageView) viewHolder.getViewById(R.id.i_tip));
             System.out.println();
             if (friend.getTitle()!=null){
@@ -776,14 +776,15 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     //讨论组数据处理
     public void getTlzData(){
         RequestParams params=new RequestParams(HttpUtils.host4+"getqun");
-        params.addQueryStringParameter("choice",4+ "");
-        params.addQueryStringParameter("userid",MainActivity.getUser().getUserid() + "");
+        params.addQueryStringParameter("choice","4");
+        params.addQueryStringParameter("userid",MainActivity.getUser().getUserid()+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 if(result.equals("[]")){
                     Toast.makeText(getActivity(),"暂时没有讨论组-____-\"",Toast.LENGTH_SHORT).show();
                 }
+                Log.i("onError:succ",result);
                 tlzs.clear();
                 Log.i("tlzsData",result);
                 progress4.setVisibility(View.GONE);
@@ -798,7 +799,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                Log.i("onError:",ex+"");
             }
 
             @Override
@@ -899,6 +900,19 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                 }, 1000);
             }
         });
+        re_tlz.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                re_tlz.postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        getTlzData();
+                        re_tlz.setRefreshing(false);
+                    }
+                }, 1000);
+            }
+        });
     }
 
     //会话列表链接容云
@@ -915,7 +929,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                 Type type = new TypeToken<User>() {
                 }.getType();
                 user = gson.fromJson(result, type);
-                RongIM.getInstance().refreshUserInfoCache(new UserInfo(MainActivity.getUser().getUserid() + "", user.getUsername(), Uri.parse(HttpUtils.host4 + user.getUserimg())));
+                RongIM.getInstance().refreshUserInfoCache(new UserInfo(MainActivity.getUser().getUserid() + "", user.getUsername(), Uri.parse(HttpUtils.hostpc + user.getUserimg())));
                 //刷新所有好友的头像
                 refreshImg();
             }
@@ -941,7 +955,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     private void refreshImg() {
         for (Friend i : friends) {
             Log.i("fffffrrrrree", i.getFriendid() + "");
-            RongIM.getInstance().refreshUserInfoCache(new UserInfo(i.getFriendid() + "", i.getName(), Uri.parse(HttpUtils.host4 + i.getUser().getUserimg())));
+            RongIM.getInstance().refreshUserInfoCache(new UserInfo(i.getFriendid() + "", i.getName(), Uri.parse(HttpUtils.hostpc + i.getUser().getUserimg())));
         }
     }
     private  void getUserimg(){
@@ -954,7 +968,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
                 Gson gson=new Gson();
                 Type type=new TypeToken<User>(){}.getType();
                 User user=gson.fromJson(result,type);
-                xUtilsImageUtils.display(userimg, HttpUtils.host4+user.getUserimg(),true);
+                xUtilsImageUtils.display(userimg, HttpUtils.host4+"upload/"+user.getUserimg(),true);
             }
 
             @Override

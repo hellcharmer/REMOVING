@@ -4,7 +4,7 @@ package com.example.charmer.moving.contantData;
  * Created by Administrator on 2016/9/22.
  */
 public class HttpUtils {
-
+    public static final String hostpc="http://10.40.5.13:8080/moving/upload/";
     public static final String host="http://10.40.5.5:8080/moving/";
     public static final String host1="http://49.75.66.187:8080/moving/";
     public static final String host2="http://192.168.155.1:8080/moving/";

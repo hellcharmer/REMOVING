@@ -36,7 +36,7 @@ private List<String> userids=new ArrayList<String>();
         userids.add("2");
 
         CreateQunImpl createQun=new CreateQunImpl();
-        createQun.connectRong(userids,"power");
+
 
     }
 }

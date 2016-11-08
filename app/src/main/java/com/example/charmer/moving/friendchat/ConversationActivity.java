@@ -13,9 +13,9 @@ import android.widget.Toast;
 import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.example.charmer.moving.pojo.Friend;
 import com.example.charmer.moving.pojo.Qun;
 import com.example.charmer.moving.pojo.TLZ;
+import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -54,7 +54,7 @@ public class ConversationActivity extends FragmentActivity {
     TextView tlzname;
     @InjectView(R.id.tlz)
     RelativeLayout tlz;
-    private Friend fd;
+    private User user;
     private Qun qu;
     private TLZ tlzinfo;
     /**
@@ -94,20 +94,20 @@ public class ConversationActivity extends FragmentActivity {
             RequestParams requestParams = new RequestParams(HttpUtils.host4 + "friendservlet");
             requestParams.addQueryStringParameter("choice", 2+"");
             requestParams.addQueryStringParameter("friendid", mTargetId);
-            requestParams.addQueryStringParameter("userid", MainActivity.getUser().getUserid()+"");
+//            requestParams.addQueryStringParameter("userid", MainActivity.getUser().getUserid()+"");
             x.http().get(requestParams, new Callback.CommonCallback<String>() {
 
                 @Override
                 public void onSuccess(String result) {
                     Log.i("friendsuccess", result);
-                    fd = new Friend();
+                    user = new User();
                     Gson gson = new Gson();
-                    Type type = new TypeToken<Friend>() {
+                    Type type = new TypeToken<User>() {
                     }.getType();
-                    fd = gson.fromJson(result, type);
+                    user = gson.fromJson(result, type);
                     haoyou.setVisibility(View.VISIBLE);
-                    xUtilsImageUtils.display(ivUserimg, HttpUtils.host4 + fd.getFriendimg(), true);
-                    username.setText(fd.getUser().getUsername());
+                    xUtilsImageUtils.display(ivUserimg, HttpUtils.hostpc+ user.getUserimg(), true);
+                    username.setText(user.getUsername());
                 }
 
                 @Override

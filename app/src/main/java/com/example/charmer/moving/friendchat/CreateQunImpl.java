@@ -58,7 +58,7 @@ public class CreateQunImpl {
         Token = token;
     }
 
-    public void connectRong(final List<String> userids, final String title){
+    public void connectRong(final List<String> userids, final String title, final String exerciseId){
         for (int i=0;i<userids.size();i++){
             users=users+userids.get(i)+",";
         }
@@ -78,6 +78,7 @@ public class CreateQunImpl {
                         params.addQueryStringParameter("tlzid",s);
                         params.addQueryStringParameter("tlzname",title);
                         params.addQueryStringParameter("tlzusers",users);
+                        params.addQueryStringParameter("exerciseId",exerciseId);
                         x.http().get(params, new Callback.CommonCallback<String>() {
                             @Override
                             public void onSuccess(String result) {
@@ -151,7 +152,7 @@ public class CreateQunImpl {
               x.http().get(requestParams, new Callback.CommonCallback<String>() {
                   @Override
                   public void onSuccess(String result) {
-
+                      Log.i("onSuccesstlz:",200+"");
                   }
 
                   @Override
@@ -223,6 +224,17 @@ public class CreateQunImpl {
           }
       });
   }
+    public void startdischat(String tlzid,String tlzname){
+        Conntent();
+        /**
+         * 启动讨论组聊天界面。
+         *
+         * @param context            应用上下文。
+         * @param targetDiscussionId 要聊天的讨论组 Id。
+         * @param title              聊天的标题，如果传入空值，则默认显示讨论组名称。
+         */
+        RongIM.getInstance().startDiscussionChat(B, tlzid, tlzname);
+    }
     private void Conntent(){
         RongIM.connect(Token, new RongIMClient.ConnectCallback() {
             @Override

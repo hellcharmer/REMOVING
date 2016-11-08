@@ -23,6 +23,15 @@ public class Exercises {
     private String activeState;
     private String enroller;
 	private boolean isScan;
+	private  String tlzId;
+
+	public String getTlzId() {
+		return tlzId;
+	}
+
+	public void setTlzId(String tlzId) {
+		this.tlzId = tlzId;
+	}
 
 	public boolean isScan() {
 		return isScan;
