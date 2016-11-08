@@ -43,6 +43,18 @@ public class Remark implements Serializable{
 		this.childComment = childComment;
 	}
 
+	public Remark(Integer infoId, Integer childDiscount, String username, Timestamp timestamp, String s,Integer fid,String fcomment) {
+
+		this.infoId = infoId;
+		this.childDiscussant = childDiscount;
+		this.childDiscussantName = username;
+		this.commentTime = timestamp;
+		this.childComment = s;
+		this.fatherDiscussant = fid;
+		this.fatherComment = fcomment;
+
+	}
+
 	public Integer getDynamicRemarkId() {
 		return dynamicRemarkId;
 	}
@@ -132,11 +144,6 @@ public class Remark implements Serializable{
 		this.fatherComment = fatherComment;
 	}
 
-	public Remark(Integer infoId, Integer childDiscussant, String childComment) {
-		this.infoId = infoId;
-		this.childDiscussant = childDiscussant;
-		this.childComment = childComment;
-	}
 
 	public Remark(Integer infoId, String childDiscussantImg,String childDiscussantName, String childComment, String fatherDiscussantName) {
 		this.infoId = infoId;

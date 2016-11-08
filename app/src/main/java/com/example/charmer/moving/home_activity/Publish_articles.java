@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;

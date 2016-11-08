@@ -1,10 +1,10 @@
 [
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\menu_preview.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\menu\\menu_preview.xml"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\menu_picker.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\menu\\menu_picker.xml"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\menu_picker.xml",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\menu\\menu_picker.xml"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\menu_preview.xml",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\menu\\menu_preview.xml"
     }
 ]

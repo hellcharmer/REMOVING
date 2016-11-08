@@ -1,30 +1,30 @@
 [
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\default_check.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\default_check.png"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_selected.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_selected.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\asv.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\asv.png"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\asv.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\asv.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_unselected.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_unselected.png"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_action_discard.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\ic_action_discard.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_action_discard.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\ic_action_discard.png"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\asy.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\asy.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\asy.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\asy.png"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\default_check.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\default_check.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\default_error.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\default_error.png"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_unselected.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_unselected.png"
     },
     {
-        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_selected.png",
-        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\btn_selected.png"
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\default_error.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-xxhdpi\\default_error.png"
     }
 ]

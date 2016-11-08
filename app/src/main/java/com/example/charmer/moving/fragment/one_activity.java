@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +19,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -27,6 +29,7 @@ import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Remark;
+import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.example.charmer.moving.view.NineGridTestLayout;
 import com.google.gson.Gson;
@@ -55,14 +58,19 @@ public class one_activity extends AppCompatActivity {
     private EditText input_comment;
     private TextView btn_publish_comment;
     private EditText input_comment1;
-    private TextView btn_publish_comment1;
+    private TextView btn_send;
     private TextView tv_likenum;
     private CheckBox iv_like;
+    private String userimg;
+    private LinearLayout linear;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_info_one);
+        Integer userid = MainActivity.getUser().getUserid();
+        getuserbyuserid(userid);
         initView();
         initData();
         initevent();
@@ -101,6 +109,8 @@ public class one_activity extends AppCompatActivity {
     }
 
     private void initView() {
+        //评论狂
+        linear = ((LinearLayout) findViewById(R.id.linearLayout));
         iv_photoImg = ((ImageView) findViewById(R.id.iv_photoImg));
         tv_infoName = ((TextView) findViewById(R.id.tv_infoName));
         tv_infoContent = ((TextView) findViewById(R.id.tv_infoContent));
@@ -154,21 +164,15 @@ public class one_activity extends AppCompatActivity {
                 sendRemark(MainActivity.getUser().getUserid(), Integer.parseInt(infoId));
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                Remark remark = new Remark(Integer.parseInt(infoId), MainActivity.getUser().getUserimg(), MainActivity.getUser().getUsername(), new Timestamp(System.currentTimeMillis()), input_comment.getText().toString() + "");
-                Log.i("info", "infoListonClick: "+remark);
-                remarkList.add(remark);
-//                myadapter = new AdapterComment(getApplication(), remarkList);
-//                lv_commentlist.setAdapter(myadapter);
-                myadapter.notifyDataSetChanged();
-//                getRemarkList(infoId);
             }
         });
     }
 
     private void showdialog(final Integer infoId,final Integer fatherId,final String fatherName) {
-        final View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.view_input_comment1, null);
+        linear.setVisibility(View.GONE);
+        final View view = LayoutInflater.from(this).inflate(R.layout.view_input_comment1, null);
         input_comment1 = ((EditText) view.findViewById(R.id.input_comment1));
-        btn_publish_comment1 = ((TextView) view.findViewById(R.id.btn_publish_comment1));
+        btn_send = ((TextView) view.findViewById(R.id.btn_send));
         final PopupWindow popupWindow = new PopupWindow(view, ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
         popupWindow.setTouchable(true);
         popupWindow.setTouchInterceptor(new View.OnTouchListener() {
@@ -178,33 +182,17 @@ public class one_activity extends AppCompatActivity {
             }
         });
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
-        input_comment1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                input_comment1.setFocusable(true);
-                input_comment1.setFocusableInTouchMode(true);
-                input_comment1.requestFocus();
-                input_comment1.findFocus();
-            }
-        });
+        popupWindow.showAtLocation(view, Gravity.BOTTOM,0,50);
 
-        btn_publish_comment1.setOnClickListener(new View.OnClickListener() {
+        btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("info", "onClick: inputcomment"+input_comment1.getText().toString()+"");
                 Log.i("info", "onClick: infoid" + infoId);
-                sendRemark1(fatherId, infoId);
+                sendRemark1(fatherId, infoId,fatherName);
                 view.setVisibility(View.GONE);
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                Remark remark = new Remark(infoId,MainActivity.getUser().getUserimg(),MainActivity.getUser().getUsername()+"", input_comment1.getText().toString()+"",fatherName );
-                Log.i("info", "infoListonClick: "+MainActivity.getUser().getUsername()+"");
-
-                remarkList.add(remark);
-                myadapter = new AdapterComment(getApplication(), remarkList);
-                lv_commentlist.setAdapter(myadapter);
-                myadapter.notifyDataSetChanged();
-                getRemarkList(String.valueOf(infoId));
             }
         });
     }
@@ -312,10 +300,12 @@ public class one_activity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (finalHolder.delete.getText().toString().equals("删除")) {
+                        Log.i("sssss", "onClick: "+"回复");
                         deleteRemark(String.valueOf(remark.getCommentTime()), remark.getInfoId());
                         remarkList.remove(remarkList.get(position));
                         notifyDataSetChanged();
-                    } else {
+                    } if(finalHolder.delete.getText().toString().equals("回复")) {
+                        Log.i("info===", "onClick: "+"回复");
                         showdialog(remark.getInfoId(),remark.getChildDiscussant(),remark.getChildDiscussantName());
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
@@ -378,9 +368,12 @@ public class one_activity extends AppCompatActivity {
             Toast.makeText(getApplication(), "评论不能为空！", Toast.LENGTH_SHORT).show();
         } else {
             //生成评论数据
-            Remark remark = new Remark(infoId, MainActivity.getUser().getUserid(),
-                    input_comment.getText().toString() + "",0,"");
-            Log.i("info", "sendRemark: " + remark);
+
+            Remark remark = new Remark(infoId,ChildDiscount, MainActivity.getUser().getUsername(), new Timestamp(System.currentTimeMillis()), input_comment.getText().toString() + "",0,"");
+            Log.i("info", "infoListonClick: "+remark);
+            remark.setChildDiscussantImg(userimg);
+            remarkList.add(remark);
+            myadapter.notifyDataSetChanged();
             RequestParams params = new RequestParams(HttpUtils.host_dynamic + "sendremark");
             Gson gson = new Gson();
             String remarkInfo = gson.toJson(remark);
@@ -415,12 +408,21 @@ public class one_activity extends AppCompatActivity {
 
         }
     }
-    public void sendRemark1(Integer fatherId, Integer infoId) {
-        if (input_comment.getText().toString().equals("")) {
+    public void sendRemark1(Integer fatherId, Integer infoId,String fathername) {
+        Log.i("info===", "sendRemark1: "+fatherId+fathername);
+        if (input_comment1.getText().toString().equals("")) {
             Toast.makeText(getApplication(), "评论不能为空！", Toast.LENGTH_SHORT).show();
         } else {
             //生成评论数据
-            Remark remark = new Remark(infoId,MainActivity.getUser().getUserid(), input_comment.getText().toString() + "",fatherId, "");
+
+            Remark remark = new Remark(infoId,MainActivity.getUser().getUserid(), input_comment1.getText().toString() + "",fatherId, "");
+            remark.setFatherDiscussantName(fathername);
+            remark.setCommentTime(new Timestamp(System.currentTimeMillis()));
+            Log.i("info===", "sendRemark1: "+fatherId+fathername);
+            remark.setChildDiscussantImg(userimg);
+            remark.setChildDiscussantName(username);
+            remarkList.add(remark);
+            myadapter.notifyDataSetChanged();
             Log.i("info", "sendRemark: " + remark);
             RequestParams params = new RequestParams(HttpUtils.host_dynamic + "sendremark");
             Gson gson = new Gson();
@@ -432,7 +434,7 @@ public class one_activity extends AppCompatActivity {
                 public void onSuccess(String result) {
                     if ("true".equals(result)) {
                         input_comment.setText("");
-                        Toast.makeText(getApplication(), "评论成功", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication(), "评论真的成功", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getApplication(), "评论失败", Toast.LENGTH_LONG).show();
                     }
@@ -455,6 +457,34 @@ public class one_activity extends AppCompatActivity {
             });
 
         }
+    }
+    public void getuserbyuserid(Integer userid){
+        RequestParams params=new RequestParams(HttpUtils.host_dynamic+"queryuserbyuserid");
+        params.addBodyParameter("userid",String.valueOf(userid));
+        x.http().get(params, new Callback.CommonCallback<String >() {
+            @Override
+            public void onSuccess(String result) {
+                Gson gson = new Gson();
+                User user = gson.fromJson(result,User.class);
+                userimg = user.getUserimg();
+                username = user.getUsername();
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
     }
 }
 

@@ -24,6 +24,8 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     }
 
 
+
+
     @Override
     public int getCount() {
         return (lists!=null)?lists.size():0;

@@ -127,12 +127,15 @@
         </com.example.charmer.moving.MyView.MyListView>
         </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom"
+        android:id="@+id/linearLayout"
         android:layout_alignParentBottom="true"
-        android:id="@+id/linearLayout">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <EditText
             android:id="@+id/input_comment"
             android:layout_weight="1"

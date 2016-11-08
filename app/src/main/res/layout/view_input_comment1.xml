@@ -23,7 +23,7 @@
                 android:focusable="true"
                 />
         <TextView
-                android:id="@+id/btn_publish_comment1"
+                android:id="@+id/btn_send"
                 android:layout_width="60dp"
                 android:layout_height="35dp"
                 android:text="发表"

@@ -17,8 +17,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.mumu.parallaxheader.R;
-import com.mumu.parallaxheader.util.DensityUtil;
+
+import com.example.charmer.moving.R;
+import com.example.charmer.moving.utils.DensityUtil;
+
 
 /**
  * Created by MuMu on 16/9/24.

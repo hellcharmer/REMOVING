@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,7 +26,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -35,6 +35,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyView.LoadMoreListView;
 import com.example.charmer.moving.Publishdynamic.Publishdynamic;
 import com.example.charmer.moving.R;
@@ -42,8 +43,8 @@ import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.Info;
 import com.example.charmer.moving.pojo.QueryInfoBean;
 import com.example.charmer.moving.pojo.Remark;
+import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.CommonAdapter;
-import com.example.charmer.moving.utils.MyAdapter;
 import com.example.charmer.moving.utils.ViewHolder;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.example.charmer.moving.view.NineGridTestLayout;
@@ -54,7 +55,9 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URLEncoder;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -87,9 +90,6 @@ public class Fragment_dynamic extends BaseFragment {
     Map<Integer,Boolean> is_now=new HashMap<>();
     //记录评论的位置
     Map<Integer,Boolean> remarkContent = new HashMap<>();
-    //记录图片的位置
-    Map<Integer,Boolean> grid = new HashMap<>();
-
     InfosAdapter infosAdapter;
     List<Info> infoList = new ArrayList<Info>();
     @InjectView(R.id.lv_info)
@@ -98,12 +98,9 @@ public class Fragment_dynamic extends BaseFragment {
     ProgressBar pbLoad;
     @InjectView(R.id.iv_publish)
     ImageView ivPublish;
-    private GridView gv;
     private NineGridTestLayout nineGridTestLayout;
-    private MyAdapter imgsAdapter;
     private CommentAdapter remarksAdapter;
     Integer likeNum;
-    private String[] imgs;
     private SwipeRefreshLayout dynamic_refresh;
     private ObjectAnimator bottomAnimator;
     private RelativeLayout rl_test;
@@ -116,6 +113,8 @@ public class Fragment_dynamic extends BaseFragment {
     private ListView lv_commentlist;
     private TextView tv_cancel;
     private TextView tv_delete;
+    private String username;
+
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -123,8 +122,7 @@ public class Fragment_dynamic extends BaseFragment {
             switch (msg.what){
                 //handleMessage界面更新
                 case 1:
-                   getData(dynamic_pageNo);
-
+                    getData(dynamic_pageNo);
                     break;
             }
         }
@@ -135,6 +133,8 @@ public class Fragment_dynamic extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_info, null);
         ButterKnife.inject(this, v);
+        Integer userid = MainActivity.getUser().getUserid();
+        getuserbyuserid(userid);
         return v;
 
     }
@@ -189,7 +189,11 @@ public class Fragment_dynamic extends BaseFragment {
     }
 
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        getData(1);
+    }
 
     @Override
     public void initData() {
@@ -234,6 +238,7 @@ public class Fragment_dynamic extends BaseFragment {
         //xutils获取网络数据
         String url = HttpUtils.host_dynamic + "queryinfoservlet";
         RequestParams requestParams = new RequestParams(url);
+        requestParams.addQueryStringParameter("userid", MainActivity.getUser().getUserid()+"");
         requestParams.addQueryStringParameter("pageNo",dynamic_pageNo+"");
         requestParams.addQueryStringParameter("pageSize",total_pageSize+"");
         Log.i("info", "getData: "+total_pageSize);
@@ -244,6 +249,8 @@ public class Fragment_dynamic extends BaseFragment {
                 Log.i("info","lll"+result);
                 //json转换为List<Info>
                 Gson gson = new Gson();
+
+                System.out.println(result);
                 Type type = new TypeToken<QueryInfoBean>() {}.getType();
                 QueryInfoBean queryInfoBean = gson.fromJson(result, type);  //解析成List<Info>
                 List<Info> infos = queryInfoBean.getInfoList();
@@ -286,14 +293,9 @@ public class Fragment_dynamic extends BaseFragment {
 
     class InfosAdapter extends CommonAdapter<Info> {
 
-
         public InfosAdapter(Context context, List<Info> lists, int layoutId) {
             super(context, lists, layoutId);
 
-//            //false没有评论
-//            for(int i = 0;i<lists.size();i++){
-//                remarkContent.put(i,false);
-//            }
             //初始化checkStstus：默认都是未选中状态
             for(int i = 0;i<lists.size();i++){
                 Log.i("jin","jin");
@@ -318,6 +320,9 @@ public class Fragment_dynamic extends BaseFragment {
 
         @Override
         public void convert(ViewHolder viewHolder, final Info info, final int position) {
+
+
+            List<String> urlsList = new ArrayList<String>();
             //取出控件
             comment = viewHolder.getViewById(R.id.btn_input_comment);
             final List<Remark> remarkList = new ArrayList<Remark>();
@@ -328,13 +333,7 @@ public class Fragment_dynamic extends BaseFragment {
             if (is_now.get(position)==null){
                 is_now.put(position,true);
             }
-            if(remarkContent.get(position)==null){
-                if(remarks.isEmpty()){
-                    remarkContent.put(position,false);
-                }else{
-                    remarkContent.put(position,true);
-                }
-            }
+
             if(is_now.get(position)){
                 likenums.put(position,info.getInfoLikeNum());
                 if(flagmsg){
@@ -355,7 +354,6 @@ public class Fragment_dynamic extends BaseFragment {
                        checkStatus.put(position,false);
                    }
             }
-
             iv_like.setChecked(checkStatus.get(position));
             flag.put(position,false);
             isliked.put(position,true);
@@ -372,6 +370,18 @@ public class Fragment_dynamic extends BaseFragment {
             infoDate.setText(date);
             final TextView tv_likeNumber = viewHolder.getViewById(R.id.tv_likeNumber);
             tv_likeNumber.setText(likenums.get(position)+"");
+
+            if(remarkContent.get(position)==null){
+                if(remarks.isEmpty()){
+                    remarkContent.put(position,false);
+                }else{
+                    remarkContent.put(position,true);
+                }
+            }else{
+                if (!remarks.isEmpty()){
+                    remarkContent.put(position,true);
+                }
+            }
 
             if(remarkContent.get(position)){
                 if(remarkList.isEmpty()){
@@ -392,21 +402,23 @@ public class Fragment_dynamic extends BaseFragment {
                 lv_commentlist.setAdapter(remarksAdapter);
             }
 
-            List<String> urlsList = new ArrayList<String>();
+
             //取出gridview
             nineGridTestLayout = viewHolder.getViewById(R.id.ng_grid);
-            if (info.getInfoPhotoImg() != null && !"".equals(info.getInfoPhotoImg())) {
-                String []imgs = info.getInfoPhotoImg().split(",");
-                if(imgs.length>0) {
+
+            if(info.getInfoPhotoImg() == null || "".equals(info.getInfoPhotoImg())){
+                nineGridTestLayout.setVisibility(View.GONE);
+            }else{
+                nineGridTestLayout.setVisibility(View.VISIBLE);
+                urlsList.clear();
+                String[] imgs = info.getInfoPhotoImg().split(",");
+                if (imgs.length > 0) {
                     for (int i = 0; i < imgs.length; i++) {
-                        urlsList.add(HttpUtils.host_dynamic+imgs[i]);
+                        urlsList.add(HttpUtils.host_dynamic + imgs[i]);
                     }
                     nineGridTestLayout.setUrlList(urlsList);
                     nineGridTestLayout.setIsShowAll(info.isShowAll);
                 }
-            } else if("".equals(info.getInfoPhotoImg() ) && info.getInfoPhotoImg()  == null){
-                    nineGridTestLayout.notifyDataSetChanged();
-
             }
 
             iv_like.setTag(position); //每个checkbox的tag不一样
@@ -537,35 +549,36 @@ public class Fragment_dynamic extends BaseFragment {
             });
 
 
+            //点击评论textview
             comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Integer fid = 0;
                     InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
-                    showdialog(fid,info.getInfoId());
+                    showdialog(fid,info.getInfoId(),position);
 
                 }
             });
 
+            //点击listview
             lv_commentlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Integer fid = remarkList.get(position).getFatherDiscussant();
-                    String remarktime = String.valueOf(remarkList.get(position).getCommentTime());
+                    Timestamp remarktime = remarkList.get(position).getCommentTime();
                     Log.i("info", "onItemClick: father"+fid);
                     Integer cid = remarkList.get(position).getChildDiscussant();
+                    String cname = remarkList.get(position).getChildDiscussantName();
                     if(cid == getUser().getUserid()){
-                        remarkList.remove(position);
-                        showdeletedialog(remarktime,info.getInfoId());
+                        showdeletedialog(remarktime,info.getInfoId(),position);
 
-
-//                        remarkList.remove(remarkList.get(position));
-                        remarksAdapter.notifyDataSetChanged();
+//                        remarkList.remove(position);
+//                        remarksAdapter.notifyDataSetChanged();
 
                     }
                     else{
-                        showdialog(cid,info.getInfoId());
+                        showdialogitem(cid,info.getInfoId(),cname);
                         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
                     }
@@ -577,6 +590,7 @@ public class Fragment_dynamic extends BaseFragment {
         }
 
     }
+
 
 
 
@@ -651,7 +665,6 @@ public class Fragment_dynamic extends BaseFragment {
     private void showBar() {
 
         bottomAnimator = ObjectAnimator.ofFloat(mBottom, "translationY", 0);
-
         bottomAnimator.setDuration(400).start();
         rl_title.getBackground().setAlpha(255);
         rb_guys.setTextColor(Color.WHITE);
@@ -660,7 +673,6 @@ public class Fragment_dynamic extends BaseFragment {
     }
 
     private void hideBar() {
-
         rl_title.getBackground().setAlpha(50);
         rb_guys.setTextColor(Color.BLACK);
         ivPublish.setImageResource(R.drawable.publish_black);
@@ -680,8 +692,8 @@ public class Fragment_dynamic extends BaseFragment {
         });
     }
 
+    //内部评论适配器
     private class CommentAdapter extends BaseAdapter {
-
         private List<Remark> remarkslist1;
         Context context;
         CommentAdapter( Context context,List<Remark> remarkslist1){
@@ -721,32 +733,19 @@ public class Fragment_dynamic extends BaseFragment {
             final Remark remark = remarkslist1.get(position);
             if(remark.getFatherDiscussant()==null||remark.getFatherDiscussant()==0){
                 viewHolder.tv_commentname.setText(remark.childDiscussantName+"");
-                viewHolder.replayorcomment.setText("评论："+remark.childComment+"");
+                viewHolder.replayorcomment.setText("  评论："+remark.childComment+"");
                 viewHolder.tv_replayname.setVisibility(View.GONE);
                 viewHolder.tv_content.setVisibility(View.GONE);
             }
             else{
                 viewHolder.tv_commentname.setText(remark.childDiscussantName+"");
-                viewHolder.replayorcomment.setText("  回复  ");
+                viewHolder.replayorcomment.setText("  回复:  ");
                 viewHolder.tv_replayname.setText(remark.fatherDiscussantName+"");
                 Log.i("info", "getView: remark.fatherDiscussantName"+remark.fatherDiscussantName);
                 viewHolder.tv_content.setText(remark.childComment+"");
             }
             return convertView;
         }
-       /**
-        * 添加一条评论,刷新列表
-        */
-//        public void addComment(Remark remark){
-//            List<Remark> newData = new ArrayList<Remark>();
-//            newData.addAll(remarkslist);
-//            remarkslist.clear();
-//            newData.add(remark);
-//            remarkslist.addAll(newData);
-//            System.out.println(".........."+remarkslist.size());
-//            notifyDataSetChanged();
-//            notifyDataSetInvalidated();
-//        }
          class ViewHolder {
             public TextView tv_commentname;
             public TextView replayorcomment;
@@ -755,7 +754,7 @@ public class Fragment_dynamic extends BaseFragment {
         }
     }
 
-    public void showdialog(final Integer ChildDiscount ,final Integer infoId){
+    public void showdialog(final Integer ChildDiscount , final Integer infoId, final int position){
         final View view = LayoutInflater.from(getActivity()).inflate(R.layout.view_input_comment, null);
         input_comment = ((EditText) view.findViewById(R.id.input_comment));
         btn_publish_comment = ((TextView) view.findViewById(R.id.btn_publish_comment));
@@ -773,23 +772,52 @@ public class Fragment_dynamic extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Log.i("info", "onClick: infoid"+infoId);
-                sendRemark(ChildDiscount,infoId);
+                sendRemark(ChildDiscount,infoId,position);
                 view.setVisibility(View.GONE);
                 InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                getData(dynamic_pageNo);
+
 
             }
         });
     }
 
-    public void sendRemark(Integer ChildDiscount,Integer infoId){
+    private void showdialogitem(final Integer fatherDiscount,final Integer infoId,final String fname) {
+        final View view = LayoutInflater.from(getActivity()).inflate(R.layout.view_input_comment, null);
+        input_comment = ((EditText) view.findViewById(R.id.input_comment));
+        btn_publish_comment = ((TextView) view.findViewById(R.id.btn_publish_comment));
+        final PopupWindow popupWindow = new PopupWindow(view, ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
+        popupWindow.setTouchable(true);
+        popupWindow.setTouchInterceptor(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow.showAtLocation(view, Gravity.BOTTOM,0,50);
+        btn_publish_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("info", "onClick: infoid"+infoId);
+                sendRemark1(fatherDiscount,infoId,fname);
+                view.setVisibility(View.GONE);
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+
+            }
+        });
+    }
+
+    private void sendRemark1(Integer childDiscount, Integer infoId,String fname) {
         if (input_comment.getText().toString().equals("")) {
             Toast.makeText(getActivity(), "评论不能为空！", Toast.LENGTH_SHORT).show();
         } else {
             //生成评论数据
             Remark remark = new Remark(infoId, getUser().getUserid(),
-                    input_comment.getText().toString()+"",ChildDiscount,"");
+                    input_comment.getText().toString()+"",childDiscount,"");
+            remark.setChildDiscussantName(fname);
             Log.i("info", "sendRemark: "+remark);
             RequestParams params = new RequestParams(HttpUtils.host_dynamic + "sendremark");
             Gson gson =new Gson();
@@ -801,7 +829,8 @@ public class Fragment_dynamic extends BaseFragment {
                 public void onSuccess(String result) {
                     if("true".equals(result)){
                         input_comment.setText("");
-                        Toast.makeText(getContext(),"评论成功",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"评论成功,dynamic_pageNo:"+dynamic_pageNo,Toast.LENGTH_LONG).show();
+                        getData(dynamic_pageNo);
                     }
                     else{
                         Toast.makeText(getContext(),"评论失败",Toast.LENGTH_LONG).show();
@@ -828,7 +857,60 @@ public class Fragment_dynamic extends BaseFragment {
 
     }
 
-    public void showdeletedialog(final String remarkTime, final Integer infoId) {
+    public void sendRemark(Integer ChildDiscount,Integer infoId,int position){
+        if (input_comment.getText().toString().equals("")) {
+            Toast.makeText(getActivity(), "评论不能为空！", Toast.LENGTH_SHORT).show();
+        } else {
+            //生成评论数据
+            Remark remark = new Remark(infoId, getUser().getUserid(),
+                    input_comment.getText().toString()+"",ChildDiscount,"");
+            remark.setChildDiscussantName(username);
+            infoList.get(position).getRemark().add(remark);
+            infosAdapter.notifyDataSetChanged();
+            Log.i("info", "sendRemark: "+remark);
+            RequestParams params = new RequestParams(HttpUtils.host_dynamic + "sendremark");
+            Gson gson =new Gson();
+            String remarkInfo = gson.toJson(remark);
+            Log.i("info", "sendRemark:two "+remarkInfo);
+            try {
+                params.addQueryStringParameter("remarkInfo",URLEncoder.encode(remarkInfo,"utf-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            x.http().get(params, new Callback.CommonCallback<String>() {
+                @Override
+                public void onSuccess(String result) {
+                    if("true".equals(result)){
+                        input_comment.setText("");
+                        Toast.makeText(getContext(),"评论成功",Toast.LENGTH_LONG).show();
+                        getData(dynamic_pageNo);
+                    }
+                    else{
+                        Toast.makeText(getContext(),"评论失败",Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onError(Throwable ex, boolean isOnCallback) {
+                    Toast.makeText(getContext(),"网络已断开",Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onCancelled(CancelledException cex) {
+
+                }
+
+                @Override
+                public void onFinished() {
+
+                }
+            });
+
+        }
+
+    }
+
+    public void showdeletedialog(final Timestamp remarkTime, final Integer infoId,final int position) {
         final View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_dynamic_remark_delete, null);
         final PopupWindow popupWindow = new PopupWindow(view, ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
         popupWindow.setTouchable(true);
@@ -840,6 +922,10 @@ public class Fragment_dynamic extends BaseFragment {
         });
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         popupWindow.showAtLocation(view, Gravity.BOTTOM,0,50);
+        ColorDrawable dw = new ColorDrawable(0xb0000000);
+        // 如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
+        // 我觉得这里是API的一个bug
+        popupWindow.setBackgroundDrawable(dw);
         tv_cancel = ((TextView) view.findViewById(R.id.tv_cancel));
         tv_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -851,19 +937,20 @@ public class Fragment_dynamic extends BaseFragment {
         tv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteRemark(remarkTime,infoId);
-
+                deleteRemark(remarkTime,infoId,position);
                 popupWindow.dismiss();
                 Message msg = new Message();
                 msg.what = 1;
                 handler.sendMessage(msg);
-//                getData(dynamic_pageNo);
+//                remarksAdapter.notifyDataSetChanged();
+//                infosAdapter.notifyDataSetChanged();
             }
         });
     }
 
-    public void deleteRemark(String remarkTime,Integer infoId) {
-        Remark remark = new Remark(infoId, getUser().getUserid(), Timestamp.valueOf(remarkTime));
+    public void deleteRemark(Timestamp remarkTime, Integer infoId,int position) {
+        Remark remark = new Remark(infoId, getUser().getUserid(), remarkTime);
+
         RequestParams params = new RequestParams(HttpUtils.host_dynamic+"deleteremark");
         Gson gson =new Gson();
         String remarkInfo = gson.toJson(remark);
@@ -874,6 +961,9 @@ public class Fragment_dynamic extends BaseFragment {
             public void onSuccess(String result) {
                 if("true".equals(result)){
                     Toast.makeText(getContext(),"删除成功",Toast.LENGTH_LONG).show();
+//                    Message msg = new Message();
+//                    msg.what = 1;
+//                    handler.sendMessage(msg);
                 }else{
                     Toast.makeText(getContext(),"删除失败",Toast.LENGTH_LONG).show();
                 }
@@ -895,6 +985,34 @@ public class Fragment_dynamic extends BaseFragment {
             }
         });
 
+    }
+
+    public void getuserbyuserid(Integer userid){
+        RequestParams params=new RequestParams(HttpUtils.host_dynamic+"queryuserbyuserid");
+        params.addBodyParameter("userid",String.valueOf(userid));
+        x.http().get(params, new Callback.CommonCallback<String >() {
+        @Override
+        public void onSuccess(String result) {
+            Gson gson = new Gson();
+            User user = gson.fromJson(result,User.class);
+            username = user.getUsername();
+        }
+
+        @Override
+        public void onError(Throwable ex, boolean isOnCallback) {
+
+        }
+
+        @Override
+        public void onCancelled(CancelledException cex) {
+
+        }
+
+        @Override
+        public void onFinished() {
+
+        }
+        });
     }
 
 }

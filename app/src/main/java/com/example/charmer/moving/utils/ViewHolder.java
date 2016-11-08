@@ -39,7 +39,10 @@ public class ViewHolder {
     {
         ViewHolder viewHolder;
         if(convertView==null) {
+            convertView = LayoutInflater.from(context).inflate(layoutId, parent,
+                    false);
             viewHolder= new ViewHolder(context,layoutId,parent);//创建对象
+            convertView.setTag(viewHolder);
         }else{
             viewHolder= (ViewHolder) convertView.getTag();//获取viewholder
         }

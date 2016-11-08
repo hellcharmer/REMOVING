@@ -12,7 +12,7 @@ import android.support.annotation.ColorRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.mumu.parallaxheader.R;
+import com.example.charmer.moving.R;
 
 
 /**
