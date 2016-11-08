@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/bt_mine"
+        android:layout_below="@+id/rg_all"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#fff"
+        android:text=" 个人资料"
+        android:textSize="20sp"
+        android:background="#f33e16"/>
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="#E5E5E5"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#ffffff"
+        android:id="@+id/rl_edit_head_image"
+        >
+
+        <TextView
+            android:id="@+id/tv_headimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="修改头像"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp" />
+
+        <ImageView
+            android:id="@+id/iv_head_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tou"
+            android:layout_toLeftOf="@+id/iv_edit_head_image"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            />
+        <ImageView
+            android:id="@+id/iv_edit_head_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/dayu"
+            />
+    </RelativeLayout>
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#F2F2F2"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:id="@+id/rl_edit_name"
+        >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="昵称"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/tv_real_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_edit_name"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:text="木木诺"
+            />
+        <ImageView
+            android:id="@+id/iv_edit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/dayu"
+            />
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#F2F2F2"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:id="@+id/rl_edit_sex"
+        >
+
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="性别"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/tv_real_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_edit_sex"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:text="女"
+            />
+        <ImageView
+            android:id="@+id/iv_edit_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/dayu"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#F2F2F2"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:id="@+id/rl_edit_phone"
+        >
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="电话"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/tv_real_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_edit_phone"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:text="15151977069"
+            />
+        <ImageView
+            android:id="@+id/iv_edit_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/dayu"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#F2F2F2"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:id="@+id/rl_edit_add"
+        >
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="地址"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/tv_real_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_edit_add"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:text="江苏"
+            />
+        <ImageView
+            android:id="@+id/iv_edit_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/dayu"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#F2F2F2"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:id="@+id/rl_edit_pwd"
+        >
+
+        <TextView
+            android:id="@+id/tv_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="修改密码"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp" />
+
+
+        <ImageView
+            android:id="@+id/iv_edit_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:src="@drawable/dayu"
+            />
+    </RelativeLayout>
+        <Button
+            android:id="@+id/bt_save"
+            android:layout_below="@+id/rg_all"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#fff"
+            android:text=" 保存资料"
+            android:textSize="20sp"
+            android:background="#f33e16"/>
+
+</LinearLayout>

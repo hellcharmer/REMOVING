@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/llqun"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bugdeal"
+        android:id="@+id/bugdeal"
+        />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_below="@id/bugdeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/re_qun"
+        >
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_qun"
+        android:dividerHeight="10dp"
+        android:cacheColorHint="#00000000"
+        android:background="@drawable/bg2"
+        android:divider="@null"
+        ></ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/progress2"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>

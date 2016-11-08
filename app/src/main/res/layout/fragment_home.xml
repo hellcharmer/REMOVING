@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.charmer.moving.MainActivity">
+  <me.weyye.library.EmptyLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:id="@+id/emptyLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:elEmptyLayout="@layout/layout_empty"
+      app:elErrorLayout="@layout/layout_error"
+      app:elLoadingLayout="@layout/layout_loading">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/sr_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+    <com.example.charmer.moving.MyView.LoadMoreListView
+        android:id="@+id/lv_zixun"
+
+        android:dividerHeight="10dp"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.example.charmer.moving.MyView.LoadMoreListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+ </me.weyye.library.EmptyLayout>
+</FrameLayout>

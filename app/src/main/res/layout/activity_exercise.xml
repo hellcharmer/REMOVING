@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="10dp"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <ImageView
+
+                android:layout_marginTop="10dp"
+                android:id="@+id/userImage"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@mipmap/app_icon"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/publisher"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/userImage"
+                android:paddingTop="10dp"
+                android:text="@string/publisherName"
+                android:gravity="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            android:padding="5dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/remakeborde"
+            >
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:layout_below="@id/title"
+                />
+            <TextView
+                android:id="@+id/theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:layout_alignTop="@id/type"
+                android:layout_alignParentRight="true"
+                />
+            <ImageView
+                android:id="@+id/addr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/addr"
+                android:layout_below="@id/type"
+
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:id="@+id/place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/place"
+                android:textSize="16sp"
+                android:layout_alignBottom="@id/addr"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/addr"
+                />
+            <ImageView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/time"
+                android:layout_marginTop="2dp"
+                android:layout_below="@id/place"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                />
+            <TextView
+                android:id="@+id/activityTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activityTime"
+                android:textSize="16sp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="5dp"
+                android:layout_alignBottom="@id/time"
+                android:layout_toRightOf="@id/time"
+                />
+
+            <ImageView
+                android:id="@+id/account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/account"
+                android:layout_below="@id/activityTime"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                />
+            <TextView
+                android:id="@+id/currentNumberdesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currentNumberdesc"
+                android:textSize="18sp"
+                android:layout_alignBottom="@id/account"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/account"
+                />
+            <TextView
+                android:id="@+id/currentNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currentNumber"
+                android:textSize="16sp"
+                android:layout_alignBottom="@id/currentNumberdesc"
+                android:layout_toRightOf="@id/currentNumberdesc"
+                android:layout_marginLeft="5dp"
+                />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
