@@ -275,6 +275,7 @@
             </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/enrolllayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/nobordeframe"
@@ -282,31 +283,91 @@
             android:layout_marginTop="15dp"
             android:layout_margin="10dp">
 
+            <TextView
+                android:id="@+id/baoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="报名用户"
+                android:textSize="18sp"
+                android:textColor="@color/themeblue"
+                android:layout_margin="10dp"
+                />
+            <RelativeLayout
+                android:layout_below="@id/baoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <ListView
                 android:id="@+id/lvenrollers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:touchscreenBlocksFocus="true"
+
                 >
 
             </ListView>
+            </RelativeLayout>
 
-<!--
+            <!--<com.example.charmer.moving.MyView.MyListView-->
+                <!--android:id="@+id/lvenrollers"-->
+                <!--android:layout_below="@id/baoming"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:touchscreenBlocksFocus="true"-->
+                <!--&gt;-->
 
-            <com.example.charmer.moving.MyView.MyListView
-                android:id="@+id/lvenrollers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#f00"
-                android:touchscreenBlocksFocus="true"
-                >
+            <!--</com.example.charmer.moving.MyView.MyListView>-->
 
-            </com.example.charmer.moving.MyView.MyListView>
--->
 
 
         </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nobordeframe"
+                android:layout_below="@id/enrolllayout"
+                android:layout_marginTop="15dp"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/tuichu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="请求退出"
+                    android:textSize="18sp"
+                    android:textColor="@color/themeblue"
+                    android:layout_margin="10dp"
+                    />
+                <RelativeLayout
+                    android:layout_below="@id/tuichu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                <ListView
+                    android:id="@+id/lvcancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="true"
+
+                    >
+
+                </ListView>
+
+                </RelativeLayout>
+                <!--<com.example.charmer.moving.MyView.MyListView-->
+                <!--android:id="@+id/lvenrollers"-->
+                <!--android:layout_below="@id/baoming"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:touchscreenBlocksFocus="true"-->
+                <!--&gt;-->
+
+                <!--</com.example.charmer.moving.MyView.MyListView>-->
+
+
+
+            </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
 

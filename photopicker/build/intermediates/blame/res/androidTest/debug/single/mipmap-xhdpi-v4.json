@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\text_indicator_pressed.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\text_indicator_pressed.png"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_action_discard.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_action_discard.png"
+    },
+    {
+        "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\text_indicator_normal.png",
+        "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\text_indicator_normal.png"
+    }
+]

@@ -5,23 +5,33 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
+import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
+import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.home_activity.Zixun_comment;
+import com.example.charmer.moving.pojo.ListActivityBean;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
@@ -48,8 +58,10 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
     private BaseAdapter adapter;
     private BaseAdapter imgadapter;
     private BaseAdapter enrolleradapter;
+    private BaseAdapter canceleradapter;
     private ListView lv_exercise;
     private ListView lvenrollers;
+    private ListView lvcancel;
     private TextView title ;
     private Button cancelexe;
     private TextView name;
@@ -72,6 +84,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
     VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
     final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
     final List<VariableExercise.DataSummary> dsListEnroll = new ArrayList<VariableExercise.DataSummary>();
+    final List<VariableExercise.DataSummary> dsListcancel = new ArrayList<VariableExercise.DataSummary>();
     private RelativeLayout saoyisao;
     /**
      * 扫描跳转Activity RequestCode
@@ -94,8 +107,10 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
         successfulpublishpercent = ((TextView) findViewById(R.id.successfulpublishpercent));
         publishedNum = ((TextView) findViewById(R.id.publishedNum));
         imguser = ((ImageView) findViewById(R.id.imguser));
+        imguser.setEnabled(false);
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         lvenrollers = ((ListView)findViewById(R.id.lvenrollers));
+        lvcancel = ((ListView)findViewById(R.id.lvcancel));
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));
 
         adapter = new BaseAdapter() {
@@ -170,12 +185,20 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
+                final int position1 = position;
                 convertView = View.inflate(ExeInfopublisher.this, R.layout.joinerimg, null);
                 joinerImg= (ImageView) convertView.findViewById(R.id.joinerImg);
                 VariableExercise.DataSummary vds = dsListJoin.get(position);
                 xUtilsImageUtils.display(joinerImg, HttpUtils.hoster+"upload/"+vds.userImg);
                 System.out.println("==-=-=-=-=-=-"+vds.userImg);
-
+                joinerImg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent1 = new Intent(ExeInfopublisher.this, Homepage.class);
+                        intent1.putExtra("user",dsListJoin.get(position1).userAccount.toString());
+                        startActivity(intent1);
+                    }
+                });
                 return convertView;
             }
         };
@@ -204,7 +227,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
 
                 lvenrollers.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListEnroll.size()));
 
-                Toast.makeText(ExeInfopublisher.this, ""+dsListEnroll.size(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ExeInfopublisher.this, ""+dsListEnroll.size(), Toast.LENGTH_SHORT).show();
                 convertView = View.inflate(ExeInfopublisher.this, R.layout.enrolleritem, null);
 
                 enrollerImg = ((ImageView) convertView.findViewById(R.id.enrollerImg));
@@ -213,6 +236,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 enrollerName = ((TextView) convertView.findViewById(R.id.enrollerName));
                 agreebtn = ((Button) convertView.findViewById(R.id.agreebtn));
                 ignore = ((TextView) convertView.findViewById(R.id.ignore));
+                enrollerImg = ((ImageView) convertView.findViewById(R.id.enrollerImg));
 
 
                 VariableExercise.DataSummary vds = dsListEnroll.get(position);
@@ -221,7 +245,14 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 enrollerinfonum.setText(enrollerinfonum.getText().toString()+vds.joinedNum);
                 enrollerinforate.setText(enrollerinforate.getText().toString()+vds.appointmentRate);
                 enrollerName.setText(vds.userName);
-
+                enrollerImg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent1 = new Intent(ExeInfopublisher.this, Homepage.class);
+                        intent1.putExtra("user",dsListEnroll.get(position1).userAccount.toString());
+                        startActivity(intent1);
+                    }
+                });
 
                 agreebtn.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -298,8 +329,142 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
         };
         lvenrollers.setAdapter(enrolleradapter);
 
+
+        canceleradapter = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return dsListcancel.size();
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return dsListcancel.get(position);
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                final int position1 = position;
+
+                lvcancel.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListcancel.size()));
+
+                //Toast.makeText(ExeInfopublisher.this, ""+dsListEnroll.size(), Toast.LENGTH_SHORT).show();
+                convertView = View.inflate(ExeInfopublisher.this, R.layout.enrolleritem, null);
+
+                enrollerImg = ((ImageView) convertView.findViewById(R.id.enrollerImg));
+                enrollerinfonum = ((TextView) convertView.findViewById(R.id.enrollerinfonum));
+                enrollerinforate = ((TextView) convertView.findViewById(R.id.enrollerinforate));
+                enrollerName = ((TextView) convertView.findViewById(R.id.enrollerName));
+                agreebtn = ((Button) convertView.findViewById(R.id.agreebtn));
+                ignore = ((TextView) convertView.findViewById(R.id.ignore));
+                enrollerImg = ((ImageView) convertView.findViewById(R.id.enrollerImg));
+
+                VariableExercise.DataSummary vds = dsListcancel.get(position);
+                System.out.println("+++++++++++++22+++++++++"+vds);
+                xUtilsImageUtils.display(enrollerImg, HttpUtils.hoster+"upload/"+vds.userImg);
+                enrollerinfonum.setText(enrollerinfonum.getText().toString()+vds.joinedNum);
+                enrollerinforate.setText(enrollerinforate.getText().toString()+vds.appointmentRate);
+                enrollerName.setText(vds.userName);
+
+                enrollerImg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent1 = new Intent(ExeInfopublisher.this, Homepage.class);
+                        intent1.putExtra("user",dsListcancel.get(position1).userAccount.toString());
+                        startActivity(intent1);
+                    }
+                });
+                agreebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ExeInfopublisher.this);
+                        builder.setMessage(getString(R.string.agreejoin_sure));
+                        builder.setTitle(dsListcancel.get(position1).userName+"请求退出此活动");
+                        builder.setPositiveButton(
+                                getString(R.string.ok),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        cancelJoin(position1,exerciseId,dsListcancel.get(position1).userAccount.toString(),ExeInfopublisher.this);
+                                    }
+                                });
+                        builder.setNegativeButton(
+                                getString(R.string.app_cancel),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        // stub
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+                        builder.create().show();
+                    }
+                });
+
+                ignore.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                ExeInfopublisher.this);
+                        builder.setMessage(getString(R.string.ignore_sure));
+                        builder.setTitle("您将忽略"+dsListcancel.get(position1).userName+"的请求!");
+                        builder.setPositiveButton(
+                                getString(R.string.ok),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        cancelResponse(position1,exerciseId,dsListcancel.get(position1).userAccount.toString(),ExeInfopublisher.this);
+                                    }
+                                });
+                        builder.setNegativeButton(
+                                getString(R.string.app_cancel),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialogInterface,
+                                            int which) {
+                                        // TODO Auto-generated method
+                                        // stub
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+                        builder.create().show();
+                    }
+                });
+                return convertView;
+
+
+
+            }
+        };
+        lvcancel.setAdapter(canceleradapter);
+
         getExerciseList(exerciseId);
-        enrolleradapter.notifyDataSetChanged();
+
+        imguser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(ExeInfopublisher.this, Homepage.class);
+                System.out.println("++++"+exerciseList.get(0).publisherId);
+                intent1.putExtra("user",exerciseList.get(0).publisherId);
+                startActivity(intent1);
+            }
+        });
+
         cancelexe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -371,16 +536,17 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                     dsListJoin.addAll(bean.dsListJoin);
                 }
                 dsListEnroll.clear();
-                System.out.println("-------------11-----------------_");
                 dsListEnroll.addAll(bean.dsListEnroll);
-                System.out.println("dsdds_______+++++"+dsListEnroll);
-                System.out.println("dsdds_______+++++"+dsListEnroll.size());
-                System.out.println("dsdds_______+++++"+dsListEnroll.get(0));
-                System.out.println("dsdds_______+++++"+dsListEnroll.get(0).userName);
+
+                dsListcancel.clear();
+                dsListcancel.addAll(bean.dsListcancel);
                 lvenrollers.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListEnroll.size()));
+                lvcancel.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DensityUtil.dip2px(ExeInfopublisher.this,100)*dsListcancel.size()));
+
                 ds = bean.ds;
                 if(exerciseList.size()>0) {
                     cancelexe.setEnabled(true);
+                    imguser.setEnabled(true);
                 }
                 try{
                     title.setText(URLDecoder.decode(bean.exerciseList.get(0).title,"utf-8"));
@@ -398,6 +564,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 imgadapter.notifyDataSetChanged();
                 enrolleradapter.notifyDataSetChanged();
                 adapter.notifyDataSetChanged();
+                canceleradapter.notifyDataSetChanged();
             }
 
             @Override
@@ -419,6 +586,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
     }
 
     private void agreeJoin(String exerciseId,String joiner,Context contexts){
+        final String joiner1 = joiner;
         final String exeId = exerciseId;
         final Context context = contexts;
         String str = HttpUtils.hoster+"enrollexe";
@@ -437,6 +605,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 if ("1".equals(result)){
                     Toast.makeText(context,"操作成功！",Toast.LENGTH_SHORT).show();
                     getExerciseList(exeId);
+                    jPush(joiner1);
                 }else
                 {
                     Toast.makeText(context,"操作失败！",Toast.LENGTH_SHORT).show();
@@ -463,7 +632,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
 
 
     private void ignoreEnroll(int position1,String exerciseId,String joiner,Context contexts){
-        final int position =position1;
+        final int position = position1;
         final String exeId = exerciseId;
         final Context context = contexts;
         String str = HttpUtils.hoster+"enrollexe";
@@ -481,6 +650,85 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                     //getExerciseList(exeId);
                     dsListEnroll.remove(position);
                     enrolleradapter.notifyDataSetChanged();
+                }else{
+                    Toast.makeText(context,"忽略失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
+    public void cancelJoin(int position1,String exerciseId,String joiner,Context contexts){
+        final Context context = contexts;
+        final int position = position1;
+        final String exeId = exerciseId;
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("choice","2");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    //Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
+                    getExerciseList(exeId);
+                }else {
+                    Toast.makeText(context,"操作失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+    private void cancelResponse(int position1,String exerciseId,String joiner,Context contexts){
+        final int position = position1;
+        final String exeId = exerciseId;
+        final Context context = contexts;
+        String str = HttpUtils.hoster+"enrollexe";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("state","3");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)) {
+                    //Toast.makeText(context,"忽略成功！",Toast.LENGTH_SHORT).show();
+                    //getExerciseList(exeId);
+                    dsListcancel.remove(position);
+                    canceleradapter.notifyDataSetChanged();
                 }else{
                     Toast.makeText(context,"忽略失败！",Toast.LENGTH_SHORT).show();
                 }

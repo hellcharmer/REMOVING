@@ -598,7 +598,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                         DialogInterface dialogInterface,
                                         int which) {
                                     // TODO Auto-generated method
-                                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
+                                    cancelRequest(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
                                 }
                             });
                     builder.setNegativeButton(
@@ -762,7 +762,7 @@ public class ManagerexeActivity extends AppCompatActivity {
         });
     }
 
-    public void cancelJoin(int position,String exerciseId,String joiner,Context contexts){
+    public void cancelRequest(int position,String exerciseId,String joiner,Context contexts){
         final Context context = contexts;
         final int position1 =position;
         String str = HttpUtils.hoster+"cancelany";
@@ -770,13 +770,13 @@ public class ManagerexeActivity extends AppCompatActivity {
 
         params.addQueryStringParameter("exerciseId",exerciseId);
         params.addQueryStringParameter("joiner",joiner);
-        params.addQueryStringParameter("choice","2");
+        params.addQueryStringParameter("choice","4");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 System.out.println(result);
                 if ("true".equals(result)){
-                    Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
                     exeinfolist2.remove(position1);
                     adapter2.notifyDataSetChanged();
                 }else {

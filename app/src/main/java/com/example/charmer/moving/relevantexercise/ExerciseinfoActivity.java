@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
@@ -126,7 +127,9 @@ public class ExerciseinfoActivity extends AppCompatActivity {
                 return convertView;
             }
         };
+
         lv_exercise.setAdapter(adapter);
+
         imgadapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -145,12 +148,20 @@ public class ExerciseinfoActivity extends AppCompatActivity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
+                final int position1 = position;
                 convertView = View.inflate(ExerciseinfoActivity.this, R.layout.joinerimg, null);
                 joinerImg= (ImageView) convertView.findViewById(R.id.joinerImg);
                 VariableExercise.DataSummary vds = dsListJoin.get(position);
                 xUtilsImageUtils.display(joinerImg, HttpUtils.hoster+"upload/"+vds.userImg);
                 System.out.println("==-=-=-=-=-=-"+vds.userImg);
-
+                joinerImg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent1 = new Intent(ExerciseinfoActivity.this, Homepage.class);
+                        intent1.putExtra("user",dsListJoin.get(position1).userAccount.toString());
+                        startActivity(intent1);
+                    }
+                });
                 return convertView;
             }
         };
@@ -158,6 +169,16 @@ public class ExerciseinfoActivity extends AppCompatActivity {
         joinerImgs.setAdapter(imgadapter);
 
         getExerciseList(exerciseId);
+
+        imguser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(ExerciseinfoActivity.this, Homepage.class);
+                System.out.println("++++"+exerciseList.get(0).publisherId);
+                intent1.putExtra("user",exerciseList.get(0).publisherId);
+                startActivity(intent1);
+            }
+        });
 
         enroll.setOnClickListener(new View.OnClickListener() {
             @Override

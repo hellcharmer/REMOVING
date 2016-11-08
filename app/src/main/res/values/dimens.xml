@@ -11,4 +11,6 @@
     <dimen name="default_btn_radius_circle">42dp</dimen>
     <dimen name="activity_fragment">150dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="nav_top_bar_height">46dp</dimen>
+    <dimen name="text_title_big_size">18sp</dimen>
 </resources>

@@ -108,10 +108,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
-        System.out.println(intent.getStringExtra("userId")+"111111111111");
         user.setUserid(Integer.parseInt(intent.getStringExtra("userId")));
         user.setUseraccount(intent.getStringExtra("useraccount"));
-
         setContentView(R.layout.activity_main);
 //       getusertoken();
         //lzy的改动

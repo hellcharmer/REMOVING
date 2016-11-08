@@ -17,6 +17,7 @@
     <string name="totalNumber">总人数</string>
     <string name="exercises">活动</string>
     <string name="exercisesinfoes">活动详情</string>
+    <string name="choiceplace">选取地点</string>
     <string name="manager">管理</string>
     <string name="exemanager">活动管理</string>
     <string name="releasetime">发布于</string>
@@ -84,6 +85,7 @@
         <item>你请客</item>
     </string-array>
     <string name="app_cancel">取消</string>
+    <string name="cancel">取消</string>
     <string name="app_sure">确定</string>
 
     <item name="tag_first" type="id"></item>
@@ -104,6 +106,7 @@
     <string name="delete">删除</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="delete_sure">确定要删除评论吗？</string>
     <string name="ok">确定</string>
     <string name="agreejoin_sure">确定同意吗？</string>
@@ -117,6 +120,10 @@
 
     <string name="xq_viewpager_indicator">%1$d/%2$d</string>
     <string name="select">%1$s/%2$s</string>
+
+
+    <string name="load_more_loading">加载中，请稍后...</string>
+    <string name="load_more_loaded_no_more">亲，没有更多了...</string>
 
 
 </resources>
