@@ -776,14 +776,15 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
     //讨论组数据处理
     public void getTlzData(){
         RequestParams params=new RequestParams(HttpUtils.host4+"getqun");
-        params.addQueryStringParameter("choice",4+ "");
-        params.addQueryStringParameter("userid",MainActivity.getUser().getUserid() + "");
+        params.addQueryStringParameter("choice","4");
+        params.addQueryStringParameter("userid",MainActivity.getUser().getUserid()+"");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                if(result.equals("[]")||result==null){
+                if(result.equals("[]")){
                     Toast.makeText(getActivity(),"暂时没有讨论组-____-\"",Toast.LENGTH_SHORT).show();
                 }
+                Log.i("onError:succ",result);
                 tlzs.clear();
                 Log.i("tlzsData",result);
                 progress4.setVisibility(View.GONE);
@@ -798,7 +799,7 @@ public class Fragment_friend extends Fragment implements View.OnClickListener {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                Log.i("onError:",ex+"");
             }
 
             @Override

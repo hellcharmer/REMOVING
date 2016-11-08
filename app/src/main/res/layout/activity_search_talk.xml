@@ -105,7 +105,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_below="@id/fen"
+            android:layout_marginTop="6dp"
             android:src="@drawable/searchgreen"
+
             />
         <TextView
             android:layout_marginTop="8dp"
@@ -151,6 +153,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/searchgreen"
+            android:layout_marginTop="7dp"
+
             />
         <TextView
             android:layout_marginTop="8dp"

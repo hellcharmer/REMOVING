@@ -161,23 +161,25 @@ public class Creatqun2 extends AppCompatActivity implements View.OnClickListener
                 params.addQueryStringParameter("userids",userids);
                 params.addQueryStringParameter("qunname",edqunname);
                 params.addBodyParameter("kong","kong");
-                params.addBodyParameter("choice",0+"");
+                params.addQueryStringParameter("choice",0+"");
                 x.http().post(params, new Callback.CommonCallback<String>() {
                     @Override
                     public void onSuccess(String result) {
-                        Log.i("ssssss",result);
-                        Toast.makeText(Creatqun2.this,"",Toast.LENGTH_SHORT).show();
+                        Log.i("ssssss","ssssss");
+                        Toast.makeText(Creatqun2.this,"创建成功",Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                     @Override
                     public void onError(Throwable ex, boolean isOnCallback) {
                         Log.i("onError",ex+"");
+                        Toast.makeText(Creatqun2.this,"创建失败",Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onCancelled(CancelledException cex) {
                     }
                     @Override
                     public void onFinished() {
-                        finish();
+
                     }
                 });
                 break;
