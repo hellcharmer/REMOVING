@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:background="@drawable/boder"
         android:layout_width="180dp"
@@ -36,10 +37,17 @@
             android:text="XXXXXXXXX"
 
             />
-        <Button
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="查看详细"/>
+        <TextView
+        android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+        android:background="@drawable/textview_exercise_border"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSkybule"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="查看详细"/>
     </LinearLayout>
 </LinearLayout>

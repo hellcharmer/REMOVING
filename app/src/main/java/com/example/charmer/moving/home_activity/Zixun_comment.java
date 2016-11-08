@@ -427,7 +427,7 @@ public class Zixun_comment extends AppCompatActivity implements View.OnClickList
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
 
-                emptyLayout.showError("加载失败，点击重新加载"); // 显示失败
+
             }
 
             @Override

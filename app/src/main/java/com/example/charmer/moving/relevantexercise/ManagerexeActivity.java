@@ -4,13 +4,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
 import com.example.charmer.moving.pojo.VariableExercise;
-import com.foamtrace.photopicker.Image;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -40,8 +37,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.OnItemClick;
 
 public class ManagerexeActivity extends AppCompatActivity {
 
@@ -581,7 +576,7 @@ public class ManagerexeActivity extends AppCompatActivity {
             viewHolder.title.setText(URLDecoder.decode(exercises.title,"utf-8"));
             viewHolder.activityTime.setText(URLDecoder.decode(exercises.activityTime,"utf-8").substring(5,16));
             viewHolder.releaseTime.setText(URLDecoder.decode(exercises.releaseTime,"utf-8").substring(5,16));
-
+            System.out.println("-----------"+exercises.isScan);
             if(!exercises.isScan){
                 isscan.setVisibility(View.GONE);
             }
@@ -603,7 +598,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                         DialogInterface dialogInterface,
                                         int which) {
                                     // TODO Auto-generated method
-                                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
+                                    cancelRequest(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
                                 }
                             });
                     builder.setNegativeButton(
@@ -767,7 +762,7 @@ public class ManagerexeActivity extends AppCompatActivity {
         });
     }
 
-    public void cancelJoin(int position,String exerciseId,String joiner,Context contexts){
+    public void cancelRequest(int position,String exerciseId,String joiner,Context contexts){
         final Context context = contexts;
         final int position1 =position;
         String str = HttpUtils.hoster+"cancelany";
@@ -775,13 +770,13 @@ public class ManagerexeActivity extends AppCompatActivity {
 
         params.addQueryStringParameter("exerciseId",exerciseId);
         params.addQueryStringParameter("joiner",joiner);
-        params.addQueryStringParameter("choice","2");
+        params.addQueryStringParameter("choice","4");
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 System.out.println(result);
                 if ("true".equals(result)){
-                    Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
                     exeinfolist2.remove(position1);
                     adapter2.notifyDataSetChanged();
                 }else {

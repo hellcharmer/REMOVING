@@ -3,11 +3,13 @@ package com.example.charmer.moving.relevantexercise;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.view.ActionMode;
 import android.text.InputType;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -53,9 +55,12 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
     private TextView typeslt;
     private TextView themeslt;
     private TextView etStartTime;
-    private Button commitbtn;
+    private RelativeLayout commitbtn;
     private Exercises exepub;
     private RelativeLayout finishthis;
+    private RelativeLayout gaode;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,24 +77,40 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
         numslt.setOnClickListener(new tvclick(R.array.exepbnumber, numslt));
         mthdslt = (TextView) findViewById(R.id.exepb_ctmth);
         mthdslt.setOnClickListener(new tvclick(R.array.exepbcostmthd, mthdslt));
-        commitbtn = (Button) findViewById(R.id.commitbtn);
+        commitbtn = (RelativeLayout) findViewById(R.id.commitbtn);
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));
         exe_pb_name = (EditText) findViewById(R.id.exe_pb_name);
         exepb_cost = (EditText) findViewById(R.id.exepb_cost);
         exepb_place = (EditText) findViewById(R.id.exepb_place);
         exepb_intro = (EditText) findViewById(R.id.exepb_intro);
+        gaode =((RelativeLayout) findViewById(R.id.gaode));
         InputMethodManager imm =(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(exepb_intro.getWindowToken(), 0);
         commitbtn.setOnClickListener(new commitbtn());
 
         findViewById(R.id.rltv).setOnClickListener(new rltvclick());
         finishthis.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
+        gaode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PublishExe.this,EventsActivity.class);
+                Bundle bundle = new Bundle();
+                String str = "";
+                bundle.putString("str1", str);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, 10);
+
+            }
+        });
     }
+
 
     private class tvclick implements View.OnClickListener {
         private TextView tempview;
@@ -180,7 +201,21 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
         return true;
     }
 
-    private class rltvclick implements View.OnClickListener{
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (resultCode) { //resultCode为回传的标记，我在B中回传的是RESULT_OK
+            case RESULT_OK:
+                Bundle b = data.getExtras(); //data为B中回传的Intent
+                String str = b.getString("str1");//str即为回传的值
+                exepb_place.setText(str);
+                break;
+            default:
+                break;
+
+        }
+    }
+        private class rltvclick implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
@@ -230,9 +265,9 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
                 System.out.println("+_+_+_+__"+result);
                 if ("true".equals(result)){
                     Toast.makeText(PublishExe.this, "发布成功", Toast.LENGTH_SHORT).show();
-//                    finish();
-//                    Intent intent = new Intent(PublishExe.this, ManagerexeActivity.class);
-//                    startActivity(intent);
+                    finish();
+                    Intent intent = new Intent(PublishExe.this, ManagerexeActivity.class);
+                    startActivity(intent);
 
                 }else{
                     Toast.makeText(PublishExe.this, "发布失败", Toast.LENGTH_SHORT).show();

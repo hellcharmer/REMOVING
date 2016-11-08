@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shoucang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.charmer.moving.mine_activity.Shoucang">
+    <RelativeLayout
+        android:id="@+id/titletop"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorSkybule">
+        <RelativeLayout
+            android:id="@+id/finishthis"
+            android:layout_width="48dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finish"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/finishthis"
+            android:text="我的收藏"
+            android:textSize="24sp"
+            android:textColor="#fff"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titletop">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="#ffffff"/>
+    </RelativeLayout>
+</RelativeLayout>

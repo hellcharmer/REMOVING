@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/xiangxi_fengxiang"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/iv_home_return"
             android:layout_gravity="center_vertical"
@@ -170,16 +170,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" >
-            <ImageButton
-                android:id="@+id/home_publish_at"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/main_bottom_item_bg"
-                android:src="@drawable/at"
+            <!--<ImageButton-->
+                <!--android:id="@+id/home_publish_at"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@drawable/main_bottom_item_bg"-->
+                <!--android:src="@drawable/at"-->
 
-                android:paddingBottom="2dip"
-                android:paddingTop="7dip"
-                />
+                <!--android:paddingBottom="2dip"-->
+                <!--android:paddingTop="7dip"-->
+                <!--/>-->
         </RelativeLayout>
 
         <RelativeLayout

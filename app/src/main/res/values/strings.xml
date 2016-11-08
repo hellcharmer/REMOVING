@@ -17,6 +17,7 @@
     <string name="totalNumber">总人数</string>
     <string name="exercises">活动</string>
     <string name="exercisesinfoes">活动详情</string>
+    <string name="choiceplace">选取地点</string>
     <string name="manager">管理</string>
     <string name="exemanager">活动管理</string>
     <string name="releasetime">发布于</string>

@@ -44,6 +44,7 @@ public class ListActivityBean {
         public String  state;
         public Integer zixunId;
         public String photoImg;
+        public String publisheraccount;
         public String publisherimg;
         public String chenghao;
         public String type;

@@ -42,6 +42,10 @@ import org.xutils.x;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
+import cn.jpush.android.api.JPushInterface;
+import cn.jpush.android.api.TagAliasCallback;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -104,9 +108,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
-//        user.setUserid(Integer.parseInt(intent.getStringExtra("userId")));
-        user.setUsername("小五");
-        user.setUserid(22);
+        user.setUserid(Integer.parseInt(intent.getStringExtra("userId")));
         user.setUseraccount(intent.getStringExtra("useraccount"));
         setContentView(R.layout.activity_main);
 //       getusertoken();
@@ -148,6 +150,17 @@ public class MainActivity extends AppCompatActivity {
         tabs[0].setSelected(true);
         plus_yuan.setVisibility(View.VISIBLE);
         plus_im.setVisibility(View.VISIBLE);
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
+        JPushInterface.setAlias(this, //上下文对象
+                intent.getStringExtra("useraccount"), //别名
+                new TagAliasCallback() {//回调接口,i=0表示成功,其它设置失败
+                    @Override
+                    public void gotResult(int i, String s, Set<String> set) {
+                        Log.d("alias", "set alias result is" + i);
+                    }
+                });
+
     }
 
 
@@ -462,6 +475,9 @@ public class MainActivity extends AppCompatActivity {
             dishui_tv.setClickable(clicked? true : false);
             guoshui_tv.setClickable(clicked? true : false);
             iv_fabuhuodong.setClickable(clicked? true : false);
+            return true;
+        }else if(Fragment_mine.rl_qrcode.getVisibility()==View.VISIBLE){
+            Fragment_mine.rl_qrcode.setVisibility(View.GONE);
             return true;
         }
         return super.onKeyDown(keyCode, event);

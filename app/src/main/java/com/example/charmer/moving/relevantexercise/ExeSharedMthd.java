@@ -179,7 +179,7 @@ public class ExeSharedMthd {
             public void onSuccess(String result) {
                 System.out.println(result);
                 if ("true".equals(result)){
-                    Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
                 }
@@ -237,5 +237,40 @@ public class ExeSharedMthd {
         });
     }
 
+    public static void cancelRequest(String exerciseId,String joiner,Context contexts){
+        final Context context = contexts;
 
+        String str = HttpUtils.hoster+"cancelany";
+        RequestParams params = new RequestParams(str);
+
+        params.addQueryStringParameter("exerciseId",exerciseId);
+        params.addQueryStringParameter("joiner",joiner);
+        params.addQueryStringParameter("choice","4");
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+                if ("true".equals(result)){
+                    //Toast.makeText(context,"取消参加成功！",Toast.LENGTH_SHORT).show();
+                }else {
+                    //Toast.makeText(context,"取消失败！",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
 }

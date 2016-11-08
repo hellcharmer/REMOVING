@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.MyView.ObservableScrollView;
@@ -73,6 +74,7 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
     String zixunId="";
     Drawable startDra;
     SharedPreferences sharedPreferences;
+    String useraccount;
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -154,9 +156,8 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
         Intent intent = this.getIntent();
          zixunId = intent.getStringExtra("zixunId");
         getZixunlistById(zixunId);
-
         String shoucangid =sharedPreferences.getString("shoucangid", "");
-
+        useraccount = intent.getStringExtra("user");
         if(shoucangid.equals("")){
            getshoucangstate(MainActivity.getUser().getUseraccount());
         }else {
@@ -249,6 +250,14 @@ public class ZixunInfo_xq extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        xiangxi_author_touxiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(ZixunInfo_xq.this, Homepage.class);
+                intent.putExtra("user",useraccount);
+                startActivity(intent);
             }
         });
     }
