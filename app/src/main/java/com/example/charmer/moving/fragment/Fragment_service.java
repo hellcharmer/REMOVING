@@ -19,7 +19,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -236,6 +235,8 @@ public class Fragment_service extends Fragment {
                 Intent intent = new Intent(getActivity(), ExerciseinfoActivity.class);
                 if (position>=1) {
                     intent.putExtra("exerciseId", exerciseList.get(position - 1).exerciseId + "");
+                    intent.putExtra("account", exerciseList.get(position - 1).publisherId + "");
+
                     startActivity(intent);
                 }
             }

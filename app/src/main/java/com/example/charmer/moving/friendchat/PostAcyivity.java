@@ -228,7 +228,7 @@ public class PostAcyivity extends AppCompatActivity {
         @Override
         public void convert(ViewHolder viewHolder, Post post, final int position) {
             ImageView postimg = ((ImageView) viewHolder.getViewById(R.id.postimg));
-            xUtilsImageUtils.display(postimg, HttpUtils.host4 + post.getPostimg(), true);
+            xUtilsImageUtils.display(postimg, HttpUtils.hostpc + post.getPostimg(), true);
             TextView postname = ((TextView) viewHolder.getViewById(R.id.postname));
             postname.setText(post.getPostname());
             TextView tv6 = ((TextView) viewHolder.getViewById(R.id.tv6));

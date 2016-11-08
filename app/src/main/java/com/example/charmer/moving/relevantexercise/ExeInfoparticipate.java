@@ -3,8 +3,8 @@ package com.example.charmer.moving.relevantexercise;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +15,12 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
 import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.friendchat.CreateQunImpl;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -49,6 +48,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
     private GridView_picture joinerImgs;
     private ImageView joinerImg;
     private RelativeLayout finishthis;
+    private String tlzId;
     private static final String TAG = "ExerciseinfoActivity";
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     private TextView textintroduce;
@@ -56,12 +56,16 @@ public class ExeInfoparticipate extends AppCompatActivity {
     final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
 
     private String exerciseId;
+    private Button tlztalk2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exe_infoparticipate);
+        CreateQunImpl.B=this;
         Intent intent = this.getIntent();
         exerciseId = intent.getStringExtra("exerciseId");
+        tlzId=intent.getStringExtra("tlzId");
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
         title = ((TextView) findViewById(R.id.titleinfo));
@@ -73,6 +77,7 @@ public class ExeInfoparticipate extends AppCompatActivity {
         imguser = ((ImageView) findViewById(R.id.imguser));
         joinerImgs = ((GridView_picture) findViewById(R.id.joinerImgs));
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));
+        tlztalk2 = ((Button) findViewById(R.id.tlztalk2));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -220,7 +225,13 @@ public class ExeInfoparticipate extends AppCompatActivity {
                 finish();
             }
         });
-
+        tlztalk2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CreateQunImpl createQun=new CreateQunImpl();
+                createQun.startdischat(tlzId,null);
+            }
+        });
     }
     private void getExerciseList(String exerciseId) {
         String str = HttpUtils.hoster+"getexebyid";

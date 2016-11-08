@@ -28,7 +28,6 @@ import com.example.charmer.moving.fragment.Fragment_friend;
 import com.example.charmer.moving.fragment.Fragment_home;
 import com.example.charmer.moving.fragment.Fragment_mine;
 import com.example.charmer.moving.fragment.Fragment_service;
-import com.example.charmer.moving.friendchat.RongImChat;
 import com.example.charmer.moving.home_activity.Publish_articles;
 import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.utils.StatusBarCompat;
@@ -113,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //       getusertoken();
         //lzy的改动
-        RongImChat.A=this;
+
           yiburenwu2();
         //BP.init();
         StatusBarCompat.compat(this, Color.parseColor("#0099ff"));
@@ -503,6 +502,7 @@ public class MainActivity extends AppCompatActivity {
                         usersToken.addAll(newusersToken);
                         //赋予当前用户token
                         for (int i=0;i<usersToken.size();i++){
+                        
                             if(j==usersToken.get(i).getUserid()){
                                 Token=usersToken.get(i).getUsertoken();
                                 Log.i("Tooooo3","kennn"+Token);

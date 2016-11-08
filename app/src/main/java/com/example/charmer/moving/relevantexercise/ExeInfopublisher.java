@@ -5,20 +5,14 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,16 +20,16 @@ import android.widget.Toast;
 
 import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
-import com.example.charmer.moving.home_activity.Zixun_comment;
-import com.example.charmer.moving.pojo.ListActivityBean;
+import com.example.charmer.moving.friendchat.CreateQunImpl;
+import com.example.charmer.moving.pojo.User;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.DensityUtil;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
@@ -44,6 +38,7 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +76,9 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
     private Button agreebtn;
     private TextView ignore;
     private RelativeLayout finishthis;
+    private String publisheraccount;
+    private String tlzId;
+
     VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
     final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
     final List<VariableExercise.DataSummary> dsListEnroll = new ArrayList<VariableExercise.DataSummary>();
@@ -90,13 +88,18 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
      * 扫描跳转Activity RequestCode
      */
     public static final int REQUEST_CODE = 111;
+    private Button tlztalk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exe_infopublisher);
+        CreateQunImpl.B=this;
         Intent intent = this.getIntent();
         exerciseId = intent.getStringExtra("exerciseId");
+        publisheraccount=intent.getStringExtra("account");
+        tlzId = intent.getStringExtra("tlzId");
+        CreateQunImpl.B=this;
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));
         saoyisao = ((RelativeLayout) findViewById(R.id.saoyisao));
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
@@ -112,7 +115,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
         lvenrollers = ((ListView)findViewById(R.id.lvenrollers));
         lvcancel = ((ListView)findViewById(R.id.lvcancel));
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));
-
+        tlztalk = ((Button) findViewById(R.id.tlztalk));
         adapter = new BaseAdapter() {
             @Override
             public int getCount() {
@@ -503,6 +506,13 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                 }
 
         });
+        tlztalk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CreateQunImpl createQun=new CreateQunImpl();
+                   createQun.startdischat(tlzId,null);
+            }
+        });
         finishthis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -578,7 +588,7 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
 
     }
 
-    private void agreeJoin(String exerciseId,String joiner,Context contexts){
+    private void agreeJoin(String exerciseId, final String joiner, Context contexts){
         final String joiner1 = joiner;
         final String exeId = exerciseId;
         final Context context = contexts;
@@ -599,6 +609,38 @@ public class ExeInfopublisher extends AppCompatActivity implements EasyPermissio
                     Toast.makeText(context,"操作成功！",Toast.LENGTH_SHORT).show();
                     getExerciseList(exeId);
                     jPush(joiner1);
+
+                    RequestParams requestParams =new RequestParams(HttpUtils.host4+"getuser");
+                    requestParams.addQueryStringParameter("choice",1+"");
+                    requestParams.addQueryStringParameter("account",joiner1);
+                    x.http().get(requestParams, new Callback.CommonCallback<String>() {
+                        @Override
+                        public void onSuccess(String result) {
+                            Log.i("result:",result);
+                            User user1=new User();
+                            Gson gson=new Gson();
+                            Type type=new TypeToken<User>(){}.getType();
+                            user1=gson.fromJson(result,type);
+                            Integer user1id=user1.getUserid();
+                            CreateQunImpl createQun=new CreateQunImpl();
+                            createQun.joinone(user1id+"",tlzId);
+                        }
+
+                        @Override
+                        public void onError(Throwable ex, boolean isOnCallback) {
+                            Log.e("errorconn:", ex+"");
+                        }
+
+                        @Override
+                        public void onCancelled(CancelledException cex) {
+
+                        }
+
+                        @Override
+                        public void onFinished() {
+
+                        }
+                    });
                 }else
                 {
                     Toast.makeText(context,"操作失败！",Toast.LENGTH_SHORT).show();

@@ -31,6 +31,7 @@ public class VariableExercise {
         public String exerciseIntroduce;
         public String releaseTime;
         public boolean isScan;
+        public String tlzId;
         @Override
         public String toString() {
             return "Exercises{" +

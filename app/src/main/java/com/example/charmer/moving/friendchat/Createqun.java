@@ -182,7 +182,7 @@ public class Createqun extends AppCompatActivity {
             public void convert(ViewHolder viewHolder, final Friend friend, final int position) {
                       Log.i("friend","好友数据");
                ImageView iv3= ((ImageView) viewHolder.getViewById(R.id.iv3));
-                xUtilsImageUtils.display(iv3, HttpUtils.host4 + friend.getUser().getUserimg(), true);
+                xUtilsImageUtils.display(iv3, HttpUtils.hostpc + friend.getUser().getUserimg(), true);
                 TextView tv3=  ((TextView) viewHolder.getViewById(R.id.tv3));
                 tv3.setText(friend.getUser().getUsername());
 

@@ -1,48 +1,44 @@
 package com.example.charmer.moving.relevantexercise;
 
-import android.app.DatePickerDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.view.ActionMode;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.fragment.WheelDialogFragment;
+import com.example.charmer.moving.friendchat.CreateQunImpl;
 import com.example.charmer.moving.pojo.Exercises;
 import com.example.charmer.moving.utils.DateUtil;
 import com.example.charmer.moving.utils.ResUtil;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
-import java.lang.reflect.Field;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
-import butterknife.OnClick;
+import java.util.List;
+import java.util.Map;
 
 public class PublishExe extends AppCompatActivity  implements View.OnTouchListener {
 
@@ -55,18 +51,15 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
     private TextView typeslt;
     private TextView themeslt;
     private TextView etStartTime;
-    private RelativeLayout commitbtn;
+    private Button commitbtn;
     private Exercises exepub;
     private RelativeLayout finishthis;
-    private RelativeLayout gaode;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish_exe);
-
+        CreateQunImpl.B=this;
         etStartTime = (TextView) this.findViewById(R.id.et_start_time);
         etStartTime.setOnTouchListener(this);
         typeslt = (TextView) findViewById(R.id.typeslt);
@@ -77,40 +70,24 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
         numslt.setOnClickListener(new tvclick(R.array.exepbnumber, numslt));
         mthdslt = (TextView) findViewById(R.id.exepb_ctmth);
         mthdslt.setOnClickListener(new tvclick(R.array.exepbcostmthd, mthdslt));
-        commitbtn = (RelativeLayout) findViewById(R.id.commitbtn);
+        commitbtn = (Button) findViewById(R.id.commitbtn);
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));
         exe_pb_name = (EditText) findViewById(R.id.exe_pb_name);
         exepb_cost = (EditText) findViewById(R.id.exepb_cost);
         exepb_place = (EditText) findViewById(R.id.exepb_place);
         exepb_intro = (EditText) findViewById(R.id.exepb_intro);
-        gaode =((RelativeLayout) findViewById(R.id.gaode));
         InputMethodManager imm =(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(exepb_intro.getWindowToken(), 0);
         commitbtn.setOnClickListener(new commitbtn());
 
         findViewById(R.id.rltv).setOnClickListener(new rltvclick());
         finishthis.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-        gaode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PublishExe.this,EventsActivity.class);
-                Bundle bundle = new Bundle();
-                String str = "";
-                bundle.putString("str1", str);
-                intent.putExtras(bundle);
-                startActivityForResult(intent, 10);
-
-            }
-        });
     }
-
 
     private class tvclick implements View.OnClickListener {
         private TextView tempview;
@@ -201,21 +178,7 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
         return true;
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (resultCode) { //resultCode为回传的标记，我在B中回传的是RESULT_OK
-            case RESULT_OK:
-                Bundle b = data.getExtras(); //data为B中回传的Intent
-                String str = b.getString("str1");//str即为回传的值
-                exepb_place.setText(str);
-                break;
-            default:
-                break;
-
-        }
-    }
-        private class rltvclick implements View.OnClickListener{
+    private class rltvclick implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
@@ -238,9 +201,9 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
             {
                 //Toast.makeText(PublishExe.this, "提交成功", Toast.LENGTH_SHORT).show();
                 exepub = new Exercises(Long.parseLong(MainActivity.getUser().getUseraccount()), exe_pb_name.getText().toString(), typeslt.getText().toString(),
-                       themeslt.getText().toString(), exepb_intro.getText().toString(), exepb_place.getText().toString(),
-                       DateUtil.stringToDate(etStartTime.getText().toString()), Double.parseDouble(exepb_cost.getText().toString()), mthdslt.getText().toString(),
-                       Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()),"","","");
+                        themeslt.getText().toString(), exepb_intro.getText().toString(), exepb_place.getText().toString(),
+                        DateUtil.stringToDate(etStartTime.getText().toString()), Double.parseDouble(exepb_cost.getText().toString()), mthdslt.getText().toString(),
+                        Integer.parseInt(numslt.getText().toString()), new Date(System.currentTimeMillis()),"","","");
 
                 sendexepub(exepub);
 
@@ -262,9 +225,20 @@ public class PublishExe extends AppCompatActivity  implements View.OnTouchListen
 
             @Override
             public void onSuccess(String result) {
+
+                Gson gson = new Gson();
+                Type type = new TypeToken<Map<String,String>>(){}.getType();
+                Map<String,String> temp= gson.fromJson(result, type);
                 System.out.println("+_+_+_+__"+result);
-                if ("true".equals(result)){
+                if ("true".equals(temp.get("result"))){
+                    temp.get("exerciseId");
                     Toast.makeText(PublishExe.this, "发布成功", Toast.LENGTH_SHORT).show();
+                    CreateQunImpl createQun=new CreateQunImpl();
+                    List<String> userids=new ArrayList<String>();
+                    userids.add(MainActivity.getUser().getUserid()+"");
+                    userids.add(34+"");
+                    String title=exe_pb_name.getText().toString();
+                    createQun.connectRong(userids,title, temp.get("exerciseId"));
                     finish();
                     Intent intent = new Intent(PublishExe.this, ManagerexeActivity.class);
                     startActivity(intent);

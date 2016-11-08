@@ -112,8 +112,9 @@ public class SearchTalk extends AppCompatActivity  {
                 rdsearsr.setFocusableInTouchMode(true);
                 rdsearsr.requestFocus();
                 rdsearsr.requestFocusFromTouch();
-//                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//                imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+
             }
         });
         //人搜索框

@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.friendchat.CreateQunImpl;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.google.gson.Gson;
 
@@ -44,6 +45,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     private BaseAdapter adapter2;
     private BaseAdapter adapter3;
     private Button cancelExe;
+    private Button tlz1;
     private Button cancelJoin;
     private Button cancelEnroll;
     private TextView noData1;
@@ -65,12 +67,12 @@ public class ManagerexeActivity extends AppCompatActivity {
     final ArrayList<VariableExercise.Exercises> exeinfolist1 = new ArrayList<VariableExercise.Exercises>();
     final ArrayList<VariableExercise.Exercises> exeinfolist2 = new ArrayList<VariableExercise.Exercises>();
     final ArrayList<VariableExercise.Exercises> exeinfolist3 = new ArrayList<VariableExercise.Exercises>();
-
+    private CreateQunImpl createQun;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.managerexe);
-
+        CreateQunImpl.B=this;
         pager = (ViewPager) this.findViewById(R.id.vper);
         tabStrip = (PagerTabStrip) this.findViewById(R.id.strip);
         finishthis =((RelativeLayout) findViewById(R.id.finishthis));
@@ -216,6 +218,8 @@ public class ManagerexeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ManagerexeActivity.this, ExeInfopublisher.class);
                 intent.putExtra("exerciseId", exeinfolist1.get(position).exerciseId+"");
+                intent.putExtra("account", exeinfolist1.get(position).publisherId+"");
+                intent.putExtra("tlzId", exeinfolist1.get(position).tlzId+"");
                 startActivity(intent);
 
             }
@@ -225,6 +229,8 @@ public class ManagerexeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ManagerexeActivity.this, ExeInfoparticipate.class);
                 intent.putExtra("exerciseId", exeinfolist2.get(position).exerciseId+"");
+                intent.putExtra("account", exeinfolist2.get(position).publisherId+"");
+                intent.putExtra("tlzId", exeinfolist2.get(position).tlzId+"");
                 startActivity(intent);
 
             }
@@ -234,6 +240,7 @@ public class ManagerexeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ManagerexeActivity.this, ExeInfoEnroll.class);
                 intent.putExtra("exerciseId", exeinfolist3.get(position).exerciseId+"");
+                intent.putExtra("account", exeinfolist2.get(position).publisherId+"");
                 startActivity(intent);
 
             }
@@ -475,6 +482,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                 viewHolder.activityTime = ((TextView) convertView.findViewById(R.id.exetime));
                 viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
                 cancelExe = (Button) convertView.findViewById(R.id.cancelExe);
+                tlz1=((Button) convertView.findViewById(R.id.tlz1));
                 convertView.setTag(viewHolder);//缓存对象
             }else{
                 viewHolder = (ViewHolder)convertView.getTag();
@@ -522,6 +530,18 @@ public class ManagerexeActivity extends AppCompatActivity {
                         builder.create().show();
                     }
                 });
+                tlz1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        createQun.startdischat( exeinfolist1.get(position1).tlzId,null);
+                    }
+                });
+
+
+
+
+
+
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -532,7 +552,9 @@ public class ManagerexeActivity extends AppCompatActivity {
 
     class exeAdapter extends BaseAdapter{
 
-    @Override
+        private Button tlz2;
+
+        @Override
     public int getCount() {
         return exeinfolist2.size();
     }
@@ -548,7 +570,7 @@ public class ManagerexeActivity extends AppCompatActivity {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         Log.i(TAG, "加载listview item position:" + position);
         final int position1 = position;
         ViewHolder viewHolder = null;
@@ -563,6 +585,8 @@ public class ManagerexeActivity extends AppCompatActivity {
             viewHolder.releaseTime = ((TextView) convertView.findViewById(R.id.releasetime));
             cancelJoin = (Button) convertView.findViewById(R.id.cancelJoin);
             isscan = (ImageView) convertView.findViewById(R.id.isscan);
+            tlz2 = ((Button) convertView.findViewById(R.id.tlz2));
+
 
             convertView.setTag(viewHolder);//缓存对象
         }else{
@@ -598,7 +622,7 @@ public class ManagerexeActivity extends AppCompatActivity {
                                         DialogInterface dialogInterface,
                                         int which) {
                                     // TODO Auto-generated method
-                                    cancelJoin(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
+                                    cancelRequest(position1,exeinfolist2.get(position1).exerciseId.toString(), MainActivity.getUser().getUseraccount(),ManagerexeActivity.this);
                                 }
                             });
                     builder.setNegativeButton(
@@ -617,6 +641,18 @@ public class ManagerexeActivity extends AppCompatActivity {
 
                 }
             });
+            tlz2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    createQun.startdischat(exeinfolist2.get(position1).tlzId,null);
+                }
+            });
+
+
+
+
+
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -762,11 +798,11 @@ public class ManagerexeActivity extends AppCompatActivity {
         });
     }
 
-<<<<<<< HEAD
-    public void cancelJoin(int position,String exerciseId,String joiner,Context contexts){
-=======
+
+
+
     public void cancelRequest(int position,String exerciseId,String joiner,Context contexts){
->>>>>>> 62ba73e678e38c1fdffcce195464cbf9088fb329
+
         final Context context = contexts;
         final int position1 =position;
         String str = HttpUtils.hoster+"cancelany";

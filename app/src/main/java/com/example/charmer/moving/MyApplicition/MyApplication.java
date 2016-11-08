@@ -23,23 +23,23 @@ import io.rong.imkit.RongIM;
 /**
  * Created by Charmer on 2016/9/13.
  */
-public class MyApplication extends Application{
+public class MyApplication extends Application {
 
     public static String location = "";
     public AMapLocationClientOption mLocationOption = null;
     public AMapLocationClient mLocationClient = null;
     //声明定位回调监听器
-    public AMapLocationListener mLocationListener = new AMapLocationListener(){
+    public AMapLocationListener mLocationListener = new AMapLocationListener() {
         @Override
         public void onLocationChanged(AMapLocation amapLocation) {
             if (amapLocation != null) {
                 if (amapLocation.getErrorCode() == 0) {
                     //可在其中解析amapLocation获取相应内容。
-                    setLocation(amapLocation.getProvince()+amapLocation.getCity()+amapLocation.getDistrict());
-                    System.out.println("__________"+getLocation());
-                }else {
+                    setLocation(amapLocation.getProvince() + amapLocation.getCity() + amapLocation.getDistrict());
+                    System.out.println("__________" + getLocation());
+                } else {
                     //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
-                    Log.e("AmapError","location Error, ErrCode:"
+                    Log.e("AmapError", "location Error, ErrCode:"
                             + amapLocation.getErrorCode() + ", errInfo:"
                             + amapLocation.getErrorInfo());
                 }
@@ -49,6 +49,7 @@ public class MyApplication extends Application{
     };
 
     public static Context context;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -58,8 +59,6 @@ public class MyApplication extends Application{
         context = getApplicationContext();
         RongIM.init(this);
         ZXingLibrary.initDisplayOpinion(this);
-
-    }
 
 
         //初始化AMapLocationClientOption对象
@@ -92,7 +91,6 @@ public class MyApplication extends Application{
 
 
     }
-
 
 
     public static Context getContext(){return context;}

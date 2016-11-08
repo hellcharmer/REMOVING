@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_action_discard.png",
+        "source": "E:\\copy\\Lesson1\\workspace\\MOVING\\photopicker\\src\\main\\res\\mipmap-mdpi\\ic_action_discard.png"
+    },
+    {
         "merged": "G:\\android_project\\MOVING\\MOVING\\photopicker\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_action_discard.png",
         "source": "G:\\android_project\\MOVING\\MOVING\\photopicker\\src\\main\\res\\mipmap-mdpi\\ic_action_discard.png"
     }

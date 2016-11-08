@@ -162,7 +162,7 @@ public class Fragment_search2 extends mBaseFragment{
             }
            ImageView iv_tou= ((ImageView) viewHolder.getViewById(R.id.iv_tou));
 
-            xUtilsImageUtils.display(iv_tou, HttpUtils.host4 + user.getUserimg(), true);
+            xUtilsImageUtils.display(iv_tou, HttpUtils.host4 +"upload/"+ user.getUserimg(), true);
         }
     }
 }

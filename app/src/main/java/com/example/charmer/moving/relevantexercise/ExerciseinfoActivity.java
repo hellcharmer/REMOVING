@@ -3,14 +3,13 @@ package com.example.charmer.moving.relevantexercise;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -19,10 +18,10 @@ import android.widget.Toast;
 
 import com.example.charmer.moving.Homepage;
 import com.example.charmer.moving.MainActivity;
-import com.example.charmer.moving.MyApplicition.MyApplication;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.friendchat.RongImChat;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -50,6 +49,7 @@ public class ExerciseinfoActivity extends AppCompatActivity {
     private Integer totalNum;
     private GridView_picture joinerImgs;
     private RelativeLayout finishthis;
+    private String publisheraccount;
     String exerciseId;
     private ImageView joinerImg;
     private static final String TAG = "ExerciseinfoActivity";
@@ -57,12 +57,27 @@ public class ExerciseinfoActivity extends AppCompatActivity {
     private TextView textintroduce;
     VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
     final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
+    private Button talkmaster;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exerciseinfo);
         Intent intent = this.getIntent();
         exerciseId = intent.getStringExtra("exerciseId");
+        publisheraccount=intent.getStringExtra("account");
+        RongImChat.A=this;
+        //lzy改动
+        talkmaster = ((Button) findViewById(R.id.talkmaster));
+        talkmaster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RongImChat rong=new RongImChat();
+                rong.startChat(publisheraccount);
+            }
+        });
+
+        //
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
         title = ((TextView) findViewById(R.id.titleinfo));

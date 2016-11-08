@@ -20,6 +20,7 @@ import com.example.charmer.moving.MainActivity;
 import com.example.charmer.moving.MyView.GridView_picture;
 import com.example.charmer.moving.R;
 import com.example.charmer.moving.contantData.HttpUtils;
+import com.example.charmer.moving.friendchat.RongImChat;
 import com.example.charmer.moving.pojo.VariableExercise;
 import com.example.charmer.moving.utils.xUtilsImageUtils;
 import com.google.gson.Gson;
@@ -47,7 +48,9 @@ public class ExeInfoEnroll extends AppCompatActivity {
     private GridView_picture joinerImgs;
     private ImageView joinerImg;
     private RelativeLayout finishthis;
+    private Button talkmaster1;
     private static final String TAG = "ExeInfoEnroll";
+    private String publisheraccount;
     final ArrayList<VariableExercise.Exercises> exerciseList = new ArrayList<VariableExercise.Exercises>();
     VariableExercise.DataSummary ds = new VariableExercise.DataSummary();
     final List<VariableExercise.DataSummary> dsListJoin = new ArrayList<VariableExercise.DataSummary>();
@@ -60,6 +63,18 @@ public class ExeInfoEnroll extends AppCompatActivity {
         setContentView(R.layout.activity_exe_infoenroll);
         Intent intent = this.getIntent();
         exerciseId = intent.getStringExtra("exerciseId");
+        publisheraccount=intent.getStringExtra("account");
+        //lzy
+        RongImChat.A=this;
+        talkmaster1 = ((Button) findViewById(R.id.talkmaster1));
+        talkmaster1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RongImChat rong=new RongImChat();
+                rong.startChat(publisheraccount);
+            }
+        });
+        //
         lv_exercise = ((ListView)findViewById(R.id.exemidinfolist));
         textintroduce = ((TextView) findViewById(R.id.textintroduce));
         title = ((TextView) findViewById(R.id.titleinfo));
